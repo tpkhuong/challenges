@@ -1,0 +1,56 @@
+/* mobile */
+
+.font-size-16px {
+  font-size: var(--font-size-16px);
+}
+
+.font-size-56px {
+  font-size: var(--font-size-56px);
+}
+
+.player-turns-bg-container {
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-weight: 600;
+
+  height: 168px;
+  width: 200px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block-start: 28px;
+
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: -142px;
+  margin-inline: auto;
+}
+
+[data-playerturn="one"] .player-turns-bg-container {
+  background-image: url("/images/turn-background-red.svg");
+  color: var(--color-neutral-white);
+  display: flex;
+}
+
+[data-playerturn="two"] .player-turns-bg-container {
+  background-image: url("/images/turn-background-yellow.svg");
+  color: var(--color-neutral-black);
+  display: flex;
+}
+
+.text-container {
+  margin-block-start: -5px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .player-turns-bg-container {
+    bottom: -113px;
+  }
+}
+
+/* desktop */

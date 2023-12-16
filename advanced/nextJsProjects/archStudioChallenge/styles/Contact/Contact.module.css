@@ -1,0 +1,25 @@
+/* .map {
+  height: 180px;
+} */
+
+.hero-content-container {
+  position: relative;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .header,
+  .main {
+    padding-inline: 118px;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  .header,
+  .main {
+    padding-inline: 165px;
+  }
+}

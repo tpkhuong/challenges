@@ -1,0 +1,20 @@
+.rules-btn:hover,
+.rules-btn:focus {
+  box-shadow: var(--bottom-box-shadow-hover);
+  border-color: var(--color-dark-purple);
+}
+
+.rules-btn {
+  padding: 20px;
+  width: 100%;
+  border-block-start: var(--border-block-start-inline);
+  border-inline: var(--border-block-start-inline);
+  border-radius: var(--border-radius);
+  box-shadow: var(--bottom-box-shadow);
+  border-color: var(--color-neutral-black);
+}
+
+.rules-btn {
+  background-color: var(--color-neutral-white);
+  text-align: left;
+}

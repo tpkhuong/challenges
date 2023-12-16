@@ -1,0 +1,12 @@
+.title {
+  color: red;
+}
+
+.space {
+  margin-block-start: 8px;
+}
+
+/* border */
+/* border-top: 2px solid black */
+/* border-inline: 2px solid black */
+/* box shadow: 0px 10px 0px black */

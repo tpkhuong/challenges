@@ -1,0 +1,123 @@
+/* mobile */
+
+.player-display-container[data-isdesktop="true"] {
+  display: none;
+}
+
+.player-display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+  position: relative;
+  padding: 7px;
+  padding-inline: 31px;
+  background-color: var(--color-neutral-white);
+  border-block-start: var(--border-block-start-inline);
+  border-inline: var(--border-block-start-inline);
+  border-radius: var(--border-radius);
+  box-shadow: var(--bottom-box-shadow);
+}
+
+/* second player */
+
+[data-firstorsecondplayer="second"] .image {
+  left: revert;
+  right: -26px;
+}
+
+.image {
+  position: absolute;
+  left: -26px;
+  top: 0;
+  bottom: 0;
+  width: max-content;
+  height: min-content;
+  margin-block: auto;
+}
+
+.title {
+  font-size: var(--font-size-16px);
+  font-weight: 600;
+}
+
+.score {
+  font-size: var(--font-size-32px);
+  font-weight: 600;
+  display: inline-block;
+  margin-block-start: -7px;
+}
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .player-display-container[data-firstorsecondplayer="second"] {
+    flex-direction: row-reverse;
+    padding-inline-start: 36px;
+    padding-inline-end: 44px;
+  }
+  .player-display-container {
+    flex-direction: revert;
+    gap: 30px;
+    padding-inline: 36px;
+  }
+  .title {
+    font-size: var(--font-size-20px);
+  }
+
+  .score {
+    font-size: var(--font-size-56px);
+    margin-block-start: 0px;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  .player-display-container[data-isdesktop="true"] {
+    display: flex;
+  }
+
+  .player-display-container[data-firstorsecondplayer="second"] {
+    flex-direction: column;
+    padding-inline-start: revert;
+    padding-inline-end: revert;
+    padding-inline: 20px;
+
+    right: 200px;
+    left: revert;
+  }
+
+  .player-display-container {
+    flex-direction: column;
+    gap: 0;
+    padding-inline: 20px;
+    padding-block: 45px;
+    padding-block-end: 12px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-block: auto;
+    height: min-content;
+
+    left: 200px;
+  }
+
+  [data-firstorsecondplayer="second"] .image {
+    left: 0;
+    right: 0;
+  }
+
+  .image {
+    top: -26px;
+    left: 0;
+    right: 0;
+    bottom: revert;
+    margin-block: revert;
+    margin-inline: auto;
+  }
+
+  .score {
+    margin-block-start: -12px;
+  }
+}

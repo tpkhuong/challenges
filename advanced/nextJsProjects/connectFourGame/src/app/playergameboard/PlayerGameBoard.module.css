@@ -1,0 +1,134 @@
+/* mobile */
+
+.game-board-bg-container[data-playerturn="one"] {
+  --playerchipcolor: var(--color-red);
+}
+
+.game-board-bg-container[data-playerturn="two"] {
+  --playerchipcolor: var(--color-yellow);
+}
+
+/* .circle-container,
+.dropped-circle-container {
+  --circle-size: 80px;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  margin-inline: auto;
+  position: absolute;
+  inset: 0;
+
+  margin-block-start: 80px;
+} */
+
+.circle {
+  /* --circle-size: 80px;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: var(--circle-color);
+  border-radius: 50%; */
+
+  /* position: absolute; */
+}
+
+/* .chip-bg,
+.chip-bottom,
+.chip-top,
+.chip-border,
+.dropped-chip-bg,
+.dropped-chip-top,
+.dropped-chip-border {
+  position: absolute;
+}
+
+.chip-bg,
+.dropped-chip-bg {
+  --circle-color: var(--color-yellow);
+}
+
+.chip-bottom {
+  border: 6px solid black;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+.chip-top,
+.dropped-chip-top {
+  border: 6px solid hsla(0, 0%, 0%, 0.5);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+}
+
+.chip-border,
+.dropped-chip-border {
+  border: 5px solid black;
+  transform: translateY(-5px);
+} */
+
+.dropped-chip-top {
+}
+
+.dropped-chip-border {
+}
+
+.back {
+  --circle-color: var(--color-neutral-black);
+}
+
+.bottom {
+  border: 4px solid black;
+}
+
+.game-board-bg-container {
+  height: 100%;
+  background-color: var(--color-purple);
+  padding-block-start: 50px;
+  padding-inline: 20px;
+
+  position: relative;
+}
+
+.bottom-bg {
+  height: 236px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+}
+
+.game-board-bg-container[data-result="null"] .bottom-bg {
+  background-color: var(--color-dark-purple);
+}
+
+.game-board-bg-container[data-result="playerone"] .bottom-bg {
+  background-color: var(--color-red);
+}
+
+.game-board-bg-container[data-result="playertwo"] .bottom-bg {
+  background-color: var(--color-yellow);
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .bottom-bg {
+    height: 234px;
+  }
+
+  .game-board-bg-container {
+    padding-block-start: 30px;
+    padding-inline: 68px;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  .bottom-bg {
+    height: 200px;
+  }
+
+  .game-board-bg-container {
+    padding-block-start: 53px;
+  }
+}

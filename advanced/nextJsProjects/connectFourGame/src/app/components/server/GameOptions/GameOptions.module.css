@@ -1,0 +1,198 @@
+/* mobile */
+
+.text-color {
+  color: var(--color-purple);
+}
+
+.font-size-20px {
+  font-size: var(--font-size-20px);
+}
+
+/* data-showrules="false" display none on .modal-container */
+/* data-showrules="true" display none on .options-container */
+
+[data-showrules="false"] .modal-container {
+  display: none;
+}
+
+[data-showrules="true"] .options-container {
+  display: none;
+}
+
+.game-options-bg {
+  height: 100%;
+  font-size: var(--font-size-24px);
+  font-weight: 600;
+}
+
+.game-options-bg span {
+  color: var(--color-neutral-black);
+}
+
+.options-container,
+.modal-container {
+  background-color: var(--color-purple);
+}
+
+.options-container {
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-game:hover,
+.start-game:focus,
+.rules-btn:hover,
+.rules-btn:focus {
+  box-shadow: var(--bottom-box-shadow-hover);
+  border-color: var(--color-dark-purple);
+}
+
+.start-game,
+.rules-btn {
+  padding: 20px;
+  width: 100%;
+  border-block-start: var(--border-block-start-inline);
+  border-inline: var(--border-block-start-inline);
+  border-radius: var(--border-radius);
+  box-shadow: var(--bottom-box-shadow);
+  border-color: var(--color-neutral-black);
+}
+
+.start-game {
+  background-color: var(--color-yellow);
+  display: flex;
+  align-items: center;
+  margin-block: 70px;
+  margin-block-end: 30px;
+  padding-inline-end: 17px;
+  justify-content: space-between;
+}
+
+.rules-btn {
+  background-color: var(--color-neutral-white);
+  text-align: left;
+}
+
+/* rules modal */
+
+.modal-container {
+  min-height: 100%;
+  font-size: var(--font-size-16px);
+  font-weight: 600;
+  padding-inline: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rules-modal {
+  background-color: var(--color-neutral-white);
+  padding: 20px;
+  padding-block-start: 30px;
+  padding-block-end: 61px;
+  position: relative;
+  max-width: 480px;
+
+  border-block-start: var(--border-block-start-inline);
+  border-inline: var(--border-block-start-inline);
+  border-radius: var(--border-radius);
+  box-shadow: var(--bottom-box-shadow);
+  border-color: var(--color-neutral-black);
+}
+
+.modal-title {
+  font-size: var(--font-size-56px);
+  text-align: center;
+}
+
+.objectives-title-margin {
+  margin-block-start: 30px;
+}
+
+.objective,
+.list-of-rules li span:last-child {
+  color: hsl(0, 0%, 34%);
+}
+
+.objective {
+  margin-block: 16px;
+  margin-block-end: 33px;
+}
+
+.list-of-rules {
+  margin-block-start: 16px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.list-of-rules li {
+  display: flex;
+  gap: 20px;
+}
+
+.list-of-rules > * + * {
+  margin-block-start: 10px;
+}
+
+.checked-image {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+
+  margin-inline: auto;
+  bottom: -36px;
+  left: 0px;
+  right: 0px;
+}
+
+@media screen and (max-width: 23.625rem) {
+  .options-container {
+    min-height: 100%;
+  }
+}
+/* --color-dark-purple main bg */
+/* --color-purple:  */
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .game-options-bg {
+    background-color: var(--color-dark-purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .options-container {
+    flex-basis: 480px;
+    height: min-content;
+    padding-inline: 40px;
+    padding-block: 70px;
+    padding-block-end: 60px;
+
+    border-block-start: var(--border-block-start-inline);
+    border-inline: var(--border-block-start-inline);
+    border-radius: var(--border-radius);
+    box-shadow: var(--bottom-box-shadow);
+    border-color: var(--color-neutral-black);
+  }
+
+  .start-game {
+    margin-block-start: 79px;
+  }
+
+  .modal-container {
+    width: 100%;
+  }
+
+  .rules-modal {
+    padding-inline: 34px;
+    padding-block-end: 54px;
+  }
+}
+
+/* desktop */

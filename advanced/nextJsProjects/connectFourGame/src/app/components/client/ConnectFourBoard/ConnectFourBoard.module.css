@@ -1,0 +1,795 @@
+.chips-container div[data-playerchip="one"] {
+  --circle-color: var(--color-red);
+}
+
+.chips-container div[data-playerchip="two"] {
+  --circle-color: var(--color-yellow);
+}
+
+.chips-container div[data-playerchip=""] {
+  --circle-color: transparent;
+}
+
+/* mobile */
+
+.connect-four-board-container {
+  /* display: none; */
+}
+
+.circle-container,
+.dropped-circle-container {
+  --circle-size: 36px;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  margin-inline: auto;
+  inset: 0;
+  border-radius: 50%;
+
+  position: relative;
+  /* position: absolute; */
+  /* --circle-size: 36px; */
+  /* margin-block-start: 80px; */
+}
+
+.dropped-circle-container {
+  z-index: 1;
+}
+
+.circle {
+  --circle-size: 39px;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: var(--circle-color);
+  border-radius: 50%;
+
+  /* position: absolute; */
+}
+
+.chip-bg,
+.chip-bottom,
+.chip-top,
+.chip-border,
+.dropped-chip-bg,
+.dropped-chip-top,
+.dropped-chip-border {
+  position: absolute;
+}
+
+/* .chips-container span[data-playerchip="one"] {
+  background-color: var(--color-red);
+}
+
+.chips-container span[data-playerchip="two"] {
+  background-color: var(--color-yellow);
+} */
+
+/* .chip-bg,
+.dropped-chip-bg {
+  background-color: var(--circle-color);
+} */
+
+.dropped-chip-bg {
+  height: 36px;
+}
+
+.chip-bottom {
+  border: 3px solid black;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+.chip-top,
+.dropped-chip-top {
+  border: 4.5px solid hsla(0, 0%, 0%, 0.5);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+}
+
+.chip-border,
+.dropped-chip-border {
+  border: 3px solid black;
+  transform: translateY(-2px);
+  /* background should be transparent */
+  background-color: transparent;
+}
+
+/* winning circle */
+
+/* mobile 20 */
+/* tablet and above 34 */
+
+.winning-white-circle[data-connectfour="true"] {
+  display: block;
+}
+
+.winning-white-circle {
+  --winning-circle-size: 20px;
+  display: none;
+  width: var(--winning-circle-size);
+  height: var(--winning-circle-size);
+  background-color: var(--color-neutral-white);
+
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 50%;
+  transform: translateX(1px);
+}
+
+.winning-center-circle {
+  /* background color will match chip and dropped chip background */
+  --winning-circle-size: 20px;
+  display: block;
+  width: calc(var(--winning-circle-size) / 2);
+  height: calc(var(--winning-circle-size) / 2);
+  background-color: var(--circle-color);
+
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 50%;
+}
+
+/* use custom properties */
+
+/* .row[id="animation-row"] [data-droppedposition="last"] {
+  animation: MobileDroppedPositionSixthRow 1500ms ease-out forwards;
+} */
+
+.connect-four-board-container {
+  width: max-content;
+  position: relative;
+}
+
+/* declare pointer-events: none for div with class front-game-board
+we can click on connect for chips */
+
+.front-game-board {
+  position: absolute;
+  transform: translateY(-320px);
+  z-index: 1;
+  pointer-events: none;
+}
+/* span:first-child */
+/* one option */
+/* .chips-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  position: absolute;
+  padding: 6px;
+  top: 0;
+  gap: 7px 8px;
+} */
+
+/* another option */
+
+.chips-container {
+  position: absolute;
+  top: 0;
+  padding-block-start: 7px;
+  padding-inline-start: 6px;
+
+  pointer-events: none;
+}
+
+/* .chips-container > * + * {
+  margin-block-start: 7px;
+} */
+
+.chips-container .row:not(:nth-child(3)) {
+  margin-block-start: 11px;
+}
+
+.chips-container .row:nth-child(3) {
+  margin-block-start: 10px;
+}
+
+.chips-container .row:nth-child(1) {
+  margin-block-start: 3px;
+}
+
+.click-row {
+  position: absolute;
+}
+
+.row {
+  display: flex;
+  /* gap: 11px; */
+
+  /* gap: 11px; */
+}
+/* update margin-block-start for animation row from 11px to 1px */
+.chips-container .row[id="animation-row"] {
+  position: absolute;
+  top: 9px;
+  margin-block-start: 1px;
+  gap: 0px;
+
+  /* top: 9px;
+  margin-block-start: 1px; */
+}
+
+/* dropped chip spacing use margin-inline .row[id*="row"] its children */
+
+.row[id*="row-"] {
+  position: relative;
+  z-index: 2;
+  margin-inline-start: 2px;
+  /* margin-block-start: 4px; */
+}
+
+/* 2,3,4,6,7 11px 5 10px */
+
+.row[id*="row"] [data-playerchip]:nth-child(5),
+.row [id="animation-column-fourth"],
+.row [id="animation-column-sixth"] {
+  margin-inline-start: 10px;
+}
+
+.row[id*="row"] [data-playerchip]:not(:nth-child(5)),
+.row [id="animation-column-second"],
+.row [id="animation-column-third"],
+.row [id="animation-column-fifth"],
+.row [id="animation-column-seventh"] {
+  margin-inline-start: 11px;
+}
+
+.row[id*="row"] [data-playerchip]:first-child {
+  margin-inline-start: 0px;
+}
+
+/* move code from player game board for dropped chip and and chip to here */
+/* .row[id="row-1"] span {
+  background-color: transparent;
+} */
+
+.row [id="animation-column-first"] {
+  margin-inline-start: 2px;
+}
+
+/* .row [id="animation-column-second"],
+.row [id="animation-column-third"],
+.row [id="animation-column-fifth"],
+.row [id="animation-column-seventh"] {
+  margin-inline-start: 11px;
+}
+
+.row [id="animation-column-fourth"],
+.row [id="animation-column-sixth"] {
+  margin-inline-start: 10px;
+} */
+
+/* .chips-container span {
+  display: block;
+  width: 39px;
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+} */
+
+/* row 6 */
+.chips-container [row-6] [data-playerchip] {
+}
+/* row 5 */
+.chips-container [row-5] [data-playerchip] {
+}
+/* row 4 */
+.chips-container [row-4] [data-playerchip] {
+}
+/* row 3 */
+.chips-container [row-3] [data-playerchip] {
+}
+/* row 2 */
+.chips-container [row-2] [data-playerchip] {
+}
+/* row 1 */
+.chips-container [row-1] [data-playerchip] {
+}
+
+.clicking-container {
+  width: 328px;
+  height: 282px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  gap: 7px;
+  padding-block-start: 7px;
+  padding-inline-start: 6px;
+}
+
+.clicking-container span {
+  flex-basis: 40px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  /* tablet size and above look at player game board module css for circle css declarations */
+  .front-game-board {
+    transform: translateY(-593px);
+  }
+
+  .chips-container {
+    position: absolute;
+    top: 0;
+    padding-block-start: 17px;
+    padding-inline-start: 16px;
+  }
+
+  .chips-container > * + * {
+    margin-block-start: 17px;
+  }
+
+  .row {
+    /* gap: 17px; */
+  }
+
+  /* .chips-container span {
+    width: 71px;
+    height: 71px;
+  } */
+
+  .chips-container .row:nth-child(n + 2):nth-child(-n + 6) {
+    margin-block-start: 21px;
+  }
+
+  .chips-container .row:nth-child(1) {
+    margin-block-start: 5px;
+  }
+
+  /* animation row */
+
+  .chips-container .row[id="animation-row"] {
+    top: 20px;
+  }
+
+  .row [id="animation-column-second"],
+  .row[id*="row"] [data-playerchip]:nth-child(2) {
+    margin-inline-start: 20px;
+  }
+
+  .row [id="animation-column-third"],
+  .row [id="animation-column-fourth"],
+  .row [id="animation-column-fifth"],
+  .row [id="animation-column-sixth"],
+  .row [id="animation-column-seventh"],
+  .row[id*="row"] [data-playerchip]:not(:nth-child(2)) {
+    margin-inline-start: 21px;
+  }
+
+  .row [id="animation-column-first"],
+  .row[id*="row"] [data-playerchip]:nth-child(1) {
+    margin-inline-start: 1px;
+  }
+
+  .clicking-container {
+    width: 625px;
+    height: 545px;
+    padding-block-start: 17px;
+    padding-inline-start: 16px;
+
+    gap: 17px;
+  }
+
+  .clicking-container span {
+    flex-basis: 71px;
+  }
+
+  /* chip circle and dropped chip circle */
+
+  .circle-container,
+  .dropped-circle-container {
+    --circle-size: 67px;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    /* margin-inline: auto;
+  position: absolute;
+  inset: 0;
+
+  margin-block-start: 80px; */
+  }
+
+  .dropped-circle-container {
+    z-index: 1;
+  }
+
+  .circle {
+    --circle-size: 71px;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    /* background-color: var(--circle-color);
+  border-radius: 50%; */
+
+    /* position: absolute; */
+  }
+
+  .chip-bottom {
+    border: 5px solid black;
+  }
+
+  .chip-top,
+  .dropped-chip-top {
+    border: 5px solid hsla(0, 0%, 0%, 0.5);
+  }
+
+  .chip-border,
+  .dropped-chip-border {
+    border: 5px solid black;
+    transform: translateY(-4.5px);
+  }
+
+  .dropped-chip-bg {
+    height: 65.9px;
+  }
+
+  /* winning circle */
+
+  /* tablet and above 34 */
+
+  .winning-white-circle {
+    --winning-circle-size: 34px;
+
+    width: var(--winning-circle-size);
+    height: var(--winning-circle-size);
+
+    transform: translateY(-4px);
+  }
+
+  .winning-center-circle {
+    width: 20px;
+    height: 20px;
+  }
+}
+/* background color will match chip and dropped chip background */
+
+/* desktop */
+
+/* chip animation */
+
+/* mobile */
+
+.row[id="animation-row"] [data-droppedposition="6"] {
+  animation: MobileDroppedPositionSixthRow 1500ms ease-out forwards;
+}
+
+.row[id="animation-row"] [data-droppedposition="5"] {
+  animation: MobileDroppedPositionFifthRow 1500ms ease-out forwards;
+}
+
+.row[id="animation-row"] [data-droppedposition="4"] {
+  animation: MobileDroppedPositionFourthRow 1500ms ease-out forwards;
+}
+
+.row[id="animation-row"] [data-droppedposition="3"] {
+  animation: MobileDroppedPositionThirdRow 1500ms ease-out forwards;
+}
+
+.row[id="animation-row"] [data-droppedposition="2"] {
+  animation: MobileDroppedPositionSecondRow 1500ms ease-out forwards;
+}
+
+.row[id="animation-row"] [data-droppedposition="1"] {
+  animation: MobileDroppedPositionFirstRow 1500ms ease-out forwards;
+}
+
+/* Sixth row */
+
+@keyframes MobileDroppedPositionSixthRow {
+  0% {
+    background-color: transparent;
+  }
+
+  2% {
+    background-color: var(--playerchipcolor);
+  }
+
+  100% {
+    background-color: var(--playerchipcolor);
+  }
+}
+
+/* Fifth row */
+
+@keyframes MobileDroppedPositionFifthRow {
+  0% {
+    transform: translateY(0px);
+    background-color: transparent;
+  }
+
+  2% {
+    transform: translateY(0px);
+    background-color: var(--playerchipcolor);
+  }
+
+  100% {
+    transform: translateY(47px);
+    background-color: var(--playerchipcolor);
+  }
+}
+
+/* Fourth row */
+
+@keyframes MobileDroppedPositionFourthRow {
+  0% {
+    transform: translateY(0px);
+    background-color: transparent;
+  }
+
+  2% {
+    transform: translateY(0px);
+    background-color: var(--playerchipcolor);
+  }
+
+  100% {
+    transform: translateY(94px);
+    background-color: var(--playerchipcolor);
+  }
+}
+
+/* Third row */
+
+@keyframes MobileDroppedPositionThirdRow {
+  0% {
+    transform: translateY(0px);
+    background-color: transparent;
+  }
+
+  2% {
+    transform: translateY(0px);
+    background-color: var(--playerchipcolor);
+  }
+
+  100% {
+    transform: translateY(141px);
+    background-color: var(--playerchipcolor);
+  }
+}
+
+/* Second row */
+
+@keyframes MobileDroppedPositionSecondRow {
+  0% {
+    transform: translateY(0px);
+    background-color: transparent;
+  }
+
+  2% {
+    transform: translateY(0px);
+    background-color: var(--playerchipcolor);
+  }
+
+  100% {
+    transform: translateY(188px);
+    background-color: var(--playerchipcolor);
+  }
+}
+
+/* First row */
+
+@keyframes MobileDroppedPositionFirstRow {
+  0% {
+    transform: translateY(0px);
+    background-color: transparent;
+  }
+
+  2% {
+    transform: translateY(0px);
+    background-color: var(--playerchipcolor);
+  }
+
+  100% {
+    transform: translateY(234px);
+    background-color: var(--playerchipcolor);
+  }
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  /* animation */
+  .row[id="animation-row"] [data-droppedposition="6"] {
+    animation: TabletScreenDroppedPositionSixthRow 1500ms ease-out forwards;
+  }
+
+  .row[id="animation-row"] [data-droppedposition="5"] {
+    animation: TabletScreenDroppedPositionFifthRow 1500ms ease-out forwards;
+  }
+
+  .row[id="animation-row"] [data-droppedposition="4"] {
+    animation: TabletScreenDroppedPositionFourthRow 1500ms ease-out forwards;
+  }
+
+  .row[id="animation-row"] [data-droppedposition="3"] {
+    animation: TabletScreenDroppedPositionThirdRow 1500ms ease-out forwards;
+  }
+
+  .row[id="animation-row"] [data-droppedposition="2"] {
+    animation: TabletScreenDroppedPositionSecondRow 1500ms ease-out forwards;
+  }
+
+  .row[id="animation-row"] [data-droppedposition="1"] {
+    animation: TabletScreenDroppedPositionFirstRow 1500ms ease-out forwards;
+  }
+
+  /* Sixth row */
+
+  @keyframes TabletScreenDroppedPositionSixthRow {
+    0% {
+      transform: translateY(0px);
+      background-color: transparent;
+    }
+
+    2% {
+      background-color: var(--playerchipcolor);
+    }
+
+    100% {
+      transform: translateY(0px);
+      background-color: var(--playerchipcolor);
+    }
+  }
+
+  /* Fifth row */
+
+  @keyframes TabletScreenDroppedPositionFifthRow {
+    0% {
+      transform: translateY(0px);
+      background-color: transparent;
+    }
+
+    2% {
+      transform: translateY(0px);
+      background-color: var(--playerchipcolor);
+    }
+
+    100% {
+      /* 89px */
+      transform: translateY(89px);
+      background-color: var(--playerchipcolor);
+    }
+  }
+
+  /* Fourth row */
+
+  @keyframes TabletScreenDroppedPositionFourthRow {
+    0% {
+      transform: translateY(0px);
+      background-color: transparent;
+    }
+
+    2% {
+      transform: translateY(0px);
+      background-color: var(--playerchipcolor);
+    }
+
+    100% {
+      /* 177px */
+      transform: translateY(177px);
+      background-color: var(--playerchipcolor);
+    }
+  }
+
+  /* Third row */
+
+  @keyframes TabletScreenDroppedPositionThirdRow {
+    0% {
+      transform: translateY(0px);
+      background-color: transparent;
+    }
+
+    2% {
+      transform: translateY(0px);
+      background-color: var(--playerchipcolor);
+    }
+
+    100% {
+      /* 265px */
+      transform: translateY(265px);
+      background-color: var(--playerchipcolor);
+    }
+  }
+
+  /* Second row */
+
+  @keyframes TabletScreenDroppedPositionSecondRow {
+    0% {
+      transform: translateY(0px);
+      background-color: transparent;
+    }
+
+    2% {
+      transform: translateY(0px);
+      background-color: var(--playerchipcolor);
+    }
+
+    100% {
+      /* 353px */
+      transform: translateY(353px);
+      background-color: var(--playerchipcolor);
+    }
+  }
+
+  /* First row */
+
+  @keyframes TabletScreenDroppedPositionFirstRow {
+    0% {
+      transform: translateY(0px);
+      background-color: transparent;
+    }
+
+    2% {
+      transform: translateY(0px);
+      background-color: var(--playerchipcolor);
+    }
+
+    100% {
+      /* 441px since the chip are smaller size */
+      transform: translateY(441px);
+      background-color: var(--playerchipcolor);
+    }
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  /* chips container */
+  /* pointer */
+
+  /* column 1 */
+
+  [data-chipdroplocation="first"] .pointer-container {
+    left: 17px;
+  }
+
+  /* column 2 */
+  [data-chipdroplocation="second"] .pointer-container {
+    left: 105px;
+  }
+
+  /* column 3 */
+  [data-chipdroplocation="third"] .pointer-container {
+    left: 193px;
+  }
+
+  /* column 4 */
+  [data-chipdroplocation="fourth"] .pointer-container {
+    left: 281px;
+  }
+
+  /* column 5 */
+  [data-chipdroplocation="fifth"] .pointer-container {
+    left: 370px;
+  }
+
+  /* column 6 */
+  [data-chipdroplocation="sixth"] .pointer-container {
+    left: 458px;
+  }
+
+  /* column 7 */
+  [data-chipdroplocation="seventh"] .pointer-container {
+    left: 545px;
+  }
+
+  .drop-selection-pointer-container {
+    position: absolute;
+    width: 599px;
+    top: -38px;
+
+    margin-block-start: 0px;
+  }
+
+  .pointer-container {
+    width: 38px;
+    height: 36px;
+
+    position: absolute;
+  }
+
+  [data-playerturn="one"] .pointer-container {
+    background-image: url("/images/marker-red.svg");
+  }
+
+  [data-playerturn="two"] .pointer-container {
+    background-image: url("/images/marker-yellow.svg");
+  }
+}

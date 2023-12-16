@@ -1,0 +1,26 @@
+.map {
+  max-width: 375px;
+  min-height: 367px;
+  margin-block: 72px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .map {
+    max-width: 572px;
+    min-height: 560px;
+    margin-block: 226px;
+    margin-block-end: 200px;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  .map {
+    max-width: 1110px;
+    min-height: 560px;
+    margin-block-end: 159px;
+  }
+}

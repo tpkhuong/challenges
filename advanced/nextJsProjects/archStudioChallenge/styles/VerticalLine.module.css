@@ -1,0 +1,38 @@
+.wrapper {
+  text-decoration: none;
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+}
+
+.vertical-line {
+  width: 1.5px;
+  height: 104px;
+  background-color: hsl(224, 17%, 82%);
+  display: inline-block;
+}
+
+.vertical-text {
+  color: hsl(224, 17%, 82%);
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  letter-spacing: 16px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 48rem) {
+  .wrapper {
+    display: flex;
+  }
+  .vertical-text {
+    padding-block: 45px;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  .vertical-text {
+    padding-block: 69px;
+  }
+}
