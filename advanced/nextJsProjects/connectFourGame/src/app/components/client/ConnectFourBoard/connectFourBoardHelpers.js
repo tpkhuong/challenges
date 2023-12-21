@@ -450,31 +450,89 @@ const methodsForRowThree = {
 
 // row four
 const methodsForRowFour = {
-  first: function ({ arrayNodes, positionRow, positionColumn }) {
+  first: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    testLoopGoingDown,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
     // goingRight,goingDownRight,goingDown
+    // array chips going down
+    const arrayOfChipsGoingDown = testLoopGoingDown(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
+    // use for loop
+    const subarrays = [arrayOfChipsGoingDown];
+
     return "first";
   },
-  second: function () {
+  second: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    testLoopGoingDown,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
     // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
     return "second";
   },
-  third: function () {
+  third: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    testLoopGoingDown,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
     // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
     return "third";
   },
-  fourth: function () {
+  fourth: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    testLoopGoingDown,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
     // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
     return "fourth";
   },
-  fifth: function () {
+  fifth: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    testLoopGoingDown,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
     // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
     return "fifth";
   },
-  sixth: function () {
+  sixth: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    testLoopGoingDown,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
     // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
     return "sixth";
   },
-  seventh: function () {
+  seventh: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    testLoopGoingDown,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
     // goingDownLeft, goingLeft
     return "seventh";
   },
