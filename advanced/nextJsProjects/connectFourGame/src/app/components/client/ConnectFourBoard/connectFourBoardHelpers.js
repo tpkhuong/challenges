@@ -363,6 +363,16 @@ const methodsForRowOne = {
       return;
     }
 
+    // check winner going horizontally
+    const isWinnerGoingHorizontal = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsHorizontal
+    );
+
+    if (isWinnerGoingHorizontal) {
+      return;
+    }
+
     /**
      * not using for loop
      * **/
@@ -694,247 +704,247 @@ const methodsForRowThree = {
 };
 
 // row four
-const methodsForRowFour = {
-  first: function ({
-    arrayNodes,
-    positionRow,
-    positionColumn,
-    testLoopGoingDown,
-    getValuesForCheckFunc,
-    connectFourChecker,
-  }) {
-    // goingRight,goingDownRight,goingDown
-    // array chips going down
-    const arrayOfChipsGoingDown = testLoopGoingDown(
-      arrayNodes,
-      positionRow,
-      positionColumn
-    );
+// const methodsForRowFour = {
+//   first: function ({
+//     arrayNodes,
+//     positionRow,
+//     positionColumn,
+//     testLoopGoingDown,
+//     getValuesForCheckFunc,
+//     connectFourChecker,
+//   }) {
+//     // goingRight,goingDownRight,goingDown
+//     // array chips going down
+//     const arrayOfChipsGoingDown = testLoopGoingDown(
+//       arrayNodes,
+//       positionRow,
+//       positionColumn
+//     );
 
-    /**
-     * not using for loop
-     * **/
+//     /**
+//      * not using for loop
+//      * **/
 
-    const isWinnerGoingDown = connectFourChecker(
-      getValuesForCheckFunc,
-      arrayOfChipsGoingDown
-    );
+//     const isWinnerGoingDown = connectFourChecker(
+//       getValuesForCheckFunc,
+//       arrayOfChipsGoingDown
+//     );
 
-    if (isWinnerGoingDown) {
-      return;
-    }
+//     if (isWinnerGoingDown) {
+//       return;
+//     }
 
-    /**
-     * not using for loop
-     * **/
+//     /**
+//      * not using for loop
+//      * **/
 
-    // return "first";
-  },
-  second: function ({
-    arrayNodes,
-    positionRow,
-    positionColumn,
-    testLoopGoingDown,
-    getValuesForCheckFunc,
-    connectFourChecker,
-  }) {
-    // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
-    // array chips going down
-    const arrayOfChipsGoingDown = testLoopGoingDown(
-      arrayNodes,
-      positionRow,
-      positionColumn
-    );
+//     // return "first";
+//   },
+//   second: function ({
+//     arrayNodes,
+//     positionRow,
+//     positionColumn,
+//     testLoopGoingDown,
+//     getValuesForCheckFunc,
+//     connectFourChecker,
+//   }) {
+//     // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
+//     // array chips going down
+//     const arrayOfChipsGoingDown = testLoopGoingDown(
+//       arrayNodes,
+//       positionRow,
+//       positionColumn
+//     );
 
-    /**
-     * not using for loop
-     * **/
+//     /**
+//      * not using for loop
+//      * **/
 
-    const isWinnerGoingDown = connectFourChecker(
-      getValuesForCheckFunc,
-      arrayOfChipsGoingDown
-    );
+//     const isWinnerGoingDown = connectFourChecker(
+//       getValuesForCheckFunc,
+//       arrayOfChipsGoingDown
+//     );
 
-    if (isWinnerGoingDown) {
-      return;
-    }
+//     if (isWinnerGoingDown) {
+//       return;
+//     }
 
-    /**
-     * not using for loop
-     * **/
-    // return "second";
-  },
-  third: function ({
-    arrayNodes,
-    positionRow,
-    positionColumn,
-    testLoopGoingDown,
-    getValuesForCheckFunc,
-    connectFourChecker,
-  }) {
-    // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
-    // array chips going down
-    const arrayOfChipsGoingDown = testLoopGoingDown(
-      arrayNodes,
-      positionRow,
-      positionColumn
-    );
+//     /**
+//      * not using for loop
+//      * **/
+//     // return "second";
+//   },
+//   third: function ({
+//     arrayNodes,
+//     positionRow,
+//     positionColumn,
+//     testLoopGoingDown,
+//     getValuesForCheckFunc,
+//     connectFourChecker,
+//   }) {
+//     // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
+//     // array chips going down
+//     const arrayOfChipsGoingDown = testLoopGoingDown(
+//       arrayNodes,
+//       positionRow,
+//       positionColumn
+//     );
 
-    /**
-     * not using for loop
-     * **/
+//     /**
+//      * not using for loop
+//      * **/
 
-    const isWinnerGoingDown = connectFourChecker(
-      getValuesForCheckFunc,
-      arrayOfChipsGoingDown
-    );
+//     const isWinnerGoingDown = connectFourChecker(
+//       getValuesForCheckFunc,
+//       arrayOfChipsGoingDown
+//     );
 
-    if (isWinnerGoingDown) {
-      return;
-    }
+//     if (isWinnerGoingDown) {
+//       return;
+//     }
 
-    /**
-     * not using for loop
-     * **/
-    // return "third";
-  },
-  fourth: function ({
-    arrayNodes,
-    positionRow,
-    positionColumn,
-    testLoopGoingDown,
-    getValuesForCheckFunc,
-    connectFourChecker,
-  }) {
-    // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
-    // array chips going down
-    const arrayOfChipsGoingDown = testLoopGoingDown(
-      arrayNodes,
-      positionRow,
-      positionColumn
-    );
+//     /**
+//      * not using for loop
+//      * **/
+//     // return "third";
+//   },
+//   fourth: function ({
+//     arrayNodes,
+//     positionRow,
+//     positionColumn,
+//     testLoopGoingDown,
+//     getValuesForCheckFunc,
+//     connectFourChecker,
+//   }) {
+//     // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
+//     // array chips going down
+//     const arrayOfChipsGoingDown = testLoopGoingDown(
+//       arrayNodes,
+//       positionRow,
+//       positionColumn
+//     );
 
-    /**
-     * not using for loop
-     * **/
+//     /**
+//      * not using for loop
+//      * **/
 
-    const isWinnerGoingDown = connectFourChecker(
-      getValuesForCheckFunc,
-      arrayOfChipsGoingDown
-    );
+//     const isWinnerGoingDown = connectFourChecker(
+//       getValuesForCheckFunc,
+//       arrayOfChipsGoingDown
+//     );
 
-    if (isWinnerGoingDown) {
-      return;
-    }
+//     if (isWinnerGoingDown) {
+//       return;
+//     }
 
-    /**
-     * not using for loop
-     * **/
-    // return "fourth";
-  },
-  fifth: function ({
-    arrayNodes,
-    positionRow,
-    positionColumn,
-    testLoopGoingDown,
-    getValuesForCheckFunc,
-    connectFourChecker,
-  }) {
-    // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
-    // array chips going down
-    const arrayOfChipsGoingDown = testLoopGoingDown(
-      arrayNodes,
-      positionRow,
-      positionColumn
-    );
+//     /**
+//      * not using for loop
+//      * **/
+//     // return "fourth";
+//   },
+//   fifth: function ({
+//     arrayNodes,
+//     positionRow,
+//     positionColumn,
+//     testLoopGoingDown,
+//     getValuesForCheckFunc,
+//     connectFourChecker,
+//   }) {
+//     // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
+//     // array chips going down
+//     const arrayOfChipsGoingDown = testLoopGoingDown(
+//       arrayNodes,
+//       positionRow,
+//       positionColumn
+//     );
 
-    /**
-     * not using for loop
-     * **/
+//     /**
+//      * not using for loop
+//      * **/
 
-    const isWinnerGoingDown = connectFourChecker(
-      getValuesForCheckFunc,
-      arrayOfChipsGoingDown
-    );
+//     const isWinnerGoingDown = connectFourChecker(
+//       getValuesForCheckFunc,
+//       arrayOfChipsGoingDown
+//     );
 
-    if (isWinnerGoingDown) {
-      return;
-    }
+//     if (isWinnerGoingDown) {
+//       return;
+//     }
 
-    /**
-     * not using for loop
-     * **/
-    // return "fifth";
-  },
-  sixth: function ({
-    arrayNodes,
-    positionRow,
-    positionColumn,
-    testLoopGoingDown,
-    getValuesForCheckFunc,
-    connectFourChecker,
-  }) {
-    // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
-    // array chips going down
-    const arrayOfChipsGoingDown = testLoopGoingDown(
-      arrayNodes,
-      positionRow,
-      positionColumn
-    );
+//     /**
+//      * not using for loop
+//      * **/
+//     // return "fifth";
+//   },
+//   sixth: function ({
+//     arrayNodes,
+//     positionRow,
+//     positionColumn,
+//     testLoopGoingDown,
+//     getValuesForCheckFunc,
+//     connectFourChecker,
+//   }) {
+//     // goingLeft, goingTopLeft, goingTopRight, goingRight, goingDownRight, goingDown, goingDownLeft
+//     // array chips going down
+//     const arrayOfChipsGoingDown = testLoopGoingDown(
+//       arrayNodes,
+//       positionRow,
+//       positionColumn
+//     );
 
-    /**
-     * not using for loop
-     * **/
+//     /**
+//      * not using for loop
+//      * **/
 
-    const isWinnerGoingDown = connectFourChecker(
-      getValuesForCheckFunc,
-      arrayOfChipsGoingDown
-    );
+//     const isWinnerGoingDown = connectFourChecker(
+//       getValuesForCheckFunc,
+//       arrayOfChipsGoingDown
+//     );
 
-    if (isWinnerGoingDown) {
-      return;
-    }
+//     if (isWinnerGoingDown) {
+//       return;
+//     }
 
-    /**
-     * not using for loop
-     * **/
-    // return "sixth";
-  },
-  seventh: function ({
-    arrayNodes,
-    positionRow,
-    positionColumn,
-    testLoopGoingDown,
-    getValuesForCheckFunc,
-    connectFourChecker,
-  }) {
-    // goingDownLeft, goingLeft
-    // array chips going down
-    const arrayOfChipsGoingDown = testLoopGoingDown(
-      arrayNodes,
-      positionRow,
-      positionColumn
-    );
+//     /**
+//      * not using for loop
+//      * **/
+//     // return "sixth";
+//   },
+//   seventh: function ({
+//     arrayNodes,
+//     positionRow,
+//     positionColumn,
+//     testLoopGoingDown,
+//     getValuesForCheckFunc,
+//     connectFourChecker,
+//   }) {
+//     // goingDownLeft, goingLeft
+//     // array chips going down
+//     const arrayOfChipsGoingDown = testLoopGoingDown(
+//       arrayNodes,
+//       positionRow,
+//       positionColumn
+//     );
 
-    /**
-     * not using for loop
-     * **/
+//     /**
+//      * not using for loop
+//      * **/
 
-    const isWinnerGoingDown = connectFourChecker(
-      getValuesForCheckFunc,
-      arrayOfChipsGoingDown
-    );
+//     const isWinnerGoingDown = connectFourChecker(
+//       getValuesForCheckFunc,
+//       arrayOfChipsGoingDown
+//     );
 
-    if (isWinnerGoingDown) {
-      return;
-    }
+//     if (isWinnerGoingDown) {
+//       return;
+//     }
 
-    /**
-     * not using for loop
-     * **/
-    // return "seventh";
-  },
-};
+//     /**
+//      * not using for loop
+//      * **/
+//     // return "seventh";
+//   },
+// };
 
 // row five
 const methodsForRowFive = {
@@ -3020,6 +3030,7 @@ function goingUpRight(array, row, column) {
       const currentObj = array[index][columnIndex];
       const currentChip = array[index][columnIndex].playerChip;
       // console.log(previousValue);
+      console.log("goingUpRight");
       console.log(currentObj);
       console.log(arrayOfObjs, "arrayOfObjs");
       if (currentChip == arrayOfObjs[arrayOfObjs.length - 1].playerChip) {
