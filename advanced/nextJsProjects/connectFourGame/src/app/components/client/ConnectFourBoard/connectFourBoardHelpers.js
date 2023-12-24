@@ -34,6 +34,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingUpRight) {
+      console.log("isWinnerGoingUpRight", isWinnerGoingUpRight);
       return;
     }
     // get chips going right
@@ -49,6 +50,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingRight) {
+      console.log("isWinnerGoingRight", isWinnerGoingRight);
       return;
     }
     /**
@@ -115,6 +117,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingTopRight) {
+      console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
       return;
     }
     // get chips going right
@@ -130,6 +133,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingRight) {
+      console.log("isWinnerGoingRight", isWinnerGoingRight);
       return;
     }
     // get chips going left
@@ -151,6 +155,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingHorizontal) {
+      console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
       return;
     }
 
@@ -218,6 +223,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingTopRight) {
+      console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
       return;
     }
     // get chips going right
@@ -233,6 +239,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingRight) {
+      console.log("isWinnerGoingRight", isWinnerGoingRight);
       return;
     }
     // get chips going left
@@ -254,6 +261,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingHorizontal) {
+      console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
       return;
     }
 
@@ -315,6 +323,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingLeft) {
+      console.log("isWinnerGoingLeft", isWinnerGoingLeft);
       return;
     }
     // get chips going top left
@@ -330,6 +339,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingTopLeft) {
+      console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
       return;
     }
     // get chips going top right
@@ -345,6 +355,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingTopRight) {
+      console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
       return;
     }
     // get chips going right
@@ -360,6 +371,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingRight) {
+      console.log("isWinnerGoingRight", isWinnerGoingRight);
       return;
     }
 
@@ -370,6 +382,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingHorizontal) {
+      console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
       return;
     }
 
@@ -425,6 +438,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingLeft) {
+      console.log("isWinnerGoingLeft", isWinnerGoingLeft);
       return;
     }
     // get chips going top left
@@ -440,6 +454,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingTopLeft) {
+      console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
       return;
     }
     // get chips going right
@@ -459,6 +474,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerHorizontalChips) {
+      console.log("isWinnerHorizontalChips", isWinnerHorizontalChips);
       return;
     }
 
@@ -512,6 +528,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingLeft) {
+      console.log("isWinnerGoingLeft", isWinnerGoingLeft);
       return;
     }
     // get chips going top left
@@ -528,6 +545,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingTopLeft) {
+      console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
       return;
     }
 
@@ -548,6 +566,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerHorizontalChips) {
+      console.log("isWinnerHorizontalChips", isWinnerHorizontalChips);
       return;
     }
 
@@ -598,6 +617,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingLeft) {
+      console.log("isWinnerGoingLeft", isWinnerGoingLeft);
       return;
     }
     // get chips going top left
@@ -614,6 +634,7 @@ const methodsForRowOne = {
     );
 
     if (isWinnerGoingTopLeft) {
+      console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
       return;
     }
 
@@ -2709,6 +2730,7 @@ function left({ arrayNodes }) {
 // make a recursive function
 
 function testLoopGoingUp(array, row, column) {
+  console.log("testLoopGoingUp");
   // each array[row][column] is an obj
   // loop through array add chip to arrayOfObjs if last value in array does not match currentVale of our loop
   // break
@@ -2755,6 +2777,7 @@ function testLoopGoingUp(array, row, column) {
 }
 
 function testLoopGoingDown(array, row, column) {
+  console.log("testLoopGoingDown");
   // each array[row][column] is an obj
   // loop through array add chip to arrayOfObjs if last value in array does not match currentVale of our loop
   // break
@@ -2800,6 +2823,7 @@ function testLoopGoingDown(array, row, column) {
 }
 
 function testLoopGoingLeft(array, row, column) {
+  console.log("testLoopGoingLeft");
   // each array[row][column] is an obj
   // loop through array add chip to arrayOfObjs if last value in array does not match currentVale of our loop
   console.log("array", array);
@@ -2850,6 +2874,7 @@ function testLoopGoingLeft(array, row, column) {
 }
 
 function testLoopGoingRight(array, row, column) {
+  console.log("testLoopGoingRight");
   // each array[row][column] is an obj
   // loop through array add chip to arrayOfObjs if last value in array does not match currentVale of our loop
   // break
@@ -2900,6 +2925,7 @@ function testLoopGoingRight(array, row, column) {
 }
 
 function goingUpLeft(array, row, column) {
+  console.log("goingUpLeft");
   // each array[row][column] is an obj
   // loop through array add chip to arrayOfObjs if last value in array does not match currentVale of our loop
   // break
@@ -2949,6 +2975,7 @@ function goingUpLeft(array, row, column) {
 }
 
 function goingDownRight(array, row, column) {
+  console.log("goingDownRight");
   // each array[row][column] is an obj
   // loop through array add chip to arrayOfObjs if last value in array does not match currentVale of our loop
   // break
@@ -2998,6 +3025,7 @@ function goingDownRight(array, row, column) {
 }
 
 function goingUpRight(array, row, column) {
+  console.log("goingUpRight");
   // each array[row][column] is an obj
   // loop through array add chip to arrayOfObjs if last value in array does not match currentVale of our loop
   // break
@@ -3049,6 +3077,7 @@ function goingUpRight(array, row, column) {
 }
 
 function goingDownLeft(array, row, column) {
+  console.log("goingDownLeft");
   // each array[row][column] is an obj
   // loop through array add chip to arrayOfObjs if last value in array does not match currentVale of our loop
   // break
