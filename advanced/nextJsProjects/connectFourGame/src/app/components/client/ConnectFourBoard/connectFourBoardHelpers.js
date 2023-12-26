@@ -17,6 +17,7 @@ const methodsForRowOne = {
     getValuesForCheckFunc,
     connectFourChecker,
   }) {
+    console.log("first column");
     /**
      * not using for loop
      * **/
@@ -32,7 +33,7 @@ const methodsForRowOne = {
       getValuesForCheckFunc,
       arrayOfChipsGoingUpRight
     );
-
+    console.log("isWinnerGoingUpRight", isWinnerGoingUpRight);
     if (isWinnerGoingUpRight) {
       console.log("isWinnerGoingUpRight", isWinnerGoingUpRight);
       return;
@@ -100,6 +101,7 @@ const methodsForRowOne = {
     connectFourChecker,
     horizontalChips,
   }) {
+    console.log("second column");
     /**
      * not using for loop
      * **/
@@ -115,7 +117,7 @@ const methodsForRowOne = {
       getValuesForCheckFunc,
       arrayOfChipsGoingTopRight
     );
-
+    console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
     if (isWinnerGoingTopRight) {
       console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
       return;
@@ -203,6 +205,7 @@ const methodsForRowOne = {
     connectFourChecker,
     horizontalChips,
   }) {
+    console.log("third column");
     console.log("arrayNodes", arrayNodes);
     console.log("positionRow", positionRow);
     console.log("positionColumn", positionColumn);
@@ -221,7 +224,7 @@ const methodsForRowOne = {
       getValuesForCheckFunc,
       arrayOfChipsGoingTopRight
     );
-
+    console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
     if (isWinnerGoingTopRight) {
       console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
       return;
@@ -306,6 +309,7 @@ const methodsForRowOne = {
     connectFourChecker,
     horizontalChips,
   }) {
+    console.log("fourth column");
     // goingLeft, topLeft, topRight and right
     /**
      * not using for loop
@@ -321,7 +325,7 @@ const methodsForRowOne = {
       getValuesForCheckFunc,
       arrayOfChipsGoingLeft
     );
-
+    console.log("isWinnerGoingLeft", isWinnerGoingLeft);
     if (isWinnerGoingLeft) {
       console.log("isWinnerGoingLeft", isWinnerGoingLeft);
       return;
@@ -421,6 +425,7 @@ const methodsForRowOne = {
     connectFourChecker,
     horizontalChips,
   }) {
+    console.log("fifth column");
     // goingLeft, topLeft, and right
     /**
      * not using for loop
@@ -436,7 +441,7 @@ const methodsForRowOne = {
       getValuesForCheckFunc,
       arrayOfChipsGoingLeft
     );
-
+    console.log("isWinnerGoingLeft", isWinnerGoingLeft);
     if (isWinnerGoingLeft) {
       console.log("isWinnerGoingLeft", isWinnerGoingLeft);
       return;
@@ -511,6 +516,7 @@ const methodsForRowOne = {
     getValuesForCheckFunc,
     connectFourChecker,
   }) {
+    console.log("sixth column");
     // goingLeft, topLeft
     /**
      * not using for loop
@@ -526,7 +532,7 @@ const methodsForRowOne = {
       getValuesForCheckFunc,
       arrayOfChipsGoingLeft
     );
-
+    console.log("isWinnerGoingLeft", isWinnerGoingLeft);
     if (isWinnerGoingLeft) {
       console.log("isWinnerGoingLeft", isWinnerGoingLeft);
       return;
@@ -600,6 +606,7 @@ const methodsForRowOne = {
     getValuesForCheckFunc,
     connectFourChecker,
   }) {
+    console.log("seventh column");
     // goingLeft, topLeft
     /**
      * not using for loop
@@ -615,7 +622,7 @@ const methodsForRowOne = {
       getValuesForCheckFunc,
       arrayOfChipsGoingLeft
     );
-
+    console.log("isWinnerGoingLeft", isWinnerGoingLeft);
     if (isWinnerGoingLeft) {
       console.log("isWinnerGoingLeft", isWinnerGoingLeft);
       return;
@@ -723,7 +730,9 @@ const methodsForRowThree = {
     return "seventh";
   },
 };
-
+/**
+ * start here
+ * **/
 // row four
 // const methodsForRowFour = {
 //   first: function ({
@@ -1978,10 +1987,11 @@ function rowCounter({
   };
 
   return function innerFunc(event) {
+    console.log(event, "event");
     const columnClicked = event.target.getAttribute("data-column");
     movePointer({ columnClicked });
 
-    console.log(columnClicked);
+    console.log(columnClicked, "columnClicked");
     if (columnClicked && objOfMethods[columnClicked]) {
       // clear setInterval
       const playersTurnTimer = JSON.parse(
@@ -2548,6 +2558,7 @@ function placeHolder({
       console.log(columnObj.moveCounter, "columnObj.moveCounter");
       if (columnObj.moveCounter == 7) {
         console.log("this is the 7th move");
+        console.log("convertToText(column)", convertToText(column));
         methodsForRowOne[convertToText(column)]({
           arrayNodes,
           positionRow,
