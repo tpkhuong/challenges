@@ -336,22 +336,22 @@ const methodsForRowOne = {
       return;
     }
     // get chips going top left
-    // const arrayOfChipsGoingTopLeft = goingUpLeft(
-    //   arrayNodes,
-    //   positionRow,
-    //   positionColumn
-    // );
-    // // check winner going top left
-    // const isWinnerGoingTopLeft = connectFourChecker(
-    //   getValuesForCheckFunc,
-    //   arrayOfChipsGoingTopLeft
-    // );
+    const arrayOfChipsGoingTopLeft = goingUpLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
+    // check winner going top left
+    const isWinnerGoingTopLeft = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingTopLeft
+    );
 
-    // console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
-    // if (isWinnerGoingTopLeft == "winner") {
-    //   console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
-    //   return;
-    // }
+    console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
+    if (isWinnerGoingTopLeft == "winner") {
+      console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
+      return;
+    }
     // get chips going top right
     const arrayOfChipsGoingTopRight = goingUpRight(
       arrayNodes,
@@ -461,22 +461,22 @@ const methodsForRowOne = {
       return;
     }
     // get chips going top left
-    // const arrayOfChipsGoingTopLeft = goingUpLeft(
-    //   arrayNodes,
-    //   positionRow,
-    //   positionColumn
-    // );
-    // // check winner going top left
-    // const isWinnerGoingTopLeft = connectFourChecker(
-    //   getValuesForCheckFunc,
-    //   arrayOfChipsGoingTopLeft
-    // );
+    const arrayOfChipsGoingTopLeft = goingUpLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
+    // check winner going top left
+    const isWinnerGoingTopLeft = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingTopLeft
+    );
 
-    // console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
-    // if (isWinnerGoingTopLeft == "winner") {
-    //   console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
-    //   return;
-    // }
+    console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
+    if (isWinnerGoingTopLeft == "winner") {
+      console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
+      return;
+    }
     // get chips going right
     const arrayOfChipsGoingRight = testLoopGoingRight(
       arrayNodes,
@@ -555,23 +555,23 @@ const methodsForRowOne = {
       return;
     }
     // get chips going top left
-    // const arrayOfChipsGoingTopLeft = goingUpLeft(
-    //   arrayNodes,
-    //   positionRow,
-    //   positionColumn
-    // );
+    const arrayOfChipsGoingTopLeft = goingUpLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
 
-    // // check for winner going top left
-    // const isWinnerGoingTopLeft = connectFourChecker(
-    //   getValuesForCheckFunc,
-    //   arrayOfChipsGoingTopLeft
-    // );
+    // check for winner going top left
+    const isWinnerGoingTopLeft = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingTopLeft
+    );
 
-    // console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
-    // if (isWinnerGoingTopLeft == "winner") {
-    //   console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
-    //   return;
-    // }
+    console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
+    if (isWinnerGoingTopLeft == "winner") {
+      console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
+      return;
+    }
 
     // get chips going right
     const arrayOfChipsGoingRight = testLoopGoingRight(
