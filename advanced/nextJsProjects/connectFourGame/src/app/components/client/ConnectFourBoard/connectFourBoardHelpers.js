@@ -775,14 +775,15 @@ const methodsForRowFour = {
      * not using for loop
      * **/
 
-    // const isWinnerGoingDown = connectFourChecker(
-    //   getValuesForCheckFunc,
-    //   arrayOfChipsGoingDown
-    // );
-
-    // if (isWinnerGoingDown) {
-    //   return;
-    // }
+    const isWinnerGoingDown = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingDown
+    );
+    console.log("isWinnerGoingDown");
+    if (isWinnerGoingDown) {
+      console.log("isWinnerGoingDown");
+      return;
+    }
 
     /**
      * not using for loop
