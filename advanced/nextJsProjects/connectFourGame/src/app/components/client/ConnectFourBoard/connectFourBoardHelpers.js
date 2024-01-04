@@ -779,9 +779,9 @@ const methodsForRowFour = {
       getValuesForCheckFunc,
       arrayOfChipsGoingDown
     );
-    console.log("isWinnerGoingDown");
+    console.log("isWinnerGoingDown", isWinnerGoingDown);
     if (isWinnerGoingDown) {
-      console.log("isWinnerGoingDown");
+      console.log("isWinnerGoingDown", isWinnerGoingDown);
       return;
     }
 
@@ -811,14 +811,15 @@ const methodsForRowFour = {
      * not using for loop
      * **/
 
-    // const isWinnerGoingDown = connectFourChecker(
-    //   getValuesForCheckFunc,
-    //   arrayOfChipsGoingDown
-    // );
-
-    // if (isWinnerGoingDown) {
-    //   return;
-    // }
+    const isWinnerGoingDown = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingDown
+    );
+    console.log("isWinnerGoingDown", isWinnerGoingDown);
+    if (isWinnerGoingDown) {
+      console.log("isWinnerGoingDown", isWinnerGoingDown);
+      return;
+    }
 
     /**
      * not using for loop
@@ -845,14 +846,15 @@ const methodsForRowFour = {
      * not using for loop
      * **/
 
-    // const isWinnerGoingDown = connectFourChecker(
-    //   getValuesForCheckFunc,
-    //   arrayOfChipsGoingDown
-    // );
-
-    // if (isWinnerGoingDown) {
-    //   return;
-    // }
+    const isWinnerGoingDown = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingDown
+    );
+    console.log("isWinnerGoingDown", isWinnerGoingDown);
+    if (isWinnerGoingDown) {
+      console.log("isWinnerGoingDown", isWinnerGoingDown);
+      return;
+    }
 
     /**
      * not using for loop
@@ -2356,6 +2358,23 @@ function placeHolder({
       console.log(columnObj.moveCounter, "columnObj.moveCounter");
       if (columnObj.moveCounter == 7) {
         console.log("this is the 7th move");
+        methodsForRowFour[convertToText(column)]({
+          arrayNodes,
+          positionRow,
+          positionColumn,
+          testLoopGoingLeft,
+          testLoopGoingRight,
+          testLoopGoingDown,
+          goingUpLeft,
+          goingDownRight,
+          goingUpRight,
+          goingDownLeft,
+          getValuesForCheckFunc,
+          connectFourChecker,
+          horizontalChips,
+          diagonalTopLeftBottomRightChips,
+          diagonalTopRightBottomLeftChips,
+        });
       }
       // const goingDownArrayValues = testLoopGoingDown(
       //   arrayNodes,
@@ -2583,8 +2602,6 @@ function placeHolder({
           arrayNodes,
           positionRow,
           positionColumn,
-          testLoopGoingUp,
-          testLoopGoingDown,
           testLoopGoingLeft,
           testLoopGoingRight,
           goingUpLeft,
