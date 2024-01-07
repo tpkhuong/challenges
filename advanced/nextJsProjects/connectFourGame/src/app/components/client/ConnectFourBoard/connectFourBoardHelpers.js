@@ -815,7 +815,7 @@ const methodsForRowTwo = {
     // get chips going diagonal top right bottom left
     const arrayOfChipsDiagonalTopRightBottomLeft =
       diagonalTopRightBottomLeftChips(
-        arrayOfChipsGoingRight,
+        arrayOfChipsGoingTopRight,
         arrayOfChipsGoingDownLeft
       );
     // check for winner going diagonal top right bottom left
@@ -824,7 +824,7 @@ const methodsForRowTwo = {
       arrayOfChipsDiagonalTopRightBottomLeft
     );
 
-    onsole.log(
+    console.log(
       "isWinnerGoingDiagonalTopRightBottomLeft",
       isWinnerGoingDiagonalTopRightBottomLeft
     );
@@ -849,8 +849,74 @@ const methodsForRowTwo = {
     // goingDownLeft, goingLeft, goingTopLeft, topRight, right, downRight
     return "fifth";
   },
-  sixth: function () {
+  sixth: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    goingUpLeft,
+    testLoopGoingLeft,
+    testLoopGoingRight,
+    goingDownRight,
+    horizontalChips,
+    diagonalTopLeftBottomRightChips,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
     // goingLeft, goingTopLeft, right, downRight
+    // get chips going up left
+    // check for winner going up left
+    // get chips going left
+    // check for winner going left
+    // get chips going right
+    // get chips going horizontal
+    // check for winner going horizontal
+    // get chips going down right
+    // get chips going diagonal up left to down right
+    // check for winner going diagonal up left to down right
+    return "sixth";
+  },
+  seventh: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    goingUpLeft,
+    testLoopGoingLeft,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
+    // goingLeft, topLeft
+    // get chips going up left
+    // check for winner going up left
+    // get chips going left
+    // check for winner going left
+    return "seventh";
+  },
+};
+
+// row three
+const methodsForRowThree = {
+  first: function ({ arrayNodes, positionRow, positionColumn }) {
+    // goingTopRight, right
+    return "first";
+  },
+  second: function () {
+    // goingDownLeft, left, topLeft, topRight, right, downRight
+    return "second";
+  },
+  third: function () {
+    // goingDownLeft, left, topLeft, topRight, right, downRight
+    return "third";
+  },
+  fourth: function () {
+    // goingDownLeft, left, topLeft, topRight, right, downRight
+    return "fourth";
+  },
+  fifth: function () {
+    // goingDownLeft, left, topLeft, topRight, right, downRight
+    return "fifth";
+  },
+  sixth: function () {
+    // goingDownLeft, left, topLeft, topRight, right, downRight
     return "sixth";
   },
   seventh: function () {
@@ -858,38 +924,6 @@ const methodsForRowTwo = {
     return "seventh";
   },
 };
-
-// row three
-// const methodsForRowThree = {
-//   first: function ({ arrayNodes, positionRow, positionColumn }) {
-//     // goingTopRight, right
-//     return "first";
-//   },
-//   second: function () {
-//     // goingDownLeft, left, topLeft, topRight, right, downRight
-//     return "second";
-//   },
-//   third: function () {
-//     // goingDownLeft, left, topLeft, topRight, right, downRight
-//     return "third";
-//   },
-//   fourth: function () {
-//     // goingDownLeft, left, topLeft, topRight, right, downRight
-//     return "fourth";
-//   },
-//   fifth: function () {
-//     // goingDownLeft, left, topLeft, topRight, right, downRight
-//     return "fifth";
-//   },
-//   sixth: function () {
-//     // goingDownLeft, left, topLeft, topRight, right, downRight
-//     return "sixth";
-//   },
-//   seventh: function () {
-//     // goingLeft, topLeft
-//     return "seventh";
-//   },
-// };
 /**
  * start here
  * **/
@@ -2261,8 +2295,8 @@ function rowCounter({
   goingUpRight,
   goingDownLeft,
   methodsForRowOne,
-  // methodsForRowTwo,
-  // methodsForRowThree,
+  methodsForRowTwo,
+  methodsForRowThree,
   methodsForRowFour,
   methodsForRowFive,
   methodsForRowSix,
@@ -2346,8 +2380,8 @@ function rowCounter({
         goingUpRight,
         goingDownLeft,
         methodsForRowOne,
-        // methodsForRowTwo,
-        // methodsForRowThree,
+        methodsForRowTwo,
+        methodsForRowThree,
         methodsForRowFour,
         methodsForRowFive,
         methodsForRowSix,
@@ -2573,8 +2607,8 @@ function rowCounter({
         goingUpRight,
         goingDownLeft,
         methodsForRowOne,
-        // methodsForRowTwo,
-        // methodsForRowThree,
+        methodsForRowTwo,
+        methodsForRowThree,
         methodsForRowFour,
         methodsForRowFive,
         methodsForRowSix,
@@ -2789,8 +2823,8 @@ function rowCounter({
         goingUpRight,
         goingDownLeft,
         methodsForRowOne,
-        // methodsForRowTwo,
-        // methodsForRowThree,
+        methodsForRowTwo,
+        methodsForRowThree,
         methodsForRowFour,
         methodsForRowFive,
         methodsForRowSix,
@@ -3005,8 +3039,8 @@ function rowCounter({
         goingUpRight,
         goingDownLeft,
         methodsForRowOne,
-        // methodsForRowTwo,
-        // methodsForRowThree,
+        methodsForRowTwo,
+        methodsForRowThree,
         methodsForRowFour,
         methodsForRowFive,
         methodsForRowSix,
@@ -3039,8 +3073,8 @@ function rowCounter({
         goingUpRight,
         goingDownLeft,
         methodsForRowOne,
-        // methodsForRowTwo,
-        // methodsForRowThree,
+        methodsForRowTwo,
+        methodsForRowThree,
         methodsForRowFour,
         methodsForRowFive,
         methodsForRowSix,
@@ -3073,8 +3107,8 @@ function rowCounter({
         goingUpRight,
         goingDownLeft,
         methodsForRowOne,
-        // methodsForRowTwo,
-        // methodsForRowThree,
+        methodsForRowTwo,
+        methodsForRowThree,
         methodsForRowFour,
         methodsForRowFive,
         methodsForRowSix,
@@ -3107,8 +3141,8 @@ function rowCounter({
         goingUpRight,
         goingDownLeft,
         methodsForRowOne,
-        // methodsForRowTwo,
-        // methodsForRowThree,
+        methodsForRowTwo,
+        methodsForRowThree,
         methodsForRowFour,
         methodsForRowFive,
         methodsForRowSix,
@@ -3165,8 +3199,8 @@ export const checking = rowCounter({
   goingUpRight,
   goingDownLeft,
   methodsForRowOne,
-  // methodsForRowTwo,
-  // methodsForRowThree,
+  methodsForRowTwo,
+  methodsForRowThree,
   methodsForRowFour,
   methodsForRowFive,
   methodsForRowSix,
@@ -3207,8 +3241,8 @@ function placeHolder({
   goingUpRight,
   goingDownLeft,
   methodsForRowOne,
-  // methodsForRowTwo,
-  // methodsForRowThree,
+  methodsForRowTwo,
+  methodsForRowThree,
   methodsForRowFour,
   methodsForRowFive,
   methodsForRowSix,
@@ -3646,22 +3680,22 @@ function placeHolder({
       console.log(columnObj.moveCounter, "columnObj.moveCounter");
       if (columnObj.moveCounter == 7) {
         console.log("this is the 7th move row 2");
-        // methodsForRowOneToThree[convertToText(column)]({
-        //   arrayNodes,
-        //   positionRow,
-        //   positionColumn,
-        //   testLoopGoingLeft,
-        //   testLoopGoingRight,
-        //   goingUpLeft,
-        //   goingDownRight,
-        //   goingUpRight,
-        //   goingDownLeft,
-        //   getValuesForCheckFunc,
-        //   connectFourChecker,
-        //   horizontalChips,
-        //   diagonalTopLeftBottomRightChips,
-        //   diagonalTopRightBottomLeftChips,
-        // });
+        methodsForRowTwo[convertToText(column)]({
+          arrayNodes,
+          positionRow,
+          positionColumn,
+          testLoopGoingLeft,
+          testLoopGoingRight,
+          goingUpLeft,
+          goingDownRight,
+          goingUpRight,
+          goingDownLeft,
+          horizontalChips,
+          diagonalTopLeftBottomRightChips,
+          diagonalTopRightBottomLeftChips,
+          getValuesForCheckFunc,
+          connectFourChecker,
+        });
       }
     }, time + 100);
 
@@ -3750,11 +3784,11 @@ function placeHolder({
           goingDownRight,
           goingUpRight,
           goingDownLeft,
+          horizontalChips,
           getValuesForCheckFunc,
           connectFourChecker,
-          horizontalChips,
-          diagonalTopLeftBottomRightChips,
-          diagonalTopRightBottomLeftChips,
+          // diagonalTopLeftBottomRightChips,
+          // diagonalTopRightBottomLeftChips,
         });
       }
     }, time + 150);
