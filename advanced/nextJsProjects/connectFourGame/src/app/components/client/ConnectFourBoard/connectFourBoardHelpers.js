@@ -837,8 +837,37 @@ const methodsForRowTwo = {
     }
     // return "second";
   },
-  third: function () {
+  third: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    goingUpLeft,
+    goingUpRight,
+    testLoopGoingLeft,
+    testLoopGoingRight,
+    goingDownRight,
+    goingDownLeft,
+    horizontalChips,
+    diagonalTopRightBottomLeftChips,
+    diagonalTopLeftBottomRightChips,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
     // goingDownLeft, goingLeft, goingTopLeft, topRight, right, downRight
+    // get chips going up right
+    // get chips going down left
+    // get chips going diagonal up right to down left
+    // check for winner going diagonal up right to down left
+    // get chips going up left
+    // get chips going down right
+    // get chips going diagonal up left to down right
+    // check for winner going diagonal up left to down right
+    // check for winner going up right
+    // get chips going right
+    // check for winner going right
+    // get chips going left
+    // get chips going horizontal
+    // check for winner going horizontal
     return "third";
   },
   fourth: function () {
@@ -865,14 +894,14 @@ const methodsForRowTwo = {
     // goingLeft, goingTopLeft, right, downRight
     // get chips going up left
     // check for winner going up left
+    // get chips going down right
+    // get chips going diagonal up left to down right
+    // check for winner going diagonal up left to down right
     // get chips going left
     // check for winner going left
     // get chips going right
     // get chips going horizontal
     // check for winner going horizontal
-    // get chips going down right
-    // get chips going diagonal up left to down right
-    // check for winner going diagonal up left to down right
     return "sixth";
   },
   seventh: function ({
