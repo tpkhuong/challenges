@@ -855,27 +855,192 @@ const methodsForRowTwo = {
   }) {
     // goingDownLeft, goingLeft, goingTopLeft, topRight, right, downRight
     // get chips going up right
-    // get chips going down left
-    // get chips going diagonal up right to down left
-    // check for winner going diagonal up right to down left
-    // get chips going up left
-    // get chips going down right
-    // get chips going diagonal up left to down right
-    // check for winner going diagonal up left to down right
+    const arrayOfChipsGoingTopRight = goingUpRight(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
     // check for winner going up right
+    const isWinnerGoingTopRight = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingTopRight
+    );
+    console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
+    if (isWinnerGoingTopRight == "winner") {
+      console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
+      return;
+    }
+    // get chips going down left
+    const arrayOfChipsGoingDownLeft = goingDownLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
+    // get chips going diagonal up right to down left
+    const arrayOfChipsGoingTopRightBottomLeft = diagonalTopRightBottomLeftChips(
+      arrayOfChipsGoingTopRight,
+      arrayOfChipsGoingDownLeft
+    );
+    // check for winner going diagonal up right to down left
+    const isWinnerGoingDiagonalTopRightBottomLeft = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingTopRightBottomLeft
+    );
+
+    console.log(
+      "isWinnerGoingDiagonalTopRightBottomLeft",
+      isWinnerGoingDiagonalTopRightBottomLeft
+    );
+    if (isWinnerGoingDiagonalTopRightBottomLeft == "winner") {
+      console.log(
+        "isWinnerGoingDiagonalTopRightBottomLeft",
+        isWinnerGoingDiagonalTopRightBottomLeft
+      );
+      return;
+    }
+    // get chips going up left
+    const arrayOfChipsGoingTopLeft = goingUpLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
+    // get chips going down right
+    const arrayOfChipsGoingDownRight = goingUpRight(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
+    // get chips going diagonal up left to down right
+    const arrayOfChipsGoingDiagonalTopLeftBottomRight =
+      diagonalTopLeftBottomRightChips(
+        arrayOfChipsGoingTopLeft,
+        arrayOfChipsGoingDownRight
+      );
+    // check for winner going diagonal up left to down right
+    const isWinnerGoingDiagonalTopLeftBottomRight = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingDiagonalTopLeftBottomRight
+    );
+
+    console.log(
+      "isWinnerGoingDiagonalTopLeftBottomRight",
+      isWinnerGoingDiagonalTopLeftBottomRight
+    );
+    if (isWinnerGoingDiagonalTopLeftBottomRight == "winner") {
+      console.log(
+        "isWinnerGoingDiagonalTopLeftBottomRight",
+        isWinnerGoingDiagonalTopLeftBottomRight
+      );
+      return;
+    }
     // get chips going right
+    const arrayOfChipsGoingRight = testLoopGoingRight(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
     // check for winner going right
+    const isWinnerGoingRight = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingRight
+    );
+
+    console.log("isWinnerGoingRight", isWinnerGoingRight);
+    if (isWinnerGoingRight == "winner") {
+      console.log("isWinnerGoingRight", isWinnerGoingRight);
+      return;
+    }
     // get chips going left
+    const arrayOfChipsGoingLeft = testLoopGoingLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
     // get chips going horizontal
+    const arrayOfChipsHorizontal = horizontalChips(
+      arrayOfChipsGoingLeft,
+      arrayOfChipsGoingRight
+    );
     // check for winner going horizontal
+    const isWinnerGoingHorizontal = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsHorizontal
+    );
+
+    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
+    if (isWinnerGoingHorizontal == "winner") {
+      console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
+      return;
+    }
+
     return "third";
   },
-  fourth: function () {
+  fourth: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    goingUpLeft,
+    goingUpRight,
+    testLoopGoingLeft,
+    testLoopGoingRight,
+    goingDownRight,
+    goingDownLeft,
+    horizontalChips,
+    diagonalTopRightBottomLeftChips,
+    diagonalTopLeftBottomRightChips,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
     // goingDownLeft, goingLeft, goingTopLeft, topRight, right, downRight
+    // get chips going up right
+    // check winner going up right
+    // get chips going down left
+    // get chips going diagonal up right to down left
+    // check winner going diagonal up right to down left
+    // get chips going right
+    // check winner going right
+    // get chips going left
+    // check winner going left
+    // get chips going horizontal
+    // check winner going horizontal
+    // get chips going up left
+    // check winner going up left
+    // get chips going down right
+    // get chips going diagonal up left to down right
+    // check winner going diagonal up left to down right
     return "fourth";
   },
-  fifth: function () {
+  fifth: function ({
+    arrayNodes,
+    positionRow,
+    positionColumn,
+    goingUpLeft,
+    goingUpRight,
+    testLoopGoingLeft,
+    testLoopGoingRight,
+    goingDownRight,
+    goingDownLeft,
+    horizontalChips,
+    diagonalTopRightBottomLeftChips,
+    diagonalTopLeftBottomRightChips,
+    getValuesForCheckFunc,
+    connectFourChecker,
+  }) {
     // goingDownLeft, goingLeft, goingTopLeft, topRight, right, downRight
+    // get chips going left
+    // check winner going left
+    // get chips going up left
+    // check winner going up left
+    // get chips going down right
+    // get chips going diagonal up left to down right
+    // check winner going diagonal up left to down right
+    // get chips going up right
+    // get chips going down left
+    // get chips going diagonal up right to down left
+    // check winner going diagonal up right to down left
+    // get chips going right
+    // get chips going horizontal
+    // check winner going horizontal
     return "fifth";
   },
   sixth: function ({
@@ -893,15 +1058,90 @@ const methodsForRowTwo = {
   }) {
     // goingLeft, goingTopLeft, right, downRight
     // get chips going up left
+    const arrayOfChipsGoingTopLeft = goingUpLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
     // check for winner going up left
+    const isWinnerGoingTopLeft = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingTopLeft
+    );
+
+    console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
+    if (isWinnerGoingTopLeft == "winner") {
+      console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
+      return;
+    }
     // get chips going down right
+    const arrayOfChipsGoingDownRight = goingDownRight(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
     // get chips going diagonal up left to down right
+    const arrayOfChipsDiagonalTopLeftBottomRight =
+      diagonalTopLeftBottomRightChips(
+        arrayOfChipsGoingTopLeft,
+        arrayOfChipsGoingDownRight
+      );
+
     // check for winner going diagonal up left to down right
+    const isWinnerGoingDiagonalTopLeftBottomRight = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsDiagonalTopLeftBottomRight
+    );
+
+    console.log(
+      "isWinnerGoingDiagonalTopLeftBottomRight",
+      isWinnerGoingDiagonalTopLeftBottomRight
+    );
+    if (isWinnerGoingDiagonalTopLeftBottomRight == "winner") {
+      console.log(
+        "isWinnerGoingDiagonalTopLeftBottomRight",
+        isWinnerGoingDiagonalTopLeftBottomRight
+      );
+      return;
+    }
     // get chips going left
+    const arrayOfChipsGoingLeft = testLoopGoingLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
     // check for winner going left
+    const isWinnerGoingLeft = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingLeft
+    );
+    console.log("isWinnerGoingLeft", isWinnerGoingLeft);
+    if (isWinnerGoingLeft == "winner") {
+      console.log("isWinnerGoingLeft", isWinnerGoingLeft);
+      return;
+    }
     // get chips going right
+    const arrayOfChipsGoingRight = testLoopGoingRight(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
     // get chips going horizontal
+    const arrayOfHorizontalChips = horizontalChips(
+      arrayOfChipsGoingLeft,
+      arrayOfChipsGoingRight
+    );
     // check for winner going horizontal
+    const isWinnerHorizontalChips = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfHorizontalChips
+    );
+
+    console.log("isWinnerHorizontalChips", isWinnerHorizontalChips);
+    if (isWinnerHorizontalChips == "winner") {
+      console.log("isWinnerHorizontalChips", isWinnerHorizontalChips);
+      return;
+    }
     return "sixth";
   },
   seventh: function ({
@@ -915,9 +1155,38 @@ const methodsForRowTwo = {
   }) {
     // goingLeft, topLeft
     // get chips going up left
+    const arrayOfChipsGoingTopLeft = goingUpLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
     // check for winner going up left
+    const isWinnerGoingTopLeft = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingTopLeft
+    );
+
+    console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
+    if (isWinnerGoingTopLeft == "winner") {
+      console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft);
+      return;
+    }
     // get chips going left
+    const arrayOfChipsGoingLeft = testLoopGoingLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
     // check for winner going left
+    const isWinnerGoingLeft = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingLeft
+    );
+    console.log("isWinnerGoingLeft", isWinnerGoingLeft);
+    if (isWinnerGoingLeft == "winner") {
+      console.log("isWinnerGoingLeft", isWinnerGoingLeft);
+      return;
+    }
     return "seventh";
   },
 };
