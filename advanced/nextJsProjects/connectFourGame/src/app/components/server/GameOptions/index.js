@@ -17,7 +17,7 @@ export default function GameOptions({ children }) {
         {/* button player vs player */}
         <a
           aria-label="launch player one vs player two game"
-          href=""
+          href="/playergameboard"
           className={styles[`start-game`]}
         >
           <span>Play vs Player</span>
