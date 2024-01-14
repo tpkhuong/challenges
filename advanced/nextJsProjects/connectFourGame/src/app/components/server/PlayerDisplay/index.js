@@ -13,6 +13,7 @@ export default function PlayerDisplay({
       data-firstorsecondplayer={firstOrSecond}
       data-isdesktop={isDesktop}
       className={PlayerDisplayStyles[`player-display-container`]}
+      id={`player-score-selector-${firstOrSecond}`}
     >
       {isCpu && firstOrSecond == "second" && (
         <img
@@ -40,7 +41,7 @@ export default function PlayerDisplay({
         {!isCpu && firstOrSecond == "first" && "PLAYER 1"}
         {!isCpu && firstOrSecond == "second" && "PLAYER 2"}
       </h2>
-      <span className={PlayerDisplayStyles[`score`]}>26</span>
+      <span className={PlayerDisplayStyles[`score`]}>0</span>
     </div>
   );
 }

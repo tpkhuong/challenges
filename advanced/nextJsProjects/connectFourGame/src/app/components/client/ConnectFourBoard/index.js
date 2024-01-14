@@ -6,6 +6,9 @@ import ResultsDisplay from "../Result/index";
 import { checking } from "./connectFourBoardHelpers";
 
 export default function ConnectFourBoard({ children }) {
+  React.useEffect(function afterAppMounted() {
+    console.log(localStorage.getItem("gameFunctionsObj", "gameFunctions"));
+  }, []);
   return (
     <React.Fragment>
       {/* <div className={styles[`circle-container`]}>
@@ -31,7 +34,7 @@ export default function ConnectFourBoard({ children }) {
 
       <div className={styles[`connect-four-board-container`]}>
         <PlayerTurnTimer />
-        <ResultsDisplay />
+        <ResultsDisplay checkingFunc={checking} />
         {/* import result and player turn timer to this component */}
         {/* back img */}
         <div className={styles[`back-game-board`]}>

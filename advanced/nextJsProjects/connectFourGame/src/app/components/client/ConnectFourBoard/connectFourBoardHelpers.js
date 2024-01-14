@@ -5725,6 +5725,11 @@ function rowCounter({
     moveCounter: 0,
   };
 
+  const gameFunctionsObj = {
+    playerOneScore: 0,
+    playerTwoScore: 0,
+  };
+
   const obj = {
     first: 1,
     second: 2,
