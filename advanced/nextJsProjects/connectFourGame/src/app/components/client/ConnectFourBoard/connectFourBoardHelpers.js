@@ -6542,32 +6542,37 @@ function rowCounter({
   };
 
   return function innerFunc(event) {
+    console.log("arrayOfChipNodes at top of func", arrayOfChipNodes);
     console.log(event, "event");
-    const columnClicked = event.target.getAttribute("data-column");
-    movePointer({ columnClicked });
+    /**
+     * run func based on button clicked
+     * **/
+    console.log(event.target, "event.target");
+    // const columnClicked = event.target.getAttribute("data-column");
+    // movePointer({ columnClicked });
 
-    console.log(columnClicked, "columnClicked");
-    if (columnClicked && objOfMethods[columnClicked]) {
-      // clear setInterval
-      const playersTurnTimer = JSON.parse(
-        localStorage.getItem("stopCountdown")
-      );
-      if (playersTurnTimer) {
-        // reset timer display to 30s
-        document.getElementById("turn-countdown-selector").textContent = "30";
-        // reset timer function
-        clearInterval(playersTurnTimer);
-      }
-      objOfMethods[columnClicked]({
-        first: 1,
-        second: 2,
-        third: 3,
-        fourth: 4,
-        fifth: 5,
-        sixth: 6,
-        seventh: 7,
-      });
-    }
+    // console.log(columnClicked, "columnClicked");
+    // if (columnClicked && objOfMethods[columnClicked]) {
+    //   // clear setInterval
+    //   const playersTurnTimer = JSON.parse(
+    //     localStorage.getItem("stopCountdown")
+    //   );
+    //   if (playersTurnTimer) {
+    //     // reset timer display to 30s
+    //     document.getElementById("turn-countdown-selector").textContent = "30";
+    //     // reset timer function
+    //     clearInterval(playersTurnTimer);
+    //   }
+    //   objOfMethods[columnClicked]({
+    //     first: 1,
+    //     second: 2,
+    //     third: 3,
+    //     fourth: 4,
+    //     fifth: 5,
+    //     sixth: 6,
+    //     seventh: 7,
+    //   });
+    // }
   };
 }
 

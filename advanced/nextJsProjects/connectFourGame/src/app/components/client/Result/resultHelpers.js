@@ -17,6 +17,7 @@ function closureGameFunction() {
     // change player turn display color
     // change player turn to "two"
     console.log(checkFunction, "checkFunction");
+    checkFunction(event);
     if (restartGameObj.previouStarter == "one") {
       // change data-playerturn attr on main element with id "game-board-bg-selector" to "two"
       document
