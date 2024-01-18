@@ -6548,10 +6548,18 @@ function rowCounter({
      * run func based on button clicked
      * **/
     console.log(event.target, "event.target");
+    // if event.target does not have attr "data-column" && it is play again btn
+    if (
+      !event.target.getAttribute("data-column") &&
+      event.target.getAttribute("id") == "play-again-btn-selector"
+    ) {
+      // this is result component and 'play again' button clicked
+    }
     // const columnClicked = event.target.getAttribute("data-column");
     // movePointer({ columnClicked });
 
     // console.log(columnClicked, "columnClicked");
+    // this is connect four board component and user clicked on one of seven columns
     // if (columnClicked && objOfMethods[columnClicked]) {
     //   // clear setInterval
     //   const playersTurnTimer = JSON.parse(

@@ -13,6 +13,7 @@ export default function ResultsDisplay({ children, checkingFunc }) {
       </h2>
       <span>WINS</span>
       <button
+        id="play-again-btn-selector"
         onClick={(event) => {
           gameFunctions(event, checkingFunc);
         }}
