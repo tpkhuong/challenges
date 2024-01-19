@@ -6,9 +6,6 @@ import ResultsDisplay from "../Result/index";
 import { checking } from "./connectFourBoardHelpers";
 
 export default function ConnectFourBoard({ children }) {
-  React.useEffect(function afterAppMounted() {
-    console.log(localStorage.getItem("gameFunctionsObj", "gameFunctions"));
-  }, []);
   return (
     <React.Fragment>
       {/* <div className={styles[`circle-container`]}>

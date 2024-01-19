@@ -1821,6 +1821,12 @@ const methodsForRowThree = {
       arrayOfChipsGoingRight
     );
 
+    /**
+     * CHECK when goingLeft or goingRight
+     * then goingTopLeft or goingTopRight
+     * has nodes in the array
+     * going horizontal return 'winner'
+     * **/
     console.log("isWinnerGoingRight", isWinnerGoingRight);
     if (isWinnerGoingRight == "winner") {
       console.log("isWinnerGoingRight", isWinnerGoingRight);
@@ -6554,33 +6560,43 @@ function rowCounter({
       event.target.getAttribute("id") == "play-again-btn-selector"
     ) {
       // this is result component and 'play again' button clicked
+      console.log(
+        "this is if statement for !event.target.getAttribute(data-column) && event.target.getAttribute(id) == play-again-btn-selector"
+      );
+      console.log(gameFunctionsObj, "gameFunctionsObj");
+      // reset arrayOfChipNodes
+      // reset game scores to 0s
+      return;
     }
-    // const columnClicked = event.target.getAttribute("data-column");
-    // movePointer({ columnClicked });
+    const columnClicked = event.target.getAttribute("data-column");
+    movePointer({ columnClicked });
 
-    // console.log(columnClicked, "columnClicked");
-    // this is connect four board component and user clicked on one of seven columns
-    // if (columnClicked && objOfMethods[columnClicked]) {
-    //   // clear setInterval
-    //   const playersTurnTimer = JSON.parse(
-    //     localStorage.getItem("stopCountdown")
-    //   );
-    //   if (playersTurnTimer) {
-    //     // reset timer display to 30s
-    //     document.getElementById("turn-countdown-selector").textContent = "30";
-    //     // reset timer function
-    //     clearInterval(playersTurnTimer);
-    //   }
-    //   objOfMethods[columnClicked]({
-    //     first: 1,
-    //     second: 2,
-    //     third: 3,
-    //     fourth: 4,
-    //     fifth: 5,
-    //     sixth: 6,
-    //     seventh: 7,
-    //   });
-    // }
+    console.log(columnClicked, "columnClicked");
+    if (columnClicked && objOfMethods[columnClicked]) {
+      // this is connect four board component and user clicked on one of seven columns
+      console.log(
+        "this is if statement for columnClicked && objOfMethods[columnClicked]"
+      );
+      // clear setInterval
+      const playersTurnTimer = JSON.parse(
+        localStorage.getItem("stopCountdown")
+      );
+      if (playersTurnTimer) {
+        // reset timer display to 30s
+        document.getElementById("turn-countdown-selector").textContent = "30";
+        // reset timer function
+        clearInterval(playersTurnTimer);
+      }
+      objOfMethods[columnClicked]({
+        first: 1,
+        second: 2,
+        third: 3,
+        fourth: 4,
+        fifth: 5,
+        sixth: 6,
+        seventh: 7,
+      });
+    }
   };
 }
 
@@ -6995,22 +7011,22 @@ function placeHolder({
       console.log(columnObj.moveCounter, "columnObj.moveCounter");
       if (columnObj.moveCounter == 7) {
         console.log("this is the 7th move row 3");
-        // methodsForRowOneToThree[convertToText(column)]({
-        //   arrayNodes,
-        //   positionRow,
-        //   positionColumn,
-        //   testLoopGoingLeft,
-        //   testLoopGoingRight,
-        //   goingUpLeft,
-        //   goingDownRight,
-        //   goingUpRight,
-        //   goingDownLeft,
-        //   getValuesForCheckFunc,
-        //   connectFourChecker,
-        //   horizontalChips,
-        //   diagonalTopLeftBottomRightChips,
-        //   diagonalTopRightBottomLeftChips,
-        // });
+        methodsForRowThree[convertToText(column)]({
+          arrayNodes,
+          positionRow,
+          positionColumn,
+          testLoopGoingLeft,
+          testLoopGoingRight,
+          goingUpLeft,
+          goingDownRight,
+          goingUpRight,
+          goingDownLeft,
+          getValuesForCheckFunc,
+          connectFourChecker,
+          horizontalChips,
+          diagonalTopLeftBottomRightChips,
+          diagonalTopRightBottomLeftChips,
+        });
       }
     }, time + 100);
 
