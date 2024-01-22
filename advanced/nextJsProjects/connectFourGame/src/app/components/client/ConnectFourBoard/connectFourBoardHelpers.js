@@ -4132,10 +4132,13 @@ const methodsForRowFive = {
     testLoopGoingRight,
     testLoopGoingLeft,
     goingUpLeft,
+    goingUpRight,
     goingDownRight,
+    goingDownLeft,
     testLoopGoingDown,
     horizontalChips,
     diagonalTopLeftBottomRightChips,
+    diagonalTopRightBottomLeftChips,
     getValuesForCheckFunc,
     connectFourChecker,
   }) {
@@ -4224,6 +4227,44 @@ const methodsForRowFive = {
       console.log(
         "isWinnerGoingDiagonalTopLeftBottomRight",
         isWinnerGoingDiagonalTopLeftBottomRight
+      );
+      return;
+    }
+
+    // get chips going down left
+    const arrayOfChipsGoingDownLeft = goingDownLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
+
+    // get chips going up right
+    const arrayOfChipsGoingTopRight = goingUpRight(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
+
+    // get chips going diagonal up right to down left
+    const arrayOfChipsDiagonalTopRightBottomLeft =
+      diagonalTopRightBottomLeftChips(
+        arrayOfChipsGoingTopRight,
+        arrayOfChipsGoingDownLeft
+      );
+    // check winner going diagonal up right to down left
+    const isWinnerGoingDiagonalTopRightBottomLeft = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsDiagonalTopRightBottomLeft
+    );
+
+    console.log(
+      "isWinnerGoingDiagonalTopRightBottomLeft",
+      isWinnerGoingDiagonalTopRightBottomLeft
+    );
+    if (isWinnerGoingDiagonalTopRightBottomLeft == "winner") {
+      console.log(
+        "isWinnerGoingDiagonalTopRightBottomLeft",
+        isWinnerGoingDiagonalTopRightBottomLeft
       );
       return;
     }
@@ -4431,12 +4472,15 @@ const methodsForRowFive = {
     arrayNodes,
     positionRow,
     positionColumn,
+    goingUpLeft,
     goingUpRight,
     testLoopGoingLeft,
     testLoopGoingRight,
+    goingDownRight,
     goingDownLeft,
     horizontalChips,
     diagonalTopRightBottomLeftChips,
+    diagonalTopLeftBottomRightChips,
     testLoopGoingDown,
     getValuesForCheckFunc,
     connectFourChecker,
@@ -4528,6 +4572,43 @@ const methodsForRowFive = {
       );
       return;
     }
+
+    // get chips going up left
+    const arrayOfChipsGoingTopLeft = goingUpLeft(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
+    // get chips going down right
+    const arrayOfChipsGoingDownRight = goingDownRight(
+      arrayNodes,
+      positionRow,
+      positionColumn
+    );
+    // get chips going diagonal up left to down right
+    const arrayOfChipsGoingDiagonalTopLeftBottomRight =
+      diagonalTopLeftBottomRightChips(
+        arrayOfChipsGoingTopLeft,
+        arrayOfChipsGoingDownRight
+      );
+    // check winner going diagonal up left to down right
+    const isWinnerGoingDiagonalTopLeftBottomRight = connectFourChecker(
+      getValuesForCheckFunc,
+      arrayOfChipsGoingDiagonalTopLeftBottomRight
+    );
+
+    console.log(
+      "isWinnerGoingDiagonalTopLeftBottomRight",
+      isWinnerGoingDiagonalTopLeftBottomRight
+    );
+    if (isWinnerGoingDiagonalTopLeftBottomRight == "winner") {
+      console.log(
+        "isWinnerGoingDiagonalTopLeftBottomRight",
+        isWinnerGoingDiagonalTopLeftBottomRight
+      );
+      return;
+    }
+
     // array chips going down
     const arrayOfChipsGoingDown = testLoopGoingDown(
       arrayNodes,
