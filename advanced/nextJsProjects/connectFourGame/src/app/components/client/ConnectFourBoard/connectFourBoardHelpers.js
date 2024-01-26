@@ -5372,6 +5372,13 @@ const methodsForRowSix = {
     connectFourChecker,
   }) {
     // goingLeft, goingDown, goingDownLeft
+    /**
+     * Remove later
+     * **/
+    // alert("Hello World.");
+    /**
+     * Remove later
+     * **/
     // get chips going left
     const arrayOfChipsGoingLeft = testLoopGoingLeft(
       arrayNodes,
@@ -7470,9 +7477,11 @@ function testLoopGoingUp(array, row, column) {
       console.log(currentObj);
       console.log(arrayOfObjs, "arrayOfObjs");
       if (currentChip == arrayOfObjs[arrayOfObjs.length - 1].playerChip) {
+        console.log("add to arrayOfObjs testLoopGoingUp");
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log("break the loop testLoopGoingUp");
         return arrayOfObjs;
       }
       // console.log(previousValue);
@@ -7516,9 +7525,11 @@ function testLoopGoingDown(array, row, column) {
       console.log(currentObj);
       console.log(arrayOfObjs, "arrayOfObjs");
       if (currentChip == arrayOfObjs[arrayOfObjs.length - 1].playerChip) {
+        console.log("add to arrayOfObjs testLoopGoingDown");
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log("break the loop testLoopGoingDown");
         return arrayOfObjs;
       }
       // console.log(previousValue);
@@ -7567,9 +7578,11 @@ function testLoopGoingLeft(array, row, column) {
       console.log(currentObj);
       console.log(arrayOfObjs, "arrayOfObjs");
       if (currentChip == arrayOfObjs[arrayOfObjs.length - 1].playerChip) {
+        console.log("add to arrayOfObjs testLoopGoingLeft");
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log("break the loop testLoopGoingLeft");
         return arrayOfObjs;
       }
       // console.log(previousValue);
@@ -7618,9 +7631,11 @@ function testLoopGoingRight(array, row, column) {
       console.log(currentObj);
       console.log(arrayOfObjs, "arrayOfObjs");
       if (currentChip == arrayOfObjs[arrayOfObjs.length - 1].playerChip) {
+        console.log("add to arrayOfObjs testLoopGoingRight");
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log("break the loop testLoopGoingRight");
         return arrayOfObjs;
       }
       // console.log(previousValue);
@@ -7668,9 +7683,11 @@ function goingUpLeft(array, row, column) {
       console.log(currentObj);
       console.log(arrayOfObjs, "arrayOfObjs");
       if (currentChip == arrayOfObjs[arrayOfObjs.length - 1].playerChip) {
+        console.log("add to arrayOfObjs goingUpLeft");
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log("break the loop goingUpLeft");
         return arrayOfObjs;
       }
       // console.log(previousValue);
@@ -7718,9 +7735,11 @@ function goingDownRight(array, row, column) {
       console.log(currentObj);
       console.log(arrayOfObjs, "arrayOfObjs");
       if (currentChip == arrayOfObjs[arrayOfObjs.length - 1].playerChip) {
+        console.log("add to arrayOfObjs goingDownRight");
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log("break the loop goingDownRight");
         return arrayOfObjs;
       }
       // console.log(previousValue);
@@ -7770,9 +7789,11 @@ function goingUpRight(array, row, column) {
       console.log(currentObj);
       console.log(arrayOfObjs, "arrayOfObjs");
       if (currentChip == arrayOfObjs[arrayOfObjs.length - 1].playerChip) {
+        console.log("add to arrayOfObjs goingUpRight");
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log("break the loop goingUpRight");
         return arrayOfObjs;
       }
       // console.log(previousValue);
@@ -7789,8 +7810,16 @@ function goingDownLeft(array, row, column) {
   // each array[row][column] is an obj
   // loop through array add chip to arrayOfObjs if last value in array does not match currentVale of our loop
   // break
+  /**
+   * start here
+   * look at the first obj we are pushing into arrayOfObjs
+   * **/
   const firstObj = array[row][column];
   const arrayOfObjs = [firstObj];
+  /**
+   * start here
+   * look at the first obj we are pushing into arrayOfObjs
+   * **/
 
   for (
     let index = row + 1, columnIndex = column - 1;
@@ -7820,9 +7849,11 @@ function goingDownLeft(array, row, column) {
       console.log(currentObj);
       console.log(arrayOfObjs, "arrayOfObjs");
       if (currentChip == arrayOfObjs[arrayOfObjs.length - 1].playerChip) {
+        console.log("add to arrayOfObjs goingDownLeft");
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log("break the loop goingDownLeft");
         return arrayOfObjs;
       }
       // console.log(previousValue);
