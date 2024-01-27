@@ -7481,6 +7481,7 @@ function testLoopGoingUp(array, row, column) {
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log(arrayOfObjs, "arrayOfObjs of break else statement");
         console.log("break the loop testLoopGoingUp");
         return arrayOfObjs;
       }
@@ -7529,6 +7530,7 @@ function testLoopGoingDown(array, row, column) {
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log(arrayOfObjs, "arrayOfObjs of break else statement");
         console.log("break the loop testLoopGoingDown");
         return arrayOfObjs;
       }
@@ -7582,6 +7584,7 @@ function testLoopGoingLeft(array, row, column) {
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log(arrayOfObjs, "arrayOfObjs of break else statement");
         console.log("break the loop testLoopGoingLeft");
         return arrayOfObjs;
       }
@@ -7635,6 +7638,7 @@ function testLoopGoingRight(array, row, column) {
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log(arrayOfObjs, "arrayOfObjs of break else statement");
         console.log("break the loop testLoopGoingRight");
         return arrayOfObjs;
       }
@@ -7687,6 +7691,7 @@ function goingUpLeft(array, row, column) {
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log(arrayOfObjs, "arrayOfObjs of break else statement");
         console.log("break the loop goingUpLeft");
         return arrayOfObjs;
       }
@@ -7739,6 +7744,7 @@ function goingDownRight(array, row, column) {
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log(arrayOfObjs, "arrayOfObjs of break else statement");
         console.log("break the loop goingDownRight");
         return arrayOfObjs;
       }
@@ -7793,6 +7799,7 @@ function goingUpRight(array, row, column) {
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log(arrayOfObjs, "arrayOfObjs of break else statement");
         console.log("break the loop goingUpRight");
         return arrayOfObjs;
       }
@@ -7853,7 +7860,12 @@ function goingDownLeft(array, row, column) {
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
+        console.log(arrayOfObjs, "arrayOfObjs of break else statement");
         console.log("break the loop goingDownLeft");
+        /**
+         * we are returning an array with initial obj
+         * with playerChip "one" or "two"
+         * **/
         return arrayOfObjs;
       }
       // console.log(previousValue);
