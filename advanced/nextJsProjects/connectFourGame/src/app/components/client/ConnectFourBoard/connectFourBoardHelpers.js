@@ -7883,6 +7883,8 @@ function goingDownLeft(array, row, column) {
 
 function createTwoWayArraysFunctions() {
   return function innerFunc(firstArray, secondArray) {
+    const testArray = [...firstArray, ...secondArray];
+    console.log(testArray, "testArray");
     return [...firstArray, ...secondArray];
   };
 }
