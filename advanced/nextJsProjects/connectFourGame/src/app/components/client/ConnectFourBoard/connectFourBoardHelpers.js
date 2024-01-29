@@ -7883,7 +7883,25 @@ function goingDownLeft(array, row, column) {
 
 function createTwoWayArraysFunctions() {
   return function innerFunc(firstArray, secondArray) {
-    const testArray = [...firstArray, ...secondArray];
+    const testArray = [...firstArray, ...secondArray].reduce(
+      function removeDuplicates(buildingUp, currentValue) {
+        // buildingUp will be array with
+        // appearOnceObj at index 0 and arrayOfObjs at index 1
+        // currentValue is obj with properties playerChip and chipPosition
+        const appearOnceObj = buildingUp[0];
+        const arrayOfObjs = buildingUp[1];
+        // get row and column
+        const chipsRow = currentValue.chipPosition[0];
+        const chipsColumn = currentValue.chipPosition[1];
+        // build string
+        const positionString = `row${chipsRow}Column${chipsColumn}`;
+        // if appearOnceObj[positionString] is falsy which means it is undefined or null
+        // enter if statement and assign boolean value true to appearOnceObj[positionString]
+        // and adding obj to arrayOfObjs
+      },
+      [{}, []]
+    );
+    // use reduce to remove duplicates element/obj
     console.log(testArray, "testArray");
     return [...firstArray, ...secondArray];
   };
