@@ -7898,6 +7898,11 @@ function createTwoWayArraysFunctions() {
         // if appearOnceObj[positionString] is falsy which means it is undefined or null
         // enter if statement and assign boolean value true to appearOnceObj[positionString]
         // and adding obj to arrayOfObjs
+        if (!appearOnceObj[positionString]) {
+          appearOnceObj[positionString] = true;
+          arrayOfObjs.push(currentValue);
+        }
+        return buildingUp;
       },
       [{}, []]
     );
