@@ -7907,6 +7907,8 @@ function createTwoWayArraysFunctions() {
       [{}, []]
     );
     // use reduce to remove duplicates element/obj
+    // array at index 1 of testArray will have correct number of items/objs
+    // objs chipsPosition is not in order
     console.log(testArray, "testArray");
     return [...firstArray, ...secondArray];
   };
