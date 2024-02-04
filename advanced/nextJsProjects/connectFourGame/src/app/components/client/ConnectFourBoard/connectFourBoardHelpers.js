@@ -7896,6 +7896,16 @@ function createTwoWayArraysFunctions() {
     const newArray = [...copyOfFirstArray, ...secondArray];
     console.log("newArray", newArray);
     // sort the objs in array by column number which will be 1 to 7
+    const sortedObjsArray = newArray.concat([]);
+    sortedObjsArray.sort(function sortByColumn(first, second) {
+      const firstColumnNum = first.chipPosition[1];
+      const secondColumnNum = second.chipPosition[1];
+
+      if (firstColumnNum < secondColumnNum) return -1;
+      if (secondColumnNum < firstColumnNum) return 1;
+      return 0;
+    });
+    console.log(sortedObjsArray, "sortedObjsArray");
     /**
      * not using reduce method
      * **/
