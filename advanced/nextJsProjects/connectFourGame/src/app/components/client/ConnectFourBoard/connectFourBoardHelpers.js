@@ -6610,6 +6610,9 @@ function rowCounter({
       console.log(gameFunctionsObj, "gameFunctionsObj");
       // reset arrayOfChipNodes
       // reset game scores to 0s
+      // reset game board to blanks
+      // how do we want to accomplish this?
+      // div children of div with id="row-1" to id="row-6"
       return;
     }
     const columnClicked = event.target.getAttribute("data-column");
