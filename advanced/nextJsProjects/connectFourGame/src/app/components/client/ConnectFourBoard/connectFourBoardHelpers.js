@@ -6613,6 +6613,32 @@ function rowCounter({
       // reset game board to blanks
       // how do we want to accomplish this?
       // div children of div with id="row-1" to id="row-6"
+      /**
+       * row-1
+       * **/
+
+      document
+        .getElementById("row-1")
+        .childNodes.forEach(function changeDataPlayerChip(divElement) {
+          // loop through array of div elements and change the value of attr
+          // data playerchip to empty string ""
+          console.log(divElement);
+        });
+      /**
+       * row-2
+       * **/
+      /**
+       * row-3
+       * **/
+      /**
+       * row-4
+       * **/
+      /**
+       * row-5
+       * **/
+      /**
+       * row-6
+       * **/
       return;
     }
     const columnClicked = event.target.getAttribute("data-column");
