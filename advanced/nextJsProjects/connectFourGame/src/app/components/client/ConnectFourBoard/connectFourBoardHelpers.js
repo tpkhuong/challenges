@@ -6609,7 +6609,13 @@ function rowCounter({
       );
       console.log(gameFunctionsObj, "gameFunctionsObj");
       // reset arrayOfChipNodes
-      // reset game scores to 0s
+      // loop through arrayOfChipNodes and assign each index of arrayOfChipNodes to
+      // this array [null, null, null, null, null, null, null]
+      for (let index = 0; index < arrayOfChipNodes.length; index++) {
+        arrayOfChipNodes[index] = [null, null, null, null, null, null, null];
+      }
+      // update game score
+      // use id="player-score-selector-first" and id="player-score-selector-second"
       // reset game board to blanks
       // how do we want to accomplish this?
       // div children of div with id="row-1" to id="row-6"
