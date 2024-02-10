@@ -6636,6 +6636,16 @@ function rowCounter({
       /**
        * row-2
        * **/
+      document
+        .getElementById("row-2")
+        .childNodes.forEach(function changeDataPlayerChip(divElement) {
+          // loop through array of div elements and change the value of attr
+          // data playerchip to empty string ""
+          console.log(divElement);
+          if (divElement.getAttribute("data-playerchip") !== "") {
+            divElement.setAttribute("data-playerchip", "");
+          }
+        });
       /**
        * row-3
        * **/
