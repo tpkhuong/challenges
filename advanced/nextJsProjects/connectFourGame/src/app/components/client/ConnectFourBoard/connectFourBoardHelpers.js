@@ -6662,9 +6662,29 @@ function rowCounter({
       /**
        * row-4
        * **/
+      document
+        .getElementById("row-4")
+        .childNodes.forEach(function changeDataPlayerChip(divElement) {
+          // loop through array of div elements and change the value of attr
+          // data playerchip to empty string ""
+          console.log(divElement);
+          if (divElement.getAttribute("data-playerchip") !== "") {
+            divElement.setAttribute("data-playerchip", "");
+          }
+        });
       /**
        * row-5
        * **/
+      document
+        .getElementById("row-5")
+        .childNodes.forEach(function changeDataPlayerChip(divElement) {
+          // loop through array of div elements and change the value of attr
+          // data playerchip to empty string ""
+          console.log(divElement);
+          if (divElement.getAttribute("data-playerchip") !== "") {
+            divElement.setAttribute("data-playerchip", "");
+          }
+        });
       /**
        * row-6
        * **/
