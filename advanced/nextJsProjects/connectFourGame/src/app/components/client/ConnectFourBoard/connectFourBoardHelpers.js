@@ -6616,6 +6616,15 @@ function rowCounter({
       }
       // update game score
       // use id="player-score-selector-first" and id="player-score-selector-second"
+      const firstPlayerScoreElement = document.getElementById(
+        "player-score-selector-first"
+      );
+      // update first player score
+      const secondPlayerScoreElement = document.getElementById(
+        "player-score-selector-second"
+      );
+      // update second player score
+
       // reset game board to blanks
       // how do we want to accomplish this?
       // div children of div with id="row-1" to id="row-6"
@@ -6688,6 +6697,16 @@ function rowCounter({
       /**
        * row-6
        * **/
+      document
+        .getElementById("row-6")
+        .childNodes.forEach(function changeDataPlayerChip(divElement) {
+          // loop through array of div elements and change the value of attr
+          // data playerchip to empty string ""
+          console.log(divElement);
+          if (divElement.getAttribute("data-playerchip") !== "") {
+            divElement.setAttribute("data-playerchip", "");
+          }
+        });
       return;
     }
     const columnClicked = event.target.getAttribute("data-column");
