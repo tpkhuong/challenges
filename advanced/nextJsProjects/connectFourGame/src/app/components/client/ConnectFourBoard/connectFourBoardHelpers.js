@@ -52,6 +52,10 @@ const methodsForRowOne = {
 
     console.log("isWinnerGoingRight", isWinnerGoingRight);
     if (isWinnerGoingRight == "winner") {
+      /**
+       * where do we want to change attr data-result of element with id="game-board-bg-selector"
+       * either player one or two
+       * **/
       console.log("isWinnerGoingRight", isWinnerGoingRight);
       return;
     }
