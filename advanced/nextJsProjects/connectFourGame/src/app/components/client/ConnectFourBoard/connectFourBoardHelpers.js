@@ -56,6 +56,9 @@ const methodsForRowOne = {
        * where do we want to change attr data-result of element with id="game-board-bg-selector"
        * either player one or two
        * **/
+      // first we have to update attr data-result
+      // second we want to get that value and update score property in gameFunctionsObj
+      // then update UI
       console.log("isWinnerGoingRight", isWinnerGoingRight);
       return;
     }
