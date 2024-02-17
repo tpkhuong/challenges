@@ -52,13 +52,6 @@ const methodsForRowOne = {
 
     console.log("isWinnerGoingRight", isWinnerGoingRight);
     if (isWinnerGoingRight == "winner") {
-      /**
-       * where do we want to change attr data-result of element with id="game-board-bg-selector"
-       * either player one or two
-       * **/
-      // first we have to update attr data-result
-      // second we want to get that value and update score property in gameFunctionsObj
-      // then update UI
       console.log("isWinnerGoingRight", isWinnerGoingRight);
       return;
     }
@@ -6621,17 +6614,42 @@ function rowCounter({
       for (let index = 0; index < arrayOfChipNodes.length; index++) {
         arrayOfChipNodes[index] = [null, null, null, null, null, null, null];
       }
-      // update game score
-      // use id="player-score-selector-first" and id="player-score-selector-second"
-      const firstPlayerScoreElement = document.getElementById(
-        "player-score-selector-first"
-      );
-      // update first player score
-      const secondPlayerScoreElement = document.getElementById(
-        "player-score-selector-second"
-      );
-      // update second player score
-
+      // get value of attr data-result of element with id="game-board-bg-selector"
+      const gameResult = document
+        .getElementById("game-board-bg-selector")
+        .getAttribute("data-result");
+      /**
+       * winner is player one
+       * **/
+      if (gameResult == "playerone") {
+        // update score in gameFunctionsObj
+        gameFunctionsObj.playerOneScore = gameFunctionsObj.playerOneScore + 1;
+        // update UI
+        // use id="player-score-selector-first" and id="player-score-selector-second"
+        // use value of gameFunctionsObj.playerOneScore
+        const firstPlayerScoreSpanElement = document.getElementById(
+          "player-score-selector-first"
+        ).childNodes[2];
+        firstPlayerScoreSpanElement.textContent = `${gameFunctionsObj.playerOneScore}`;
+      }
+      // const gameFunctionsObj = {
+      //   playerOneScore: 0,
+      //   playerTwoScore: 0,
+      // };
+      /**
+       * winner is player two
+       * **/
+      if (gameResult == "playertwo") {
+        // update score in gameFunctionsObj
+        gameFunctionsObj.playerTwoScore = gameFunctionsObj.playerTwoScore + 1;
+        // update UI
+        // use id="player-score-selector-second"
+        // use value of gameFunctionsObj.playerTwoScore
+        const secondPlayerScoreSpanElement = document.getElementById(
+          "player-score-selector-second"
+        ).childNodes[2];
+        secondPlayerScoreSpanElement.textContent = `${gameFunctionsObj.playerTwoScore}`;
+      }
       // reset game board to blanks
       // how do we want to accomplish this?
       // div children of div with id="row-1" to id="row-6"
@@ -8093,8 +8111,26 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
           "true"
         );
     });
+    // get value of property playerChip of obj values in array returned from executing/calling/envoking
+    // function getValuesForCheckFunc
+    const firstObjOfConnectFourArray = isConnectFour[0];
+    const valueOfStringOneOrTwo = firstObjOfConnectFourArray.playerChip;
+    if (valueOfStringOneOrTwo == "one") {
+      // player one wins
+      // update value of attr data-result of element with id="game-board-bg-selector"
+      document
+        .getElementById("game-board-bg-selector")
+        .setAttribute("data-result", "playerone");
+    }
+    if (valueOfStringOneOrTwo == "two") {
+      // player two wins
+      // update value of attr data-result of element with id="game-board-bg-selector"
+      document
+        .getElementById("game-board-bg-selector")
+        .setAttribute("data-result", "playertwo");
+    }
   }
-  // // when we get here it means isConnectFour is null meaning the length of the array is less than 4
+  // when we get here it means isConnectFour is null meaning the length of the array is less than 4
   return null;
 }
 
