@@ -6614,6 +6614,10 @@ function rowCounter({
       for (let index = 0; index < arrayOfChipNodes.length; index++) {
         arrayOfChipNodes[index] = [null, null, null, null, null, null, null];
       }
+      console.log(
+        "arrayOfChipNodes after running for loop to assign value null to index 0-7 of each subarrays",
+        arrayOfChipNodes
+      );
       // get value of attr data-result of element with id="game-board-bg-selector"
       const gameResult = document
         .getElementById("game-board-bg-selector")
@@ -6631,6 +6635,10 @@ function rowCounter({
           "player-score-selector-first"
         ).childNodes[2];
         firstPlayerScoreSpanElement.textContent = `${gameFunctionsObj.playerOneScore}`;
+        console.log(
+          "gameFunctionsObj in if state for playerone",
+          gameFunctionsObj
+        );
       }
       // const gameFunctionsObj = {
       //   playerOneScore: 0,
@@ -6649,6 +6657,10 @@ function rowCounter({
           "player-score-selector-second"
         ).childNodes[2];
         secondPlayerScoreSpanElement.textContent = `${gameFunctionsObj.playerTwoScore}`;
+        console.log(
+          "gameFunctionsObj in if state for playertwo",
+          gameFunctionsObj
+        );
       }
       // reset game board to blanks
       // how do we want to accomplish this?
