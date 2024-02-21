@@ -1,0 +1,45 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 150px);
+  grid-template-areas:
+    "third fourth fifth"
+    "third fourth fifth"
+    "third fourth fifth"
+    "first second second"
+    "first second second";
+}
+
+/* .grid div { */
+/* this will make each div height max at 150px. each div will not match the grid-template-area
+  grid-template-areas:
+    "third fourth fifth"
+    "third fourth fifth"
+    "third fourth fifth"
+    "first second second"
+    "first second second";
+}
+  */
+/* height: 150px; */
+/* } */
+
+.grid div:nth-child(1) {
+  grid-area: first;
+  background-color: red;
+}
+.grid div:nth-child(2) {
+  grid-area: second;
+  background-color: blue;
+}
+.grid div:nth-child(3) {
+  grid-area: third;
+  background-color: green;
+}
+.grid div:nth-child(4) {
+  grid-area: fourth;
+  background-color: orange;
+}
+.grid div:nth-child(5) {
+  grid-area: fifth;
+  background-color: purple;
+}

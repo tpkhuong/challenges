@@ -6,7 +6,11 @@ export default function CssGrid({ children }) {
   return (
     <React.Fragment>
       <div className={styles[`grid`]}>
-        <Title></Title>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </React.Fragment>
   );
