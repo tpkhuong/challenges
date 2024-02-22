@@ -11,6 +11,16 @@ export default function CssGrid({ children }) {
         <div></div>
         <div></div>
         <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </React.Fragment>
   );

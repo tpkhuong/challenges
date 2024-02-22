@@ -3,13 +3,14 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 150px);
   grid-template-areas:
-    "third fourth fifth"
-    "third fourth fifth"
-    "third fourth fifth"
-    "first second second"
-    "first second second";
+    "three four five"
+    "three four five"
+    "three four five"
+    "one two two"
+    "one two two";
 }
 
+/* grid-template-areas requires a grid. We need grid-template-columns and gr */
 /* .grid div { */
 /* this will make each div height max at 150px. each div will not match the grid-template-area
   grid-template-areas:
@@ -23,23 +24,67 @@
 /* height: 150px; */
 /* } */
 
+.grid div {
+  height: 150px;
+}
+
 .grid div:nth-child(1) {
-  grid-area: first;
+  grid-area: one;
   background-color: red;
 }
 .grid div:nth-child(2) {
-  grid-area: second;
+  grid-area: two;
   background-color: blue;
 }
 .grid div:nth-child(3) {
-  grid-area: third;
+  grid-area: three;
   background-color: green;
 }
 .grid div:nth-child(4) {
-  grid-area: fourth;
+  grid-area: four;
   background-color: orange;
 }
 .grid div:nth-child(5) {
-  grid-area: fifth;
+  grid-area: five;
   background-color: purple;
+}
+.grid div:nth-child(6) {
+  grid-area: six;
+  background-color: rgb(41, 152, 172);
+}
+.grid div:nth-child(7) {
+  grid-area: seven;
+  background-color: rgb(97, 97, 124);
+}
+.grid div:nth-child(8) {
+  grid-area: eight;
+  background-color: rgb(216, 48, 174);
+}
+.grid div:nth-child(9) {
+  grid-area: nine;
+  background-color: rgb(177, 148, 93);
+}
+.grid div:nth-child(10) {
+  grid-area: ten;
+  background-color: rgb(59, 4, 59);
+}
+.grid div:nth-child(11) {
+  grid-area: eleven;
+  background-color: rgb(136, 47, 47);
+}
+.grid div:nth-child(12) {
+  grid-area: twelve;
+  background-color: rgb(141, 141, 235);
+}
+.grid div:nth-child(13) {
+  grid-area: thirteen;
+  background-color: rgb(77, 109, 77);
+}
+.grid div:nth-child(14) {
+  grid-area: fourteen;
+  background-color: rgb(85, 59, 10);
+}
+.grid div:nth-child(15) {
+  grid-area: fifteen;
+  background-color: rgb(230, 192, 230);
 }
