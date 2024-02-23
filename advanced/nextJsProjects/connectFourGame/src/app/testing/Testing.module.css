@@ -2,12 +2,13 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 150px);
+  gap: 24px 0px;
   grid-template-areas:
-    "three four five"
-    "three four five"
-    "three four five"
-    "one two two"
-    "one two two";
+    "two two three"
+    "four five six"
+    "seven eight nine"
+    "ten eleven twelve"
+    "thirteen one one";
 }
 
 /* grid-template-areas requires a grid. We need grid-template-columns and gr */
