@@ -4,7 +4,7 @@
   grid-template-rows: repeat(5, 150px);
   gap: 24px 0px;
   grid-template-areas:
-    "two two three"
+    "one two three"
     "four five six"
     "seven eight nine"
     "ten eleven twelve"
@@ -14,13 +14,20 @@
 /* grid-template-areas requires a grid. We need grid-template-columns and gr */
 /* .grid div { */
 /* this will make each div height max at 150px. each div will not match the grid-template-area
-  grid-template-areas:
-    "third fourth fifth"
-    "third fourth fifth"
-    "third fourth fifth"
-    "first second second"
-    "first second second";
+grid-template-areas:
+  "third fourth fifth"
+  "third fourth fifth"
+  "third fourth fifth"
+  "first second second"
+  "first second second";
 }
+can't use one element in two different part of the grid-template-area
+grid-template-areas:
+    "one two three"
+    "four five six"
+    "seven eight nine"
+    "ten eleven twelve"
+    "thirteen one one";
   */
 /* height: 150px; */
 /* } */
