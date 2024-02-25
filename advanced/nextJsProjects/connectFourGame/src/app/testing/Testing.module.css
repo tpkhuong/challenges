@@ -1,14 +1,15 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, 150px);
+  grid-template-rows: repeat(6, 150px);
   gap: 24px 0px;
   grid-template-areas:
-    "one two three"
+    "three three three"
     "four five six"
     "seven eight nine"
     "ten eleven twelve"
-    "thirteen one one";
+    "thirteen one one"
+    "fourteen fourteen fifteen";
 }
 
 /* grid-template-areas requires a grid. We need grid-template-columns and gr */
@@ -26,6 +27,18 @@ grid-template-areas:
     "one two three"
     "four five six"
     "seven eight nine"
+    "ten eleven twelve"
+    "thirteen one one";
+  */
+/* having each div height at 150px then wanting to use grid-template-areas to have an element take up to space vertical will not work
+  because each div is max height will be 150px
+  when we have these declarations there will be an empty row. Based on the bottom declartion for grid-template-areas
+  the fifth row will be blank
+   grid-template-areas:
+    "three three three"
+    "four five six"
+    "seven eight nine"
+    "ten eleven twelve"
     "ten eleven twelve"
     "thirteen one one";
   */

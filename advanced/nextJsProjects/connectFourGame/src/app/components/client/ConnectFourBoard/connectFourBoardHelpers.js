@@ -8109,6 +8109,9 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
   if (Array.isArray(isConnectFour) && isConnectFour.length == 4) {
     console.log("isConnectFour", isConnectFour);
     console.log("winner");
+    /** 
+     * move return statement below to bottom of this if statement to test our algorithm
+     * **/ 
     return "winner";
     // when we get here it means isConnectFour is an array with four objs
     // get values of position of obj in array
