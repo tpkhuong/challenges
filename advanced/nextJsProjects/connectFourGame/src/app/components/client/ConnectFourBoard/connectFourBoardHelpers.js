@@ -8109,10 +8109,6 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
   if (Array.isArray(isConnectFour) && isConnectFour.length == 4) {
     console.log("isConnectFour", isConnectFour);
     console.log("winner");
-    /** 
-     * move return statement below to bottom of this if statement to test our algorithm
-     * **/ 
-    return "winner";
     // when we get here it means isConnectFour is an array with four objs
     // get values of position of obj in array
     // use values to find element and apply winning circle attr
@@ -8144,6 +8140,7 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
         .getElementById("game-board-bg-selector")
         .setAttribute("data-result", "playertwo");
     }
+    return "winner";
   }
   // when we get here it means isConnectFour is null meaning the length of the array is less than 4
   return null;
