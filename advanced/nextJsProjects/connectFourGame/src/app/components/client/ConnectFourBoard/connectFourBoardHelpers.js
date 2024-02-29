@@ -8140,6 +8140,11 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
         .getElementById("game-board-bg-selector")
         .setAttribute("data-result", "playertwo");
     }
+    /**
+     * find way to stop timer and remove timer
+     * to not display timer select div element with class player-turns-bg-container of PlayerTurnTimer component
+     * change attr data-playerturn to an empty string
+     * **/
     return "winner";
   }
   // when we get here it means isConnectFour is null meaning the length of the array is less than 4
