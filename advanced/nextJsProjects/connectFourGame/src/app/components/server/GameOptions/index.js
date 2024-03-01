@@ -4,6 +4,7 @@ import RulesButton from "../../client/RulesButton";
 import BackToGameMenu from "../../client/BackToGameMenu";
 
 export default function GameOptions({ children }) {
+  // testing
   return (
     <main
       id="game-options-selector"

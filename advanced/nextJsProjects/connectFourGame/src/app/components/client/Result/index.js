@@ -11,7 +11,7 @@ export default function ResultsDisplay({ children, checkingFunc }) {
       <h2 id="winner-text-selector" className={styles[`winner`]}>
         PLAYER 1
       </h2>
-      <span>WINS</span>
+      <span className={styles[`winning-text`]}>WINS</span>
       <button
         id="play-again-btn-selector"
         onClick={(event) => {

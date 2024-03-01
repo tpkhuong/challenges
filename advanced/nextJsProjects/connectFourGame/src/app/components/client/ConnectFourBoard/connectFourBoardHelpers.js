@@ -6623,6 +6623,11 @@ function rowCounter({
         .getElementById("game-board-bg-selector")
         .getAttribute("data-result");
       /**
+       * need to reset game score
+       * algorithm below will update game's score
+       * move algorithm to connectFourChecker function
+       * **/
+      /**
        * winner is player one
        * **/
       if (gameResult == "playerone") {
@@ -8142,9 +8147,20 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
     }
     /**
      * find way to stop timer and remove timer
-     * to not display timer select div element with class player-turns-bg-container of PlayerTurnTimer component
+     * to not display timer select main element with class game-board-bg-container of PlayerGameBoard component
      * change attr data-playerturn to an empty string
      * **/
+    // stop timer
+    const stopPlayerTurnTimer = JSON.parse(
+      localStorage.getItem("stopCountdown")
+    );
+    clearInterval(stopPlayerTurnTimer);
+    // don't show player turn timer
+    const playerTurnDisplayer = document.getElementById(
+      "game-board-bg-selector"
+    );
+    // change attr
+    playerTurnDisplayer.setAttribute("data-playerturn", "");
     return "winner";
   }
   // when we get here it means isConnectFour is null meaning the length of the array is less than 4

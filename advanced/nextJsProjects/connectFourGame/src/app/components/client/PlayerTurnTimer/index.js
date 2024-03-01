@@ -7,6 +7,7 @@ export default function PlayerTurnTimer({ children }) {
   return (
     <React.Fragment>
       <div
+        id="player-turns-container-selector"
         onClick={(event) => {
           // countdownTimer(document.getElementById("turn-countdown-selector"));
         }}
