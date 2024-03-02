@@ -5719,7 +5719,6 @@ function rowCounter({
   convertToText,
   getValuesForCheckFunc,
   connectFourChecker,
-  testLoopGoingUp,
   testLoopGoingDown,
   testLoopGoingLeft,
   testLoopGoingRight,
@@ -5774,7 +5773,10 @@ function rowCounter({
     columnSeven: 0,
     moveCounter: 0,
   };
-
+  /**
+   * start working on updating gameFunctionsObj when a player wins the game
+   * start looking at function placeHolder
+   * **/
   const gameFunctionsObj = {
     playerOneScore: 0,
     playerTwoScore: 0,
@@ -5809,7 +5811,6 @@ function rowCounter({
         convertToText,
         getValuesForCheckFunc,
         connectFourChecker,
-        testLoopGoingUp,
         testLoopGoingDown,
         testLoopGoingLeft,
         testLoopGoingRight,
@@ -6036,7 +6037,6 @@ function rowCounter({
         convertToText,
         getValuesForCheckFunc,
         connectFourChecker,
-        testLoopGoingUp,
         testLoopGoingDown,
         testLoopGoingLeft,
         testLoopGoingRight,
@@ -6252,7 +6252,6 @@ function rowCounter({
         convertToText,
         getValuesForCheckFunc,
         connectFourChecker,
-        testLoopGoingUp,
         testLoopGoingDown,
         testLoopGoingLeft,
         testLoopGoingRight,
@@ -6468,7 +6467,6 @@ function rowCounter({
         convertToText,
         getValuesForCheckFunc,
         connectFourChecker,
-        testLoopGoingUp,
         testLoopGoingDown,
         testLoopGoingLeft,
         testLoopGoingRight,
@@ -6502,7 +6500,6 @@ function rowCounter({
         convertToText,
         getValuesForCheckFunc,
         connectFourChecker,
-        testLoopGoingUp,
         testLoopGoingDown,
         testLoopGoingLeft,
         testLoopGoingRight,
@@ -6536,7 +6533,6 @@ function rowCounter({
         convertToText,
         getValuesForCheckFunc,
         connectFourChecker,
-        testLoopGoingUp,
         testLoopGoingDown,
         testLoopGoingLeft,
         testLoopGoingRight,
@@ -6570,7 +6566,6 @@ function rowCounter({
         convertToText,
         getValuesForCheckFunc,
         connectFourChecker,
-        testLoopGoingUp,
         testLoopGoingDown,
         testLoopGoingLeft,
         testLoopGoingRight,
@@ -6622,6 +6617,28 @@ function rowCounter({
       const gameResult = document
         .getElementById("game-board-bg-selector")
         .getAttribute("data-result");
+
+      /**
+       * reset game score to 0 for both player one and two
+       * and in gameFunctionsObj
+       * **/
+      if (gameResult == "null") {
+        // reset score in game functions obj
+        gameFunctionsObj.playerOneScore = 0;
+        gameFunctionsObj.playerTwoScore = 0;
+        // reset display
+        // first player
+        const firstPlayerScoreSpanElement = document.getElementById(
+          "player-score-selector-first"
+        ).childNodes[2];
+        firstPlayerScoreSpanElement.textContent = `${gameFunctionsObj.playerOneScore}`;
+        // second player
+        const secondPlayerScoreSpanElement = document.getElementById(
+          "player-score-selector-second"
+        ).childNodes[2];
+        secondPlayerScoreSpanElement.textContent -
+          `${gameFunctionsObj.playerTwoScore}`;
+      }
       /**
        * need to reset game score
        * algorithm below will update game's score
@@ -6790,7 +6807,6 @@ export const checking = rowCounter({
   convertToText,
   getValuesForCheckFunc,
   connectFourChecker,
-  testLoopGoingUp,
   testLoopGoingDown,
   testLoopGoingLeft,
   testLoopGoingRight,
@@ -6832,7 +6848,6 @@ function placeHolder({
   convertToText,
   getValuesForCheckFunc,
   connectFourChecker,
-  testLoopGoingUp,
   testLoopGoingDown,
   testLoopGoingLeft,
   testLoopGoingRight,
@@ -7616,12 +7631,10 @@ function testLoopGoingUp(array, row, column) {
       console.log(currentObj);
       console.log(arrayOfObjs, "arrayOfObjs");
       if (currentChip == arrayOfObjs[arrayOfObjs.length - 1].playerChip) {
-        console.log("add to arrayOfObjs testLoopGoingUp");
         arrayOfObjs.push(currentObj);
       } else {
         // to break out of our function/loop
         console.log(arrayOfObjs, "arrayOfObjs of break else statement");
-        console.log("break the loop testLoopGoingUp");
         return arrayOfObjs;
       }
       // console.log(previousValue);
