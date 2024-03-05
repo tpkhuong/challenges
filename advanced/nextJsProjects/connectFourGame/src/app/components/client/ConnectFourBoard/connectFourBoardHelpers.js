@@ -5807,6 +5807,7 @@ function rowCounter({
         chipNodeColumnValue: first,
         childNodeValue: 0,
         arrayNodes: arrayOfChipNodes,
+        gameFuncObj: gameFunctionsObj,
         countdownTimer,
         convertToText,
         getValuesForCheckFunc,
@@ -6033,6 +6034,7 @@ function rowCounter({
         chipNodeColumnValue: second,
         childNodeValue: 1,
         arrayNodes: arrayOfChipNodes,
+        gameFuncObj: gameFunctionsObj,
         countdownTimer,
         convertToText,
         getValuesForCheckFunc,
@@ -6248,6 +6250,7 @@ function rowCounter({
         chipNodeColumnValue: third,
         childNodeValue: 2,
         arrayNodes: arrayOfChipNodes,
+        gameFuncObj: gameFunctionsObj,
         countdownTimer,
         convertToText,
         getValuesForCheckFunc,
@@ -6463,6 +6466,7 @@ function rowCounter({
         chipNodeColumnValue: fourth,
         childNodeValue: 3,
         arrayNodes: arrayOfChipNodes,
+        gameFuncObj: gameFunctionsObj,
         countdownTimer,
         convertToText,
         getValuesForCheckFunc,
@@ -6496,6 +6500,7 @@ function rowCounter({
         chipNodeColumnValue: fifth,
         childNodeValue: 4,
         arrayNodes: arrayOfChipNodes,
+        gameFuncObj: gameFunctionsObj,
         countdownTimer,
         convertToText,
         getValuesForCheckFunc,
@@ -6529,6 +6534,7 @@ function rowCounter({
         chipNodeColumnValue: sixth,
         childNodeValue: 5,
         arrayNodes: arrayOfChipNodes,
+        gameFuncObj: gameFunctionsObj,
         countdownTimer,
         convertToText,
         getValuesForCheckFunc,
@@ -6562,6 +6568,7 @@ function rowCounter({
         chipNodeColumnValue: seventh,
         childNodeValue: 6,
         arrayNodes: arrayOfChipNodes,
+        gameFuncObj: gameFunctionsObj,
         countdownTimer,
         convertToText,
         getValuesForCheckFunc,
@@ -6846,6 +6853,7 @@ function placeHolder({
   arrayNodes,
   countdownTimer,
   convertToText,
+  gameFuncObj,
   getValuesForCheckFunc,
   connectFourChecker,
   testLoopGoingDown,
@@ -6977,6 +6985,7 @@ function placeHolder({
         console.log("this is the 7th move");
         methodsForRowSix[convertToText(column)]({
           arrayNodes,
+          gameFuncObj,
           positionRow,
           positionColumn,
           testLoopGoingLeft,
@@ -7059,6 +7068,7 @@ function placeHolder({
         console.log("this is the 7th move");
         methodsForRowFive[convertToText(column)]({
           arrayNodes,
+          gameFuncObj,
           positionRow,
           positionColumn,
           testLoopGoingLeft,
@@ -7149,6 +7159,7 @@ function placeHolder({
         console.log("this is the 7th move");
         methodsForRowFour[convertToText(column)]({
           arrayNodes,
+          gameFuncObj,
           positionRow,
           positionColumn,
           testLoopGoingLeft,
@@ -7241,6 +7252,7 @@ function placeHolder({
         console.log("this is the 7th move row 3");
         methodsForRowThree[convertToText(column)]({
           arrayNodes,
+          gameFuncObj,
           positionRow,
           positionColumn,
           testLoopGoingLeft,
@@ -7327,6 +7339,7 @@ function placeHolder({
         console.log("this is the 7th move row 2");
         methodsForRowTwo[convertToText(column)]({
           arrayNodes,
+          gameFuncObj,
           positionRow,
           positionColumn,
           testLoopGoingLeft,
@@ -7421,6 +7434,7 @@ function placeHolder({
         console.log("this is the 7th move row 1");
         methodsForRowOne[convertToText(column)]({
           arrayNodes,
+          gameFuncObj,
           positionRow,
           positionColumn,
           testLoopGoingLeft,
