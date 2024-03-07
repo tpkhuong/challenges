@@ -10,6 +10,7 @@ const diagonalTopRightBottomLeftChips = createTwoWayArraysFunctions();
 const methodsForRowOne = {
   first: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpRight,
@@ -18,6 +19,9 @@ const methodsForRowOne = {
     connectFourChecker,
   }) {
     console.log("first column");
+    console.log("gameFuncObj before", gameFuncObj);
+    gameFuncObj.playerOneScore = gameFuncObj.playerOneScore + 1;
+    console.log("gameFuncObj after", gameFuncObj);
     /**
      * not using for loop
      * **/
@@ -93,6 +97,7 @@ const methodsForRowOne = {
   },
   second: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     testLoopGoingLeft,
@@ -103,6 +108,9 @@ const methodsForRowOne = {
     horizontalChips,
   }) {
     console.log("second column");
+    console.log("gameFuncObj before", gameFuncObj);
+    gameFuncObj.playerTwoScore = gameFuncObj.playerTwoScore + 1;
+    console.log("gameFuncObj after", gameFuncObj);
     /**
      * not using for loop
      * **/
@@ -199,6 +207,7 @@ const methodsForRowOne = {
   },
   third: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     testLoopGoingLeft,
@@ -209,6 +218,9 @@ const methodsForRowOne = {
     horizontalChips,
   }) {
     console.log("third column");
+    console.log("gameFuncObj before", gameFuncObj);
+    gameFuncObj.playerOneScore = gameFuncObj.playerOneScore + 1;
+    console.log("gameFuncObj after", gameFuncObj);
     console.log("arrayNodes", arrayNodes);
     console.log("positionRow", positionRow);
     console.log("positionColumn", positionColumn);
@@ -304,6 +316,7 @@ const methodsForRowOne = {
   },
   fourth: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     testLoopGoingLeft,
@@ -315,6 +328,9 @@ const methodsForRowOne = {
     horizontalChips,
   }) {
     console.log("fourth column");
+    console.log("gameFuncObj before", gameFuncObj);
+    gameFuncObj.playerTwoScore = gameFuncObj.playerTwoScore + 1;
+    console.log("gameFuncObj after", gameFuncObj);
     // goingLeft, topLeft, topRight and right
     /**
      * not using for loop
@@ -430,6 +446,7 @@ const methodsForRowOne = {
   },
   fifth: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     testLoopGoingLeft,
@@ -440,6 +457,9 @@ const methodsForRowOne = {
     horizontalChips,
   }) {
     console.log("fifth column");
+    console.log("gameFuncObj before", gameFuncObj);
+    gameFuncObj.playerOneScore = gameFuncObj.playerOneScore + 1;
+    console.log("gameFuncObj after", gameFuncObj);
     // goingLeft, topLeft, and right
     /**
      * not using for loop
@@ -525,6 +545,7 @@ const methodsForRowOne = {
   },
   sixth: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     testLoopGoingLeft,
@@ -534,6 +555,9 @@ const methodsForRowOne = {
     connectFourChecker,
   }) {
     console.log("sixth column");
+    console.log("gameFuncObj before", gameFuncObj);
+    gameFuncObj.playerTwoScore = gameFuncObj.playerTwoScore + 1;
+    console.log("gameFuncObj after", gameFuncObj);
     // goingLeft, topLeft
     /**
      * not using for loop
@@ -618,6 +642,7 @@ const methodsForRowOne = {
   },
   seventh: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     testLoopGoingLeft,
@@ -626,6 +651,9 @@ const methodsForRowOne = {
     connectFourChecker,
   }) {
     console.log("seventh column");
+    console.log("gameFuncObj before", gameFuncObj);
+    gameFuncObj.playerOneScore = gameFuncObj.playerOneScore + 1;
+    console.log("gameFuncObj after", gameFuncObj);
     // goingLeft, topLeft
     /**
      * not using for loop
@@ -6628,6 +6656,7 @@ function rowCounter({
       /**
        * reset game score to 0 for both player one and two
        * and in gameFunctionsObj
+       * WHEN A USER CLICK "PLAY AGAIN" BUTTON IT SHOULD NOT RESET SCORE TO 0
        * **/
       if (gameResult == "null") {
         // reset score in game functions obj
