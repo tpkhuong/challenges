@@ -6634,10 +6634,19 @@ function rowCounter({
       event.target.getAttribute("id") == "play-again-btn-selector"
     ) {
       // this is result component and 'play again' button clicked
+
       console.log(
         "this is if statement for !event.target.getAttribute(data-column) && event.target.getAttribute(id) == play-again-btn-selector"
       );
       console.log(gameFunctionsObj, "gameFunctionsObj");
+      /**
+       * Reset game board
+       * **/
+      // use array below to remove winning circles on winning chips
+      console.log(
+        "this is testArray from local storage",
+        JSON.parse(localStorage.getItem("testArray"))
+      );
       // reset arrayOfChipNodes
       // loop through arrayOfChipNodes and assign each index of arrayOfChipNodes to
       // this array [null, null, null, null, null, null, null]
@@ -6649,32 +6658,32 @@ function rowCounter({
         arrayOfChipNodes
       );
       // get value of attr data-result of element with id="game-board-bg-selector"
-      const gameResult = document
-        .getElementById("game-board-bg-selector")
-        .getAttribute("data-result");
+      // const gameResult = document
+      //   .getElementById("game-board-bg-selector")
+      //   .getAttribute("data-result");
 
       /**
        * reset game score to 0 for both player one and two
        * and in gameFunctionsObj
        * WHEN A USER CLICK "PLAY AGAIN" BUTTON IT SHOULD NOT RESET SCORE TO 0
        * **/
-      if (gameResult == "null") {
-        // reset score in game functions obj
-        gameFunctionsObj.playerOneScore = 0;
-        gameFunctionsObj.playerTwoScore = 0;
-        // reset display
-        // first player
-        const firstPlayerScoreSpanElement = document.getElementById(
-          "player-score-selector-first"
-        ).childNodes[2];
-        firstPlayerScoreSpanElement.textContent = `${gameFunctionsObj.playerOneScore}`;
-        // second player
-        const secondPlayerScoreSpanElement = document.getElementById(
-          "player-score-selector-second"
-        ).childNodes[2];
-        secondPlayerScoreSpanElement.textContent -
-          `${gameFunctionsObj.playerTwoScore}`;
-      }
+      // if (gameResult == "null") {
+      //   // reset score in game functions obj
+      //   gameFunctionsObj.playerOneScore = 0;
+      //   gameFunctionsObj.playerTwoScore = 0;
+      //   // reset display
+      //   // first player
+      //   const firstPlayerScoreSpanElement = document.getElementById(
+      //     "player-score-selector-first"
+      //   ).childNodes[2];
+      //   firstPlayerScoreSpanElement.textContent = `${gameFunctionsObj.playerOneScore}`;
+      //   // second player
+      //   const secondPlayerScoreSpanElement = document.getElementById(
+      //     "player-score-selector-second"
+      //   ).childNodes[2];
+      //   secondPlayerScoreSpanElement.textContent -
+      //     `${gameFunctionsObj.playerTwoScore}`;
+      // }
       /**
        * need to reset game score
        * algorithm below will update game's score
@@ -6683,21 +6692,21 @@ function rowCounter({
       /**
        * winner is player one
        * **/
-      if (gameResult == "playerone") {
-        // update score in gameFunctionsObj
-        gameFunctionsObj.playerOneScore = gameFunctionsObj.playerOneScore + 1;
-        // update UI
-        // use id="player-score-selector-first" and id="player-score-selector-second"
-        // use value of gameFunctionsObj.playerOneScore
-        const firstPlayerScoreSpanElement = document.getElementById(
-          "player-score-selector-first"
-        ).childNodes[2];
-        firstPlayerScoreSpanElement.textContent = `${gameFunctionsObj.playerOneScore}`;
-        console.log(
-          "gameFunctionsObj in if state for playerone",
-          gameFunctionsObj
-        );
-      }
+      // if (gameResult == "playerone") {
+      //   // update score in gameFunctionsObj
+      //   gameFunctionsObj.playerOneScore = gameFunctionsObj.playerOneScore + 1;
+      //   // update UI
+      //   // use id="player-score-selector-first" and id="player-score-selector-second"
+      //   // use value of gameFunctionsObj.playerOneScore
+      //   const firstPlayerScoreSpanElement = document.getElementById(
+      //     "player-score-selector-first"
+      //   ).childNodes[2];
+      //   firstPlayerScoreSpanElement.textContent = `${gameFunctionsObj.playerOneScore}`;
+      //   console.log(
+      //     "gameFunctionsObj in if state for playerone",
+      //     gameFunctionsObj
+      //   );
+      // }
       // const gameFunctionsObj = {
       //   playerOneScore: 0,
       //   playerTwoScore: 0,
@@ -6705,21 +6714,21 @@ function rowCounter({
       /**
        * winner is player two
        * **/
-      if (gameResult == "playertwo") {
-        // update score in gameFunctionsObj
-        gameFunctionsObj.playerTwoScore = gameFunctionsObj.playerTwoScore + 1;
-        // update UI
-        // use id="player-score-selector-second"
-        // use value of gameFunctionsObj.playerTwoScore
-        const secondPlayerScoreSpanElement = document.getElementById(
-          "player-score-selector-second"
-        ).childNodes[2];
-        secondPlayerScoreSpanElement.textContent = `${gameFunctionsObj.playerTwoScore}`;
-        console.log(
-          "gameFunctionsObj in if state for playertwo",
-          gameFunctionsObj
-        );
-      }
+      // if (gameResult == "playertwo") {
+      //   // update score in gameFunctionsObj
+      //   gameFunctionsObj.playerTwoScore = gameFunctionsObj.playerTwoScore + 1;
+      //   // update UI
+      //   // use id="player-score-selector-second"
+      //   // use value of gameFunctionsObj.playerTwoScore
+      //   const secondPlayerScoreSpanElement = document.getElementById(
+      //     "player-score-selector-second"
+      //   ).childNodes[2];
+      //   secondPlayerScoreSpanElement.textContent = `${gameFunctionsObj.playerTwoScore}`;
+      //   console.log(
+      //     "gameFunctionsObj in if state for playertwo",
+      //     gameFunctionsObj
+      //   );
+      // }
       // reset game board to blanks
       // how do we want to accomplish this?
       // div children of div with id="row-1" to id="row-6"
@@ -6802,6 +6811,26 @@ function rowCounter({
             divElement.setAttribute("data-playerchip", "");
           }
         });
+      /**
+       * reset result and playerstartedgame
+       * **/
+      const mainElementGameBoard = document.getElementById(
+        "game-board-bg-selector"
+      );
+      // get value of attr data-playerstartedgame of element with id="game-board-bg-selector"
+      const playerStartedGame = mainElementGameBoard.getAttribute(
+        "data-playerstartedgame"
+      );
+      // if playerStartedGame is "one" set data-playerstartedgame to "two"
+      if (playerStartedGame == "one") {
+        mainElementGameBoard.setAttribute("data-playerstartedgame", "two");
+      }
+      // if playerStartedGame is "two" set data-playerstartedgame to "one"
+      if (playerStartedGame == "two") {
+        mainElementGameBoard.setAttribute("data-playerstartedgame", "one");
+      }
+      // set value of data-result to "null"
+      mainElementGameBoard.setAttribute("data-result", "null");
       return;
     }
     const columnClicked = event.target.getAttribute("data-column");
@@ -8183,6 +8212,7 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
           "true"
         );
     });
+    localStorage.setItem("testArray", JSON.stringify(isConnectFour));
     // get value of property playerChip of obj values in array returned from executing/calling/envoking
     // function getValuesForCheckFunc
     const firstObjOfConnectFourArray = isConnectFour[0];
@@ -8193,6 +8223,9 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
       document
         .getElementById("game-board-bg-selector")
         .setAttribute("data-result", "playerone");
+      /**
+       * update player score here
+       * **/
     }
     if (valueOfStringOneOrTwo == "two") {
       // player two wins
@@ -8200,6 +8233,9 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
       document
         .getElementById("game-board-bg-selector")
         .setAttribute("data-result", "playertwo");
+      /**
+       * update player score here
+       * **/
     }
     /**
      * find way to stop timer and remove timer
