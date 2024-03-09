@@ -6643,9 +6643,12 @@ function rowCounter({
        * Reset game board
        * **/
       // use array below to remove winning circles on winning chips
+      const arrayOfWinningChips = JSON.parse(
+        localStorage.getItem("arrayOfFourItems")
+      );
       console.log(
-        "this is testArray from local storage",
-        JSON.parse(localStorage.getItem("testArray"))
+        "this is arrayOfWinningChips from local storage",
+        arrayOfWinningChips
       );
       // reset arrayOfChipNodes
       // loop through arrayOfChipNodes and assign each index of arrayOfChipNodes to
@@ -7423,6 +7426,9 @@ function placeHolder({
 
   // row 1
   if (columnObj[columnCounter] == 1) {
+    /**
+     * will want to prevent user from clicking on board during animation
+     * **/
     // each row has seven columns
     // chipNodeColumnValue use the value assigned to this variable
     // first: up, diagonalTopRight, right
@@ -8212,7 +8218,7 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
           "true"
         );
     });
-    localStorage.setItem("testArray", JSON.stringify(isConnectFour));
+    localStorage.setItem("arrayOfFourItems", JSON.stringify(isConnectFour));
     // get value of property playerChip of obj values in array returned from executing/calling/envoking
     // function getValuesForCheckFunc
     const firstObjOfConnectFourArray = isConnectFour[0];
