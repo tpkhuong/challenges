@@ -6650,6 +6650,22 @@ function rowCounter({
         "this is arrayOfWinningChips from local storage",
         arrayOfWinningChips
       );
+      // assign string value "false" to div element with attr data-connectfour
+      // of div element with id="row-1" to"row-6"
+      arrayOfWinningChips.forEach(function loopThroughArrayRemoveAttr(
+        obj,
+        index,
+        list
+      ) {
+        const [chipRow, chipColumn] = obj.chipPosition;
+        // select clip element and remove winning circle attr
+        document
+          .getElementById(`row-${chipRow}`)
+          .children[chipColumn - 1].children[3].setAttribute(
+            "data-connectfour",
+            "false"
+          );
+      });
       // reset arrayOfChipNodes
       // loop through arrayOfChipNodes and assign each index of arrayOfChipNodes to
       // this array [null, null, null, null, null, null, null]
