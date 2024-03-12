@@ -8246,7 +8246,7 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
         .getElementById("game-board-bg-selector")
         .setAttribute("data-result", "playerone");
       /**
-       * update player score here
+       * update player score here. winner is player one
        * **/
     }
     if (valueOfStringOneOrTwo == "two") {
@@ -8256,7 +8256,7 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
         .getElementById("game-board-bg-selector")
         .setAttribute("data-result", "playertwo");
       /**
-       * update player score here
+       * update player score here. winner is player two
        * **/
     }
     /**
