@@ -51,7 +51,8 @@ const methodsForRowOne = {
     // check winner going right
     const isWinnerGoingRight = connectFourChecker(
       getValuesForCheckFunc,
-      arrayOfChipsGoingRight
+      arrayOfChipsGoingRight,
+      gameFuncObj
     );
 
     console.log("isWinnerGoingRight", isWinnerGoingRight);
@@ -140,7 +141,8 @@ const methodsForRowOne = {
     // check winner going right
     const isWinnerGoingRight = connectFourChecker(
       getValuesForCheckFunc,
-      arrayOfChipsGoingRight
+      arrayOfChipsGoingRight,
+      gameFuncObj
     );
 
     console.log("isWinnerGoingRight", isWinnerGoingRight);
@@ -237,7 +239,8 @@ const methodsForRowOne = {
     // check winner going up right
     const isWinnerGoingTopRight = connectFourChecker(
       getValuesForCheckFunc,
-      arrayOfChipsGoingTopRight
+      arrayOfChipsGoingTopRight,
+      gameFuncObj
     );
     console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
     if (isWinnerGoingTopRight == "winner") {
@@ -344,7 +347,8 @@ const methodsForRowOne = {
     // check winner going left
     const isWinnerGoingLeft = connectFourChecker(
       getValuesForCheckFunc,
-      arrayOfChipsGoingLeft
+      arrayOfChipsGoingLeft,
+      gameFuncObj
     );
     console.log("isWinnerGoingLeft", isWinnerGoingLeft);
     if (isWinnerGoingLeft == "winner") {
@@ -473,7 +477,8 @@ const methodsForRowOne = {
     // check winner going left
     const isWinnerGoingLeft = connectFourChecker(
       getValuesForCheckFunc,
-      arrayOfChipsGoingLeft
+      arrayOfChipsGoingLeft,
+      gameFuncObj
     );
     console.log("isWinnerGoingLeft", isWinnerGoingLeft);
     if (isWinnerGoingLeft == "winner") {
@@ -571,7 +576,8 @@ const methodsForRowOne = {
     // check for winner going left
     const isWinnerGoingLeft = connectFourChecker(
       getValuesForCheckFunc,
-      arrayOfChipsGoingLeft
+      arrayOfChipsGoingLeft,
+      gameFuncObj
     );
     console.log("isWinnerGoingLeft", isWinnerGoingLeft);
     if (isWinnerGoingLeft == "winner") {
@@ -667,7 +673,8 @@ const methodsForRowOne = {
     // check for winner going left
     const isWinnerGoingLeft = connectFourChecker(
       getValuesForCheckFunc,
-      arrayOfChipsGoingLeft
+      arrayOfChipsGoingLeft,
+      gameFuncObj
     );
     console.log("isWinnerGoingLeft", isWinnerGoingLeft);
     if (isWinnerGoingLeft == "winner") {
@@ -8213,7 +8220,7 @@ function getValuesForCheckFunc(array) {
   }
 }
 
-function connectFourChecker(getValuesForCheckFunc, arrays) {
+function connectFourChecker(getValuesForCheckFunc, arrays, gameFuncObj) {
   console.log("this is checker");
   // find out value of calling/executing func getValuesForCheckFunc
   const isConnectFour = getValuesForCheckFunc(arrays);
@@ -8239,22 +8246,30 @@ function connectFourChecker(getValuesForCheckFunc, arrays) {
     // function getValuesForCheckFunc
     const firstObjOfConnectFourArray = isConnectFour[0];
     const valueOfStringOneOrTwo = firstObjOfConnectFourArray.playerChip;
+    const gameBoardElement = document.getElementById("game-board-bg-selector");
+
+    // const gameResultForConnectFour = gameBoardElement.getAttribute("data-result");
+
     if (valueOfStringOneOrTwo == "one") {
       // player one wins
       // update value of attr data-result of element with id="game-board-bg-selector"
-      document
-        .getElementById("game-board-bg-selector")
-        .setAttribute("data-result", "playerone");
+      gameBoardElement.setAttribute("data-result", "playerone");
+      console.log("gameFuncObj before", gameFuncObj);
       /**
        * update player score here. winner is player one
        * **/
+      // update score in gameFuncObj
+      gameFuncObj.playerOneScore = gameFuncObj.playerOneScore + 1;
+      const firstPlayerScoreSpanElement = document.getElementById(
+        "player-score-selector-first"
+      ).childNodes[2];
+      firstPlayerScoreSpanElement.textContent = `${gameFuncObj.playerOneScore}`;
+      console.log("gameFuncObj after", gameFuncObj);
     }
     if (valueOfStringOneOrTwo == "two") {
       // player two wins
       // update value of attr data-result of element with id="game-board-bg-selector"
-      document
-        .getElementById("game-board-bg-selector")
-        .setAttribute("data-result", "playertwo");
+      gameBoardElement.setAttribute("data-result", "playertwo");
       /**
        * update player score here. winner is player two
        * **/
