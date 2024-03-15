@@ -8264,6 +8264,10 @@ function connectFourChecker(getValuesForCheckFunc, arrays, gameFuncObj) {
         "player-score-selector-first"
       ).childNodes[2];
       firstPlayerScoreSpanElement.textContent = `${gameFuncObj.playerOneScore}`;
+      /**
+       * need to move code that update players score out of connectFourChecker func
+       * we are running this func multiple times.
+       * **/
       console.log("gameFuncObj after", gameFuncObj);
     }
     if (valueOfStringOneOrTwo == "two") {
@@ -8273,14 +8277,14 @@ function connectFourChecker(getValuesForCheckFunc, arrays, gameFuncObj) {
       /**
        * update player score here. winner is player two
        * **/
-      console.log("gameFuncObj before", gameFuncObj);
-      // update score in gameFuncObj
-      gameFuncObj.playerTwoScore = gameFuncObj.playerTwoScore + 1;
-      const secondPlayerScoreSpanElement = document.getElementById(
-        "player-score-selector-second"
-      ).childNodes[2];
-      secondPlayerScoreSpanElement.textContent = `${gameFuncObj.playerTwoScore}`;
-      console.log("gameFuncObj after", gameFuncObj);
+      // console.log("gameFuncObj before", gameFuncObj);
+      // // update score in gameFuncObj
+      // gameFuncObj.playerTwoScore = gameFuncObj.playerTwoScore + 1;
+      // const secondPlayerScoreSpanElement = document.getElementById(
+      //   "player-score-selector-second"
+      // ).childNodes[2];
+      // secondPlayerScoreSpanElement.textContent = `${gameFuncObj.playerTwoScore}`;
+      // console.log("gameFuncObj after", gameFuncObj);
     }
     /**
      * find way to stop timer and remove timer
