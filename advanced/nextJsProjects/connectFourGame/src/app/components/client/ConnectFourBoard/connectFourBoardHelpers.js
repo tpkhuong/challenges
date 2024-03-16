@@ -19,9 +19,9 @@ const methodsForRowOne = {
     connectFourChecker,
   }) {
     console.log("first column");
-    console.log("gameFuncObj before", gameFuncObj);
-    gameFuncObj.playerOneScore = gameFuncObj.playerOneScore + 1;
-    console.log("gameFuncObj after", gameFuncObj);
+    // console.log("gameFuncObj before", gameFuncObj);
+    // gameFuncObj.playerOneScore = gameFuncObj.playerOneScore + 1;
+    // console.log("gameFuncObj after", gameFuncObj);
     /**
      * not using for loop
      * **/
