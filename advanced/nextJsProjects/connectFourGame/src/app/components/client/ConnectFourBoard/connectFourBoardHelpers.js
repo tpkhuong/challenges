@@ -34,9 +34,9 @@ function updateGameScore({ convertString, gameFuncObj, str }) {
     `player-score-selector-${spelledOutStr}`
   ).childNodes[2];
   console.log(playerScoreSpanElement, "playerScoreSpanElement");
-  // playerScoreSpanElement.textContent = `${
-  //   gameFuncObj[`player${uppercasedFirstStr}Score`]
-  // }`;
+  playerScoreSpanElement.textContent = `${
+    gameFuncObj[`player${uppercasedFirstStr}Score`]
+  }`;
 }
 
 // row one methodsForRowOne
@@ -74,11 +74,11 @@ const methodsForRowOne = {
     console.log("isWinnerGoingUpRight", isWinnerGoingUpRight.gameResult);
     if (isWinnerGoingUpRight.gameResult == "winner") {
       console.log("isWinnerGoingUpRight", isWinnerGoingUpRight.gameResult);
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingUpRight.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingUpRight.winningPlayer,
+      });
       return;
     }
     // get chips going right
@@ -99,11 +99,11 @@ const methodsForRowOne = {
     if (isWinnerGoingRight.gameResult == "winner") {
       console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
       console.log("isWinnerGoingUpRight", isWinnerGoingUpRight.gameResult);
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingRight.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingRight.winningPlayer,
+      });
       return;
     }
     /**
@@ -199,11 +199,11 @@ const methodsForRowOne = {
     console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
     if (isWinnerGoingRight.gameResult == "winner") {
       console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingRight.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingRight.winningPlayer,
+      });
       return;
     }
     // get chips going left
@@ -230,11 +230,11 @@ const methodsForRowOne = {
         "isWinnerGoingHorizontal",
         isWinnerGoingHorizontal.gameResult
       );
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingHorizontal.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingHorizontal.winningPlayer,
+      });
       return;
     }
 
@@ -309,11 +309,11 @@ const methodsForRowOne = {
     console.log("isWinnerGoingTopRight", isWinnerGoingTopRight.gameResult);
     if (isWinnerGoingTopRight.gameResult == "winner") {
       console.log("isWinnerGoingTopRight", isWinnerGoingTopRight.gameResult);
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingTopRight.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingTopRight.winningPlayer,
+      });
       return;
     }
     // get chips going right
@@ -331,11 +331,11 @@ const methodsForRowOne = {
     console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
     if (isWinnerGoingRight.gameResult == "winner") {
       console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingRight.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingRight.winningPlayer,
+      });
       return;
     }
     // get chips going left
@@ -362,11 +362,11 @@ const methodsForRowOne = {
         "isWinnerGoingHorizontal",
         isWinnerGoingHorizontal.gameResult
       );
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingHorizontal.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingHorizontal.winningPlayer,
+      });
       return;
     }
 
@@ -435,11 +435,11 @@ const methodsForRowOne = {
     console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
     if (isWinnerGoingLeft.gameResult == "winner") {
       console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingLeft.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingLeft.winningPlayer,
+      });
       return;
     }
     // get chips going top left
@@ -457,11 +457,11 @@ const methodsForRowOne = {
     console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft.gameResult);
     if (isWinnerGoingTopLeft.gameResult == "winner") {
       console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft.gameResult);
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingTopLeft.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingTopLeft.winningPlayer,
+      });
       return;
     }
     // get chips going top right
@@ -479,11 +479,11 @@ const methodsForRowOne = {
     console.log("isWinnerGoingTopRight", isWinnerGoingTopRight.gameResult);
     if (isWinnerGoingTopRight.gameResult == "winner") {
       console.log("isWinnerGoingTopRight", isWinnerGoingTopRight.gameResult);
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingTopRight.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingTopRight.winningPlayer,
+      });
       return;
     }
     // get chips going right
@@ -501,11 +501,11 @@ const methodsForRowOne = {
     console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
     if (isWinnerGoingRight.gameResult == "winner") {
       console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingRight.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingRight.winningPlayer,
+      });
       return;
     }
 
@@ -526,11 +526,11 @@ const methodsForRowOne = {
         "isWinnerGoingHorizontal",
         isWinnerGoingHorizontal.gameResult
       );
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingHorizontal.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingHorizontal.winningPlayer,
+      });
       return;
     }
 
@@ -593,11 +593,11 @@ const methodsForRowOne = {
     console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
     if (isWinnerGoingLeft.gameResult == "winner") {
       console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingLeft.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingLeft.winningPlayer,
+      });
       return;
     }
     // get chips going top left
@@ -615,11 +615,11 @@ const methodsForRowOne = {
     console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft.gameResult);
     if (isWinnerGoingTopLeft.gameResult == "winner") {
       console.log("isWinnerGoingTopLeft", isWinnerGoingTopLeft.gameResult);
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingTopLeft.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingTopLeft.winningPlayer,
+      });
       return;
     }
     // get chips going right
@@ -645,11 +645,11 @@ const methodsForRowOne = {
         "isWinnerGoingHorizontal",
         isWinnerGoingHorizontal.gameResult
       );
-      // updateGameScore({
-      //   convertString,
-      //   gameFuncObj,
-      //   str: isWinnerGoingHorizontal.winningPlayer,
-      // });
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingHorizontal.winningPlayer,
+      });
       return;
     }
 
