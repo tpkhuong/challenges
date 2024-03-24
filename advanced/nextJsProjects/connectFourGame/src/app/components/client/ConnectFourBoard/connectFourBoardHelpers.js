@@ -882,6 +882,7 @@ const methodsForRowOne = {
 const methodsForRowTwo = {
   first: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpRight,
@@ -905,9 +906,14 @@ const methodsForRowTwo = {
       getValuesForCheckFunc,
       arrayOfChipsGoingUpRight
     );
-    console.log("isWinnerGoingUpRight", isWinnerGoingUpRight);
-    if (isWinnerGoingUpRight == "winner") {
-      console.log("isWinnerGoingUpRight", isWinnerGoingUpRight);
+    console.log("isWinnerGoingUpRight", isWinnerGoingUpRight.gameResult);
+    if (isWinnerGoingUpRight.gameResult == "winner") {
+      console.log("isWinnerGoingUpRight", isWinnerGoingUpRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingUpRight.winningPlayer,
+      });
       return;
     }
     // get chips going right
@@ -922,14 +928,20 @@ const methodsForRowTwo = {
       arrayOfChipsGoingRight
     );
 
-    console.log("isWinnerGoingRight", isWinnerGoingRight);
-    if (isWinnerGoingRight == "winner") {
-      console.log("isWinnerGoingRight", isWinnerGoingRight);
+    console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+    if (isWinnerGoingRight.gameResult == "winner") {
+      console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingRight.winningPlayer,
+      });
       return;
     }
   },
   second: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpRight,
@@ -1030,6 +1042,7 @@ const methodsForRowTwo = {
   },
   third: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpLeft,
@@ -1168,6 +1181,7 @@ const methodsForRowTwo = {
   },
   fourth: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpLeft,
@@ -1328,6 +1342,7 @@ const methodsForRowTwo = {
   },
   fifth: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpLeft,
@@ -1466,6 +1481,7 @@ const methodsForRowTwo = {
   },
   sixth: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpLeft,
@@ -1567,6 +1583,7 @@ const methodsForRowTwo = {
   },
   seventh: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpLeft,
@@ -7701,7 +7718,19 @@ function placeHolder({
     }, time + 250);
   }
 }
-
+/**
+ * fix bug if another player click on column while animation
+ * it will trigger animation of previous player that clicked column
+ * **/
+// when a player/user clicks on column to start animation
+// change pointer-events of div element with class front game board to auto
+// when we change player chips with function changePlayerChip
+// we will change pointer-events of div element with class front game board to none
+// add id to div element with class front game board to select it using document.getElementById
+/**
+ * fix bug if another player click on column while animation
+ * it will trigger animation of previous player that clicked column
+ * **/
 function changePlayerChip({ currentPlayerChip }) {
   // change data-playerturn value after animation
   // make this work with each column and row combination
