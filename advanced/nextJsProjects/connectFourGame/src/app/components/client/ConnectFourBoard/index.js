@@ -1481,7 +1481,10 @@ export default function ConnectFourBoard({ children }) {
         {/* front img */}
         {/* declare pointer-events: none for div with class front-game-board */}
         {/* we can click on connect for chips */}
-        <div className={styles[`front-game-board`]}>
+        <div
+          id="front-game-board-selector"
+          className={styles[`front-game-board`]}
+        >
           <picture>
             <source
               media="(min-width: 768px)"
