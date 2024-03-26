@@ -1484,6 +1484,7 @@ export default function ConnectFourBoard({ children }) {
         <div
           id="front-game-board-selector"
           className={styles[`front-game-board`]}
+          data-disableclick="false"
         >
           <picture>
             <source
