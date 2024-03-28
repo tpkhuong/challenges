@@ -142,6 +142,10 @@
 /* declare pointer-events: none for div with class front-game-board
 we can click on connect for chips */
 
+.front-game-board[data-disableclick="true"] {
+  pointer-events: all;
+}
+
 .front-game-board {
   position: absolute;
   transform: translateY(-320px);

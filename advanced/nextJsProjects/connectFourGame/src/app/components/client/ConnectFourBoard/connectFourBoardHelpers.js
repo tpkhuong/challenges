@@ -7178,6 +7178,14 @@ function placeHolder({
   );
   console.log("chipNodeColumnValue", chipNodeColumnValue);
   console.log(chipNodeElement, "chipNodeElement");
+  // stop clicking event on front game board element
+  const valueOfAttrDataDisableClick = document
+    .getElementById("front-game-board-selector")
+    .getAttribute("data-disableclick");
+  if (valueOfAttrDataDisableClick == "false")
+    document
+      .getElementById("front-game-board-selector")
+      .setAttribute("data-disableclick", "true");
   // set value of data-droppedposition attr based on current counter
   selectedColumn.setAttribute(
     "data-droppedposition",
@@ -7260,6 +7268,10 @@ function placeHolder({
     // change player
     setTimeout(() => {
       changePlayerChip({ currentPlayerChip });
+      // allow clicking on front game board element
+      document
+        .getElementById("front-game-board-selector")
+        .setAttribute("data-disableclick", "false");
     }, 250);
   }
 
@@ -7347,6 +7359,10 @@ function placeHolder({
     // change player
     setTimeout(() => {
       changePlayerChip({ currentPlayerChip });
+      // allow clicking on front game board element
+      document
+        .getElementById("front-game-board-selector")
+        .setAttribute("data-disableclick", "false");
     }, time + 250);
   }
 
@@ -7444,6 +7460,10 @@ function placeHolder({
     // change player
     setTimeout(() => {
       changePlayerChip({ currentPlayerChip });
+      // allow clicking on front game board element
+      document
+        .getElementById("front-game-board-selector")
+        .setAttribute("data-disableclick", "false");
     }, time + 250);
   }
 
@@ -7530,6 +7550,10 @@ function placeHolder({
     // change player
     setTimeout(() => {
       changePlayerChip({ currentPlayerChip });
+      // allow clicking on front game board element
+      document
+        .getElementById("front-game-board-selector")
+        .setAttribute("data-disableclick", "false");
     }, time + 250);
   }
 
@@ -7617,6 +7641,10 @@ function placeHolder({
     // change player
     setTimeout(() => {
       changePlayerChip({ currentPlayerChip });
+      // allow clicking on front game board element
+      document
+        .getElementById("front-game-board-selector")
+        .setAttribute("data-disableclick", "false");
     }, time + 250);
   }
 
@@ -7715,6 +7743,10 @@ function placeHolder({
     // change player
     setTimeout(() => {
       changePlayerChip({ currentPlayerChip });
+      // allow clicking on front game board element
+      document
+        .getElementById("front-game-board-selector")
+        .setAttribute("data-disableclick", "false");
     }, time + 250);
   }
 }
