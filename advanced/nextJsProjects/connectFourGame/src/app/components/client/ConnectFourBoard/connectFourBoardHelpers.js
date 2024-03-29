@@ -7226,8 +7226,6 @@ function placeHolder({
       column,
     });
 
-    // testingAlgorithm({ arrayNodes, positionRow, positionColumn });
-
     console.log(arrayNodes);
     // chip dropped animation
     setTimeout(() => {
@@ -7308,8 +7306,6 @@ function placeHolder({
       row,
       column,
     });
-
-    // testingAlgorithm({ arrayNodes, positionRow, positionColumn });
 
     console.log(arrayNodes);
     const time = window.innerWidth <= 378 ? 1260 : 1310;
@@ -7399,8 +7395,6 @@ function placeHolder({
       row,
       column,
     });
-
-    // testingAlgorithm({ arrayNodes, positionRow, positionColumn });
 
     console.log(arrayNodes);
     console.log(row, "row");
@@ -7501,8 +7495,6 @@ function placeHolder({
       column,
     });
 
-    // testingAlgorithm({ arrayNodes, positionRow, positionColumn });
-
     console.log(arrayNodes);
     const time = window.innerWidth <= 378 ? 1320 : 1370;
     // chip dropped animation
@@ -7591,8 +7583,6 @@ function placeHolder({
       row,
       column,
     });
-
-    // testingAlgorithm({ arrayNodes, positionRow, positionColumn });
 
     console.log(arrayNodes);
     const time = window.innerWidth <= 378 ? 1350 : 1400;
@@ -7689,8 +7679,6 @@ function placeHolder({
       row,
       column,
     });
-
-    // testingAlgorithm({ arrayNodes, positionRow, positionColumn });
 
     console.log(arrayNodes);
     const time = window.innerWidth <= 378 ? 1370 : 1420;
@@ -7853,7 +7841,6 @@ function setPlayerChip({
       chipPosition: [`${row}`, `${column}`],
     };
     // testing
-    // testingAlgorithm({ arrayNodes, positionRow, positionColumn });
   }
 }
 
@@ -8405,7 +8392,9 @@ function createTwoWayArraysFunctions() {
     //   },
     //   [{}, []]
     // );
-
+    /**
+     * refactor this
+     * **/
     console.log(testArray, "testArray");
     return [...firstArray, ...secondArray];
   };
