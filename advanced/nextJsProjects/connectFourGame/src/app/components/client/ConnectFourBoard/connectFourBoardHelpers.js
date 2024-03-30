@@ -8395,8 +8395,8 @@ function createTwoWayArraysFunctions() {
     /**
      * refactor this
      * **/
-    console.log(testArray, "testArray");
-    return [...firstArray, ...secondArray];
+    // console.log(testArray, "testArray");
+    return sortedObjsArray;
   };
 }
 
