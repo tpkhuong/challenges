@@ -965,9 +965,14 @@ const methodsForRowTwo = {
       getValuesForCheckFunc,
       arrayOfChipsGoingTopRight
     );
-    console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
-    if (isWinnerGoingTopRight == "winner") {
-      console.log("isWinnerGoingTopRight", isWinnerGoingTopRight);
+    console.log("isWinnerGoingTopRight", isWinnerGoingTopRight.gameResult);
+    if (isWinnerGoingTopRight.gameResult == "winner") {
+      console.log("isWinnerGoingTopRight", isWinnerGoingTopRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingTopRight.winningPlayer,
+      });
       return;
     }
     // get chips going right
@@ -982,9 +987,14 @@ const methodsForRowTwo = {
       arrayOfChipsGoingRight
     );
 
-    console.log("isWinnerGoingRight", isWinnerGoingRight);
-    if (isWinnerGoingRight == "winner") {
-      console.log("isWinnerGoingRight", isWinnerGoingRight);
+    console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+    if (isWinnerGoingRight.gameResult == "winner") {
+      console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingRight.winningPlayer,
+      });
       return;
     }
     // get chips going left
@@ -1004,9 +1014,17 @@ const methodsForRowTwo = {
       arrayOfChipsHorizontal
     );
 
-    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
-    if (isWinnerGoingHorizontal == "winner") {
-      console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
+    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal.gameResult);
+    if (isWinnerGoingHorizontal.gameResult == "winner") {
+      console.log(
+        "isWinnerGoingHorizontal",
+        isWinnerGoingHorizontal.gameResult
+      );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingHorizontal.winningPlayer,
+      });
       return;
     }
     // get chips going down left
@@ -1029,13 +1047,18 @@ const methodsForRowTwo = {
 
     console.log(
       "isWinnerGoingDiagonalTopRightBottomLeft",
-      isWinnerGoingDiagonalTopRightBottomLeft
+      isWinnerGoingDiagonalTopRightBottomLeft.gameResult
     );
-    if (isWinnerGoingDiagonalTopRightBottomLeft == "winner") {
+    if (isWinnerGoingDiagonalTopRightBottomLeft.gameResult == "winner") {
       console.log(
         "isWinnerGoingDiagonalTopRightBottomLeft",
-        isWinnerGoingDiagonalTopRightBottomLeft
+        isWinnerGoingDiagonalTopRightBottomLeft.gameResult
       );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDiagonalTopRightBottomLeft.winningPlayer,
+      });
       return;
     }
     // return "second";
