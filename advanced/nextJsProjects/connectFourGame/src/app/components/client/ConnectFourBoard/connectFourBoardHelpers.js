@@ -1783,6 +1783,7 @@ const methodsForRowTwo = {
 const methodsForRowThree = {
   first: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpRight,
@@ -1806,9 +1807,14 @@ const methodsForRowThree = {
       getValuesForCheckFunc,
       arrayOfChipsGoingUpRight
     );
-    console.log("isWinnerGoingUpRight", isWinnerGoingUpRight);
-    if (isWinnerGoingUpRight == "winner") {
-      console.log("isWinnerGoingUpRight", isWinnerGoingUpRight);
+    console.log("isWinnerGoingUpRight", isWinnerGoingUpRight.gameResult);
+    if (isWinnerGoingUpRight.gameResult == "winner") {
+      console.log("isWinnerGoingUpRight", isWinnerGoingUpRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingUpRight.winningPlayer,
+      });
       return;
     }
     // get chips going right
@@ -1823,9 +1829,14 @@ const methodsForRowThree = {
       arrayOfChipsGoingRight
     );
 
-    console.log("isWinnerGoingRight", isWinnerGoingRight);
-    if (isWinnerGoingRight == "winner") {
-      console.log("isWinnerGoingRight", isWinnerGoingRight);
+    console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+    if (isWinnerGoingRight.gameResult == "winner") {
+      console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingRight.winningPlayer,
+      });
       return;
     }
     return "first";
