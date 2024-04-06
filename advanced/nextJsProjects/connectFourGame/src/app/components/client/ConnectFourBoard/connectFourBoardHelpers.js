@@ -3459,6 +3459,7 @@ const methodsForRowThree = {
 const methodsForRowFour = {
   first: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     testLoopGoingDown,
@@ -3481,9 +3482,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingRight
     );
 
-    console.log("isWinnerGoingRight", isWinnerGoingRight);
-    if (isWinnerGoingRight == "winner") {
-      console.log("isWinnerGoingRight", isWinnerGoingRight);
+    console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+    if (isWinnerGoingRight.gameResult == "winner") {
+      console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingRight.winningPlayer,
+      });
       return;
     }
 
@@ -3499,32 +3505,37 @@ const methodsForRowFour = {
       arrayOfChipsGoingDownRight
     );
 
-    console.log("isWinnerGoingDownRight", isWinnerGoingDownRight);
-    if (isWinnerGoingDownRight == "winner") {
-      console.log("isWinnerGoingDownRight", isWinnerGoingDownRight);
+    console.log("isWinnerGoingDownRight", isWinnerGoingDownRight.gameResult);
+    if (isWinnerGoingDownRight.gameResult == "winner") {
+      console.log("isWinnerGoingDownRight", isWinnerGoingDownRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDownRight.winningPlayer,
+      });
       return;
     }
 
     // array chips going down
-    const arrayOfChipsGoingDown = testLoopGoingDown(
-      arrayNodes,
-      positionRow,
-      positionColumn
-    );
+    // const arrayOfChipsGoingDown = testLoopGoingDown(
+    //   arrayNodes,
+    //   positionRow,
+    //   positionColumn
+    // );
 
     /**
      * not using for loop
      * **/
 
-    const isWinnerGoingDown = connectFourChecker(
-      getValuesForCheckFunc,
-      arrayOfChipsGoingDown
-    );
-    console.log("isWinnerGoingDown", isWinnerGoingDown);
-    if (isWinnerGoingDown) {
-      console.log("isWinnerGoingDown", isWinnerGoingDown);
-      return;
-    }
+    // const isWinnerGoingDown = connectFourChecker(
+    //   getValuesForCheckFunc,
+    //   arrayOfChipsGoingDown
+    // );
+    // console.log("isWinnerGoingDown", isWinnerGoingDown);
+    // if (isWinnerGoingDown) {
+    //   console.log("isWinnerGoingDown", isWinnerGoingDown);
+    //   return;
+    // }
 
     /**
      * not using for loop
@@ -3534,6 +3545,7 @@ const methodsForRowFour = {
   },
   second: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     testLoopGoingRight,
@@ -3562,9 +3574,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingRight
     );
 
-    console.log("isWinnerGoingRight", isWinnerGoingRight);
-    if (isWinnerGoingRight == "winner") {
-      console.log("isWinnerGoingRight", isWinnerGoingRight);
+    console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+    if (isWinnerGoingRight.gameResult == "winner") {
+      console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingRight.winningPlayer,
+      });
       return;
     }
     // get chips going left
@@ -3584,9 +3601,17 @@ const methodsForRowFour = {
       arrayOfChipsHorizontal
     );
 
-    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
-    if (isWinnerGoingHorizontal == "winner") {
-      console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
+    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal.gameResult);
+    if (isWinnerGoingHorizontal.gameResult == "winner") {
+      console.log(
+        "isWinnerGoingHorizontal",
+        isWinnerGoingHorizontal.gameResult
+      );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingHorizontal.winningPlayer,
+      });
       return;
     }
     // get chips going down right
@@ -3601,9 +3626,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingDownRight
     );
 
-    console.log("isWinnerGoingDownRight", isWinnerGoingDownRight);
-    if (isWinnerGoingDownRight == "winner") {
-      console.log("isWinnerGoingDownRight", isWinnerGoingDownRight);
+    console.log("isWinnerGoingDownRight", isWinnerGoingDownRight.gameResult);
+    if (isWinnerGoingDownRight.gameResult == "winner") {
+      console.log("isWinnerGoingDownRight", isWinnerGoingDownRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDownRight.winningPlayer,
+      });
       return;
     }
 
@@ -3628,13 +3658,18 @@ const methodsForRowFour = {
 
     console.log(
       "isWinnerGoingDiagonalTopLeftBottomRight",
-      isWinnerGoingDiagonalTopLeftBottomRight
+      isWinnerGoingDiagonalTopLeftBottomRight.gameResult
     );
-    if (isWinnerGoingDiagonalTopLeftBottomRight == "winner") {
+    if (isWinnerGoingDiagonalTopLeftBottomRight.gameResult == "winner") {
       console.log(
         "isWinnerGoingDiagonalTopLeftBottomRight",
-        isWinnerGoingDiagonalTopLeftBottomRight
+        isWinnerGoingDiagonalTopLeftBottomRight.gameResult
       );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDiagonalTopLeftBottomRight.winningPlayer,
+      });
       return;
     }
     // get chips going up right
@@ -3662,13 +3697,18 @@ const methodsForRowFour = {
 
     console.log(
       "isWinnerGoingDiagonalTopRightBottomLeft",
-      isWinnerGoingDiagonalTopRightBottomLeft
+      isWinnerGoingDiagonalTopRightBottomLeft.gameResult
     );
-    if (isWinnerGoingDiagonalTopRightBottomLeft == "winner") {
+    if (isWinnerGoingDiagonalTopRightBottomLeft.gameResult == "winner") {
       console.log(
         "isWinnerGoingDiagonalTopRightBottomLeft",
-        isWinnerGoingDiagonalTopRightBottomLeft
+        isWinnerGoingDiagonalTopRightBottomLeft.gameResult
       );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDiagonalTopRightBottomLeft.winningPlayer,
+      });
       return;
     }
     // array chips going down
@@ -3686,9 +3726,14 @@ const methodsForRowFour = {
       getValuesForCheckFunc,
       arrayOfChipsGoingDown
     );
-    console.log("isWinnerGoingDown", isWinnerGoingDown);
-    if (isWinnerGoingDown) {
-      console.log("isWinnerGoingDown", isWinnerGoingDown);
+    console.log("isWinnerGoingDown", isWinnerGoingDown.gameResult);
+    if (isWinnerGoingDown.gameResult) {
+      console.log("isWinnerGoingDown", isWinnerGoingDown.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDown.winningPlayer,
+      });
       return;
     }
 
@@ -3699,6 +3744,7 @@ const methodsForRowFour = {
   },
   third: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     testLoopGoingRight,
@@ -3727,9 +3773,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingRight
     );
 
-    console.log("isWinnerGoingRight", isWinnerGoingRight);
-    if (isWinnerGoingRight == "winner") {
-      console.log("isWinnerGoingRight", isWinnerGoingRight);
+    console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+    if (isWinnerGoingRight.gameResult == "winner") {
+      console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingRight.winningPlayer,
+      });
       return;
     }
     // get chips going left
@@ -3749,9 +3800,17 @@ const methodsForRowFour = {
       arrayOfChipsHorizontal
     );
 
-    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
-    if (isWinnerGoingHorizontal == "winner") {
-      console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
+    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal.gameResult);
+    if (isWinnerGoingHorizontal.gameResult == "winner") {
+      console.log(
+        "isWinnerGoingHorizontal",
+        isWinnerGoingHorizontal.gameResult
+      );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingHorizontal.winningPlayer,
+      });
       return;
     }
     // get chips going down right
@@ -3766,9 +3825,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingDownRight
     );
 
-    console.log("isWinnerGoingDownRight", isWinnerGoingDownRight);
-    if (isWinnerGoingDownRight == "winner") {
-      console.log("isWinnerGoingDownRight", isWinnerGoingDownRight);
+    console.log("isWinnerGoingDownRight", isWinnerGoingDownRight.gameResult);
+    if (isWinnerGoingDownRight.gameResult == "winner") {
+      console.log("isWinnerGoingDownRight", isWinnerGoingDownRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDownRight.winningPlayer,
+      });
       return;
     }
 
@@ -3793,13 +3857,18 @@ const methodsForRowFour = {
 
     console.log(
       "isWinnerGoingDiagonalTopLeftBottomRight",
-      isWinnerGoingDiagonalTopLeftBottomRight
+      isWinnerGoingDiagonalTopLeftBottomRight.gameResult
     );
-    if (isWinnerGoingDiagonalTopLeftBottomRight == "winner") {
+    if (isWinnerGoingDiagonalTopLeftBottomRight.gameResult == "winner") {
       console.log(
         "isWinnerGoingDiagonalTopLeftBottomRight",
-        isWinnerGoingDiagonalTopLeftBottomRight
+        isWinnerGoingDiagonalTopLeftBottomRight.gameResult
       );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDiagonalTopLeftBottomRight.winningPlayer,
+      });
       return;
     }
     // get chips going up right
@@ -3827,13 +3896,18 @@ const methodsForRowFour = {
 
     console.log(
       "isWinnerGoingDiagonalTopRightBottomLeft",
-      isWinnerGoingDiagonalTopRightBottomLeft
+      isWinnerGoingDiagonalTopRightBottomLeft.gameResult
     );
-    if (isWinnerGoingDiagonalTopRightBottomLeft == "winner") {
+    if (isWinnerGoingDiagonalTopRightBottomLeft.gameResult == "winner") {
       console.log(
         "isWinnerGoingDiagonalTopRightBottomLeft",
-        isWinnerGoingDiagonalTopRightBottomLeft
+        isWinnerGoingDiagonalTopRightBottomLeft.gameResult
       );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDiagonalTopRightBottomLeft.winningPlayer,
+      });
       return;
     }
     // array chips going down
@@ -3851,9 +3925,14 @@ const methodsForRowFour = {
       getValuesForCheckFunc,
       arrayOfChipsGoingDown
     );
-    console.log("isWinnerGoingDown", isWinnerGoingDown);
-    if (isWinnerGoingDown) {
-      console.log("isWinnerGoingDown", isWinnerGoingDown);
+    console.log("isWinnerGoingDown", isWinnerGoingDown.gameResult);
+    if (isWinnerGoingDown.gameResult) {
+      console.log("isWinnerGoingDown", isWinnerGoingDown.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDown.winningPlayer,
+      });
       return;
     }
 
@@ -3864,6 +3943,7 @@ const methodsForRowFour = {
   },
   fourth: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpLeft,
@@ -3891,9 +3971,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingRight
     );
 
-    console.log("isWinnerGoingRight", isWinnerGoingRight);
-    if (isWinnerGoingRight == "winner") {
-      console.log("isWinnerGoingRight", isWinnerGoingRight);
+    console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+    if (isWinnerGoingRight.gameResult == "winner") {
+      console.log("isWinnerGoingRight", isWinnerGoingRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingRight.winningPlayer,
+      });
       return;
     }
     // get chips going left
@@ -3908,9 +3993,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingLeft
     );
 
-    console.log("isWinnerGoingLeft", isWinnerGoingLeft);
-    if (isWinnerGoingLeft == "winner") {
-      console.log("isWinnerGoingLeft", isWinnerGoingLeft);
+    console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
+    if (isWinnerGoingLeft.gameResult == "winner") {
+      console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingLeft.winningPlayer,
+      });
       return;
     }
     // get chips going horizontal
@@ -3924,9 +4014,17 @@ const methodsForRowFour = {
       arrayOfChipsHorizontal
     );
 
-    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
-    if (isWinnerGoingHorizontal == "winner") {
-      console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
+    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal.gameResult);
+    if (isWinnerGoingHorizontal.gameResult == "winner") {
+      console.log(
+        "isWinnerGoingHorizontal",
+        isWinnerGoingHorizontal.gameResult
+      );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingHorizontal.winningPlayer,
+      });
       return;
     }
     // get chips going down right
@@ -3940,9 +4038,14 @@ const methodsForRowFour = {
       getValuesForCheckFunc,
       arrayOfChipsGoingDownRight
     );
-    console.log("isWinnerGoingDownRight", isWinnerGoingDownRight);
-    if (isWinnerGoingDownRight == "winner") {
-      console.log("isWinnerGoingDownRight", isWinnerGoingDownRight);
+    console.log("isWinnerGoingDownRight", isWinnerGoingDownRight.gameResult);
+    if (isWinnerGoingDownRight.gameResult == "winner") {
+      console.log("isWinnerGoingDownRight", isWinnerGoingDownRight.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDownRight.winningPlayer,
+      });
       return;
     }
     // get chips going up left
@@ -3965,13 +4068,18 @@ const methodsForRowFour = {
 
     console.log(
       "isWinnerGoingDiagonalTopLeftBottomRight",
-      isWinnerGoingDiagonalTopLeftBottomRight
+      isWinnerGoingDiagonalTopLeftBottomRight.gameResult
     );
-    if (isWinnerGoingDiagonalTopLeftBottomRight == "winner") {
+    if (isWinnerGoingDiagonalTopLeftBottomRight.gameResult == "winner") {
       console.log(
         "isWinnerGoingDiagonalTopLeftBottomRight",
-        isWinnerGoingDiagonalTopLeftBottomRight
+        isWinnerGoingDiagonalTopLeftBottomRight.gameResult
       );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDiagonalTopLeftBottomRight.winningPlayer,
+      });
       return;
     }
     // get chips going down left
@@ -3986,9 +4094,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingDownLeft
     );
 
-    console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft);
-    if (isWinnerGoingDownLeft == "winner") {
-      console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft);
+    console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft.gameResult);
+    if (isWinnerGoingDownLeft.gameResult == "winner") {
+      console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDownLeft.winningPlayer,
+      });
       return;
     }
     // get chips going up right
@@ -4011,13 +4124,18 @@ const methodsForRowFour = {
 
     console.log(
       "isWinnerGoingDiagonalTopRightBottomLeft",
-      isWinnerGoingDiagonalTopRightBottomLeft
+      isWinnerGoingDiagonalTopRightBottomLeft.gameResult
     );
-    if (isWinnerGoingDiagonalTopRightBottomLeft == "winner") {
+    if (isWinnerGoingDiagonalTopRightBottomLeft.gameResult == "winner") {
       console.log(
         "isWinnerGoingDiagonalTopRightBottomLeft",
-        isWinnerGoingDiagonalTopRightBottomLeft
+        isWinnerGoingDiagonalTopRightBottomLeft.gameResult
       );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDiagonalTopRightBottomLeft.winningPlayer,
+      });
       return;
     }
     // array chips going down
@@ -4036,9 +4154,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingDown
     );
 
-    console.log("isWinnerGoingDown", isWinnerGoingDown);
-    if (isWinnerGoingDown) {
-      console.log("isWinnerGoingDown", isWinnerGoingDown);
+    console.log("isWinnerGoingDown", isWinnerGoingDown.gameResult);
+    if (isWinnerGoingDown.gameResult) {
+      console.log("isWinnerGoingDown", isWinnerGoingDown.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDown.winningPlayer,
+      });
       return;
     }
 
@@ -4049,6 +4172,7 @@ const methodsForRowFour = {
   },
   fifth: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpLeft,
@@ -4077,9 +4201,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingLeft
     );
 
-    console.log("isWinnerGoingLeft", isWinnerGoingLeft);
-    if (isWinnerGoingLeft == "winner") {
-      console.log("isWinnerGoingLeft", isWinnerGoingLeft);
+    console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
+    if (isWinnerGoingLeft.gameResult == "winner") {
+      console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingLeft.winningPlayer,
+      });
       return;
     }
     // get chips going right
@@ -4099,9 +4228,17 @@ const methodsForRowFour = {
       arrayOfChipsHorizontal
     );
 
-    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
-    if (isWinnerGoingHorizontal == "winner") {
-      console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
+    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal.gameResult);
+    if (isWinnerGoingHorizontal.gameResult == "winner") {
+      console.log(
+        "isWinnerGoingHorizontal",
+        isWinnerGoingHorizontal.gameResult
+      );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingHorizontal.winningPlayer,
+      });
       return;
     }
     // get chips going down left
@@ -4116,9 +4253,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingDownLeft
     );
 
-    console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft);
-    if (isWinnerGoingDownLeft == "winner") {
-      console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft);
+    console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft.gameResult);
+    if (isWinnerGoingDownLeft.gameResult == "winner") {
+      console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingLeft.winningPlayer,
+      });
       return;
     }
     // get chips going up right
@@ -4142,13 +4284,18 @@ const methodsForRowFour = {
 
     console.log(
       "isWinnerGoingDiagonalTopRightBottomLeft",
-      isWinnerGoingDiagonalTopRightBottomLeft
+      isWinnerGoingDiagonalTopRightBottomLeft.gameResult
     );
-    if (isWinnerGoingDiagonalTopRightBottomLeft == "winner") {
+    if (isWinnerGoingDiagonalTopRightBottomLeft.gameResult == "winner") {
       console.log(
         "isWinnerGoingDiagonalTopRightBottomLeft",
-        isWinnerGoingDiagonalTopRightBottomLeft
+        isWinnerGoingDiagonalTopRightBottomLeft.gameResult
       );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDiagonalTopRightBottomLeft.winningPlayer,
+      });
       return;
     }
 
@@ -4178,36 +4325,41 @@ const methodsForRowFour = {
 
     console.log(
       "isWinnerGoingDiagonalTopLeftBottomRight",
-      isWinnerGoingDiagonalTopLeftBottomRight
+      isWinnerGoingDiagonalTopLeftBottomRight.gameResult
     );
-    if (isWinnerGoingDiagonalTopLeftBottomRight == "winner") {
+    if (isWinnerGoingDiagonalTopLeftBottomRight.gameResult == "winner") {
       console.log(
         "isWinnerGoingDiagonalTopLeftBottomRight",
-        isWinnerGoingDiagonalTopLeftBottomRight
+        isWinnerGoingDiagonalTopLeftBottomRight.gameResult
       );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDiagonalTopLeftBottomRight.winningPlayer,
+      });
       return;
     }
     // array chips going down
-    const arrayOfChipsGoingDown = testLoopGoingDown(
-      arrayNodes,
-      positionRow,
-      positionColumn
-    );
+    // const arrayOfChipsGoingDown = testLoopGoingDown(
+    //   arrayNodes,
+    //   positionRow,
+    //   positionColumn
+    // );
 
     /**
      * not using for loop
      * **/
 
-    const isWinnerGoingDown = connectFourChecker(
-      getValuesForCheckFunc,
-      arrayOfChipsGoingDown
-    );
+    // const isWinnerGoingDown = connectFourChecker(
+    //   getValuesForCheckFunc,
+    //   arrayOfChipsGoingDown
+    // );
 
-    console.log("isWinnerGoingDown", isWinnerGoingDown);
-    if (isWinnerGoingDown) {
-      console.log("isWinnerGoingDown", isWinnerGoingDown);
-      return;
-    }
+    // console.log("isWinnerGoingDown", isWinnerGoingDown);
+    // if (isWinnerGoingDown) {
+    //   console.log("isWinnerGoingDown", isWinnerGoingDown);
+    //   return;
+    // }
     /**
      * not using for loop
      * **/
@@ -4215,6 +4367,7 @@ const methodsForRowFour = {
   },
   sixth: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     goingUpLeft,
@@ -4243,9 +4396,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingLeft
     );
 
-    console.log("isWinnerGoingLeft", isWinnerGoingLeft);
-    if (isWinnerGoingLeft == "winner") {
-      console.log("isWinnerGoingLeft", isWinnerGoingLeft);
+    console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
+    if (isWinnerGoingLeft.gameResult == "winner") {
+      console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingLeft.winningPlayer,
+      });
       return;
     }
     // get chips going right
@@ -4265,9 +4423,17 @@ const methodsForRowFour = {
       arrayOfChipsHorizontal
     );
 
-    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
-    if (isWinnerGoingHorizontal == "winner") {
-      console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal);
+    console.log("isWinnerGoingHorizontal", isWinnerGoingHorizontal.gameResult);
+    if (isWinnerGoingHorizontal.gameResult == "winner") {
+      console.log(
+        "isWinnerGoingHorizontal",
+        isWinnerGoingHorizontal.gameResult
+      );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingHorizontal.winningPlayer,
+      });
       return;
     }
     // get chips going down left
@@ -4282,9 +4448,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingDownLeft
     );
 
-    console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft);
-    if (isWinnerGoingDownLeft == "winner") {
-      console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft);
+    console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft.gameResult);
+    if (isWinnerGoingDownLeft.gameResult == "winner") {
+      console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDownLeft.winningPlayer,
+      });
       return;
     }
     // get chips going up right
@@ -4308,13 +4479,18 @@ const methodsForRowFour = {
 
     console.log(
       "isWinnerGoingDiagonalTopRightBottomLeft",
-      isWinnerGoingDiagonalTopRightBottomLeft
+      isWinnerGoingDiagonalTopRightBottomLeft.gameResult
     );
-    if (isWinnerGoingDiagonalTopRightBottomLeft == "winner") {
+    if (isWinnerGoingDiagonalTopRightBottomLeft.gameResult == "winner") {
       console.log(
         "isWinnerGoingDiagonalTopRightBottomLeft",
-        isWinnerGoingDiagonalTopRightBottomLeft
+        isWinnerGoingDiagonalTopRightBottomLeft.gameResult
       );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDiagonalTopRightBottomLeft.winningPlayer,
+      });
       return;
     }
 
@@ -4344,36 +4520,41 @@ const methodsForRowFour = {
 
     console.log(
       "isWinnerGoingDiagonalTopLeftBottomRight",
-      isWinnerGoingDiagonalTopLeftBottomRight
+      isWinnerGoingDiagonalTopLeftBottomRight.gameResult
     );
-    if (isWinnerGoingDiagonalTopLeftBottomRight == "winner") {
+    if (isWinnerGoingDiagonalTopLeftBottomRight.gameResult == "winner") {
       console.log(
         "isWinnerGoingDiagonalTopLeftBottomRight",
-        isWinnerGoingDiagonalTopLeftBottomRight
+        isWinnerGoingDiagonalTopLeftBottomRight.gameResult
       );
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDiagonalTopLeftBottomRight.winningPlayer,
+      });
       return;
     }
     // array chips going down
-    const arrayOfChipsGoingDown = testLoopGoingDown(
-      arrayNodes,
-      positionRow,
-      positionColumn
-    );
+    // const arrayOfChipsGoingDown = testLoopGoingDown(
+    //   arrayNodes,
+    //   positionRow,
+    //   positionColumn
+    // );
 
     /**
      * not using for loop
      * **/
 
-    const isWinnerGoingDown = connectFourChecker(
-      getValuesForCheckFunc,
-      arrayOfChipsGoingDown
-    );
+    // const isWinnerGoingDown = connectFourChecker(
+    //   getValuesForCheckFunc,
+    //   arrayOfChipsGoingDown
+    // );
 
-    console.log("isWinnerGoingDown", isWinnerGoingDown);
-    if (isWinnerGoingDown) {
-      console.log("isWinnerGoingDown", isWinnerGoingDown);
-      return;
-    }
+    // console.log("isWinnerGoingDown", isWinnerGoingDown);
+    // if (isWinnerGoingDown) {
+    //   console.log("isWinnerGoingDown", isWinnerGoingDown);
+    //   return;
+    // }
 
     /**
      * not using for loop
@@ -4382,6 +4563,7 @@ const methodsForRowFour = {
   },
   seventh: function ({
     arrayNodes,
+    gameFuncObj,
     positionRow,
     positionColumn,
     testLoopGoingLeft,
@@ -4403,9 +4585,14 @@ const methodsForRowFour = {
       arrayOfChipsGoingLeft
     );
 
-    console.log("isWinnerGoingLeft", isWinnerGoingLeft);
-    if (isWinnerGoingLeft == "winner") {
-      console.log("isWinnerGoingLeft", isWinnerGoingLeft);
+    console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
+    if (isWinnerGoingLeft.gameResult == "winner") {
+      console.log("isWinnerGoingLeft", isWinnerGoingLeft.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingLeft.winningPlayer,
+      });
       return;
     }
 
@@ -4421,32 +4608,37 @@ const methodsForRowFour = {
       arrayOfChipsGoingDownLeft
     );
 
-    console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft);
-    if (isWinnerGoingDownLeft == "winner") {
-      console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft);
+    console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft.gameResult);
+    if (isWinnerGoingDownLeft.gameResult == "winner") {
+      console.log("isWinnerGoingDownLeft", isWinnerGoingDownLeft.gameResult);
+      updateGameScore({
+        convertString,
+        gameFuncObj,
+        str: isWinnerGoingDownLeft.winningPlayer,
+      });
       return;
     }
     // array chips going down
-    const arrayOfChipsGoingDown = testLoopGoingDown(
-      arrayNodes,
-      positionRow,
-      positionColumn
-    );
+    // const arrayOfChipsGoingDown = testLoopGoingDown(
+    //   arrayNodes,
+    //   positionRow,
+    //   positionColumn
+    // );
 
     /**
      * not using for loop
      * **/
 
-    const isWinnerGoingDown = connectFourChecker(
-      getValuesForCheckFunc,
-      arrayOfChipsGoingDown
-    );
+    // const isWinnerGoingDown = connectFourChecker(
+    //   getValuesForCheckFunc,
+    //   arrayOfChipsGoingDown
+    // );
 
-    console.log("isWinnerGoingDown", isWinnerGoingDown);
-    if (isWinnerGoingDown) {
-      console.log("isWinnerGoingDown", isWinnerGoingDown);
-      return;
-    }
+    // console.log("isWinnerGoingDown", isWinnerGoingDown);
+    // if (isWinnerGoingDown) {
+    //   console.log("isWinnerGoingDown", isWinnerGoingDown);
+    //   return;
+    // }
 
     /**
      * not using for loop
