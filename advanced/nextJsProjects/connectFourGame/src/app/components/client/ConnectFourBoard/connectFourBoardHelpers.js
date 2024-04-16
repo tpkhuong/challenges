@@ -7675,6 +7675,17 @@ function rowCounter({
         "reset objOfCounters",
         objOfCounters
       );
+      // const objOfCounters = {
+      //   columnOne: 0,
+      //   columnTwo: 0,
+      //   columnThree: 0,
+      //   columnFour: 0,
+      //   columnFive: 0,
+      //   columnSix: 0,
+      //   columnSeven: 0,
+      //   moveCounter: 0,
+      // };
+      objOfCounters.columnOne = 0;
       // get value of attr data-result of element with id="game-board-bg-selector"
       // const gameResult = document
       //   .getElementById("game-board-bg-selector")
