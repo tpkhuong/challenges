@@ -7686,6 +7686,12 @@ function rowCounter({
       //   moveCounter: 0,
       // };
       objOfCounters.columnOne = 0;
+      objOfCounters.columnTwo = 0;
+      objOfCounters.columnThree = 0;
+      objOfCounters.columnFour = 0;
+      objOfCounters.columnFive = 0;
+      objOfCounters.columnSix = 0;
+      objOfCounters.columnSeven = 0;
       // get value of attr data-result of element with id="game-board-bg-selector"
       // const gameResult = document
       //   .getElementById("game-board-bg-selector")
