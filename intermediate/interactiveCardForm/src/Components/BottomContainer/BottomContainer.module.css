@@ -1,0 +1,404 @@
+/* mobile */
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+input:focus {
+  outline: none;
+  border-color: transparent;
+}
+
+span {
+  display: block;
+}
+
+label {
+  display: inline-block;
+}
+
+/* declaring spacing declaration around inputs */
+input:not([type="radio"]) {
+  border: 2px solid var(--color-input-border);
+  border-radius: 8px;
+  width: 100%;
+  padding-block: 8px;
+  padding-inline-start: 8px;
+  color: var(--color-input-placeholder);
+  cursor: pointer;
+}
+
+[data-needattention] {
+  position: relative;
+}
+
+[data-needattention="true"] input,
+[data-yearneedsattn="true"] input,
+[data-monthneedsattn="true"] input,
+[data-formatchecking="true"] input {
+  border-color: transparent;
+}
+
+label,
+.expdate-text {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: var(--font-size-12px);
+  margin-block-end: 8px;
+  font-weight: 500;
+}
+
+.form-confirm-container {
+  flex-basis: 464px;
+  color: var(--color-neutral-vary-dark-violet);
+  padding: 91px 24px 45px;
+}
+
+/* [id="cardholder"] + [id="hello"] {
+  color: red;
+} */
+
+[data-needattention="false"] .error-msg,
+[data-expdateempty="false"] .error-msg,
+[data-formatchecking="false"] .wrong-format,
+[data-showexpdatemsg="false"] .wrong-format {
+  display: none;
+}
+
+/* [data-needattention="false"] .accepted {
+  display: revert;
+} */
+
+/* show or hide accepted/not-accepted icons */
+
+/* show accepted icon */
+
+[data-showicon].accepted,
+[data-showicon].not-accepted {
+  display: revert;
+}
+
+/* show not accepted icon */
+.accepted,
+.not-accepted {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.5rem;
+  display: none;
+}
+
+.accepted {
+  color: green;
+}
+
+.not-accepted {
+  color: red;
+}
+
+/* checked and "x" icon placement */
+
+/* card holder */
+
+.cardholder-name .accepted,
+.cardholder-name .not-accepted {
+  top: 3px;
+}
+
+/* card number */
+
+.card-number .accepted,
+.card-number .not-accepted {
+  top: -2px;
+}
+
+/* exp month and year */
+.expdate-month-year-container .accepted,
+.expdate-month-year-container .not-accepted {
+  top: -3px;
+  right: -3px;
+}
+/* cvc */
+.cvc-input .accepted,
+.cvc-input .not-accepted {
+  top: 3px;
+}
+
+.error-msg,
+.wrong-format {
+  font-size: var(--font-size-12px);
+  color: red;
+  font-weight: 500;
+  position: absolute;
+  bottom: -21px;
+}
+
+.creditcard-form {
+}
+
+/* card name */
+
+.custom-input-border-wrapper,
+.expdate-month-year-container,
+.cvc-input {
+  position: relative;
+}
+
+/* having span a sibling of inputs and both span and input as children of
+wrapper our algorithm will create a "border" around inputs
+due to position absolute, inset and z-index 
+*/
+
+.input-border,
+.year-input-border,
+.month-input-border {
+  border-radius: 8px;
+  content: "";
+  position: absolute;
+  inset: -3px;
+  z-index: -1;
+}
+
+input:focus + .input-border,
+input:hover + .input-border,
+input:hover + .year-input-border,
+input:focus + .year-input-border,
+input:hover + .month-input-border,
+input:focus + .month-input-border {
+  background-image: linear-gradient(
+    var(--color-primary-gradient-from),
+    var(--color-primary-gradient-to)
+  );
+}
+
+[data-needattention="true"] span.input-border,
+[data-formatchecking="true"] span.input-border,
+[data-yearneedsattn="true"] span.year-input-border,
+[data-monthneedsattn="true"] span.month-input-border {
+  background-image: revert;
+  background-color: red;
+}
+
+/* card number */
+
+.card-number,
+.expdate-cvc-container {
+  margin-block-start: 20px;
+}
+
+.number-cards-style-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.card-btns-container {
+  display: inline-flex;
+  gap: 8px;
+  margin-block-start: -8px;
+  align-items: center;
+}
+
+.cc-button {
+  padding: 0;
+  background-color: transparent;
+}
+
+.major-credit-cards {
+  width: 24px;
+}
+
+[id="visa"] [data-selected="true"] {
+  color: var(--color-visa);
+}
+
+[id="mastercard"] [data-selected="true"] {
+  color: var(--color-mastercard);
+}
+
+[id="discover"] [data-selected="true"] {
+  color: var(--color-discover);
+}
+
+[id="amex"] [data-selected="true"] {
+  color: var(--color-amex);
+}
+
+/* .card-name-test::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  background-image: linear-gradient(
+    var(--color-primary-gradient-from),
+    var(--color-primary-gradient-to)
+  );
+  z-index: -1;
+  
+} */
+
+/* exp date */
+
+/* .expdate-text {
+  letter-spacing: 2px;
+  font-size: var(--font-size-12px);
+  text-transform: uppercase;
+} */
+
+.expdate-cvc-container,
+.style-wrapper {
+  display: flex;
+}
+
+.expdate-cvc-container {
+  align-items: flex-end;
+  gap: 11px;
+  margin-block-end: 28px;
+  position: relative;
+}
+
+.style-wrapper {
+  position: relative;
+  gap: 8px;
+}
+
+.expdate-month-year-container {
+  /* flex-basis: 152px; */
+  /* change month and year container size for svg icon */
+  flex: 1;
+  /* our declaration at min-widthL 90rem will override flex-basis: 0 due to flex: 1 */
+}
+
+/* exp month */
+/* exp year */
+
+.exp-month,
+.exp-year {
+  flex-basis: 72px;
+}
+
+/* [data-expisempty="false"] .style-wrapper::before,
+[data-showexpdatemsg="false"].expdate-month-year-container::after {
+  display: none;
+} */
+
+/* .style-wrapper::before,
+.expdate-month-year-container::after {
+  position: absolute;
+  bottom: -21px;
+  font-size: var(--font-size-12px);
+  color: red;
+  font-weight: 500;
+} */
+
+/* .style-wrapper::before {
+  content: "Can't be blank";
+} */
+
+/* use pseudo element ::after for month/year entered is earlier than current data */
+
+/* .expdate-month-year-container::after {
+  content: attr(data-errormsgtext);
+} */
+
+/* cvc */
+
+.cvc-input {
+  /* flex-basis: 164px; */
+  /* change month and year container size for svg icon */
+  flex: 1;
+  /* our declaration at min-widthL 90rem will override flex-basis: 0 due to flex: 1 */
+}
+
+/* confirm */
+
+.confirm-container {
+  /* display: none; */
+  text-align: center;
+}
+
+/* confirm and continue button */
+
+.confirm-check-img {
+  width: max-content;
+  margin-inline: auto;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: var(--font-size-28px);
+  letter-spacing: 2px;
+  color: var(--color-neutral-vary-dark-violet);
+  margin-block-start: 35px;
+  margin-block-end: 16px;
+}
+
+.description {
+  color: var(--color-neutral-dark-grayish-violet);
+  margin-block-end: 48px;
+  font-weight: 500;
+}
+
+.call-to-action-btn {
+  color: var(--color-neutral-white);
+  background-color: var(--color-neutral-vary-dark-violet);
+  border-radius: 8px;
+  width: 100%;
+  padding-block: 15px;
+  text-align: center;
+}
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  /* form confirm bottom container */
+  .form-confirm-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0;
+  }
+  /* form */
+  .creditcard-form {
+    max-width: 381px;
+  }
+  /* cardholder name */
+
+  /* credit card number */
+
+  .expdate-cvc-container {
+    gap: 20px;
+  }
+
+  .expdate-month-year-container {
+    flex-basis: 170px;
+  }
+
+  .style-wrapper {
+    gap: 10px;
+  }
+
+  /* exp date cvc */
+  .exp-month,
+  .exp-year {
+    flex-basis: 80px;
+  }
+
+  .cvc-input {
+    flex-basis: 191px;
+  }
+  /* call to action btn */
+  .confirm-container {
+    display: none;
+    text-align: center;
+  }
+}
+
+/* creditCardNumberHelper */
+/* amexCreditCardNumHelper */
+/* creditCardSelectorHelper */

@@ -1,0 +1,23 @@
+.wrapper {
+  justify-content: center;
+  display: flex;
+  max-height: 100vh;
+  background-color: blanchedalmond;
+  gap: 10px;
+}
+
+.text-content {
+  width: 500px;
+  height: 350px;
+  background-color: hsl(207, 95%, 8%);
+  align-self: center;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}

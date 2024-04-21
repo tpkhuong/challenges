@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Testing.module.css";
-import Title from "../testing/testingComponents/index.js";
+import Title from "./testingComponents/index.js";
 
 export default function CssGrid({ children }) {
   return (

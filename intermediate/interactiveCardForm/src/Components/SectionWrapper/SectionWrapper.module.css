@@ -1,0 +1,69 @@
+/* mobile */
+.interactive-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+/* top */
+.cards-container {
+  background-image: url("../../../public/bg-main-mobile.png");
+  flex-basis: 240px;
+  position: relative;
+}
+/* tablet */
+/* top */
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  .interactive-card-wrapper {
+    flex-direction: row;
+  }
+  .cards-container {
+    background-image: url("../../../public/bg-main-desktop.png");
+    flex-basis: 483px;
+  }
+}
+
+.effect:hover .testing {
+  transform: rotateY(180deg);
+}
+
+.testing {
+  transition: transform 3s;
+}
+
+/* top */
+
+/***** 
+
+flip card declarations
+
+cards container:
+transform-style: perserve-3d so the children of the parent will acting
+independent of the 3d space not on its parent.
+no z-index on the childrens
+the back card will rotate 180deg
+the parent will match that rotation with 180deg.
+both children card element will be position: absolute
+position relative on the cards container.
+backface-visibility hidden on both card front and card back.
+transform translateZ on content of card
+******* ********
+with the button wrapper as a parent of div which is our card container
+declare transform-style:perserve-3d on all parent of element 
+we declare transform: translateZ()
+button{
+  width:
+  padding: 0
+}
+cards container{
+  height
+  position: relative
+  transform-style:perserve-3d
+}
+
+we declared transform: translateZ() on element that is parent to
+card holder name span and element that is parent to exp month / exp year 
+
+******* ********
+*****/

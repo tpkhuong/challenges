@@ -1,0 +1,897 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Bellefair&display=swap"); */
+
+:root {
+  /* primary */
+  --color-primary: hsl(0, 0%, 0%);
+  --color-secondary: hsl(0, 0%, 19%);
+  --color-refresh: hsl(200, 6%, 79%);
+  --color-arrow-bg: hsl(0, 0%, 60%);
+  --color-btn-color: hsl(0, 0%, 58.4%);
+
+  /* --color-primary-very-dark-gray: hsl(0, 0%, 17%); delete btn bg */
+  /* --color-primary-light-grayish-blue: hsl(239, 57%, 85%); */
+  /* --color-primary-pale-red: hsl(357, 100%, 86%); */
+
+  /* --color-neutral-dark-blue: hsl(212, 24%, 26%); */
+  /* --color-neutral-grayish-blue: hsl(211, 10%, 45%); cancel btn */
+  /* --color-neutral-light-gray: hsl(223, 19%, 93%); */
+  /* --color-neutral-very-light-gray: hsl(228, 33%, 97%); app background */
+  --color-neutral-black: hsl(0, 0%, 0%);
+  --color-neutral-white: hsl(0, 0%, 100%);
+
+  /* --color-neutral-score: hsl(229, 64%, 46%); */
+  /* --color-neutral-score-digit: hsl(229, 25%, 31%); */
+  /* --color-neutral-logo-border: hsl(217, 16%, 45%); */
+
+  /* rock */
+
+  /* --color-top-rock: hsl(349, 71%, 52%); */
+  /* --color-bottom-rock: hsl(347, 75%, 35%); */
+
+  /* paper */
+  /* --color-top-paper: hsl(229, 89%, 62%); */
+  /* --color-bottom-paper: hsl(229, 65%, 46%); */
+
+  /* scisssor */
+  /* --color-top-scissors: hsl(39, 84%, 51%); */
+  /* --color-bottom-scissors: hsl(29, 75%, 44%); */
+
+  /* --color-bg-first-half: hsl(214, 47%, 23%); */
+  /* --color-bg-second-half: hsl(237, 49%, 15%); */
+
+  /* inner */
+  /* 226,33,24 */
+  /* middle */
+  /* 226,37,21 */
+  /* outer */
+  /* 227,41,20 */
+
+  /* light shadow */
+  /* 223,22,77 */
+
+  /* top-half */
+
+  /* --color-light-shadow: hsl(223, 22%, 77%);
+
+  --color-dark-circle: hsl(223, 46%, 17%); */
+
+  /* button circle shadows */
+
+  /* --inner-shadow: hsl(220, 33%, 27%);
+  --middle-shadow: hsl(218, 41%, 26%);
+  --outer-shadow: hsl(221, 38%, 25%); */
+
+  /* desktop */
+
+  /* --selections-wrapper-padding: 60px;
+  --picked-wrapper-padding: 100px;
+
+  --selections-img-width: 80px;
+  --picked-img-width: 100px;
+
+  --selections-brdr-width: 24px;
+  --picked-brdr-width: 36px;
+
+  --selections-slide-up: -9px;
+  --picked-slide-up: -12px;
+
+  --selections-img-height: 86px;
+  --picked-img-height: 105px; */
+
+  /* mobile */
+  /* selections and picked same size */
+
+  /* --mobile-circle-padding: 42px;
+  --mobile-circle-img: 35px;
+  --mobile-circle-brdr-width: 15px; */
+
+  /* dark circle size */
+
+  /* --dark-inset-size: 20px; */
+
+  /* shadow for picked button */
+
+  /* --mobile-first-shadow: 20px;
+  --mobile-second-shadow: 45px;
+  --mobile-third-shadow: 75px;
+
+  --matching-gap-padding: 16px; */
+
+  --heading1: 12.5rem;
+  --heading2: 3.5rem;
+  --heading3: 1.5rem;
+  --heading4: 1.2rem;
+  --heading5: 1.125rem;
+  --heading6: 0.9375rem;
+
+  --subheading1: 1.75rem;
+  --subheading2: 0.875rem;
+
+  --small-text-space: 2.35px;
+  --medium-text-space: 2.7px;
+  --large-text-space: 4.75px;
+
+  /* focus/hover outline */
+
+  --mobile-focus: 8px;
+
+  --brdr-radius: 16px;
+  /* padding */
+  --padding-small: 8px;
+  --padding-medium: 16px;
+  --padding-large: 24px;
+  --padding-extra-large: 32px;
+  /* margin */
+  --margin-small: 8px;
+  --margin-medium: 16px;
+  --margin-large: 24px;
+  --margin-extra-large: 32px;
+
+  /* timezone-wrapper children padding */
+
+  --mobile-match-padding: 25px;
+  --tablet-match-padding: 64px;
+  --desktop-match-padding: 165px;
+
+  --mobile-padding-margin-match: 16px;
+  --tablet-padding-margin-match: 64px;
+  --tablet-padding-margin-match: 166px;
+  --desktop-padding-margin-match-start: 165px;
+  --desktop-padding-margin-match-end: 431px;
+
+  /* translate x and y match */
+
+  --translate-match: -200%;
+
+  /* --color-hsl-black: 0, 0%, 0%; */
+
+  --box-shadow: 0px 0.3px 0.7px rgba(0, 0, 0, 0.02),
+    0px 0.7px 1.7px rgba(0, 0, 0, 0.028), 0px 1.4px 3.3px rgba(0, 0, 0, 0.035),
+    0px 2.5px 5.8px rgba(0, 0, 0, 0.042), 0px 4.6px 10.9px rgba(0, 0, 0, 0.05),
+    0px 11px 26px rgba(0, 0, 0, 0.07);
+
+  /***** background *****/
+  /* bg-img top and bg-color-bottom */
+  /* todo input,todo listitem,items left/complete, views btns(mobile) */
+  /***** foreground *****/
+  /***** example for foreground: *****/
+  /* --todo-input-foreground: var(--color-lighttheme-todo-listitem, var(--color-darktheme-todo-text-typing-btn-hover) */
+  /* input placeholder, input typing, todo list text, items left, views btns(mobile)  
+  todo list crossed-out, todo list hover, views btns and clear btn hover, text below todo list
+  */
+
+  /* --secondary-font: var(--font-family-bellefair);
+  --description-font: var(--font-family-barlow); */
+
+  /* headings */
+  /* --font-family-poppins: "Poppins", sans-serif; */
+  /* body, call-to-actions */
+  --font-family-inter: "Inter", sans-serif;
+  /* --font-family-barlow-condensed: "Barlow Condensed", sans-serif;
+  --font-family-bellefair: "Bellefair", serif; */
+  /* section bg img */
+
+  /* mobile */
+  --mobile-morning: url("../../public/images/mobile/bg-image-daytime.jpg");
+  --mobile-evening: url("../../public/images/mobile/bg-image-nighttime.jpg");
+  /* tablet */
+  --tablet-morning: url("../../public/images/tablet/bg-image-daytime.jpg");
+  --tablet-evening: url("../../public/images/tablet/bg-image-nighttime.jpg");
+  /* desktop */
+  --desktop-morning: url("../../public/images/desktop/bg-image-daytime.jpg");
+  --desktop-evening: url("../../public/images/desktop/bg-image-nighttime.jpg");
+}
+
+/* reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+  /* color: var(--color-primary); */
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+button {
+  border: none;
+}
+
+ul[role],
+li[role] {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* utilities */
+
+.max-width {
+  /* or the width we want our container/parent element to be */
+  max-width: 1375px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  /* padding-inline-start: 16px;
+  padding-inline-end: 16px; */
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+[href="#main-content"] {
+  position: absolute;
+  top: 0;
+  left: 100%; /* move of the screen */
+}
+
+[href="#main-content"]:focus {
+  left: 62px;
+}
+
+.skip-link {
+  display: none;
+  border: 1px solid red;
+  padding-block: 16px;
+  padding-inline: 32px;
+  z-index: 3;
+}
+
+#__next {
+  height: 100%;
+}
+
+@media screen and (min-width: 70rem) {
+  .skip-link {
+    display: inline-block;
+  }
+}
+
+/* general styles */
+
+/* .primary {
+  color: var(--color-primary);
+}
+
+.secondary {
+  color: var(--color-secondary);
+} */
+
+/* .heading1,
+.heading2,
+.heading3,
+.heading4,
+.subheading1 {
+  font-family: var(--font-family-barlow);
+}
+
+.heading5,
+.subheading2 {
+  font-family: var(--font-family-barlow);
+} */
+
+[id="app-wrapper"] {
+  height: 100%;
+}
+
+body {
+  /* body text is barlow */
+  font-family: var(--font-family-inter);
+  color: var(--color-neutral-white);
+  /* background-color: var(--color-neutral-white); */
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+}
+
+.bg-img {
+  height: 100%;
+  background-image: var(--section-img);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-inline: var(--mobile-match-padding);
+  padding-block-start: 42px;
+  /* need 40px margin-block-end for data-more-click= false algorithm or else more button will touch bottom of screen */
+  padding-block-end: 40px;
+  /* we could use display: grid on this element. grid item(its children will stretch) 
+  vertical and horizontal then use align-self:end on element with class clock-expand-container
+  */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.expand-wrapper {
+  color: var(--dayevening-color);
+}
+
+.author,
+.timezone-digit-code,
+.location,
+.btn-bg-text,
+.bottom-value {
+  font-weight: 700;
+}
+
+.am-pm-code-wrapper {
+  font-weight: 400;
+}
+
+/* ******** */
+/* when user click on more-less btn */
+
+/* top container: quote */
+[data-more-clicked="true"] .top-container {
+  position: absolute;
+  transform: translateY(var(--translate-match));
+}
+
+/* clock-expand-container: clock and bottom content containers */
+
+[data-more-clicked="true"] .clock-expand-container {
+  min-height: 100%;
+}
+
+/* expand-container */
+
+[data-more-clicked="false"] .expand-wrapper {
+  /* add position aboslute using settimeout in our onClick listener for more-less-btn */
+  position: absolute;
+  /* transform: translateX(var(--translate-match)); */
+  /* reason we are using scale(0) instead of translateX(-200%) 
+  we dont want to have vertical scroll on desktop display cause by this element.
+  */
+  transform: scale(0);
+}
+
+/* ******** */
+
+/* top */
+
+/* quote: regular */
+/* author: bold */
+
+/* middle */
+
+/* text above time: regular */
+/* time: bold */
+/* BST: light */
+/* city,abbr: bold */
+/* button text: bold */
+
+/* bottom */
+
+/* test: regular */
+/* digit: bold */
+
+/* individual sections */
+
+/* bg img */
+
+[data-daynight="morning"] {
+  --section-img: var(--mobile-morning);
+  --dayevening-color: var(--color-neutral-black);
+}
+
+[data-daynight="evening"] {
+  --section-img: var(--mobile-evening);
+  --evening-blur-color: hsl(0, 0%, 0%, 0.7);
+  --evening-filter: blur(1.3rem);
+}
+
+/* top */
+/* translateY(-200%) */
+.top-container {
+  max-width: 575px;
+  display: flex;
+  /* ***** transition on this property ***** */
+
+  transition: transform 500ms ease-out;
+}
+
+[data-daynight="morning"] .quote-wrapper {
+  color: hsl(0, 49%, 24%);
+}
+
+.quote-wrapper {
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.quote {
+  line-height: 1.8;
+  font-weight: 500;
+  margin-block-end: 8px;
+}
+
+.refresh-icon-btn {
+  align-self: flex-start;
+  min-width: 18px;
+  background-color: transparent;
+  padding: 0;
+}
+
+.refresh-icon-btn svg path {
+  fill: currentColor;
+}
+
+/* bottom: clock-expand-container */
+
+.clock-expand-container {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-block-start: 100px;
+}
+
+/* clock container */
+
+/* greeting */
+
+.greeting {
+  margin-block-end: var(--margin-medium);
+  display: flex;
+  gap: 16px;
+}
+
+.notshow-mobile {
+  display: none;
+}
+
+.dynamic-text,
+.location {
+  letter-spacing: 3px;
+}
+
+/* timezone-digit-code */
+
+.timezone-digit-code {
+  display: flex;
+}
+
+.time-digit-wrapper {
+  font-size: 6.25rem;
+  margin-block: -20px;
+}
+
+.am-pm-code-wrapper,
+.location {
+  font-size: 1rem;
+}
+
+.am-pm-code-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-block: 9px;
+  margin-inline-start: 7px;
+}
+
+/* location-more-less-btn */
+
+.location-more-less-btn {
+  margin-block-start: var(---margin-medium);
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-bg {
+  margin-block-start: 62px;
+  background-color: var(--color-neutral-white);
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  padding-inline-start: 20px;
+  border-radius: 100vw;
+}
+
+.btn-bg-text {
+  color: var(--color-arrow-bg);
+  letter-spacing: 2px;
+  margin-inline-end: 12px;
+}
+
+/* more-less-btn */
+
+.more-less-btn {
+  transform: scale(0.75) rotate(180deg);
+  transition: transform 750ms ease-out;
+  border-radius: 50%;
+}
+
+[data-daynight="morning"] .more-less-btn {
+  box-shadow: 0 0 0 128vmax hsl(0, 0%, 0%, 0.2);
+}
+
+/* [data-more-clicked="false"] .more-less-btn {
+  transform: rotate(360deg);
+} */
+
+[data-more-clicked="true"] .more-less-btn {
+  transform: scale(0.75) rotate(360deg);
+  transition: transform 750ms ease-out;
+}
+
+.more-less-btn:hover,
+.more-less-btn:focus {
+  outline: 5px solid blue;
+}
+
+/* expand container */
+/* translateX(-200%) */
+.expand-wrapper {
+  margin-inline: -25px;
+  margin-block-end: -40px;
+  padding-block: 48px;
+  background-color: var(--evening-blur-color, hsl(0, 100%, 100%, 0.5));
+  backdrop-filter: var(--evening-filter, blur(0.4));
+  /* morning blur */
+  /* background-color: hsl(0, 100%, 100%, .5);
+    backdrop-filter: blur(0.4rem); */
+  /* evening blur */
+  /* background-color: hsl(0, 0%, 0%, 0.7);
+    backdrop-filter: blur(1.3rem); */
+
+  /* ***** transition on this property ***** */
+  transition: transform 500ms ease-out;
+}
+
+/* [data-absolute="true"] {
+  position: absolute;
+} */
+
+/* display flex */
+
+.timezone,
+.day-year,
+.day-week,
+.week-number {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timezone-year,
+.day-week-number {
+  padding-inline: var(--mobile-match-padding);
+}
+
+.day-year,
+.week-number,
+.day-week-number {
+  margin-block-start: 16px;
+}
+
+.timezone .bottom-value {
+  text-transform: none;
+}
+
+.top-value {
+  font-size: 0.7rem;
+}
+
+.bottom-value {
+  font-size: 1.1rem;
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .bg-img {
+    padding-block-start: 80px;
+    padding-inline-start: var(--tablet-match-padding);
+    /* need 64px margin-block-end for data-more-click= false algorithm or else more button will touch bottom of screen */
+    padding-block-end: var(--tablet-match-padding);
+  }
+  /* bg-img */
+  [data-daynight="morning"] {
+    --section-img: var(--tablet-morning);
+  }
+
+  [data-daynight="evening"] {
+    --section-img: var(--tablet-evening);
+  }
+  /* top */
+
+  .top-container {
+    gap: 16px;
+  }
+
+  .quote-wrapper {
+    font-size: 1.3rem;
+  }
+
+  .quote {
+    margin-block-start: -8px;
+  }
+
+  /* bottom: clock-expand-container */
+  /* greeting */
+  /*  */
+
+  .greeting {
+    margin-block-end: var(--margin-large);
+  }
+
+  .dynamic-text,
+  .location {
+    font-size: 1.1rem;
+    letter-spacing: 5px;
+  }
+
+  .notshow-mobile {
+    display: revert;
+  }
+
+  /* timezone */
+  .timezone-digit-code {
+    gap: 12px;
+  }
+
+  .location-more-less-btn {
+    margin-block-start: var(--margin-large);
+  }
+
+  .time-digit-wrapper {
+    font-size: 10.9375rem;
+    margin-block: -56px;
+  }
+  .am-pm-code-wrapper {
+    font-size: 2rem;
+    margin: 0;
+  }
+  /* more less btm */
+  .btn-bg {
+    padding-block: 6px;
+    padding-inline-end: 6px;
+    margin-block-start: 80px;
+  }
+
+  .more-less-btn {
+    transform: scale(1) rotate(180deg);
+  }
+
+  [data-more-clicked="true"] .more-less-btn {
+    transform: scale(1) rotate(360deg);
+  }
+  /* expand wrapper */
+
+  .expand-wrapper {
+    display: flex;
+    margin-inline-start: -64px;
+    margin-block-end: -64px;
+    padding-block: 119px;
+    gap: 80px;
+    /* margin-inline: -64px; */
+  }
+
+  .timezone-year,
+  .day-week-number {
+    padding-inline: 0;
+  }
+  .day-year,
+  .week-number,
+  .day-week-number {
+    margin-block-start: 0;
+  }
+
+  .timezone,
+  .day-year,
+  .day-week,
+  .week-number {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: revert;
+  }
+
+  .timezone-year {
+    padding-inline-start: var(--tablet-match-padding);
+  }
+
+  .day-year,
+  .week-number {
+    margin-block-start: 48px;
+  }
+
+  /* top/bottom value */
+
+  .top-value {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+
+  .bottom-value {
+    font-size: 2.2rem;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+  /* refresh btn */
+
+  .refresh-icon-btn:hover svg path,
+  .refresh-icon-btn:focus svg path {
+    fill: red;
+  }
+
+  /* hover/focus effect */
+
+  .more-less-btn:hover circle,
+  .more-less-btn:focus circle {
+    fill: var(--color-arrow-bg);
+  }
+
+  /* bg-img */
+  [data-daynight="morning"] {
+    --section-img: var(--desktop-morning);
+  }
+
+  [data-daynight="evening"] {
+    --section-img: var(--desktop-evening);
+  }
+  /* top */
+
+  .bg-img {
+    padding-block-start: 56px;
+    padding-inline: var(--desktop-match-padding);
+    /* need 98px margin-block-end for data-more-click= false algorithm or else more button will touch bottom of screen */
+    padding-block-end: 98px;
+  }
+
+  [data-daynight="morning"] .quote-wrapper {
+    color: var(--color-neutral-white);
+  }
+
+  /* bottom: clock-expand-container */
+
+  .clock-expand-container {
+    padding-block-start: 0;
+  }
+
+  .greeting {
+    margin-block-end: 30px;
+    align-items: center;
+  }
+
+  .dynamic-text,
+  .location {
+    font-size: 1.3rem;
+  }
+
+  .time-digit-wrapper {
+    font-size: 13.5rem;
+    margin-block: -72px;
+  }
+
+  .location-more-less-btn {
+    margin-block-start: 52px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .btn-bg {
+    margin-block-start: 0;
+  }
+
+  /* expand wrapper */
+
+  .expand-wrapper {
+    margin-inline: -165px;
+    margin-block-end: -98px;
+    padding-block: 74px;
+  }
+
+  .timezone-year {
+    padding-inline-start: var(--desktop-match-padding);
+    position: relative;
+  }
+
+  /* vertical line between timezone and day-week-number */
+
+  .timezone-year::after {
+    content: "";
+    background-color: var(--color-arrow-bg);
+    width: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -38%;
+  }
+
+  .day-week-number {
+    margin-inline: auto;
+  }
+
+  /* top/bottom value */
+
+  .top-value {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+  }
+
+  .bottom-value {
+    font-size: 3.5rem;
+    margin-block-start: 16px;
+  }
+}

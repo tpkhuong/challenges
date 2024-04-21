@@ -1,0 +1,1022 @@
+body {
+  background-color: peachpuff;
+}
+
+/* line(1) transform: translateY(14px) rotate(-43deg); */
+/* line(3) transform: rotate(45deg); */
+/* option 1 */
+/* .mobile-menu-icon {
+  background-color: transparent;
+  margin-inline: auto;
+  display: block;
+  margin-block-start: 80px;
+  height: 26px;
+}
+
+.line {
+  transition: transform 500ms linear, opacity 250ms ease-out;
+  background-color: var(--color-neutral-black);
+  width: 30px;
+  height: 5px;
+  display: block;
+  border-radius: 100vw;
+}
+
+[data-clicked="true"] .line:nth-of-type(1) {
+  transform: translateY(7px) rotate(-45deg);
+}
+
+.line:nth-of-type(2) {
+  background-color: red;
+  margin-block: 2px;
+}
+
+[data-clicked="true"] .line:nth-of-type(2) {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+[data-clicked="true"] .line:nth-of-type(3) {
+  transform: translateY(-7px) rotate(45deg);
+} */
+
+.tag {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.opening span:nth-of-type(2) {
+  color: red;
+  margin-inline: 3px;
+}
+
+.closing span:nth-of-type(2) {
+  color: red;
+  margin-inline: 1.6px;
+}
+
+.closing span:nth-of-type(3) {
+  color: blue;
+  margin-inline-end: 3px;
+}
+
+.spacer-inline {
+  margin-inline: 8px;
+}
+
+.spacer-end {
+  margin-inline-end: 8px;
+}
+
+.exp-container p:nth-child(n + 2):nth-child(-n + 12) {
+  padding-inline-start: 8px;
+}
+
+.exp-container p:nth-child(n + 8):nth-child(-n + 11) {
+  padding-inline-start: 16px;
+}
+
+/* option 1 */
+
+/* option 2 */
+
+.mobile-menu-icon {
+  background-color: transparent;
+  margin-inline: auto;
+  display: block;
+  margin-block-start: 80px;
+  height: 26px;
+  /* transform: rotate(45deg); */
+}
+
+[data-clicked="true"].mobile-menu-icon {
+  /* animation: spinner 1s linear forwards;
+  animation-delay: 1050ms; */
+}
+
+.line {
+  /* transition: transform 1000ms linear, opacity 500ms ease-out; */
+  background-color: var(--color-neutral-black);
+  width: 30px;
+  height: 5px;
+  display: block;
+  border-radius: 100vw;
+}
+
+.line:nth-of-type(2) {
+  background-color: red;
+  margin-block: 2px;
+}
+
+/* top line */
+
+.line:nth-of-type(1) {
+  transform: translateX(10px);
+}
+
+[data-clicked="true"] .line:nth-of-type(1) {
+  /* transform: translateX(0px) translateY(7px) rotate(-45deg); */
+  animation: topLineMoveLeft 1s 1 ease-out forwards;
+}
+
+[data-clicked="false"] .line:nth-of-type(1) {
+  /* animation: reverse; */
+  /* transform: translateX(10px); */
+  animation: topLineMoveRight 1500ms 1 ease-in-out forwards;
+}
+
+/* top line */
+
+/* middle line */
+
+.line:nth-of-type(2) {
+  background-color: red;
+  margin-block: 2px;
+}
+
+[data-clicked="true"] .line:nth-of-type(2) {
+  /* transform: translateX(-30px);
+  opacity: 0; */
+  animation: middleLineMoveLeft 700ms linear forwards;
+}
+
+[data-clicked="false"] .line:nth-of-type(2) {
+  /* transform: translateX(-30px);
+  opacity: 0; */
+  animation: middleLineMoveRight 400ms linear forwards;
+}
+
+/* middle line */
+
+/* bottom line */
+
+.line:nth-of-type(3) {
+  transform: translateX(-10px);
+}
+
+[data-clicked="true"] .line:nth-of-type(3) {
+  animation: bottomLineMoveLeft 1s forwards linear;
+  /* transform: translateX(0px) translateY(-7px) rotate(45deg); */
+}
+
+[data-clicked="false"] .line:nth-of-type(3) {
+  /* transform: translateX(-10px); */
+  animation: bottomLineMoveRight 1500ms forwards linear;
+}
+
+/* bottom line */
+
+@keyframes spinner {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes topLineMoveLeft {
+  /* start 10px to the right */
+  0% {
+    transform: translateX(10px);
+  }
+
+  /* move left */
+  35% {
+    transform: translateX(0px);
+  }
+
+  /* then down */
+  75% {
+    transform: translateY(7px);
+  }
+  /* then rotate */
+  100% {
+    /* css will rotate the element at the start position */
+    /* which is why our algorithm doesn't make an "X */
+    /* transform: rotate(-45deg); */
+    transform: translateX(0px) translateY(7px) rotate(-45deg);
+  }
+}
+
+@keyframes middleLineMoveLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes bottomLineMoveLeft {
+  /* start 10px to the left */
+  0% {
+    transform: translateX(-10px);
+  }
+  /* move right */
+  35% {
+    transform: translateX(0px);
+  }
+  /* then up */
+  75% {
+    transform: translateY(-7px);
+  }
+  /* then rotate */
+  100% {
+    transform: translateX(0px) translateY(-7px) rotate(45deg);
+  }
+}
+
+/* going reverse */
+
+@keyframes topLineMoveRight {
+  /* starting position */
+  0% {
+    transform: translateX(0px) translateY(7px) rotate(-45deg);
+  }
+  /* rotate back to flat line */
+  45% {
+    transform: translateX(0px) translateY(7px) rotate(0deg);
+  }
+  /* then up */
+  75% {
+    transform: translateY(0px);
+  }
+  /* then right */
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes middleLineMoveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes bottomLineMoveRight {
+  /* starting position */
+  0% {
+    transform: translateX(0px) translateY(-7px) rotate(45deg);
+  }
+  /* rotate back to flat line */
+  45% {
+    transform: translateX(0px) translateY(-7px) rotate(0deg);
+  }
+  /* then up */
+  75% {
+    transform: translateY(0px);
+  }
+  /* then right */
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+/* option 2 */
+
+/* option 3 */
+
+/* rotate parent element the button with attr data-clicked */
+
+.mobile-menu-icon {
+  background-color: transparent;
+  margin-inline: auto;
+  display: block;
+  margin-block-start: 80px;
+  height: 26px;
+  /* transform: rotate(45deg); */
+  /* rotate 90deg lines will render vertically */
+  /* transform: rotate(90deg); */
+}
+
+[data-clicked="true"].mobile-menu-icon {
+  /* animation: spinner 500ms linear forwards;
+  animation-delay: 1050ms; */
+}
+
+[data-clicked="false"].mobile-menu-icon {
+  /* animation: spinReverse 1s linear forwards; */
+  /* animation-delay: 1050ms; */
+}
+
+.line {
+  /* transition: transform 1000ms linear, opacity 500ms ease-out; */
+  background-color: var(--color-neutral-black);
+  width: 30px;
+  height: 5px;
+  display: block;
+  border-radius: 100vw;
+}
+
+.line:nth-of-type(2) {
+  background-color: red;
+  margin-block: 2px;
+}
+
+/* top line */
+
+.line:nth-of-type(1) {
+  transform: translateX(10px);
+}
+
+[data-clicked="true"] .line:nth-of-type(1) {
+  /* transform: translateX(0px) translateY(7px) rotate(-45deg); */
+  animation: topLineMoveLeft 1s 1 ease-out forwards;
+}
+
+[data-clicked="false"] .line:nth-of-type(1) {
+  /* animation: reverse; */
+  /* transform: translateX(10px); */
+  animation: topLineMoveRight 1500ms 1 ease-in-out forwards;
+  /* animation-delay: 1100ms; */
+}
+
+/* top line */
+
+/* middle line */
+
+.line:nth-of-type(2) {
+  background-color: red;
+  margin-block: 2px;
+}
+
+[data-clicked="true"] .line:nth-of-type(2) {
+  /* transform: translateX(-30px);
+  opacity: 0; */
+  animation: middleLineMoveLeft 700ms linear forwards;
+}
+
+[data-clicked="false"] .line:nth-of-type(2) {
+  /* transform: translateX(-30px);
+  opacity: 0; */
+  animation: middleLineMoveRight 400ms linear forwards;
+  /* animation-delay: 1100ms; */
+}
+
+/* middle line */
+
+/* bottom line */
+
+.line:nth-of-type(3) {
+  transform: translateX(-10px);
+}
+
+[data-clicked="true"] .line:nth-of-type(3) {
+  animation: bottomLineMoveLeft 1s forwards linear;
+  /* transform: translateX(0px) translateY(-7px) rotate(45deg); */
+}
+
+[data-clicked="false"] .line:nth-of-type(3) {
+  /* transform: translateX(-10px); */
+  animation: bottomLineMoveRight 1500ms forwards linear;
+  /* animation-delay: 1050ms; */
+}
+
+/* bottom line */
+
+@keyframes spinner {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  50% {
+    /* transform: rotate(360deg); */
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes topLineMoveLeft {
+  /* start 10px to the right */
+  0% {
+    transform: translateX(10px);
+  }
+
+  /* move left */
+  35% {
+    transform: translateX(0px);
+  }
+
+  /* then down */
+  75% {
+    transform: translateY(7px);
+  }
+  /* then rotate */
+  100% {
+    /* css will rotate the element at the start position */
+    /* which is why our algorithm doesn't make an "X */
+    /* transform: rotate(-45deg); */
+    transform: translateX(0px) translateY(7px) rotate(-45deg);
+  }
+}
+
+@keyframes middleLineMoveLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes bottomLineMoveLeft {
+  /* start 10px to the left */
+  0% {
+    transform: translateX(-10px);
+  }
+  /* move right */
+  35% {
+    transform: translateX(0px);
+  }
+  /* then up */
+  75% {
+    transform: translateY(-7px);
+  }
+  /* then rotate */
+  100% {
+    transform: translateX(0px) translateY(-7px) rotate(45deg);
+  }
+}
+
+/* going reverse */
+
+@keyframes spinReverse {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes topLineMoveRight {
+  /* starting position */
+  0% {
+    transform: translateX(0px) translateY(7px) rotate(-45deg);
+  }
+  /* rotate back to flat line */
+  45% {
+    transform: translateX(0px) translateY(7px) rotate(0deg);
+  }
+  /* then up */
+  75% {
+    transform: translateY(0px);
+  }
+  /* then right */
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes middleLineMoveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes bottomLineMoveRight {
+  /* starting position */
+  0% {
+    transform: translateX(0px) translateY(-7px) rotate(45deg);
+  }
+  /* rotate back to flat line */
+  45% {
+    transform: translateX(0px) translateY(-7px) rotate(0deg);
+  }
+  /* then up */
+  75% {
+    transform: translateY(0px);
+  }
+  /* then right */
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+/* rotate parent element the button with attr data-clicked */
+
+/* option 3 */
+
+/* save button */
+
+.mobile-menu-icon {
+  background-color: transparent;
+  margin-inline: auto;
+  display: block;
+  margin-block-start: 80px;
+  height: 26px;
+  /* transform: rotate(45deg); */
+}
+
+[data-clicked="true"].mobile-menu-icon {
+  /* animation: spinner 1s linear forwards;
+  animation-delay: 1050ms; */
+}
+
+.line {
+  /* transition: transform 1000ms linear, opacity 500ms ease-out; */
+  background-color: var(--color-neutral-black);
+  width: 30px;
+  height: 5px;
+  display: block;
+  border-radius: 100vw;
+}
+
+.line:nth-of-type(2) {
+  background-color: red;
+  margin-block: 2px;
+}
+
+/* top line */
+
+.line:nth-of-type(1) {
+  transform: translateX(10px);
+}
+
+[data-clicked="true"] .line:nth-of-type(1) {
+  /* transform: translateX(0px) translateY(7px) rotate(-45deg); */
+  animation: topLineMoveLeft 1s 1 ease-out forwards;
+}
+
+[data-clicked="false"] .line:nth-of-type(1) {
+  /* animation: reverse; */
+  /* transform: translateX(10px); */
+  animation: topLineMoveRight 1500ms 1 ease-in-out forwards;
+}
+
+/* top line */
+
+/* middle line */
+
+.line:nth-of-type(2) {
+  background-color: red;
+  margin-block: 2px;
+}
+
+[data-clicked="true"] .line:nth-of-type(2) {
+  /* transform: translateX(-30px);
+  opacity: 0; */
+  animation: middleLineMoveLeft 700ms linear forwards;
+}
+
+[data-clicked="false"] .line:nth-of-type(2) {
+  /* transform: translateX(-30px);
+  opacity: 0; */
+  animation: middleLineMoveRight 400ms linear forwards;
+}
+
+/* middle line */
+
+/* bottom line */
+
+.line:nth-of-type(3) {
+  transform: translateX(-10px);
+}
+
+[data-clicked="true"] .line:nth-of-type(3) {
+  animation: bottomLineMoveLeft 1s forwards linear;
+  /* transform: translateX(0px) translateY(-7px) rotate(45deg); */
+}
+
+[data-clicked="false"] .line:nth-of-type(3) {
+  /* transform: translateX(-10px); */
+  animation: bottomLineMoveRight 1500ms forwards linear;
+}
+
+/* bottom line */
+
+@keyframes spinner {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes topLineMoveLeft {
+  /* start 10px to the right */
+  0% {
+    transform: translateX(10px);
+  }
+
+  /* move left */
+  35% {
+    transform: translateX(0px);
+  }
+
+  /* then down */
+  75% {
+    transform: translateY(7px);
+  }
+  /* then rotate */
+  100% {
+    /* css will rotate the element at the start position */
+    /* which is why our algorithm doesn't make an "X */
+    /* transform: rotate(-45deg); */
+    transform: translateX(0px) translateY(7px) rotate(-45deg);
+  }
+}
+
+@keyframes middleLineMoveLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes bottomLineMoveLeft {
+  /* start 10px to the left */
+  0% {
+    transform: translateX(-10px);
+  }
+  /* move right */
+  35% {
+    transform: translateX(0px);
+  }
+  /* then up */
+  75% {
+    transform: translateY(-7px);
+  }
+  /* then rotate */
+  100% {
+    transform: translateX(0px) translateY(-7px) rotate(45deg);
+  }
+}
+
+/* going reverse */
+
+@keyframes topLineMoveRight {
+  /* starting position */
+  0% {
+    transform: translateX(0px) translateY(7px) rotate(-45deg);
+  }
+  /* rotate back to flat line */
+  45% {
+    transform: translateX(0px) translateY(7px) rotate(0deg);
+  }
+  /* then up */
+  75% {
+    transform: translateY(0px);
+  }
+  /* then right */
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes middleLineMoveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes bottomLineMoveRight {
+  /* starting position */
+  0% {
+    transform: translateX(0px) translateY(-7px) rotate(45deg);
+  }
+  /* rotate back to flat line */
+  45% {
+    transform: translateX(0px) translateY(-7px) rotate(0deg);
+  }
+  /* then up */
+  75% {
+    transform: translateY(0px);
+  }
+  /* then right */
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+/* save button */
+
+/* attempt 1 */
+
+.save-btn {
+  /* padding: 16px;
+  padding-block: 10px; */
+  /* transform: skew(0deg); */
+  /* transition: box-shadow 250ms ease-in;
+  background-color: transparent;
+  display: block;
+  margin-inline: auto;
+  margin-block-start: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: hsl(243, 100%, 82%);
+  border: 2px solid hsl(242, 48%, 58%);
+  border-radius: 100vw;
+  box-shadow: 0px 0px 1px 0px; */
+}
+
+.inner-btn {
+  /* padding: 16px;
+  padding-block: 10px;
+  display: inline-block; */
+}
+
+/* .save-btn:active {
+  box-shadow: 0px 0px 1px 0px;
+} */
+.save-btn:hover {
+  /* box-shadow: 10px 10px 1px 0px; */
+}
+
+/* attempt 1 */
+
+/* another way to animate btn */
+/* attempt 2 */
+
+.save-btn {
+  /* transition: box-shadow 250ms ease-in; */
+  background-color: hsl(243, 100%, 82%);
+  display: block;
+  margin-inline: auto;
+  margin-block-start: 16px;
+  font-weight: 700;
+  /* padding: 16px;
+  padding-block: 10px; */
+  text-transform: uppercase;
+  /* color: hsl(243, 100%, 82%); */
+  /* border: 2px solid hsl(242, 48%, 58%); */
+  border-radius: 100vw;
+  /* transform: skew(0deg); */
+  /* box-shadow: 0px 0px 1px 0px; */
+}
+
+.inner-btn {
+  transition: transform 250ms ease-in, box-shadow 250ms ease-in;
+  padding: 16px;
+  color: hsl(243, 100%, 82%);
+  padding-block: 10px;
+  border-radius: 100vw;
+  border: 2px solid hsl(242, 48%, 58%);
+  display: inline-block;
+  background-color: white;
+}
+
+.save-btn:hover .inner-btn {
+  transform: translateX(-9px) translateY(-9px);
+  box-shadow: 9px 10px 1px 0px hsl(243, 100%, 82%);
+}
+
+.save-btn:active .inner-btn {
+  transform: translateX(0px) translateY(0px);
+  box-shadow: 0px 0px 1px 0px;
+}
+/* attempt 2 */
+
+/* play around with body background color */
+
+.wrapper {
+  max-width: 1000px;
+  margin-inline: auto;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transform: skew(30deg);
+  margin-block-start: 100px;
+}
+
+.container:nth-child(1) {
+  /* transform: skew(41deg) */
+}
+
+.container:nth-child(2) {
+  /* transform: skew(-41deg) */
+}
+
+.container {
+  display: flex;
+  /* gap: 8px; */
+}
+
+.container .one {
+  height: 300px;
+}
+
+.container > * {
+  flex-basis: 25%;
+}
+
+.container div:nth-child(even) {
+  background-color: rgba(106, 138, 241, 0.301);
+}
+
+.container:nth-child(1),
+.container:nth-child(2) {
+  transform-style: preserve-3d;
+}
+
+.container:nth-child(1) {
+  transform: rotateY(35deg);
+}
+
+.container:nth-child(2) {
+  transform: rotateY(42deg);
+}
+
+.container:nth-child(2) div:nth-child(odd) {
+  box-shadow: 0px 0px 10px 10px var(--color-neutral-white);
+  transform: translateY(23px) translateZ(-45px);
+}
+
+.container:nth-child(1) div:nth-child(even):hover {
+  transform: translateY(-23px) translateZ(0px);
+}
+
+.container:nth-child(1) div:nth-child(even) {
+  box-shadow: 0px 0px 10px 10px var(--color-neutral-white);
+  transform: translateY(-23px) translateZ(45px);
+  transition: transform 500ms linear;
+}
+
+.container:nth-child(1) div:nth-child(even),
+.container:nth-child(2) div:nth-child(odd) {
+}
+
+.container div:nth-child(odd) {
+  background-color: rgba(202, 96, 206, 0.479);
+}
+
+/* triangle */
+
+.triangle {
+  display: block;
+  width: 10px;
+  border: 5px solid red;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+/* dark/light theme menu btn */
+
+button[data-theme] {
+  margin-block-start: 50px;
+  display: block;
+  margin-inline: auto;
+  width: 30px;
+  background-color: transparent;
+}
+
+[data-theme="light"] .lines-container {
+  transform: rotateX(180deg);
+}
+
+[data-theme="dark"] .lines-container {
+  transform: rotateX(0deg);
+}
+
+/* top */
+/* middle */
+/* bottom */
+
+[data-theme="light"] .lines-container:nth-child(1) {
+  /* no delay */
+  transition-delay: 0s;
+}
+
+[data-theme="dark"] .lines-container:nth-child(1) {
+  transition-delay: 1000ms;
+  /* delay */
+}
+
+[data-theme="light"] .lines-container:nth-child(2) {
+  /* delay */
+  transition-delay: 500ms;
+}
+
+[data-theme="dark"] .lines-container:nth-child(2) {
+  transition-delay: 500ms;
+  /* delay */
+}
+
+[data-theme="light"] .lines-container:nth-child(3) {
+  /* delay */
+  transition-delay: 1000ms;
+}
+
+[data-theme="dark"] .lines-container:nth-child(3) {
+  /* no delay */
+  transition-delay: 0ms;
+}
+
+.lines-container:nth-child(2) {
+  margin-block: 3px;
+}
+
+.lines-container {
+  height: 5px;
+  transition: transform 500ms linear;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.lines-container span {
+  display: block;
+  border-radius: 100vw;
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+.front {
+  background-color: black;
+}
+
+.back {
+  background-color: red;
+  transform: rotateX(180deg);
+}
+
+/* veritcal lines */
+/* button display:flex */
+/* div childrens: height 30px width: 5px */
+/* middle div margin-inline instead of margin-block */
+
+button[data-theme] {
+  display: flex;
+  width: revert;
+}
+
+.lines-container {
+  height: 30px;
+  width: 5px;
+}
+
+.lines-container:nth-child(2) {
+  margin-inline: 3px;
+  margin-block: 0px;
+}
+
+/* blinking */
+
+.blinking {
+  font-weight: 500;
+  position: relative;
+  width: max-content;
+  display: block;
+  margin-block-start: 48px;
+  margin-inline: auto;
+}
+
+.blinking::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8px;
+  background-color: currentColor;
+  height: 3px;
+  bottom: 7px;
+  left: -8px;
+  animation: blink 750ms ease-out infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
