@@ -7899,7 +7899,9 @@ function rowCounter({
     }
   };
 }
-
+/**
+ * refactor function names
+ * **/
 export const checking = rowCounter({
   placeHolder,
   movePointer,
