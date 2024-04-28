@@ -1,0 +1,76 @@
+.hamburger-button {
+  background-color: transparent;
+}
+
+.hamburger-button span {
+  display: block;
+  height: 2px;
+  width: 20px;
+  border-radius: 100vw;
+}
+
+/* animation */
+
+.hamburger-button[data-buttonclick="true"] span:first-child {
+  animation: MoveDownRotate 1000ms ease-out forwards;
+}
+
+/* .hamburger-button[data-buttonclick="true"] span:nth-child(2) {
+  animation: RemoveElement 1000ms ease-out forwards;
+} */
+
+.hamburger-button[data-buttonclick="true"] span:last-child {
+  animation: MoveUpRotate 1000ms ease-out forwards;
+}
+
+/* animation */
+
+.hamburger-button span:first-child {
+  background-color: black;
+}
+
+/* .hamburger-button span:nth-child(2) {
+  height: 5px;
+} */
+
+.hamburger-button span:last-child {
+  background-color: red;
+  margin-block-start: 5px;
+}
+
+/* .hamburger-button span:last-of-type {
+  margin-block-start: 5px;
+} */
+
+@keyframes MoveDownRotate {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3.5px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(3.5px) rotateZ(-45deg);
+  }
+}
+
+/* @keyframes RemoveElement {
+  0% {
+    position: absolute;
+  }
+  100% {
+    position: absolute;
+  }
+} */
+
+@keyframes MoveUpRotate {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3.5px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(-3.5px) rotateZ(45deg);
+  }
+}
