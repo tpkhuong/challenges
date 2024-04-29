@@ -23,6 +23,16 @@
   animation: MoveUpRotate 1000ms ease-out forwards;
 }
 
+/* reverse */
+
+.hamburger-button[data-buttonclick="true"] span:first-child {
+  animation: MoveDownRotate 1000ms ease-out forwards;
+}
+
+.hamburger-button[data-buttonclick="true"] span:last-child {
+  animation: MoveUpRotate 1000ms ease-out forwards;
+}
+
 /* animation */
 
 .hamburger-button span:first-child {
@@ -54,6 +64,18 @@
   }
 }
 
+@keyframes ReverseDownRotate {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3.5px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(3.5px) rotateZ(-45deg);
+  }
+}
+
 /* @keyframes RemoveElement {
   0% {
     position: absolute;
@@ -64,6 +86,18 @@
 } */
 
 @keyframes MoveUpRotate {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3.5px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(-3.5px) rotateZ(45deg);
+  }
+}
+
+@keyframes ReverseMoveUpRotate {
   0% {
     transform: translateY(0px);
   }
