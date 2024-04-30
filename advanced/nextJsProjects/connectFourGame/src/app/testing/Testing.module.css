@@ -66,13 +66,13 @@
 
 @keyframes ReverseDownRotate {
   0% {
-    transform: translateY(0px);
+    transform: translateY(3.5px) rotateZ(-45deg);
   }
   50% {
     transform: translateY(3.5px) rotateZ(0deg);
   }
   100% {
-    transform: translateY(3.5px) rotateZ(-45deg);
+    transform: translateY(0px);
   }
 }
 
@@ -99,12 +99,12 @@
 
 @keyframes ReverseMoveUpRotate {
   0% {
-    transform: translateY(0px);
+    transform: translateY(-3.5px) rotateZ(45deg);
   }
   50% {
     transform: translateY(-3.5px) rotateZ(0deg);
   }
   100% {
-    transform: translateY(-3.5px) rotateZ(45deg);
+    transform: translateY(0px);
   }
 }
