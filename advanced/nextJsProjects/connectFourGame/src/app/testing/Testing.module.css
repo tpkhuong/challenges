@@ -25,12 +25,12 @@
 
 /* reverse */
 
-.hamburger-button[data-buttonclick="true"] span:first-child {
-  animation: MoveDownRotate 1000ms ease-out forwards;
+.hamburger-button[data-buttonclick="false"] span:first-child {
+  animation: ReverseDownRotate 1000ms ease-out forwards;
 }
 
-.hamburger-button[data-buttonclick="true"] span:last-child {
-  animation: MoveUpRotate 1000ms ease-out forwards;
+.hamburger-button[data-buttonclick="false"] span:last-child {
+  animation: ReverseMoveUpRotate 1000ms ease-out forwards;
 }
 
 /* animation */
