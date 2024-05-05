@@ -1,0 +1,14 @@
+[data-theme="light"].marketing-point-container {
+  --bg: var(--color-neutral-white);
+  --fg: var(--color-neutral-black);
+}
+
+[data-theme="dark"].marketing-point-container {
+  --bg: var(--color-neutral-black);
+  --fg: var(--color-neutral-white);
+}
+
+.marketing-point-container {
+  background-color: var(--bg);
+  color: var(--fg);
+}
