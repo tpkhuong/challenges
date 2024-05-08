@@ -18,6 +18,12 @@ export default function Page() {
         mobile="/home/mobile/beautiful-stories.jpg"
         theme="light"
       />
+      <MarketingPoint
+        desktop="/home/desktop/designed-for-everyone.jpg"
+        tablet="/home/tablet/designed-for-everyone.jpg"
+        mobile="/home/mobile/designed-for-everyone.jpg"
+        theme="light"
+      />
     </React.Fragment>
   );
 }
