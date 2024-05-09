@@ -12,3 +12,21 @@
   background-color: var(--bg);
   color: var(--fg);
 }
+
+/* text content */
+
+.text-content-container h2 {
+  font-size: var(--font-size-40px);
+  font-weight: 600;
+}
+
+.text-content-container p {
+  font-size: var(--font-size-15px);
+  color: var(--color-light-grey);
+  font-weight: 400;
+}
+
+.link-text {
+  font-size: var(--font-size-12px);
+  font-weight: 600;
+}

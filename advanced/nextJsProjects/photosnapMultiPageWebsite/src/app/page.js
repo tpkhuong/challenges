@@ -11,8 +11,13 @@ export default function Page() {
         tablet="/home/tablet/create-and-share.jpg"
         mobile="/home/mobile/create-and-share.jpg"
         theme="dark"
-      />
-      <MarketingPoint
+        title="Create and share your photo Stories"
+      >
+        Photosnap is a platform for photographers and visual storytellers. We
+        make it easy to share photos, tell stories and connect with others.
+      </MarketingPoint>
+
+      {/* <MarketingPoint
         desktop="/home/desktop/beautiful-stories.jpg"
         tablet="/home/tablet/beautiful-stories.jpg"
         mobile="/home/mobile/beautiful-stories.jpg"
@@ -23,7 +28,7 @@ export default function Page() {
         tablet="/home/tablet/designed-for-everyone.jpg"
         mobile="/home/mobile/designed-for-everyone.jpg"
         theme="light"
-      />
+      /> */}
     </React.Fragment>
   );
 }
