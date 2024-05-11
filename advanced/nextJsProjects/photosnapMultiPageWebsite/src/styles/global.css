@@ -19,7 +19,8 @@
   --color-purple: hsl(257, 100%, 64%);
   --color-red: hsl(347, 97%, 70%);
   --color-yellow: hsl(41, 100%, 70%);
-  --color-light-grey: hsl(0, 0%, 87%);
+  --color-light-grey-dark-theme: hsl(0, 0%, 60%);
+  --color-light-grey-light-theme: hsl(0, 0%, 40%);
 
   --color-neutral-black: hsl(0, 0%, 0%);
   --color-neutral-white: hsl(0, 0%, 100%);

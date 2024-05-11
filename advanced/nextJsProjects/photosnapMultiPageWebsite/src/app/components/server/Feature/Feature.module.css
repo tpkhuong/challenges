@@ -1,0 +1,30 @@
+.feature-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--font-size-18px);
+  font-weight: 600;
+}
+
+.feature-container:nth-of-type(2) h2 {
+  margin-block-start: 67px;
+}
+
+.feature-container h2 {
+  margin-block-start: 48px;
+  margin-block-end: 16px;
+}
+
+.feature-container p {
+  width: 36ch;
+  line-height: 27px;
+}
+
+.text-content {
+  color: var(--color-light-grey-light-theme);
+  font-size: var(--font-size-15px);
+  text-align: center;
+}
