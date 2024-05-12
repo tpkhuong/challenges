@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./Testing.module.css";
+import styles from "./AnimatedMobileNavMenuButton.module.css";
 
-export default function TestingPage({ children }) {
+export default function AnimatedMobileNavMenuButton({ children }) {
   return (
-    <main>
+    <div className={styles[`mobile-menu-btn-container`]}>
       <button
         aria-label="open mobile menu"
         data-buttonclick=""
@@ -13,6 +13,6 @@ export default function TestingPage({ children }) {
         {/* <span></span> */}
         <span className={styles[`bottom-line`]}></span>
       </button>
-    </main>
+    </div>
   );
 }

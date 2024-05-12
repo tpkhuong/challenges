@@ -2,13 +2,17 @@ import styles from "../styles/Page.module.css";
 import MarketingPoint from "../app/components/client/MarketingPoint/index";
 import StoryLink from "./components/client/StoryLink/index";
 import Feature from "../app/components/server/Feature/index.js";
+import LogoNavBar from "./components/server/LogoNavbar/index.js";
+import Footer from "../app/components/server/Footer/index.js";
+import MobileNavMenu from "../app/components/server/MobileNavMenu/index.js";
 import React from "react";
 
 export default function Page() {
   return (
     <React.Fragment>
       <header>
-        <MarketingPoint
+        <LogoNavBar />
+        {/* <MarketingPoint
           desktop="/home/desktop/create-and-share.jpg"
           tablet="/home/tablet/create-and-share.jpg"
           mobile="/home/mobile/create-and-share.jpg"
@@ -19,7 +23,7 @@ export default function Page() {
         >
           Photosnap is a platform for photographers and visual storytellers. We
           make it easy to share photos, tell stories and connect with others.
-        </MarketingPoint>
+        </MarketingPoint> */}
       </header>
       <main>
         {/* <section className={styles[`view-stories-container`]}>
@@ -119,6 +123,10 @@ export default function Page() {
           </Feature> */}
         </section>
       </main>
+      {/* footer */}
+      <Footer />
+      {/* mobile menu */}
+      {/* <MobileNavMenu /> */}
     </React.Fragment>
   );
 }

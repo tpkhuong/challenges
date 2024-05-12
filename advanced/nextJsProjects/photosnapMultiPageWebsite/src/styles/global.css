@@ -28,6 +28,14 @@
   --main-accent: to top, hsl(28, 100%, 79%), hsl(329, 36%, 59%),
     hsl(229, 100%, 67%);
 
+  /* social media icon accent */
+  --color-facebook: to right top, hsl(202, 62%, 62%), hsl(257, 88%) 55%;
+  --color-youtube: to right top, hsl(341, 74%, 48%), hsl(0, 100%) 68%;
+  --color-twitter: to right top, hsl(172, 100%, 70%), hsl(195, 56%, 35%);
+  --color-pinterest: to right top, hsl(35, 86%, 74%), hsl(0, 72%, 55%);
+  --color-instagram: to right top, hsl(28, 100%, 79%), hsl(329, 36%, 59%),
+    hsl(229, 100%, 68%);
+
   /* 250px */
   --heading-extra-lrg: 15.625rem;
   /* 56px */

@@ -1,0 +1,45 @@
+.modal-container {
+  --color-light-grey: hsl(0, 0%, 87%);
+  --btn-bg: var(--color-neutral-black);
+  --btn-fg: var(--color-neutral-white);
+
+  background-color: hsla(0, 0%, 0%, 0.2);
+  position: fixed;
+  inset: 0;
+  top: 72px;
+}
+
+.mobile-nav-menu-container {
+  background-color: var(--color-neutral-white);
+  text-align: center;
+  padding: 32px;
+}
+
+.navitem:nth-child(2) {
+  padding-block: 20px;
+}
+
+.navlink {
+  letter-spacing: 2px;
+  color: var(--color-neutral-black);
+  font-size: var(--font-size-15px);
+  font-weight: 600;
+}
+
+.menu-separator {
+  height: 1px;
+  display: block;
+  background-color: hsl(0, 0%, 59%);
+  margin-block: 20px;
+}
+
+.invite-btn {
+  display: block;
+  width: 100%;
+  letter-spacing: 2px;
+  font-size: var(--font-size-15px);
+  font-weight: 600;
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
+  padding-block: 14px;
+}
