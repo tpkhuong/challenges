@@ -1,5 +1,12 @@
 .footer {
   background-color: var(--color-neutral-black);
+  padding-block: 56px;
+  padding-inline: 32px;
+}
+
+.icon-social-links-container {
+  width: fit-content;
+  margin-inline: auto;
 }
 
 .logo-icon g path:first-child {
@@ -12,8 +19,32 @@
   font-weight: 600;
 }
 
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  margin-block-start: 32px;
+  margin-block-end: 50px;
+}
+
 .social-media-icons svg path {
   fill: var(--color-neutral-white);
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.invite-copyright-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 34px;
+  margin-block-start: 120px;
 }
 
 .link-text-arrow-container {
@@ -31,4 +62,9 @@
 
 .link-text-arrow-container g {
   stroke: var(--color-neutral-white);
+}
+
+.copyright {
+  font-size: var(--font-size-15px);
+  color: var(--color-light-grey-dark-theme);
 }

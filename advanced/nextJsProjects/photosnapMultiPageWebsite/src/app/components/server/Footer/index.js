@@ -128,7 +128,11 @@ export default function Footer({ children }) {
             />
           </svg>
         </div>
-        <nav aria-label="secondary-navigation" role="menubar">
+        <nav
+          className={styles[`footer-nav`]}
+          aria-label="secondary-navigation"
+          role="menubar"
+        >
           {["home", "stories", "features", "pricing"].map(
             function makeFooterNav(linkText, index, list) {
               const capitalizedLinkText = linkText.toUpperCase();
