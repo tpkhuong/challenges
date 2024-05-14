@@ -126,7 +126,7 @@ export default function Page() {
       {/* footer */}
       <Footer />
       {/* mobile menu */}
-      {/* <MobileNavMenu /> */}
+      <MobileNavMenu />
     </React.Fragment>
   );
 }

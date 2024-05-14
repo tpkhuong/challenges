@@ -1,7 +1,13 @@
+.modal-container[data-showmodal="true"] {
+  display: block;
+}
+
 .modal-container {
   --color-light-grey: hsl(0, 0%, 87%);
   --btn-bg: var(--color-neutral-black);
   --btn-fg: var(--color-neutral-white);
+
+  display: none;
 
   background-color: hsla(0, 0%, 0%, 0.2);
   position: fixed;

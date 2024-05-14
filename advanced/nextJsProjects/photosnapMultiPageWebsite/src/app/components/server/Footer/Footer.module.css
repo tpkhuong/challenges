@@ -17,6 +17,7 @@
   color: var(--color-neutral-white);
   font-size: var(--font-size-12px);
   font-weight: 600;
+  letter-spacing: 2px;
 }
 
 .social-media-icons {
