@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import styles from "./MobileNavMenu.module.css";
@@ -5,6 +7,9 @@ import styles from "./MobileNavMenu.module.css";
 export default function MobileNavMenu({ children }) {
   return (
     <div
+      onKeyDown={(event) => {
+        console.log(event.target);
+      }}
       id="mobile-menu-selector"
       className={styles[`modal-container`]}
       data-showmodal=""
@@ -13,7 +18,11 @@ export default function MobileNavMenu({ children }) {
     >
       <div className={styles[`mobile-nav-menu-container`]}>
         <nav>
-          <ul role="menubar" className={styles[`navlist`]}>
+          <ul
+            id="navlist-selector"
+            role="menubar"
+            className={styles[`navlist`]}
+          >
             {["stories", "features", "pricing"].map(function makeNavLink(
               linkText,
               index,
@@ -40,7 +49,7 @@ export default function MobileNavMenu({ children }) {
           </ul>
         </nav>
         <span className={styles[`menu-separator`]}></span>
-        <a data-lastelement className={styles[`invite-btn`]}>
+        <a href="/" id="last-element-selector" className={styles[`invite-btn`]}>
           GET AN INVITE
         </a>
       </div>
