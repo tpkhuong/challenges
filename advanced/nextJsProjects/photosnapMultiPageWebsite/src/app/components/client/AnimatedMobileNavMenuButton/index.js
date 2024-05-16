@@ -7,7 +7,8 @@ export default function AnimatedMobileNavMenuButton({ children }) {
   return (
     <div className={styles[`mobile-menu-btn-container`]}>
       <button
-        // onKeyDown={tabThroughMobileMenu}
+        id="mobile-btn-selector"
+        onKeyDown={mobileBtnTabThroughMobileMenu}
         aria-label="open mobile menu"
         data-buttonclick=""
         className={styles[`hamburger-button`]}
@@ -50,7 +51,7 @@ function showMobileMenu(event) {
   objOfMethodForBtn[ariaLabel](clickedBtn, mobileMenuModal);
 }
 
-function tabThroughMobileMenu(event) {
+function mobileBtnTabThroughMobileMenu(event) {
   console.log(event);
   // const { code, key, shiftKey } = event;
   if (!event.shiftKey && event.code == "Tab") {

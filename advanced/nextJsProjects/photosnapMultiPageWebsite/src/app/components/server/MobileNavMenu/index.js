@@ -7,9 +7,7 @@ import styles from "./MobileNavMenu.module.css";
 export default function MobileNavMenu({ children }) {
   return (
     <div
-      onKeyDown={(event) => {
-        console.log(event.target);
-      }}
+      onKeyDown={mobileModalTabThroughMenu}
       id="mobile-menu-selector"
       className={styles[`modal-container`]}
       data-showmodal=""
@@ -33,11 +31,11 @@ export default function MobileNavMenu({ children }) {
                 <li
                   className={styles[`navitem`]}
                   role="none"
-                  data-firstelement={`${index == 0 ? "true" : "false"}`}
                   key={Math.random() * index}
                 >
                   <Link
                     role="menuitem"
+                    data-firstelement={`${index == 0 ? "true" : "false"}`}
                     className={styles[`navlink`]}
                     href={`/${linkText}`}
                   >
@@ -55,4 +53,28 @@ export default function MobileNavMenu({ children }) {
       </div>
     </div>
   );
+}
+
+function mobileModalTabThroughMenu(event) {
+  const { shiftKey, code, target } = event;
+  // focus mobile-btn
+  if (
+    !shiftKey &&
+    code == "Tab" &&
+    target.tagName == "A" &&
+    target.getAttribute("id") == "last-element-selector"
+  ) {
+    event.preventDefault();
+    document.getElementById("mobile-btn-selector").focus();
+  }
+  // focus mobile-btn
+  if (
+    shiftKey &&
+    code == "Tab" &&
+    target.tagName == "A" &&
+    target.getAttribute("data-firstelement") == "true"
+  ) {
+    event.preventDefault();
+    document.getElementById("mobile-btn-selector").focus();
+  }
 }
