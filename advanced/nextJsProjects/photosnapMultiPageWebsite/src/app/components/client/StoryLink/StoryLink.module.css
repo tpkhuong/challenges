@@ -54,3 +54,29 @@
 .read-story-arrow g {
   stroke: var(--color-neutral-white);
 }
+
+@media screen and (min-width: 90rem) {
+  .story-link-container {
+    position: relative;
+  }
+
+  /* .story-link-container:hover {
+    transition: transform 1000ms ease-out;
+    transform: translateY(-16px);
+  } */
+
+  .story-link-container:hover.story-link-container::after {
+    transition: transform 1000ms ease-in;
+    transform: translateY(0px);
+  }
+
+  .story-link-container::after {
+    content: "";
+    display: block;
+    height: 6px;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(var(--main-accent));
+    transform: translateY(-6px);
+  }
+}

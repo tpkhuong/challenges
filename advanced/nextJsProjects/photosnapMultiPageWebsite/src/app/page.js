@@ -53,7 +53,7 @@ export default function Page() {
             brands, businesses you name it.
           </MarketingPoint>
         </section> */}
-        {/* <section className={styles[`read-stories-container`]}>
+        <section className={styles[`read-stories-container`]}>
           <StoryLink
             title="The Mountains"
             author="John Appleseed"
@@ -82,7 +82,7 @@ export default function Page() {
             tablet="/stories/desktop/architecturals.jpg"
             altText=""
           />
-        </section> */}
+        </section>
         <section className={styles[`features-container`]}>
           {/* responsive */}
           {/* <Feature
@@ -124,9 +124,9 @@ export default function Page() {
         </section>
       </main>
       {/* footer */}
-      <Footer />
+      {/* <Footer /> */}
       {/* mobile menu */}
-      <MobileNavMenu />
+      {/* <MobileNavMenu /> */}
     </React.Fragment>
   );
 }
