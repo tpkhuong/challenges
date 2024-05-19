@@ -157,9 +157,26 @@
     margin-block-end: -5px;
   }
 
+  .navlink:hover {
+    color: hsl(0, 0%, 30%);
+  }
+
   .invite-copyright-container {
     margin-block-start: revert;
     align-items: flex-end;
     justify-content: space-between;
+  }
+
+  .link-text-arrow-container span {
+    position: relative;
+  }
+  .link-text-arrow-container:hover span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1px;
+    background-color: currentColor;
+    left: 0px;
+    right: 0px;
   }
 }

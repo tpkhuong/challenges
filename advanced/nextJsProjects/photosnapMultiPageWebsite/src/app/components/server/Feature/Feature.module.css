@@ -28,3 +28,25 @@
   font-size: var(--font-size-15px);
   text-align: center;
 }
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .feature-container p {
+    width: 52ch;
+  }
+}
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  .feature-container {
+    flex-basis: 350px;
+  }
+
+  .feature-container:nth-of-type(2) h2 {
+    margin-block-start: 85px;
+  }
+  .feature-container p {
+    width: 39ch;
+  }
+}

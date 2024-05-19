@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./LogoNavbar.module.css";
 import AnimatedMobileNavMenuButton from "../../client/AnimatedMobileNavMenuButton/index.js";
 
@@ -27,7 +28,33 @@ export default function LogoNavBar({ children }) {
       </a>
       {/* <div className={styles[`logo-container`]}>
       </div> */}
+      {/* tablet and desktop nav */}
+      <nav className={styles[`main-navbar`]}>
+        <ul className={styles[`navlist`]} role="menubar">
+          {["stories", "features", "pricing"].map(function makeNav(
+            linkText,
+            index,
+            list
+          ) {
+            const capitalizedLinkText = linkText.toLocaleUpperCase();
+            return (
+              <li
+                key={Math.random() * index}
+                role="none"
+                className={styles[`navitem`]}
+              >
+                <Link className={styles[`navlink`]} href={`/${linkText}`}>
+                  {capitalizedLinkText}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
       {/* tablet and desktop button */}
+      <a href="/" className={styles[`main-nav-invite-btn`]}>
+        GET AN INVITE
+      </a>
       {/* mobile menu button*/}
       <AnimatedMobileNavMenuButton />
     </div>

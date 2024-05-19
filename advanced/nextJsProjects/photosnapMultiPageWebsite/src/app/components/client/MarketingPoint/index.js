@@ -18,7 +18,7 @@ export default function MarketingPoint({
       <article
         className={styles[`marketing-point-container`]}
         data-theme={`${theme}`}
-        data-sideoftextcontent={`${textLeftBoolean}`}
+        data-textleftside={`${textLeftBoolean}`}
       >
         {/* img */}
         <div className={styles[`img-container`]}>

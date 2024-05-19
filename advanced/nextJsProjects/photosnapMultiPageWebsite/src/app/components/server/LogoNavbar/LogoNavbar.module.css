@@ -1,8 +1,96 @@
 .logonavbar-container {
+  --navlink-fg: var(--color-neutral-black);
+  --btn-fg: var(--color-neutral-white);
+  --btn-bg: var(--color-neutral-black);
   background-color: var(--color-neutral-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 24px;
-  /* padding-block: 28px; */
+  padding-block: 28px;
+}
+
+.main-navbar {
+  display: none;
+}
+
+.main-nav-invite-btn {
+  display: none;
+}
+
+@media screen and (min-width: 48rem) {
+  .logonavbar-container {
+    padding: 40px;
+    padding-block: 16px;
+  }
+  /* main-nav */
+
+  .main-navbar {
+    display: block;
+    margin-inline-start: 42px;
+    margin-inline-end: 49px;
+  }
+
+  .navlist {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 37px;
+  }
+
+  .navlist a {
+    color: var(--navlink-fg);
+    font-size: var(--font-size-12px);
+    font-weight: 600;
+    letter-spacing: 2px;
+    width: 100%;
+  }
+
+  /* invite btn */
+
+  .main-nav-invite-btn {
+    background-color: var(--btn-bg);
+    color: var(--btn-fg);
+    display: block;
+    padding-inline: 24px;
+    padding-block: 12px;
+
+    font-size: var(--font-size-12px);
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  /* logo and navbar container */
+  .logonavbar-container {
+    padding-inline: 165px;
+  }
+  /* main nav */
+
+  .main-navbar {
+    margin-inline-start: 250px;
+    margin-inline-end: 262px;
+  }
+
+  .navlist a:hover {
+    --navlink-fg: var(--color-light-grey-hover);
+  }
+
+  /* invite btn */
+
+  .main-nav-invite-btn:hover {
+    --btn-bg: var(--color-light-grey-hover-btn);
+    --btn-fg: var(--color-neutral-black);
+    display: block;
+    padding-inline: 24px;
+    padding-block: 12px;
+
+    font-size: var(--font-size-12px);
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
 }
