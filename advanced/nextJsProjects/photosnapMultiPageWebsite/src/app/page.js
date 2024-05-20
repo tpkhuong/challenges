@@ -7,7 +7,7 @@ import Footer from "../app/components/server/Footer/index.js";
 import MobileNavMenu from "../app/components/server/MobileNavMenu/index.js";
 import React from "react";
 
-export default function Page() {
+export default function RootPage() {
   return (
     <React.Fragment>
       <header>

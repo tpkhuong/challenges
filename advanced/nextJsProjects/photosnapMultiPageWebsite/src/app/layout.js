@@ -7,7 +7,7 @@ export default function Rootlayout({ children }) {
     <html lang="en">
       <head>
         <meta name="author" content="KhuongCorp" />
-        <meta name="description" content="Building Next Js App" />
+        <meta name="description" content="Photoshop Page" />
         <title>Photosnap MultiPage</title>
         <link
           rel="shortcut icon"
