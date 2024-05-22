@@ -11,9 +11,10 @@ export default function StoriesHeader({
   date,
   author,
   description,
+  linkText,
 }) {
   return (
-    <header>
+    <section>
       <div className={styles[`img-container`]}>
         {/* img */}
         <picture>
@@ -31,7 +32,7 @@ export default function StoriesHeader({
         {/* date and author */}
         <span className={styles[`date-author-container`]}>
           <span className={styles[`date`]}>{date}</span>
-          <span className={styles[`author`]}>{`by ${author}`}</span>
+          <span className={styles[`author`]}>{` by ${author}`}</span>
         </span>
         {/* paragraph */}
         <p className={styles[`content`]}>{description}</p>
@@ -50,6 +51,6 @@ export default function StoriesHeader({
           </svg>
         </a>
       </div>
-    </header>
+    </section>
   );
 }
