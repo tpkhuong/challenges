@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Stories.module.css";
 import StoriesHeader from "../components/server/Stories_Header/index.js";
+import StoryLink from "../components/client/StoryLink/index.js";
 import LogoNavBar from "../components/server/LogoNavbar/index.js";
 import Footer from "../components/server/Footer/index.js";
 import MobileNavMenu from "../components/server/MobileNavMenu/index.js";
@@ -22,7 +23,31 @@ export default function StoriesPage({ children }) {
           linkText="READ THE STORY"
         />
       </header>
-      <main></main>
+      <main>
+        {/* 1 */}
+        {/* <StoryLink
+          title="The Mountains"
+          author="John Appleseed"
+          mobile="/stories/mobile/mountains.jpg"
+          tablet="/stories/desktop/mountains.jpg"
+          altText=""
+        /> */}
+        {/* 2 */}
+        {/* 3 */}
+        {/* 4 */}
+        {/* 5 */}
+        {/* 6 */}
+        {/* 7 */}
+        {/* 8 */}
+        {/* 9 */}
+        {/* 10 */}
+        {/* 11 */}
+        {/* 12 */}
+        {/* 13 */}
+        {/* 14 */}
+        {/* 15 */}
+        {/* 16 */}
+      </main>
       {/* foooter */}
       {/* mobile menu */}
       {/* <MobileNavMenu/> */}

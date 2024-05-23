@@ -59,8 +59,19 @@
 /* tablet */
 
 @media screen and (min-width: 48rem) {
+  .img-text-content-container {
+    position: relative;
+  }
   .text-content-container {
     background-color: revert;
+
+    position: absolute;
+    top: 120px;
+    bottom: 120px;
+    left: 35px;
+
+    padding-inline: revert;
+    padding-block: revert;
   }
   .recent-story {
     letter-spacing: 3px;
@@ -68,15 +79,16 @@
   .title {
     font-size: var(--font-size-40px);
     letter-spacing: 6px;
-    line-height: 54px;
+    line-height: 42px;
 
-    margin-block-start: 24px;
+    margin-block-start: 16px;
+    margin-block-end: 12px;
   }
 
   .content {
     /* tablet: color hsl(210,9%,70%) */
     color: hsl(210, 9%, 70%);
-    width: 387px;
+    width: 385px;
     line-height: 27px;
 
     margin-block-end: 19px;
@@ -84,10 +96,29 @@
 }
 /* desktop */
 @media screen and (min-width: 90rem) {
+  .text-content-container {
+    left: 115px;
+  }
+
   .title {
   }
 
   .content {
-    /* margin-block-end: revert; */
+    margin-block-end: revert;
+  }
+  /* hover link */
+  .link-text {
+    position: relative;
+  }
+
+  .link-text-arrow-container:hover span::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: currentColor;
+    position: absolute;
+
+    left: 0px;
+    right: 0px;
   }
 }

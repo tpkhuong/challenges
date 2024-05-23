@@ -14,7 +14,7 @@ export default function StoriesHeader({
   linkText,
 }) {
   return (
-    <section>
+    <section className={styles[`img-text-content-container`]}>
       <div className={styles[`img-container`]}>
         {/* img */}
         <picture>
