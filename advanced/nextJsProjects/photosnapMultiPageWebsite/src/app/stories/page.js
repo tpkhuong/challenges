@@ -25,6 +25,7 @@ export default function StoriesPage({ children }) {
       </header>
       <main>
         {/* 1 */}
+        {/* mountains.jpg */}
         {/* <StoryLink
           title="The Mountains"
           author="John Appleseed"
@@ -33,20 +34,35 @@ export default function StoriesPage({ children }) {
           altText=""
         /> */}
         {/* 2 */}
+        {/* cityscapes */}
         {/* 3 */}
+        {/* 18-days-voyage */}
         {/* 4 */}
+        {/* architecturals */}
         {/* 5 */}
+        {/* world-tour */}
         {/* 6 */}
+        {/* unforeseen-corners */}
         {/* 7 */}
+        {/* king-on-africa */}
         {/* 8 */}
+        {/* trip-to-nowhere */}
         {/* 9 */}
+        {/* rage-of-the-sea */}
         {/* 10 */}
+        {/* running-free */}
         {/* 11 */}
+        {/* behind-the-waves */}
         {/* 12 */}
+        {/* calm-waters */}
         {/* 13 */}
+        {/* milky-way */}
         {/* 14 */}
+        {/* dark-forest */}
         {/* 15 */}
+        {/* somwarpet */}
         {/* 16 */}
+        {/* land-of-dreams */}
       </main>
       {/* foooter */}
       {/* mobile menu */}
