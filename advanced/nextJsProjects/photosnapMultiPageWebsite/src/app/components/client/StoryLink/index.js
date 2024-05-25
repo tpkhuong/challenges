@@ -3,6 +3,7 @@ import styles from "./StoryLink.module.css";
 
 export default function StoryLink({
   children,
+  date,
   title,
   author,
   mobile,
@@ -18,6 +19,8 @@ export default function StoryLink({
         </picture>
         <div className={styles[`text-content-container`]}>
           <div>
+            {/* date */}
+            <span className={styles[`date`]}>{date}</span>
             {/* story title */}
             <h2>{title}</h2>
             {/* author */}

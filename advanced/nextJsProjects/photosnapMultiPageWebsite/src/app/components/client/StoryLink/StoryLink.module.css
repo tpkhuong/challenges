@@ -6,6 +6,14 @@
   /* padding-block-end: 40px; */
 }
 
+.story-link-container::after {
+  content: "";
+  display: block;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, 0.2);
+  position: absolute;
+}
+
 .story-link-container img {
   width: 100%;
 }
@@ -18,6 +26,10 @@
   bottom: 40px;
   padding-inline: 32px;
   width: 100%;
+}
+
+.date {
+  display: block;
 }
 
 .text-content-container h2 {
