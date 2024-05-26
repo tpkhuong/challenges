@@ -1,0 +1,115 @@
+/* light gray lines */
+/* --color-light-grey-hover-btn */
+/* mobile */
+
+@media screen and (max-width: 47rem) {
+  .title,
+  .tablet-desktop-checked-features {
+    display: none;
+  }
+}
+
+.title-feature-compare-container {
+  font-weight: 600;
+  font-size: var(--font-size-12px);
+  letter-spacing: 2px;
+
+  padding-inline: 28px;
+}
+
+.features-compare li {
+  padding-block: 23.5px;
+  position: relative;
+}
+
+.features-compare li:nth-child(1) {
+  padding-block-start: 0px;
+}
+
+/* under line */
+
+.features-compare li:nth-child(1):after {
+  background-color: var(--color-neutral-black);
+}
+
+.features-compare li::after {
+  content: "";
+  display: block;
+  background-color: var(--color-light-grey-hover-btn);
+  height: 2px;
+
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.mobile-checked-features {
+  display: flex;
+  margin-block-start: 16.5px;
+}
+
+.mobile-checked-features .title-checked-img-container:nth-child(2) {
+  margin-inline-start: 68px;
+  margin-inline-end: 80px;
+}
+
+.title-checked-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.mobile-plan-title {
+  font-size: var(--font-size-10px);
+  color: hsl(0, 0%, 50%);
+}
+/* tablet */
+@media screen and (min-width: 48rem) {
+  .title-feature-compare-container {
+    padding-inline: 39px;
+  }
+
+  .title {
+    font-size: var(--font-size-40px);
+    text-align: center;
+    margin-block-end: 64px;
+  }
+
+  .mobile-checked-features {
+    display: none;
+  }
+
+  .tablet-desktop-checked-features {
+    display: flex;
+  }
+
+  .features-compare li {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tablet-desktop-checked-features .plan-title,
+  .tablet-desktop-checked-features .svg-container {
+    display: block;
+    min-width: 140px;
+  }
+
+  .tablet-desktop-checked-features .plan-title {
+    text-align: center;
+  }
+
+  .svg-container svg {
+    margin-inline: auto;
+  }
+}
+/* desktop */
+@media screen and (min-width: 90rem) {
+  .title-feature-compare-container {
+    padding-inline: 355px;
+  }
+  .title {
+    margin-block-end: 56px;
+  }
+}

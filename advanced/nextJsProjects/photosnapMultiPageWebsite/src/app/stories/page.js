@@ -2,15 +2,78 @@ import React from "react";
 import styles from "./Stories.module.css";
 import StoriesHeader from "../components/server/Stories_Header/index.js";
 import StoryLink from "../components/client/StoryLink/index.js";
+import FeatureCompare from "../components/server/FeatureCompare/index.js";
 import FooterBanner from "../components/server/FooterBanner/index.js";
 import LogoNavBar from "../components/server/LogoNavbar/index.js";
 import Footer from "../components/server/Footer/index.js";
 import MobileNavMenu from "../components/server/MobileNavMenu/index.js";
 
+import FeatureCard from "../components/server/FeatureCard/index.js";
+
 export default function StoriesPage({ children }) {
   return (
     <React.Fragment>
       <header>
+        {/* move to pricing page */}
+        <article
+          data-monthoryear="month"
+          className={styles[`toggle-cards-container`]}
+        >
+          {/* toggle button component */}
+          <ToggleButton />
+          {/* card container */}
+          {/* month */}
+
+          <div className={styles[`cards-container`]}>
+            {/* basic */}
+            {/* <FeatureCard
+              planTitle="Basic"
+              description="Includes basic usage of our platform. Recommended for new and aspiring photographers."
+              price="$19.00"
+              monthOrYear="month"
+            /> */}
+            {/* pro */}
+            {/* <FeatureCard
+              planTitle="Pro"
+              description="More advanced features available. Recommended for photography veterans and professionals."
+              price="$39.00"
+              monthOrYear="month"
+            /> */}
+            {/* business */}
+            {/* <FeatureCard
+              planTitle="Business"
+              description="Additional features available such as more detailed metrics. Recommended for business owners."
+              price="$99.00"
+              monthOrYear="month"
+            /> */}
+          </div>
+
+          {/* year */}
+          <div className={styles[`cards-container`]}>
+            {/* basic */}
+            <FeatureCard
+              planTitle="Basic"
+              description="Includes basic usage of our platform. Recommended for new and aspiring photographers."
+              price="$190.00"
+              monthOrYear="year"
+            />
+            {/* pro */}
+            <FeatureCard
+              planTitle="Pro"
+              description="More advanced features available. Recommended for photography veterans and professionals."
+              price="$390.00"
+              monthOrYear="year"
+            />
+            {/* business */}
+            <FeatureCard
+              planTitle="Business"
+              description="Additional features available such as more detailed metrics. Recommended for business owners."
+              price="$990.00"
+              monthOrYear="year"
+            />
+          </div>
+        </article>
+        {/* move to pricing page */}
         <FooterBanner
           mobile="/shared/mobile/bg-beta.jpg"
           tablet="/shared/tablet/bg-beta.jpg"
@@ -201,4 +264,17 @@ function moveBelowHeaderAfterFooterBannerIsComplete() {
       altText=""
     />
   </main>;
+}
+
+function ToggleButton({ children }) {
+  return (
+    <div className={styles[`text-toggle-btn-container`]}>
+      <span>Monthly</span>
+      <button>
+        {/* use pseudo element for toggle button */}
+        <span className={styles[`toggle-btn`]}></span>
+      </button>
+      <span>Yearly</span>
+    </div>
+  );
 }

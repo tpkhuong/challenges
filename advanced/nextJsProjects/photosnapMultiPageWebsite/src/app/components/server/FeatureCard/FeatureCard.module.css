@@ -1,0 +1,147 @@
+.card {
+  --card-bg: var(--color-pricing-card-light-theme-bg);
+  --card-fg: var(--color-neutral-black);
+  --pick-btn-bg: var(--color-neutral-black);
+  --pick-btn-fg: var(--color-neutral-white);
+  --color-description-per-month-year: var(--color-light-grey-light-theme);
+}
+
+.card:nth-child(2) {
+  --card-bg: var(--color-neutral-black);
+  --card-fg: var(--color-neutral-white);
+  --pick-btn-bg: var(--color-neutral-white);
+  --pick-btn-fg: var(--color-neutral-black);
+  --color-description-per-month-year: var(--color-light-grey-dark-theme);
+
+  margin-block: 24px;
+  position: relative;
+}
+
+.card:nth-child(2)::after {
+  content: "";
+  display: block;
+  height: 6px;
+
+  background: linear-gradient(var(--main-accent));
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+/* selecting second card container */
+/* .cards-container card:nth-child(2){} */
+
+/* mobile */
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--card-fg);
+  text-align: center;
+
+  padding-inline: 23px;
+  padding-block-start: 56px;
+  padding-block-end: 40px;
+}
+
+.plan-title {
+  font-size: var(--font-size-24px);
+  font-weight: 600;
+
+  margin-block-end: 18px;
+}
+
+.description,
+.month-or-year {
+  font-size: var(--font-size-15px);
+  color: var(--color-description-per-month-year);
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+
+  margin-block: 40px;
+}
+
+.plan-price {
+  font-size: var(--font-size-40px);
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+
+.month-or-year {
+  margin-block-start: -5px;
+}
+
+.plan-button {
+  display: block;
+  min-width: 245px;
+  padding-block: 12px;
+  background-color: var(--pick-btn-bg);
+  color: var(--pick-btn-fg);
+
+  font-size: var(--font-size-12px);
+  font-weight: 600;
+}
+
+/* toggle button bg hsl: 0,0%,50% */
+/* tablet */
+
+@media screen and (min-width: 47rem) and (max-width: 89rem) {
+  .card {
+    padding-inline-start: 40px;
+    padding-inline-end: 48px;
+    padding-block: 43px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "title price"
+      "text-content price"
+      "plan-btn price";
+  }
+  /* title */
+  .plan-title {
+    grid-area: title;
+    text-align: left;
+  }
+  /* description */
+  .description {
+    grid-area: text-content;
+    text-align: left;
+
+    margin-block-end: 32px;
+  }
+  /* price-container */
+  .price-container {
+    grid-area: price;
+
+    place-items: end;
+    margin-block: revert;
+  }
+
+  .month-or-year {
+    margin-inline-end: 8px;
+  }
+
+  /* plan button */
+  .plan-button {
+    grid-area: plan-btn;
+  }
+  .card:nth-child(2)::after {
+    height: revert;
+    width: 6px;
+
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+}
+
+@media screen and (min-width: 47rem) {
+}
+
+/* desktop */
+@media screen and (min-width: 89rem) {
+}

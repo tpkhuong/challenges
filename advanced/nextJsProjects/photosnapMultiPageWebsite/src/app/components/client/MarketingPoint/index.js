@@ -35,19 +35,22 @@ export default function MarketingPoint({
         >
           <h2>{title}</h2>
           <p>{children}</p>
-          <a className={styles[`link-text-arrow-container`]} href="">
-            <span className={styles[`link-text`]}>{linkText}</span>
-            <svg
-              className={styles[`link-arrow`]}
-              xmlns="http://www.w3.org/2000/svg"
-              width="43"
-              height="14"
-            >
-              <g fill="none" fillRule="evenodd" stroke="#000">
-                <path d="M0 7h41.864M35.428 1l6 6-6 6" />
-              </g>
-            </svg>
-          </a>
+          {linkText ? (
+            <a className={styles[`link-text-arrow-container`]} href="">
+              <span className={styles[`link-text`]}>{linkText}</span>
+              <svg
+                className={styles[`link-arrow`]}
+                xmlns="http://www.w3.org/2000/svg"
+                width="43"
+                height="14"
+              >
+                <g fill="none" fillRule="evenodd" stroke="#000">
+                  <path d="M0 7h41.864M35.428 1l6 6-6 6" />
+                </g>
+              </svg>
+            </a>
+          ) : null}
+
           <span className={styles[`gradient-bar`]}></span>
         </div>
       </article>
