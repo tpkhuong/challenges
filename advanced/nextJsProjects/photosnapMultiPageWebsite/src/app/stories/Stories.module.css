@@ -4,7 +4,7 @@
 
 .text-toggle-btn-container {
   --toggle-bg: var(--color-light-grey-hover-btn);
-  --toggle-btn-bg: var(--color-neutral-black);
+  --toggle-btn-circle-bg: var(--color-neutral-black);
 
   display: flex;
   justify-content: center;
@@ -20,7 +20,7 @@
 
 [data-monthoryear="year"] .text-toggle-btn-container {
   --toggle-bg: var(--color-neutral-black);
-  --toggle-btn-bg: var(--color-neutral-white);
+  --toggle-btn-circle-bg: var(--color-neutral-white);
 }
 
 .text-toggle-btn-container button {
@@ -35,9 +35,9 @@
 
 /* move toggle btn translateX 32px */
 
-.toggle-btn {
+.toggle-btn-circle {
   display: block;
-  background-color: var(--toggle-btn-bg);
+  background-color: var(--toggle-btn-circle-bg);
   width: 24px;
   height: 24px;
 
@@ -48,6 +48,20 @@
 [data-monthoryear="year"] .text-toggle-btn-container span:last-child {
   color: var(--color-neutral-black);
 }
+
+/* animation */
+
+[data-monthoryear="month"] .toggle-btn-circle {
+  transform: translateX(0px);
+  transition: transform 1000ms ease-out;
+}
+
+[data-monthoryear="year"] .toggle-btn-circle {
+  transform: translateX(32px);
+  transition: transform 1000ms ease-out;
+}
+
+/* animation */
 
 /* toggle button */
 

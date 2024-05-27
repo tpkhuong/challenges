@@ -16,6 +16,7 @@ export default function StoriesPage({ children }) {
       <header>
         {/* move to pricing page */}
         <article
+          id="toggle-btn-cards-selector"
           data-monthoryear="month"
           className={styles[`toggle-cards-container`]}
         >
@@ -272,7 +273,7 @@ function ToggleButton({ children }) {
       <span>Monthly</span>
       <button>
         {/* use pseudo element for toggle button */}
-        <span className={styles[`toggle-btn`]}></span>
+        <span className={styles[`toggle-btn-circle`]}></span>
       </button>
       <span>Yearly</span>
     </div>
