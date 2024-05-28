@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styles from "./Stories.module.css";
 import StoriesHeader from "../components/server/Stories_Header/index.js";
@@ -271,11 +273,30 @@ function ToggleButton({ children }) {
   return (
     <div className={styles[`text-toggle-btn-container`]}>
       <span>Monthly</span>
-      <button>
+      <button onClick={switchPricing}>
         {/* use pseudo element for toggle button */}
         <span className={styles[`toggle-btn-circle`]}></span>
       </button>
       <span>Yearly</span>
     </div>
   );
+}
+
+function switchPricing(event) {
+  const clickedBtn = event.target.closest("BUTTON");
+  console.log(clickedBtn, "clickedBtn");
+  // select article element with id toggle-btn-cards-selector
+  const articleElement = document.getElementById("toggle-btn-cards-selector");
+  const articleElementAttrValue =
+    articleElement.getAttribute("data-monthoryear");
+  // if attr of data-monthoryear is "month" change to "year"
+  if (articleElementAttrValue == "month") {
+    articleElement.setAttribute("data-monthoryear", "year");
+    return;
+  }
+  // if attr of data-monthoryear is "year" change to "month"
+  if (articleElementAttrValue == "year") {
+    articleElement.setAttribute("data-monthoryear", "month");
+    return;
+  }
 }
