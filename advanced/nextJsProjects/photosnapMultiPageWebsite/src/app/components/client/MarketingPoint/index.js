@@ -12,12 +12,14 @@ export default function MarketingPoint({
   linkText,
   booleanGradient,
   textLeftBoolean,
+  pagePadding,
 }) {
   return (
     <React.Fragment>
       <article
         className={styles[`marketing-point-container`]}
         data-theme={`${theme}`}
+        data-page={`${pagePadding}`}
         data-textleftside={`${textLeftBoolean}`}
       >
         {/* img */}

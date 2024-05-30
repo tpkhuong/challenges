@@ -54,26 +54,26 @@ export default function StoriesPage({ children }) {
           {/* year */}
           <div className={styles[`cards-container`]}>
             {/* basic */}
-            <FeatureCard
+            {/* <FeatureCard
               planTitle="Basic"
               description="Includes basic usage of our platform. Recommended for new and aspiring photographers."
               price="$190.00"
               monthOrYear="year"
-            />
+            /> */}
             {/* pro */}
-            <FeatureCard
+            {/* <FeatureCard
               planTitle="Pro"
               description="More advanced features available. Recommended for photography veterans and professionals."
               price="$390.00"
               monthOrYear="year"
-            />
+            /> */}
             {/* business */}
-            <FeatureCard
+            {/* <FeatureCard
               planTitle="Business"
               description="Additional features available such as more detailed metrics. Recommended for business owners."
               price="$990.00"
               monthOrYear="year"
-            />
+            /> */}
           </div>
         </article>
         {/* move to pricing page */}
