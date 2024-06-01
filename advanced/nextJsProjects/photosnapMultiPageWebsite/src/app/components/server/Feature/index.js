@@ -1,9 +1,12 @@
 import React from "react";
 import styles from "./Feature.module.css";
 
-export default function Feature({ children, title, text }) {
+export default function Feature({ children, title, text, isFeaturePage }) {
   return (
-    <div className={styles[`feature-container`]}>
+    <div
+      data-isfeaturepage={`${isFeaturePage}`}
+      className={styles[`feature-container`]}
+    >
       {/* icon */}
       {children}
       {/* title */}
