@@ -10,9 +10,9 @@ import React from "react";
 export default function RootPage() {
   return (
     <React.Fragment>
-      <header>
+      <header role="banner">
         <LogoNavBar />
-        {/* <MarketingPoint
+        <MarketingPoint
           desktop="/home/desktop/create-and-share.jpg"
           tablet="/home/tablet/create-and-share.jpg"
           mobile="/home/mobile/create-and-share.jpg"
@@ -24,42 +24,10 @@ export default function RootPage() {
         >
           Photosnap is a platform for photographers and visual storytellers. We
           make it easy to share photos, tell stories and connect with others.
-        </MarketingPoint> */}
-        {/* feature page header */}
-        {/* <MarketingPoint
-          desktop="/features/desktop/hero.jpg"
-          tablet="/features/tablet/hero.jpg"
-          mobile="/features/mobile/hero.jpg"
-          theme="dark"
-          title="FEATURES"
-          linkText={null}
-          textLeftBoolean="true"
-          booleanGradient="true"
-          pagePadding="not-home-page"
-        >
-          We make sure all of our features are designed to be loved by every
-          aspiring and even professional photograpers who wanted to share their
-          stories.
-        </MarketingPoint> */}
-        {/* pricing page header */}
-        <MarketingPoint
-          desktop="/pricing/desktop/hero.jpg"
-          tablet="/pricing/tablet/hero.jpg"
-          mobile="/pricing/mobile/hero.jpg"
-          theme="dark"
-          title="PRICING"
-          linkText={null}
-          textLeftBoolean="true"
-          booleanGradient="true"
-          pagePadding="not-home-page"
-        >
-          Create a your stories, Photosnap is a platform for photographers and
-          visual storytellers. It’s the simple way to create and share your
-          photos.
         </MarketingPoint>
       </header>
-      <main>
-        {/* <section className={styles[`view-stories-container`]}>
+      <main role="main">
+        <section className={styles[`view-stories-container`]}>
           <MarketingPoint
             desktop="/home/desktop/beautiful-stories.jpg"
             tablet="/home/tablet/beautiful-stories.jpg"
@@ -87,9 +55,9 @@ export default function RootPage() {
             audience. Our tool is designed for photographers of all levels,
             brands, businesses you name it.
           </MarketingPoint>
-        </section> */}
+        </section>
         <section className={styles[`read-stories-container`]}>
-          {/* <StoryLink
+          <StoryLink
             title="The Mountains"
             author="John Appleseed"
             mobile="/stories/mobile/mountains.jpg"
@@ -116,7 +84,7 @@ export default function RootPage() {
             mobile="/stories/mobile/architecturals.jpg"
             tablet="/stories/desktop/architecturals.jpg"
             altText=""
-          /> */}
+          />
         </section>
         <section className={styles[`features-container`]}>
           {/* responsive */}
@@ -159,9 +127,48 @@ export default function RootPage() {
         </section>
       </main>
       {/* footer */}
-      {/* <Footer /> */}
+      <Footer />
       {/* mobile menu */}
-      {/* <MobileNavMenu /> */}
+      <MobileNavMenu />
     </React.Fragment>
   );
+}
+
+function moveToFeatureAndPricingPage() {
+  {
+    /* feature page header */
+  }
+
+  <MarketingPoint
+    desktop="/features/desktop/hero.jpg"
+    tablet="/features/tablet/hero.jpg"
+    mobile="/features/mobile/hero.jpg"
+    theme="dark"
+    title="FEATURES"
+    linkText={null}
+    textLeftBoolean="true"
+    booleanGradient="true"
+    pagePadding="not-home-page"
+  >
+    We make sure all of our features are designed to be loved by every aspiring
+    and even professional photograpers who wanted to share their stories.
+  </MarketingPoint>;
+
+  {
+    /* pricing page header */
+  }
+  <MarketingPoint
+    desktop="/pricing/desktop/hero.jpg"
+    tablet="/pricing/tablet/hero.jpg"
+    mobile="/pricing/mobile/hero.jpg"
+    theme="dark"
+    title="PRICING"
+    linkText={null}
+    textLeftBoolean="true"
+    booleanGradient="true"
+    pagePadding="not-home-page"
+  >
+    Create a your stories, Photosnap is a platform for photographers and visual
+    storytellers. It’s the simple way to create and share your photos.
+  </MarketingPoint>;
 }

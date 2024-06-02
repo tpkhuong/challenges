@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 
 export default function Footer({ children }) {
   return (
-    <footer className={styles[`footer`]}>
+    <footer role="contentinfo" className={styles[`footer`]}>
       {/* icon,social media and links */}
       <div className={styles[`icon-social-links-container`]}>
         <svg

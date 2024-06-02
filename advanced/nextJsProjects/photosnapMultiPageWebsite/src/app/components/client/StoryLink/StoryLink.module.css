@@ -6,7 +6,7 @@
   /* padding-block-end: 40px; */
 }
 
-.story-link-container::after {
+.story-link-container::before {
   content: "";
   display: block;
   inset: 0;
@@ -111,8 +111,8 @@
 
   .story-link-container:hover.story-link-container::after {
     transition: opacity 1000ms ease-in 800ms;
-    /* transform: translateY(0px); */
     opacity: 1;
+    /* transform: translateY(0px); */
   }
 
   .story-link-container::after {
