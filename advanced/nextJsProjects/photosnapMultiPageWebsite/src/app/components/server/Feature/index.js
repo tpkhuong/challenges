@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Feature.module.css";
 
-export default function Feature({ children, title, text, isFeaturePage }) {
+export default function Features({ children, title, text, isFeaturePage }) {
   return (
     <div
       data-isfeaturepage={`${isFeaturePage}`}

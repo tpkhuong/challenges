@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FeaturesLayout({ children }) {
   return (
-    <html>
+    <html lang="en">
       <head>
         <meta name="author" content="KhuongCorp" />
         <meta name="description" content="Features Page" />
