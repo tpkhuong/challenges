@@ -10,7 +10,6 @@ import FooterBanner from "../components/server/FooterBanner/index.js";
 import LogoNavBar from "../components/server/LogoNavbar/index.js";
 import Footer from "../components/server/Footer/index.js";
 import MobileNavMenu from "../components/server/MobileNavMenu/index.js";
-
 import FeatureCard from "../components/server/FeatureCard/index.js";
 
 export default function StoriesPage({ children }) {
