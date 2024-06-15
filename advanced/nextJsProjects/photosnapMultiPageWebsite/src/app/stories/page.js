@@ -201,38 +201,6 @@ export default function StoriesPage({ children }) {
 
 function moveBelowHeaderAfterFooterBannerIsComplete() {}
 
-function ToggleButton({ children }) {
-  return (
-    <div className={styles[`text-toggle-btn-container`]}>
-      <span>Monthly</span>
-      <button onClick={switchPricing}>
-        {/* use pseudo element for toggle button */}
-        <span className={styles[`toggle-btn-circle`]}></span>
-      </button>
-      <span>Yearly</span>
-    </div>
-  );
-}
-
-function switchPricing(event) {
-  const clickedBtn = event.target.closest("BUTTON");
-  console.log(clickedBtn, "clickedBtn");
-  // select article element with id toggle-btn-cards-selector
-  const articleElement = document.getElementById("toggle-btn-cards-selector");
-  const articleElementAttrValue =
-    articleElement.getAttribute("data-monthoryear");
-  // if attr of data-monthoryear is "month" change to "year"
-  if (articleElementAttrValue == "month") {
-    articleElement.setAttribute("data-monthoryear", "year");
-    return;
-  }
-  // if attr of data-monthoryear is "year" change to "month"
-  if (articleElementAttrValue == "year") {
-    articleElement.setAttribute("data-monthoryear", "month");
-    return;
-  }
-}
-
 function moveToFeaturePage() {
   {
     /* move to feature page */
@@ -291,7 +259,7 @@ also remove our branding!"
         <path d="M67.925 54.23a1.58 1.58 0 00-.46 1.108c0 .413.168.817.46 1.11.293.291.696.459 1.109.459.412 0 .817-.168 1.109-.46.293-.292.46-.696.46-1.109a1.572 1.572 0 00-1.57-1.568c-.412 0-.817.167-1.108.46z" />
       </svg>
     </Feature>
-    {/* Boost YOur Exposure */}
+    {/* Boost Your Exposure */}
     <Feature
       isFeaturePage="true"
       title="Boost Your Exposure"
