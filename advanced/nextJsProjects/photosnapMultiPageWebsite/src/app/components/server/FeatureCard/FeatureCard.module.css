@@ -144,4 +144,14 @@
 
 /* desktop */
 @media screen and (min-width: 89rem) {
+  .card {
+    flex-basis: 350px;
+  }
+  .card:not(:nth-child(2)) {
+    align-self: center;
+  }
+  .card:nth-child(2) {
+    margin-block: 0px;
+    height: 470px;
+  }
 }

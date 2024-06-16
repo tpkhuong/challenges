@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
 import styles from "./Pricing.module.css";
 import LogoNavbar from "../components/server/LogoNavbar/index.js";
+import MarketingPoint from "../components/client/MarketingPoint/index.js";
+import FeatureCard from "../components/server/FeatureCard/index.js";
 import FeatureCompare from "../components/server/FeatureCompare/index.js";
 import FooterBanner from "../components/server/FooterBanner/index.js";
 import Footer from "../components/server/Footer/index.js";
@@ -29,7 +33,7 @@ export default function PricingPage({ children }) {
           photos.
         </MarketingPoint>
       </header>
-      <main role="main">
+      <main className={styles[`card-compare-container`]} role="main">
         {/* toggle */}
         {/* cards container */}
         <article
@@ -44,51 +48,51 @@ export default function PricingPage({ children }) {
 
           <div className={styles[`cards-container`]}>
             {/* basic */}
-            {/* <FeatureCard
-      planTitle="Basic"
-      description="Includes basic usage of our platform. Recommended for new and aspiring photographers."
-      price="$19.00"
-      monthOrYear="month"
-    /> */}
+            <FeatureCard
+              planTitle="Basic"
+              description="Includes basic usage of our platform. Recommended for new and aspiring photographers."
+              price="$19.00"
+              monthOrYear="month"
+            />
             {/* pro */}
-            {/* <FeatureCard
-      planTitle="Pro"
-      description="More advanced features available. Recommended for photography veterans and professionals."
-      price="$39.00"
-      monthOrYear="month"
-    /> */}
+            <FeatureCard
+              planTitle="Pro"
+              description="More advanced features available. Recommended for photography veterans and professionals."
+              price="$39.00"
+              monthOrYear="month"
+            />
             {/* business */}
-            {/* <FeatureCard
-      planTitle="Business"
-      description="Additional features available such as more detailed metrics. Recommended for business owners."
-      price="$99.00"
-      monthOrYear="month"
-    /> */}
+            <FeatureCard
+              planTitle="Business"
+              description="Additional features available such as more detailed metrics. Recommended for business owners."
+              price="$99.00"
+              monthOrYear="month"
+            />
           </div>
 
           {/* year */}
           <div className={styles[`cards-container`]}>
             {/* basic */}
-            {/* <FeatureCard
-      planTitle="Basic"
-      description="Includes basic usage of our platform. Recommended for new and aspiring photographers."
-      price="$190.00"
-      monthOrYear="year"
-    /> */}
+            <FeatureCard
+              planTitle="Basic"
+              description="Includes basic usage of our platform. Recommended for new and aspiring photographers."
+              price="$190.00"
+              monthOrYear="year"
+            />
             {/* pro */}
-            {/* <FeatureCard
-      planTitle="Pro"
-      description="More advanced features available. Recommended for photography veterans and professionals."
-      price="$390.00"
-      monthOrYear="year"
-    /> */}
+            <FeatureCard
+              planTitle="Pro"
+              description="More advanced features available. Recommended for photography veterans and professionals."
+              price="$390.00"
+              monthOrYear="year"
+            />
             {/* business */}
-            {/* <FeatureCard
-      planTitle="Business"
-      description="Additional features available such as more detailed metrics. Recommended for business owners."
-      price="$990.00"
-      monthOrYear="year"
-    /> */}
+            <FeatureCard
+              planTitle="Business"
+              description="Additional features available such as more detailed metrics. Recommended for business owners."
+              price="$990.00"
+              monthOrYear="year"
+            />
           </div>
         </article>
         {/* Feature Compare */}

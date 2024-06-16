@@ -1,0 +1,127 @@
+.card-compare-container {
+  padding-block: 64px;
+}
+
+/* toggle button */
+
+.text-toggle-btn-container {
+  --toggle-bg: var(--color-light-grey-hover-btn);
+  --toggle-btn-circle-bg: var(--color-neutral-black);
+
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+  padding-inline: 32px;
+  margin-block-end: 40px;
+
+  font-size: var(--font-size-18px);
+  font-weight: 600;
+
+  color: hsl(0, 0%, 50%);
+}
+
+[data-monthoryear="year"] .text-toggle-btn-container {
+  --toggle-bg: var(--color-neutral-black);
+  --toggle-btn-circle-bg: var(--color-neutral-white);
+}
+
+.text-toggle-btn-container button {
+  background-color: var(--toggle-bg);
+  display: block;
+  width: 64px;
+  height: 32px;
+  padding: 4px;
+
+  border-radius: 100vw;
+}
+
+/* move toggle btn translateX 32px */
+
+.toggle-btn-circle {
+  display: block;
+  background-color: var(--toggle-btn-circle-bg);
+  width: 24px;
+  height: 24px;
+
+  border-radius: 100%;
+}
+
+[data-monthoryear="month"] .text-toggle-btn-container span:first-child,
+[data-monthoryear="year"] .text-toggle-btn-container span:last-child {
+  color: var(--color-neutral-black);
+}
+
+/* animation */
+
+[data-monthoryear="month"] .toggle-btn-circle {
+  transform: translateX(0px);
+  transition: transform 1000ms ease-out;
+}
+
+[data-monthoryear="year"] .toggle-btn-circle {
+  transform: translateX(32px);
+  transition: transform 1000ms ease-out;
+}
+
+/* animation */
+
+/* toggle button */
+
+.toggle-cards-container {
+  padding-inline: 28px;
+  margin-block-end: 64px;
+}
+
+.toggle-cards-container[data-monthoryear="month"]
+  .cards-container:nth-child(2) {
+  display: revert;
+}
+
+.toggle-cards-container[data-monthoryear="year"] .cards-container:nth-child(3) {
+  display: revert;
+}
+
+.cards-container {
+  display: none;
+}
+
+/* mobile */
+
+/* tablet */
+
+@media screen and (min-width: 47rem) {
+  .card-compare-container {
+    padding-block: 112px;
+  }
+  .toggle-cards-container {
+    padding-inline: 40px;
+    margin-block-end: 112px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 89rem) {
+  .card-compare-container {
+    padding-block-start: 120px;
+    padding-block-end: 160px;
+  }
+  .toggle-cards-container {
+    padding-inline: 165px;
+    margin-block-end: 112px;
+  }
+  .toggle-cards-container[data-monthoryear="month"]
+    .cards-container:nth-child(2) {
+    display: flex;
+    gap: 30px;
+  }
+
+  .toggle-cards-container[data-monthoryear="year"]
+    .cards-container:nth-child(3) {
+    display: flex;
+    gap: 30px;
+  }
+  .text-toggle-btn-container {
+    margin-block-end: 40px;
+  }
+}
