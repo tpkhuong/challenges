@@ -1,3 +1,14 @@
 .title {
   color: red;
 }
+
+.line {
+  display: block;
+  width: 24px;
+  height: 4px;
+  background-color: black;
+}
+
+.top {
+  color: red;
+}
