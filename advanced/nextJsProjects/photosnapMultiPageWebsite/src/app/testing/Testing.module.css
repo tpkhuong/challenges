@@ -2,6 +2,15 @@
   color: red;
 }
 
+/* move to designo project */
+
+.menu-btn {
+  display: block;
+  width: min-content;
+  margin-inline: auto;
+  background: transparent;
+}
+
 .line {
   display: block;
   width: 24px;
@@ -9,6 +18,55 @@
   background-color: black;
 }
 
-.top {
-  color: red;
+[data-mobilebtnclick="true"] .top {
+  animation: moveDownRotate 1500ms ease-out forwards;
 }
+
+.middle {
+  margin-block: 4px;
+}
+
+[data-mobilebtnclick="true"] .middle {
+  margin-block: 4px;
+  animation: hidden 100ms ease-in forwards;
+  animation-delay: 500ms;
+}
+
+[data-mobilebtnclick="true"] .bottom {
+  animation: moveUpRotate 1500ms ease-out forwards;
+}
+
+@keyframes moveDownRotate {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(8px) rotateZ(-45deg);
+  }
+}
+
+@keyframes hidden {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveUpRotate {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(-8px) rotateZ(45deg);
+  }
+}
+
+/* move to designo project */
