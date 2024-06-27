@@ -36,6 +36,12 @@
   animation: moveUpRotate 1500ms ease-out forwards;
 }
 
+/* reverse */
+
+[data-mobilebtnclick="false"] .bottom {
+  animation: rotateMoveDown 1500ms ease-out forwards;
+}
+
 @keyframes moveDownRotate {
   0% {
     transform: translateY(0px);
@@ -57,6 +63,8 @@
   }
 }
 
+/* appear/unhidden can opacity right away */
+
 @keyframes moveUpRotate {
   0% {
     transform: translateY(0px);
@@ -67,6 +75,25 @@
   100% {
     transform: translateY(-8px) rotateZ(45deg);
   }
+}
+
+/* reverse animation */
+
+@keyframes rotateMoveDown {
+  0% {
+    transform: translateY(-8px) rotateZ(45deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotateZ(0deg);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes rotateMoveUp {
 }
 
 /* move to designo project */
