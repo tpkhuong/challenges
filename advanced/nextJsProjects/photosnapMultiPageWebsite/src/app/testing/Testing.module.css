@@ -38,6 +38,10 @@
 
 /* reverse */
 
+[data-mobilebtnclick="false"] .top {
+  animation: rotateMoveUp 1500ms ease-out forwards;
+}
+
 [data-mobilebtnclick="false"] .bottom {
   animation: rotateMoveDown 1500ms ease-out forwards;
 }
@@ -94,6 +98,17 @@
 }
 
 @keyframes rotateMoveUp {
+  0% {
+    transform: translateY(8px) rotateZ(-45deg);
+  }
+
+  50% {
+    transform: translateY(8px) rotateZ(0deg);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* move to designo project */
