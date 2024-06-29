@@ -27,8 +27,7 @@
 }
 
 [data-mobilebtnclick="true"] .middle {
-  margin-block: 4px;
-  animation: hidden 100ms ease-in forwards;
+  animation: hide 100ms ease-in forwards;
   animation-delay: 500ms;
 }
 
@@ -40,6 +39,10 @@
 
 [data-mobilebtnclick="false"] .top {
   animation: rotateMoveUp 1500ms ease-out forwards;
+}
+
+[data-mobilebtnclick="false"] .middle {
+  animation: show 1500ms ease-in forwards;
 }
 
 [data-mobilebtnclick="false"] .bottom {
@@ -58,7 +61,7 @@
   }
 }
 
-@keyframes hidden {
+@keyframes hide {
   0% {
     opacity: 1;
   }
@@ -94,6 +97,15 @@
 
   100% {
     transform: translateY(0px);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

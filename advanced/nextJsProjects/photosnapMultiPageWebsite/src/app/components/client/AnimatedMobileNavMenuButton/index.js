@@ -35,7 +35,7 @@ function showMobileMenu(event) {
       clickedBtn.setAttribute("aria-label", "close mobile menu");
       // change data-buttonclick to "true"
       clickedBtn.setAttribute("data-buttonclick", "true");
-      // change data-showmodal="true" on mobileMenuModa
+      // change data-showmodal="true" on mobileMenuModal
       mobileMenuModal.setAttribute("data-showmodal", "true");
     },
     "close mobile menu": function (clickedBtn, mobileMenuModal) {
