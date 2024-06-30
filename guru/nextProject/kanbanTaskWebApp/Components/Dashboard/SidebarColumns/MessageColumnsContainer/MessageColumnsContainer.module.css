@@ -1,0 +1,169 @@
+/* tablet */
+
+[data-apptheme="dark"] .columns-message-container {
+  --column-container-bg-dark: var(--color-dark-bg);
+  /* --color-new-column-light: hsl(219, 64%, 96%); */
+  --color-new-column-btn-dark-top: hsl(235, 12%, 19%);
+  --color-new-column-btn-dark-bottom: hsla(235 12% 19%);
+}
+
+/* --color-dark-bg
+--color-light-bg */
+
+.columns-message-container {
+  background-color: var(--column-container-bg-dark, var(--color-light-bg));
+  padding-block: 24px;
+  padding-inline: 16px;
+  min-height: 748px;
+  display: flex;
+  overflow: scroll;
+  gap: 24px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  /* min-height: 748px;
+
+  gap: 24px; */
+}
+
+/* just for mobile scroll-snap */
+
+@media screen and (max-width: 23.625rem) {
+  .columns-message-container {
+    scroll-snap-type: x mandatory;
+  }
+  .new-column-btn {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+}
+
+.columns-message-container [data-columncontainerstyleattr],
+.columns-message-container .new-column-btn {
+  min-width: 343px;
+}
+
+.columns-message-container [data-taskscontainerstyleattr] {
+  /* max-height: 748px; */
+  /* max-width: 280px; */
+
+  margin-block-start: 24px;
+  list-style: none;
+  padding-inline-start: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+[data-atleastonecolumnshown="true"] .new-column-btn {
+  display: revert;
+}
+
+.new-column-btn:hover,
+.new-column-btn:focus {
+  color: var(--color-purple);
+  box-shadow: 0px 0px 17px 4px var(--color-purple-secondary);
+  transform: translate3d(0px, 0px, 5px);
+}
+
+.new-column-btn {
+  display: none;
+  transition: transform 0.5s ease-in, box-shadow 0.5s ease-in;
+  box-shadow: 0px 0px 0px 0px transparent;
+  transform: translate3d(0px, 0px, 0px);
+  /* background-color: var(
+    --color-new-column-btn-dark,
+    var(--color-new-column-light)
+  ); */
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-new-column-btn-dark-top, hsl(219, 63%, 95%)),
+    var(--color-new-column-btn-dark-bottom, hsl(218, 66%, 95%, 0.5))
+  );
+  color: var(--color-medium-grey);
+  font-size: var(--heading-sm-three);
+  margin-block-start: 46px;
+
+  border-radius: 8px;
+  flex-shrink: 0;
+
+  font-weight: 600;
+}
+
+@media screen and (min-width: 48rem) {
+  /* columns container */
+  [data-atleastonecolumnshown="true"][data-issidebarshown="true"].columns-message-container {
+    /* declaring max-width because this is a flex item. its parent has display flex declared */
+    max-width: 548px;
+  }
+
+  [data-atleastonecolumnshown="true"][data-issidebarshown="false"].columns-message-container {
+    /* declaring max-width because this is a flex item. its parent has display flex declared */
+    max-width: 768px;
+  }
+
+  /* empty message container */
+
+  [data-atleastonecolumnshown="false"].columns-message-container {
+    min-width: 768px;
+  }
+
+  .columns-message-container {
+    position: relative;
+    max-height: 996.2px;
+    /* min-width: 768px; */
+    /* display: flex; */
+    /* flex-wrap: nowrap; */
+    /* overflow-x: scroll; */
+    /* padding-block-end: 24px; */
+  }
+
+  .columns-message-container [data-columncontainerstyleattr],
+  .columns-message-container .new-column-btn {
+    min-width: revert;
+    width: 280px;
+  }
+
+  /* .columns-message-container [data-taskscontainerstyleattr] {
+  } */
+}
+
+/* remove height and scroll on columns container. declare height and scroll on messagecolumnscontainer */
+
+/* desktop */
+
+@media screen and (min-width: 90rem) {
+  /* columns container */
+  [data-atleastonecolumnshown="true"][data-issidebarshown="true"].columns-message-container {
+    /* declaring max-width because this is a flex item. its parent has display flex declared */
+    max-width: revert;
+    width: 1139px;
+  }
+
+  [data-atleastonecolumnshown="true"][data-issidebarshown="false"].columns-message-container {
+    /* declaring max-width because this is a flex item. its parent has display flex declared */
+    max-width: revert;
+    width: 1440px;
+  }
+
+  /* empty message container */
+
+  [data-atleastonecolumnshown="false"].columns-message-container {
+    min-width: 1440px;
+  }
+
+  .columns-message-container {
+    /* min-width: 1440px; */
+    max-height: 800.2px;
+  }
+
+  .columns-message-container [data-columncontainerstyleattr],
+  .columns-message-container .new-column-btn {
+    min-width: revert;
+    width: 280px;
+  }
+
+  .columns-message-container [data-taskscontainerstyleattr] {
+  }
+}

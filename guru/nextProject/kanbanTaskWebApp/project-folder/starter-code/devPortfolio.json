@@ -1,0 +1,84 @@
+{
+  "ninth": {
+    "title": "_Kanban task management web app",
+    "sidebar": {
+      "projectlinks": {
+        "live": "https://someplacecool.io",
+        "code": "https://github/projectURL.com"
+      }
+    },
+    "main": {
+      "intro": "The challenge is to build out this multi-page website and get it looking as close to the design as possible.",
+      "userable": {
+        "title": "_Users should be able to",
+        "text": [
+          "View the optimal layout for the site depending on their device's screen size.",
+          "See hover states for all interactive elements on the page.",
+          "Create, read, update, and delete boards and tasks.",
+          "Receive form validations when trying to create/edit boards and tasks.",
+          "Mark subtasks as complete and move tasks between columns.",
+          "Hide/show the board sidebar.",
+          "Toggle the theme between light/dark modes.",
+          "Allow users to drag and drop tasks to change their status and re-order them in a column.",
+          "Keep track of any changes, even after refreshing the browser (localStorage could be used for this if you're not building out a full-stack app).",
+          "Build this project as a full-stack application."
+        ],
+        "hrefForToc": "users-interactions"
+      },
+      "process": {
+        "title": "_Process",
+        "text": [
+          "Choose this challenge because we get a chance to build drag and drop with multiple columns."
+        ],
+        "hrefForToc": "process"
+      },
+      "buildtech": {
+        "title": "_Build with / Tech Used",
+        "text": [
+          "HTML, CSS, JavaScript and Reactjs for the frontend/client.",
+          "JavaScript and NextJs for the backend/server.",
+          "MongoDB for the database and NextAuth for user authentication."
+        ],
+        "hrefForToc": "tech-used"
+      },
+      "learned": {
+        "title": "_Things we learned",
+        "text": [
+          "Users authentication and authorization with MongoDB and NextAuth.",
+          "Allowing user to sign in to their account with a link sent to their email.",
+          "Apply style to element based on current page and React props passed into component.",
+          "Form validation on the client-side for keyboard and screen reader users.",
+          "Drag and drop feature for mouse, keyboard and mobile."
+        ],
+        "hrefForToc": "things-learned"
+      },
+      "features": {
+        "title": "_Features Added",
+        "text": [
+          "Fade animation for view task modal, add task modal, delete message modal, and mobile menu.",
+          "Slide animation for Show sidebar and hide sidebar.",
+          "User confirmation before deleting task and board from storage.",
+          "Drag and drop feature for mouse, keyboard and mobile.",
+          "Hover effect for non-selected task button, selected task button for drag and drop, and drop area effect."
+        ],
+        "hrefForToc": "features"
+      },
+      "inclusion": {
+        "title": "_Inclusion features Added",
+        "text": [
+          "Drag and drop feature: Added assistive texts to let keyboard and screen reader users title, position and status column of selected task.",
+          "Change status based on completed subtasks for each task.",
+          "Keyboard user can move task to different column using left and right arrow keys.",
+          "Keyboard user can change the order of each column using up and down arrow keys."
+        ],
+        "hrefForToc": "inclusion-features"
+      }
+    },
+    "images": [
+      { "imgSrc": "/tipcalculator2.jpg", "imgText": "image1" },
+      { "imgSrc": "/tipcalculator2.jpg", "imgText": "images2" },
+      { "imgSrc": "/tipcalculator2.jpg", "imgText": "image3" },
+      { "imgSrc": "/tipcalculator2.jpg", "imgText": "image4" }
+    ]
+  }
+}

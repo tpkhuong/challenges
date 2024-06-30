@@ -1,0 +1,96 @@
+/* mobile */
+
+[data-apptheme="light"] .sidebar-modal {
+  --selectedboard-sidebar-light: var(--color-purple);
+  --hover-notselectedboard-sidebar-light-bg: hsl(240, 45%, 96%);
+  --hover-hide-sidebar-light-bg: hsl(240, 45%, 96%);
+  --hover-notselectedboard-sidebar-light-fg: var(--color-purple);
+  --hover-hide-sidebar-light-fg: var(--color-purple);
+}
+
+[data-apptheme="dark"] .sidebar-modal {
+  --selectedboard-sidebar-dark: var(--color-purple-secondary);
+  --notselectedboard-sidebar-dark-bg: var(--color-neutral-white);
+  --hover-hide-sidebar-dark-bg: var(--color-neutral-white);
+  --notselectedboard-sidebar-dark-fg: var(--color-purple);
+  --hover-hide-sidebar-dark-fg: var(--color-purple);
+}
+
+@media screen and (max-width: 23.4375rem) {
+  /* fade menu at mobile */
+
+  .boards-toggle-container[data-fademenuatmobile="true"] {
+    opacity: 0;
+  }
+
+  .boards-toggle-container {
+    transition: opacity 1s linear;
+  }
+
+  .sidebar-modal[data-show-mobile-menu="true"] {
+    display: revert;
+  }
+
+  .sidebar-modal {
+    height: 100%;
+    display: none;
+    position: absolute;
+    background-color: hsla(0 0% 0% / 0.4);
+    inset: 0;
+    padding-block-start: 12px;
+    padding-inline: 56px;
+    z-index: 1;
+  }
+
+  .boards-toggle-container {
+    border-radius: 8px;
+    padding-block: 21px;
+    padding-block-end: 12px;
+  }
+}
+
+.boards-toggle-container {
+  background-color: var(--top-sidebar-modals-bg, var(--color-neutral-white));
+}
+
+.add-task-title {
+  border: 1px solid red;
+}
+/* move animation to sidebarcolumns css */
+@media screen and (min-width: 48rem) {
+  .sidebar-modal {
+    min-width: 262px;
+  }
+  /* .sidebar-modal {
+    transition: transform 2s linear;
+  }
+
+  .sidebar-modal[data-showsidebar-menu="false"] {
+    transform: translateX(-262px);
+  }
+
+  .sidebar-modal[data-showsidebar-menu="true"] {
+    transform: translateX(0px);
+  } */
+
+  .boards-toggle-container {
+    --border: 1px solid var(--dark-theme-lines, var(--color-light-lines));
+    max-width: 262px;
+    height: 996.2px;
+    border-inline-end: var(--border);
+    display: flex;
+    flex-direction: column;
+    padding-block: 32px;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  .sidebar-modal {
+    min-width: 301px;
+  }
+  .boards-toggle-container {
+    max-width: 301px;
+    height: 800.2px;
+    padding-block-start: 16px;
+  }
+}

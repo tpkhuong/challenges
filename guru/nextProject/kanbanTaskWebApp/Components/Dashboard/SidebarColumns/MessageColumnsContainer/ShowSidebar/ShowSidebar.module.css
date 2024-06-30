@@ -1,0 +1,31 @@
+/* tablet */
+
+.show-sidebar-btn:hover,
+.show-sidebar-btn:focus {
+  background-color: var(--color-purple-secondary);
+}
+
+.show-sidebar-btn {
+  background-color: var(--color-purple);
+  position: fixed;
+
+  border-top-right-radius: 100vw;
+  border-bottom-right-radius: 100vw;
+
+  padding: 18px;
+}
+
+@media screen and (min-width: 48rem) {
+  [data-showsidebar-menu="false"] .show-sidebar-btn {
+    right: 716px;
+    top: 716px;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 90rem) {
+  [data-showsidebar-menu="false"] .show-sidebar-btn {
+    right: 1388px;
+    top: 704px;
+  }
+}

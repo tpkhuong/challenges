@@ -1,0 +1,89 @@
+/* mobile */
+
+[data-apptheme="light"] .statusbar-container {
+  --status-drop-down-box-shadow-light: 0px 0px 10px 3px hsla(0 0% 0% / 0.2);
+}
+
+[data-apptheme="dark"] .statusbar-container {
+  --status-value-dark: var(--color-neutral-white);
+  --status-drop-down-menu-bg-dark: var(--color-dark-bg);
+}
+
+.statusbar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+/* --status-drop-down-menu-dark */
+/* --status-value-dark */
+.label {
+  font-weight: 600;
+  font-size: var(--heading-reg-xxx-sm);
+  color: var(--modal-labels-light, var(--modal-labels-dark));
+}
+
+/* show modal */
+
+.current-status-btn[data-showmodal="true"] {
+  border-color: var(--color-purple);
+}
+
+.current-status-btn:hover {
+  border-color: var(--color-purple);
+}
+
+.current-status-btn {
+  padding: 16px;
+  padding-block: 8px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 2px solid
+    var(--modal-inputs-border-light, var(--modal-inputs-border-dark));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.current-status-btn span {
+  color: var(--status-value-dark);
+}
+
+.status-name {
+  text-transform: capitalize;
+}
+
+/* modal */
+
+.status-menu-container[data-isviewmodal="true"] {
+  /* view task modal bottom should be -152px */
+  bottom: -152px;
+}
+
+ul.status-menu-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -126px;
+  padding: 8px;
+  padding-inline-start: 13px;
+  border-radius: 4px;
+  box-shadow: var(--status-drop-down-box-shadow-light);
+  background-color: var(
+    --status-drop-down-menu-bg-dark,
+    var(--color-neutral-white)
+  );
+}
+.status-menu-container > * + * {
+  margin-block-start: 8px;
+}
+
+.status-menu-container button {
+  text-align: left;
+  width: 100%;
+  color: var(--color-medium-grey);
+  background-color: transparent;
+}
+
+/* tablet */
+/* desktop */

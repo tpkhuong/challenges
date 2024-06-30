@@ -1,0 +1,30 @@
+{
+  "name": "kantantaskmanagementwebapp",
+  "version": "1.0.0",
+  "description": "![Design preview for the Kanban task management web app coding challenge](./preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@next-auth/mongodb-adapter": "^1.1.1",
+    "@next-auth/prisma-adapter": "^1.0.5",
+    "@prisma/client": "^4.11.0",
+    "mongodb": "^4.1.1",
+    "next": "^12.3.1",
+    "next-auth": "^4.19.2",
+    "nodemailer": "^6.9.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1"
+  },
+  "devDependencies": {
+    "prisma": "^4.11.0"
+  }
+}

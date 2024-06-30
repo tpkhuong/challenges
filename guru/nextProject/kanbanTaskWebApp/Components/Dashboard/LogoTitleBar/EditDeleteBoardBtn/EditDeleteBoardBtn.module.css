@@ -1,0 +1,84 @@
+/* mobile: modal size: 56.25 */
+
+[data-apptheme="dark"] .edit-delete-board-modal-wrapper {
+  --logout-fg-dark: var(--color-purple);
+  --logout-bg-dark: var(--color-neutral-white);
+}
+
+.open-edit-delete-board-btn {
+  background-color: transparent;
+}
+
+.edit-delete-board-modal-wrapper {
+  transition: opacity 1s linear;
+  display: flex;
+  opacity: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  position: absolute;
+  /* z-index: 1; */
+  right: 20px;
+  top: 70px;
+  font-size: var(--heading-reg-sm);
+  background-color: var(--edit-delete-modals-bg, var(--color-neutral-white));
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: var(
+    --edit-delete-modals-box-shadow-dark,
+    0px 0px 10px 3px hsla(0 0% 0% / 0.2)
+  );
+}
+
+@media screen and (max-width: 23.4375rem) {
+  /* fade modal */
+  [data-isboardtitlebtnclick="true"]
+    + .edit-delete-board-modal-wrapper[data-fadeineditdeletemodal="true"] {
+    opacity: 1;
+  }
+  /* add or remove data-isboardtitlebtnclick when user click on board title btn */
+  /* previous sibling element to edit-delete-board-modal-wrapper */
+  [data-isboardtitlebtnclick="true"]
+    + .edit-delete-board-modal-wrapper[data-fadeineditdeletemodal="false"] {
+    opacity: 0;
+  }
+
+  .edit-delete-board-modal-wrapper {
+    z-index: 2;
+  }
+}
+
+.edit-delete-board-modal-wrapper[data-iseditdeleteboardmodalshown="true"] {
+  opacity: 0;
+}
+
+.edit-board-btn,
+.delete-board-btn {
+  background-color: transparent;
+}
+
+.edit-board-btn {
+  color: var(--color-medium-grey);
+}
+
+.delete-board-btn {
+  color: var(--color-red);
+}
+
+.modal-spacer {
+  display: inline-block;
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-light-lines);
+}
+/* tablet: modal size: 115.2 */
+
+@media screen and (min-width: 48rem) {
+  .edit-delete-board-modal-wrapper {
+    right: 30px;
+    top: 100px;
+    z-index: 1;
+    /* opacity: 1; */
+  }
+}
+/* desktop: modal size: 192 */

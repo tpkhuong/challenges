@@ -8,6 +8,7 @@ export default function TestingPage({ children }) {
     <React.Fragment>
       <h1 className={styles[`title`]}>This is Next js.</h1>
       <button
+        onClick={showMobileMenu}
         aria-label="open mobile menu"
         data-mobilebtnclick=""
         className={styles[`menu-btn`]}
@@ -22,19 +23,27 @@ export default function TestingPage({ children }) {
 
 function showMobileMenu(event) {
   const clickedBtn = event.target.closest("BUTTON");
-  const clickedBtnAriaLabel = clickedBtn.getAttribute("aria-label");
+  const ariaLabel = clickedBtn.getAttribute("aria-label");
 
   // select mobileMenuModal
   const actionMethodsObj = {
-    "open mobile menu": function () {
+    "open mobile menu": function (menuBtn) {
       // change value of data-mobilebtnclick to "true"
+      menuBtn.setAttribute("data-mobilebtnclick", "true");
       // change value of aria label to "close mobile menu"
+      menuBtn.setAttribute("aria-label", "close mobile menu");
       // change data-showmodal="true" on mobileMenuModal
     },
-    "close mobile menu": function () {
+    "close mobile menu": function (menuBtn) {
       // change value of data-mobilebtnclick to "false"
+      menuBtn.setAttribute("data-mobilebtnclick", "false");
       // change value of aria label to "open mobile menu"
+      menuBtn.setAttribute("aria-label", "open mobile menu");
       // change data-showmodal="false" on mobileMenuModal
     },
   };
+
+  if (clickedBtn && ariaLabel) {
+    actionMethodsObj[ariaLabel](clickedBtn);
+  }
 }

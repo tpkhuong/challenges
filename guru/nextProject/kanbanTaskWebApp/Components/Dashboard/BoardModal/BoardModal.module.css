@@ -1,0 +1,307 @@
+/* mobile */
+
+/* .board-modal-bg[data-showboardmodal="true"] {
+  display: revert;
+} */
+
+[data-apptheme="light"] .board-modal-bg {
+  --addcolumn-goback-btn-hover-light: hsl(242, 48%, 89%);
+}
+
+[data-apptheme="dark"] .board-modal-bg {
+  --addcolumn-goback-btn-hover-dark: var(--color-neutral-white);
+}
+
+.board-modal-bg {
+  background-color: hsla(0 0% 0% / 0.4);
+  /* display: none; */
+  z-index: 2;
+
+  position: absolute;
+  inset: 0;
+}
+
+.board-modal-container[data-iseditboardmodal="true"] {
+  opacity: 0;
+}
+
+.board-modal-container {
+  --board-container-padding: 24px;
+  --inline: 16px;
+  font-weight: 600;
+  transition: opacity 1s linear;
+  /* --color-neutral-white */
+  background-color: var(--edit-delete-modals-bg, var(--color-neutral-white));
+  position: absolute;
+  inset: 0;
+  max-width: 480px;
+  height: min-content;
+  margin-block: auto;
+  padding: var(--board-container-padding);
+  border-radius: 8px;
+  left: var(--inline);
+  right: var(--inline);
+  opacity: 1;
+  /* top: 78px; */
+}
+
+[data-showboardmodal="true"]
+  .board-modal-container[data-iseditboardmodal="true"] {
+  opacity: 1;
+}
+
+.title-btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.board-title {
+}
+
+.label {
+  font-size: var(--heading-reg-xxx-sm);
+  color: var(--modal-labels-light, var(--modal-labels-dark));
+}
+
+.name-input-container {
+  margin-block: 16px;
+  position: relative;
+}
+
+[data-isempty="true"].name-input-container input {
+  border-color: var(--color-red);
+}
+
+.name-input-container input {
+  border-radius: 4px;
+  border: 2px solid;
+  border-color: var(
+    --modal-inputs-border-dark,
+    var(--modal-inputs-border-light)
+  );
+  color: var(--modal-input-dark);
+  background-color: transparent;
+  width: 100%;
+  padding-inline-start: 16px;
+  padding-block: 8px;
+  display: inline-block;
+  margin-block-start: 8px;
+}
+
+.name-input-container input:hover,
+.name-input-container input:focus {
+  border-color: var(--color-purple);
+}
+
+/* show can't be empty, show accepted */
+
+[data-isempty="true"] .empty,
+[data-isempty="false"] .accepted {
+  display: revert;
+}
+
+.empty {
+  color: var(--color-red);
+}
+
+.empty,
+.accepted {
+  font-size: 0.7rem;
+  position: absolute;
+  display: none;
+  right: 2px;
+  top: 8px;
+}
+
+.name-input-container input,
+.column-btn-container span {
+  font-weight: 100;
+}
+
+.column-btn-container span::first-letter {
+  text-transform: uppercase;
+}
+
+.column-btn-container {
+  margin-block-start: 8px;
+}
+
+.column-btn-container > * + * {
+  margin-block-start: 12px;
+}
+
+.remove-column-btn-container {
+  display: flex;
+  gap: 16px;
+}
+
+.remove-column-btn-container span {
+  border: 2px solid;
+  border-color: var(
+    --modal-inputs-border-dark,
+    var(--modal-inputs-border-light)
+  );
+  border-radius: 4px;
+  padding-inline-start: 16px;
+  padding-block: 8px;
+  flex-grow: 1;
+}
+
+.remove-column-btn {
+  background-color: transparent;
+}
+
+.btns-container {
+  font-size: var(--heading-reg-xx-sm);
+  margin-block-start: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --addcreate-taskboard-save-btn-light
+--addsubtask-addcolumn-cancel-btn-light-bg
+--addsubtask-addcolumn-cancel-btn-light-fg */
+
+/* --addcreate-taskboard-save-btn-dark
+--addsubtask-addcolumn-cancel-btn-dark-bg
+--addsubtask-addcolumn-cancel-btn-dark-fg */
+
+/* add new column */
+
+.add-column-btn,
+.create-save-btn,
+.keep-changes-btn,
+.go-back-btn {
+  padding-block: 10px;
+  border-radius: 100vw;
+}
+
+.add-column-btn,
+.go-back-btn {
+  color: var(--color-purple);
+  background-color: var(
+    --addsubtask-addcolumn-cancel-btn-light-bg,
+    var(--addsubtask-addcolumn-cancel-btn-dark-bg)
+  );
+}
+
+.add-column-btn:hover,
+.add-column-btn:focus,
+.go-back-btn:hover,
+.go-back-btn:focus {
+  background-color: var(
+    --addcolumn-goback-btn-hover-dark,
+    var(--addcolumn-goback-btn-hover-light)
+  );
+}
+
+/* create new board / save changes */
+
+.create-save-btn {
+  color: var(--color-neutral-white);
+  background-color: var(--color-purple);
+}
+
+.create-save-btn:hover,
+.create-save-btn:focus {
+  background-color: var(--color-purple-secondary);
+}
+
+.warning-message-container {
+  --dark-theme-red: hsl(0, 90.1%, 68.2%);
+  --dark-theme-text: hsl(0, 44.1%, 13.3%);
+  --warning-container-padding: 24px;
+  --warning-inline: 16px;
+  position: absolute;
+  padding: var(--warning-container-padding);
+  font-weight: 600;
+  background-color: var(--edit-delete-modals-bg, var(--color-neutral-white));
+  inset: 0;
+  max-width: 480px;
+  height: min-content;
+  border-radius: 8px;
+  top: 76px;
+  left: var(--warning-inline);
+  right: var(--warning-inline);
+}
+
+.warning-message-container {
+  text-align: center;
+}
+
+.warning-message-container h2 {
+  color: var(--color-red);
+  margin-block-end: 8px;
+}
+
+.red-text {
+  color: var(--dark-theme-red, red);
+}
+
+.warning-message-container p:nth-of-type(2) {
+  margin-block: 8px;
+}
+
+.warning-message-container p {
+  color: var(--color-medium-grey);
+}
+
+.warning-message-container p:last-of-type {
+  color: var(--dark-theme-red, var(--color-red));
+}
+
+.warning-message-container ul {
+  list-style: none;
+  padding-inline-start: 0;
+  margin-block-end: 12px;
+}
+
+.warning-message-container li::first-letter {
+  text-transform: uppercase;
+}
+
+.warning-message-btns-container {
+  margin-block-start: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.keep-changes-btn {
+  color: var(--dark-theme-text, var(--color-neutral-white));
+  background-color: var(--color-red);
+}
+
+.keep-changes-btn:hover,
+.keep-changes-btn:focus {
+  background-color: var(--color-red-hover);
+}
+
+/* tablet */
+
+@media screen and (min-width: 48rem) {
+  .board-modal-bg {
+    /* right: 262px; */
+  }
+
+  .board-modal-container,
+  .warning-message-container {
+    --board-container-padding: 32px;
+    --warning-container-padding: 32px;
+    margin-block: revert;
+    margin: auto;
+    /* top: 170px; */
+  }
+
+  .warning-message-btns-container {
+    flex-direction: row;
+  }
+
+  .warning-message-btns-container button {
+    flex-basis: 200px;
+  }
+}
+
+/* desktop */
