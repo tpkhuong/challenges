@@ -25,6 +25,15 @@
   --color-light-grey-hover-btn: hsl(0, 0%, 87%);
   --color-pricing-card-light-theme-bg: hsl(0, 0%, 96%);
 
+  --color-peach: hsl(11, 73%, 66%);
+  --color-light-peach: hsl(11, 100%, 80%);
+  --color-black: hsl(270, 3%, 11%);
+  --color-dark-grey: hsl(264, 5%, 20%);
+  --color-footer-grey: hsl(240, 0%, 55%);
+  --color-light-grey: hsl(210, 17%, 95%);
+  --color-social-icon-hover: hsl(10, 100%, 80%);
+  --color-barline: hsl(300, 1%, 20%);
+
   --color-neutral-black: hsl(0, 0%, 0%);
   --color-neutral-white: hsl(0, 0%, 100%);
 
@@ -200,7 +209,7 @@ body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  font-family: var(--font-DM-Sans);
+  font-family: var(--font-Jost);
   color: var(--color-neutral-black);
   font-size: var(--font-size-body);
 }

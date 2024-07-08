@@ -1,0 +1,18 @@
+{
+  "name": "designomultipagewebsite",
+  "version": "1.0.0",
+  "description": "![Design preview for the Designo agency website coding challenge](./preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^14.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
