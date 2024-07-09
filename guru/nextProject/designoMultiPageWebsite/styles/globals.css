@@ -26,6 +26,7 @@
   --color-pricing-card-light-theme-bg: hsl(0, 0%, 96%);
 
   --color-peach: hsl(11, 73%, 66%);
+  --color-call-to-action-peach: hsl(10, 72%, 66%);
   --color-light-peach: hsl(11, 100%, 80%);
   --color-black: hsl(270, 3%, 11%);
   --color-dark-grey: hsl(264, 5%, 20%);
@@ -37,6 +38,7 @@
   --color-neutral-black: hsl(0, 0%, 0%);
   --color-neutral-white: hsl(0, 0%, 100%);
 
+  --color-bg-circle: to right top, hsl(0, 95%, 19%) 0%, hsl(0, 95%, 19%) 50%;
   --main-accent: to top, hsl(28, 100%, 79%), hsl(329, 36%, 59%),
     hsl(229, 100%, 67%);
 

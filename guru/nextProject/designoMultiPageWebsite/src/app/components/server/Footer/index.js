@@ -102,6 +102,7 @@ export default function Footer({ children, page }) {
         </p>
         <a href="/">GET IN TOUCH</a>
       </div>
+      <div className={styles[`circle`]}></div>
     </footer>
   );
 }
