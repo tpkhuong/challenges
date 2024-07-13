@@ -115,6 +115,21 @@ export async function submitNewUserHandler(event) {
    * we will call set func from useState before assign values to input parent to show error message.
    * **/
   // we want to call algorithm below to remove assistive text after use correct their errors
+  // update state using previous state data. we are passing in setState to refRegisterErrorMessage
+  // to re-render component with new data
+  // this obj
+  // {
+  //   errors: {
+  //     email: 0,
+  //     password: 0,
+  //   },
+  //   elementRef: {
+  //     email: null,
+  //     password: null,
+  //     confirmPassword: null,
+  //   },
+  // };
+  // using context AssistiveMessage component
   contextRefObj.refRegisterErrorMessage((prevValues) => {
     return {
       ...prevValues,
