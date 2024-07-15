@@ -1,0 +1,19 @@
+{
+  "name": "sellproductstripecalendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "layout.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nextui-org/calendar": "^2.0.7",
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

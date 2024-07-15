@@ -39,6 +39,10 @@
 /guru/nextProject/kanbanTaskWebApp/.env.local
 /guru/nextProject/kanbanTaskWebApp/.env
 /guru/nextProject/kanbanTaskWebApp/.next
+/learning/nextjs/sellProductStripeCalendar/node_modules
+/learning/nextjs/sellProductStripeCalendar/.env
+/learning/nextjs/sellProductStripeCalendar/.env.local
+/learning/nextjs/sellProductStripeCalendar/.next
 /testing
 /testingNext
 /guru/testingFolder/node_modules
