@@ -122,8 +122,12 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: linear-gradient(var(--color-bg-circle));
+  background: lin;
+  /* background: linear-gradient(var(--color-bg-circle)); */
 }
+
+/* background circles for let's talk about project section */
+/* use img element, position absolute and use width and height of img */
 
 /* tablet */
 
