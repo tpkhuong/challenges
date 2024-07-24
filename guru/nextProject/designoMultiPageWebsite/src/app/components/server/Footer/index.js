@@ -102,6 +102,7 @@ export default function Footer({ children, page }) {
         </p>
         <a href="/">GET IN TOUCH</a>
         <img
+          className={styles[`background-circles`]}
           src="/shared/mobile/bg-pattern-design-pages-intro-mobile.svg"
           alt=""
         />
