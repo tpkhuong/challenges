@@ -18,6 +18,10 @@
 
 .mobile-seperator {
   display: block;
+}
+
+.mobile-seperator,
+.tablet-seperator {
   width: 100%;
   height: 2px;
   background-color: var(--color-barline);
@@ -53,6 +57,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.tablet-seperator {
+  display: none;
 }
 
 .address-contact-social-container span {
@@ -145,6 +153,84 @@
 /* tablet */
 
 @media screen and (min-width: 47rem) {
+  .footer {
+    padding-inline: 40px;
+
+    padding-block-start: 166px;
+    padding-block-end: 80px;
+  }
+
+  .logo-nav-container {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+  }
+
+  .mobile-seperator {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+
+    gap: 42px;
+  }
+
+  .nav-list li:nth-child(2) {
+    margin-block: revert;
+  }
+
+  .tablet-seperator {
+    display: block;
+
+    margin-block: 40px;
+    margin-block-end: 32px;
+  }
+
+  .address-contact-social-container {
+    display: flex;
+  }
+
+  .address,
+  .contact {
+    align-items: flex-start;
+  }
+
+  .address {
+    margin-block: revert;
+  }
+
+  .contact {
+    margin-block-end: revert;
+  }
+
+  .contact span {
+    font-weight: 600;
+  }
+
+  .social-media-icons {
+    align-self: flex-end;
+    margin-inline: revert;
+  }
+
+  .call-to-action {
+    padding-inline: 58px;
+    padding-block: 58px;
+  }
+
+  .call-to-action h2 {
+    font-size: var(--font-size-40px);
+    line-height: 34px;
+
+    margin-inline: auto;
+    width: 11ch;
+  }
+
+  .call-to-action p {
+    margin-block-end: 32px;
+    padding-inline: 86px;
+  }
 }
 
 /* desktop */
