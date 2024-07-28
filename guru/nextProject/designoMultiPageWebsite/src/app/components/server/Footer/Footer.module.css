@@ -199,6 +199,8 @@
 
   .address {
     margin-block: revert;
+
+    margin-inline-end: 59px;
   }
 
   .contact {
@@ -212,6 +214,8 @@
   .social-media-icons {
     align-self: flex-end;
     margin-inline: revert;
+
+    margin-inline-start: auto;
   }
 
   .call-to-action {
@@ -235,4 +239,43 @@
 
 /* desktop */
 @media screen and (min-width: 89rem) {
+  .footer {
+    padding-inline: 165px;
+
+    padding-block-start: 144px;
+    padding-block-end: 72px;
+  }
+
+  .address {
+    margin-inline-end: 206px;
+  }
+
+  /* call to action */
+  .call-to-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-inline: 95px;
+    /* padding-block: revert; */
+
+    padding-block-start: 72px;
+    padding-block-end: 46px;
+  }
+
+  .text-container {
+    text-align: left;
+  }
+
+  .call-to-action h2 {
+    margin-inline: revert;
+    line-height: 36px;
+  }
+
+  .call-to-action p {
+    margin-block-end: revert;
+    padding-inline: revert;
+
+    width: 48ch;
+  }
 }
