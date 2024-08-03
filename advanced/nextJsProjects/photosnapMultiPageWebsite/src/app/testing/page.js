@@ -8,6 +8,7 @@ export default function TestingPage({ children }) {
     <React.Fragment>
       <h1 className={styles[`title`]}>This is Next js.</h1>
       <button
+        id="mobile-btn-selector"
         onClick={showMobileMenu}
         aria-label="open mobile menu"
         data-mobilebtnclick=""

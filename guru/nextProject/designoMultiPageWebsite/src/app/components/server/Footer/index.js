@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.css";
 
-export default function Footer({ children, page }) {
+export default function Footer({ children, mobile, tablet, desktop, page }) {
   return (
     <footer role="content-info" className={styles[`footer`]}>
       <div className={styles[`logo-nav-container`]}>
@@ -103,11 +103,15 @@ export default function Footer({ children, page }) {
           </p>
         </div>
         <a href="/">GET IN TOUCH</a>
-        <img
-          className={styles[`background-circles`]}
-          src="/shared/mobile/bg-pattern-design-pages-intro-mobile.svg"
-          alt=""
-        />
+        <picture>
+          <source media="(min-width: 1440px)" srcSet={`${desktop}`} />
+          <source media="(min-width: 768px)" srcSet={`${tablet}`} />
+          <img
+            className={styles[`background-circles`]}
+            src={`${mobile}`}
+            alt=""
+          />
+        </picture>
       </div>
       {/* <div className={styles[`circle`]}></div> */}
     </footer>

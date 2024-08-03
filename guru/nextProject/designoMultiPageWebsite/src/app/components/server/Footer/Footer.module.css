@@ -7,6 +7,8 @@
   padding-block-start: 253px;
   padding-block-end: 64px;
   padding-inline: 24px;
+
+  position: relative;
 }
 
 .logo-nav-container img {
@@ -94,8 +96,12 @@
   padding-inline: 24px;
   padding-block: 64px;
 
-  position: relative;
+  position: absolute;
   overflow: hidden;
+
+  top: -192px;
+  left: 24px;
+  right: 24px;
 }
 
 .call-to-action h2 {
@@ -221,6 +227,10 @@
   .call-to-action {
     padding-inline: 58px;
     padding-block: 58px;
+
+    top: -260px;
+    left: 40px;
+    right: 40px;
   }
 
   .call-to-action h2 {
@@ -261,6 +271,10 @@
 
     padding-block-start: 72px;
     padding-block-end: 46px;
+
+    top: -214px;
+    left: 165px;
+    right: 165px;
   }
 
   .text-container {
