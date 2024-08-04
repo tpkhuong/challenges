@@ -87,6 +87,9 @@
 } */
 
 .call-to-action {
+  /* remove later */
+  display: none;
+  /* remove later */
   color: var(--color-neutral-white);
   text-align: center;
   border-radius: 15px;

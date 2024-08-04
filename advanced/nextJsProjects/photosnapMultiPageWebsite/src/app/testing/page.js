@@ -25,22 +25,27 @@ export default function TestingPage({ children }) {
 function showMobileMenu(event) {
   const clickedBtn = event.target.closest("BUTTON");
   const ariaLabel = clickedBtn.getAttribute("aria-label");
-
   // select mobileMenuModal
+  const modalContainerElement = document.getElementById(
+    "mobile-menu-modal-selector"
+  );
+
   const actionMethodsObj = {
     "open mobile menu": function (menuBtn) {
       // change value of data-mobilebtnclick to "true"
       menuBtn.setAttribute("data-mobilebtnclick", "true");
       // change value of aria label to "close mobile menu"
       menuBtn.setAttribute("aria-label", "close mobile menu");
-      // change data-showmodal="true" on mobileMenuModal
+      // change data-showmobilemenu to "true" on modalContainerElement
+      modalContainerElement.setAttribute("data-showmobilemenu", "true");
     },
     "close mobile menu": function (menuBtn) {
       // change value of data-mobilebtnclick to "false"
       menuBtn.setAttribute("data-mobilebtnclick", "false");
       // change value of aria label to "open mobile menu"
       menuBtn.setAttribute("aria-label", "open mobile menu");
-      // change data-showmodal="false" on mobileMenuModal
+      // change data-showmobilemenu to "" on modalContainerElement
+      modalContainerElement.setAttribute("data-showmobilemenu", "");
     },
   };
 

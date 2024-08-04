@@ -1,0 +1,133 @@
+.title {
+  color: red;
+}
+
+/* move to designo project */
+
+.menu-btn {
+  display: block;
+  width: min-content;
+  background: transparent;
+
+  transform: translateY(-3px);
+}
+
+.line {
+  display: block;
+  width: 24px;
+  height: 4px;
+  background-color: black;
+}
+
+[data-mobilebtnclick="true"] .top {
+  animation: moveDownRotate 1500ms ease-out forwards;
+}
+
+.middle {
+  margin-block: 4px;
+}
+
+[data-mobilebtnclick="true"] .middle {
+  animation: hide 100ms ease-in forwards;
+  animation-delay: 500ms;
+}
+
+[data-mobilebtnclick="true"] .bottom {
+  animation: moveUpRotate 1500ms ease-out forwards;
+}
+
+/* reverse */
+
+[data-mobilebtnclick="false"] .top {
+  animation: rotateMoveUp 1500ms ease-out forwards;
+}
+
+[data-mobilebtnclick="false"] .middle {
+  animation: show 1500ms ease-in forwards;
+}
+
+[data-mobilebtnclick="false"] .bottom {
+  animation: rotateMoveDown 1500ms ease-out forwards;
+}
+
+@media screen and (min-width: 47rem) {
+  .menu-btn {
+    display: none;
+  }
+}
+
+@keyframes moveDownRotate {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(8px) rotateZ(-45deg);
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* appear/unhidden can opacity right away */
+
+@keyframes moveUpRotate {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(-8px) rotateZ(45deg);
+  }
+}
+
+/* reverse animation */
+
+@keyframes rotateMoveDown {
+  0% {
+    transform: translateY(-8px) rotateZ(45deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotateZ(0deg);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateMoveUp {
+  0% {
+    transform: translateY(8px) rotateZ(-45deg);
+  }
+
+  50% {
+    transform: translateY(8px) rotateZ(0deg);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* move to designo project */

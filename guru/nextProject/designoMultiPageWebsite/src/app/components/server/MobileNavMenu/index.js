@@ -13,7 +13,7 @@ export default function MobileNavMenu({ children, props }) {
       >
         <div className={styles[`mobile-menu-container`]}>
           <nav role="navigation">
-            <ul role="menu-bar" className={styles[`navlist`]}>
+            <ul role="menubar" className={styles[`navlist`]}>
               {["our company", "locations", "contact"].map(
                 function makeMenuItem(linkText, index, list) {
                   const companyTextForLink =
@@ -27,6 +27,7 @@ export default function MobileNavMenu({ children, props }) {
                       className={styles[`navitem`]}
                     >
                       <a
+                        role="menuitem"
                         href={`/${index == 0 ? companyTextForLink : linkText}`}
                         className={styles[`navlink`]}
                       >

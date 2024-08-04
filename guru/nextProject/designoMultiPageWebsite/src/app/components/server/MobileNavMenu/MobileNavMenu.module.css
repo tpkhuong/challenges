@@ -1,0 +1,37 @@
+.modal-container[data-showmobilemenu="true"] {
+  display: block;
+}
+
+.modal-container {
+  position: fixed;
+
+  inset: 0;
+  top: 97px;
+  width: 100%;
+
+  background-color: hsla(0, 0%, 0%, 0.3);
+  display: none;
+}
+
+.mobile-menu-container {
+  background-color: var(--color-neutral-black);
+
+  padding: 2px;
+}
+
+/* .navlink:focus {
+  outline-offset: 2px;
+  outline: red solid 2px;
+} */
+
+.navlink {
+  font-size: var(--font-size-24px);
+  color: var(--color-neutral-white);
+
+  display: block;
+
+  padding-block: 16px;
+  padding-inline: 24px;
+
+  letter-spacing: 2px;
+}
