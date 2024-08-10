@@ -13,9 +13,9 @@ export default function RootPage({ children }) {
       <div className={styles[`main-footer-mobilemenu-container`]}>
         {/* main,footer and mobilemenu container */}
         <Footer
-          desktop="/shared/desktop/bg-pattern-design-pages-intro-mobile.svg"
-          tablet="/shared/tablet/bg-pattern-design-pages-intro-mobile.svg"
-          mobile="/shared/mobile/bg-pattern-design-pages-intro-mobile.svg"
+        // desktop="/shared/desktop/bg-pattern-call-to-action.svg"
+        // tablet="/shared/tablet/bg-pattern-design-pages-intro-tablet.svg"
+        // mobile="/shared/mobile/bg-pattern-design-pages-intro-mobile.svg"
         />
         <MobileNavMenu />
         {/* /shared/mobile/bg-pattern-design-pages-intro-mobile.svg */}

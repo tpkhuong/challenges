@@ -103,15 +103,15 @@ export default function Footer({ children, mobile, tablet, desktop, page }) {
           </p>
         </div>
         <a href="/">GET IN TOUCH</a>
-        <picture>
+        <img
+          className={styles[`background-circles`]}
+          src="/shared/desktop/bg-pattern-call-to-action.svg"
+          alt=""
+        />
+        {/* <picture>
           <source media="(min-width: 1440px)" srcSet={`${desktop}`} />
           <source media="(min-width: 768px)" srcSet={`${tablet}`} />
-          <img
-            className={styles[`background-circles`]}
-            src={`${mobile}`}
-            alt=""
-          />
-        </picture>
+        </picture> */}
       </div>
       {/* <div className={styles[`circle`]}></div> */}
     </footer>
