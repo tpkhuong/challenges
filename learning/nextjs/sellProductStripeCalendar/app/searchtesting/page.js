@@ -3,7 +3,10 @@
 import React from "react";
 import { createClient, OAuthStrategy } from "@wix/api-client";
 import { availabilityCalendar, services } from "@wix/bookings";
-
+/** **/
+/* install @wix/stores */
+/* to work with products */
+/** **/
 const myWixClient = createClient({
   modules: { availabilityCalendar, services },
   auth: OAuthStrategy({
