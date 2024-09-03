@@ -59,4 +59,25 @@
   top: -70px;
 }
 /* tablet */
+
+@media screen and (min-width: 47rem) {
+  .hero-container {
+    padding-block-start: 60px;
+    padding-inline: 58px;
+  }
+  .hero-title {
+    font-size: var(--font-size-48px);
+    width: 16ch;
+    line-height: 48px;
+
+    margin-inline: auto;
+  }
+  .description {
+    font-size: var(--font-size-16px);
+    padding-inline: 107px;
+
+    margin-block-end: 36px;
+  }
+}
+
 /* desktop */
