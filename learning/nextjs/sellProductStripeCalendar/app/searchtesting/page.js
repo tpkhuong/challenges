@@ -3,12 +3,13 @@
 import React from "react";
 import { createClient, OAuthStrategy } from "@wix/api-client";
 import { availabilityCalendar, services } from "@wix/bookings";
+import { products } from "@wix/stores";
 /** **/
 /* install @wix/stores */
 /* to work with products */
 /** **/
 const myWixClient = createClient({
-  modules: { availabilityCalendar, services },
+  modules: { availabilityCalendar, services, products },
   auth: OAuthStrategy({
     clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
     tokens: null,
@@ -30,6 +31,7 @@ export default function SearchTestingPage({ children }) {
 }
 
 async function fetchServicesAndAvailability() {
+  // services
   const listOfServices = await myWixClient.services.queryServices().find();
 
   console.log(listOfServices.items);
@@ -42,6 +44,7 @@ async function fetchServicesAndAvailability() {
   const start = new Date("August 18, 2024 10:00:00");
   const end = new Date("August 18, 2024 15:00:00");
 
+  // availability
   const availability = await myWixClient.availabilityCalendar.queryAvailability(
     {
       filter: {
@@ -53,7 +56,16 @@ async function fetchServicesAndAvailability() {
     { timezone: "UTC" }
   );
 
-  console.log(availability);
+  console.log(availability, "availability");
+
+  // products
+  const fetchProductsObj = await myWixClient.products.queryProducts().find();
+  // async function fetchProducts() {
+  // };
+
+  console.log(fetchProductsObj, "fetchProductsObj");
+  const { items } = fetchProductsObj;
+  console.log(items, "items");
 }
 
 // async function fetchAvailability(serviceId) {

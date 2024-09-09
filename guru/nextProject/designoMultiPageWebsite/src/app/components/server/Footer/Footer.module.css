@@ -304,4 +304,9 @@
 
     width: 48ch;
   }
+
+  .background-circles {
+    left: revert;
+    right: 2px;
+  }
 }
