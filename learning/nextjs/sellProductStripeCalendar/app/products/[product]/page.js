@@ -28,15 +28,15 @@ export default function ProductPage({ children }) {
   // console.log(searchParams.get(), "searchParams..get()");
   // to get to page use <a> with href of /products/name of product
   //   at 1 hr 18 mins of video will see Search file with <Card/> and Link with href of slug
-  // async function createRedirect(slug) {
-  //   const redirect = await myWixClient.redirects.createRedirectSession({
-  //     storesProduct: `${slug}`,
-  //     callbacks: { postFlowUrl: window.location.href },
-  //   });
+  async function createRedirect(slug) {
+    const redirect = await myWixClient.redirects.createRedirectSession({
+      storesProduct: { productSlug: `${params}` },
+      callbacks: { postFlowUrl: window.location.href },
+    });
 
-  //   console.log(redirect, "redirect");
-  //   // window.location = redirect.redirectSession.fullUrl;
-  // }
+    //   console.log(redirect, "redirect");
+    window.location = redirect.redirectSession.fullUrl;
+  }
   React.useEffect(
     function getProducts() {
       fetchProducts();
@@ -46,20 +46,26 @@ export default function ProductPage({ children }) {
   return (
     <React.Fragment>
       <h1>Hi from Product Page.</h1>
-      <button>Product button</button>
+      <button
+        onClick={function redirecToLoginPage() {
+          createRedirect();
+        }}
+      >
+        Product button
+      </button>
     </React.Fragment>
   );
 }
 
-async function createRedirect(router) {
-  const redirect = await myWixClient.redirects.createRedirectSession({
-    storesProduct: `${router.query.slug}`,
-    callbacks: { postFlowUrl: window.location.href },
-  });
+// async function createRedirect(router) {
+//   const redirect = await myWixClient.redirects.createRedirectSession({
+//     storesProduct: `${router.query.slug}`,
+//     callbacks: { postFlowUrl: window.location.href },
+//   });
 
-  console.log(redirect, "redirect");
-  // window.location = redirect.redirectSession.fullUrl;
-}
+//   console.log(redirect, "redirect");
+//   window.location = redirect.redirectSession.fullUrl;
+// }
 
 // onClick={function redirectToPage() {
 //   createRedirect(router.query.slug);
