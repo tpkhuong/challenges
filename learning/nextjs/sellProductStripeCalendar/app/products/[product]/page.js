@@ -36,6 +36,14 @@ async function fetchProducts() {
   console.log(items, "items");
 }
 
+function login() {
+  const loginRequestData = myWixClient.auth.generateOAuthData(
+    "http://localhost:3000/"
+  );
+
+  console.log(loginRequestData, "loginRequestData");
+}
+
 export default function ProductPage({ children }) {
   const params = useParams();
   console.log(params, "params");
@@ -61,8 +69,9 @@ export default function ProductPage({ children }) {
     <React.Fragment>
       <h1>Hi from Product Page.</h1>
       <button
-        onClick={function redirecToLoginPage() {
-          createRedirect();
+        onClick={function executeLogin() {
+          // createRedirect();
+          login();
         }}
       >
         Product button
