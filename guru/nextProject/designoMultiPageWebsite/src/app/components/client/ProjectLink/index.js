@@ -9,7 +9,7 @@ export default function ProjectLink({
   desktop,
 }) {
   return (
-    <div>
+    <div className={styles[`img-text-container`]}>
       <picture>
         <source srcSet={desktop} media="(min-width: 1440px)" />
         <source srcSet={tablet} media="(min-width: 768px)" />

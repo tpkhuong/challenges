@@ -1,9 +1,52 @@
 /* mobile */
 /* tablet */
 
+.img-text-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.img-text-container::after {
+  content: "";
+  display: block;
+  background-color: hsla(0, 0%, 0%, 1);
+
+  position: absolute;
+  inset: 0;
+}
+
+.title-link-container {
+  position: absolute;
+  inset: 0;
+
+  width: fit-content;
+  height: max-content;
+
+  margin: auto;
+}
+
+.title {
+  font-size: var(--font-size-28px);
+  letter-spacing: 2px;
+}
+
 .title,
 .project-link-container span {
+  font-weight: 500;
   color: var(--color-neutral-white);
+}
+
+.project-link-container {
+  display: inline-flex;
+  align-items: center;
+}
+
+.project-link-container span {
+  font-size: var(--font-size-15px);
+  letter-spacing: 6px;
+
+  margin-inline-end: 9px;
 }
 
 @media screen and (min-width: 47rem) {

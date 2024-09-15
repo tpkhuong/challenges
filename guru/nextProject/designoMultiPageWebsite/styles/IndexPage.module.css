@@ -65,6 +65,12 @@
 
   left: -168px;
 }
+
+.project-links-container {
+  padding-inline: 25px;
+  margin-block: 120px;
+}
+
 /* tablet */
 
 @media screen and (min-width: 47rem) {

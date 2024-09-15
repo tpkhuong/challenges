@@ -36,12 +36,19 @@ async function fetchProducts() {
   console.log(items, "items");
 }
 
-function login() {
+async function login() {
   const loginRequestData = myWixClient.auth.generateOAuthData(
     "http://localhost:3000/"
   );
 
   console.log(loginRequestData, "loginRequestData");
+  localStorage.setItem("oAuthRedirect", JSON.stringify(loginRequestData));
+
+  const { authUrl } = await myWixClient.auth.getAuthUrl(loginRequestData);
+
+  // console.log(authObj, "authObj");
+  console.log(authUrl, "authUrl");
+  window.location.href = authUrl;
 }
 
 export default function ProductPage({ children }) {
