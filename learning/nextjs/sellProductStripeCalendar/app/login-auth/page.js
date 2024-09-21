@@ -1,5 +1,5 @@
 import React from "react";
-import { createClient, OAuthStrategy } from "@wix/api-client";
+import { createClient, OAuthStrategy } from "@wix/sdk";
 import { redirects } from "@wix/redirects";
 import { products } from "@wix/stores";
 import Cookies from "js-cookie";
