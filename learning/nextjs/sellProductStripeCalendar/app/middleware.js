@@ -1,9 +1,9 @@
-import { createClient, OAuthStrategy } from "@wix/api-client";
+import { createClient, OAuthStrategy } from "@wix/sdk";
 import { NextResponse } from "next/server";
 
 export async function middleware(request, response) {
   if (!request.cookies.get("session")) {
-    const response = response.next();
+    const response = NextResponse.next();
     const myWixClient = createClient({
       auth: OAuthStrategy({
         clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
