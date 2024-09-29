@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { createClient, OAuthStrategy } from "@wix/sdk";
 import { members } from "@wix/members";
@@ -24,16 +26,21 @@ export default function LoginBar({ children }) {
   }
 
   async function login() {
+    console.log(myWixClient, "myWixClient");
     const data = myWixClient.auth.generateOAuthData(
-      `${window.location.origin}/login-auth`,
-      window.location.href
+      `${window.location.origin}/login-callback`
     );
+
+    console.log("data in login function", data);
 
     localStorage.setItem("oauthRedirectData", JSON.stringify(data));
 
-    const { authUrl } = await myWixClient.auth.getAuthUrl(data);
+    // const { authUrl } = await myWixClient.auth.getAuthUrl(data);
+    const obj = await myWixClient.auth.getAuthUrl(data);
 
-    window.location = authUrl;
+    console.log(obj, "obj");
+    // console.log(authUrl, "authUrl");
+    // window.location.href = authUrl;
   }
 
   async function logout() {
@@ -41,7 +48,7 @@ export default function LoginBar({ children }) {
 
     Cookies.remove("session");
 
-    window.location = logoutUrl;
+    window.location.href = logoutUrl;
   }
 
   React.useEffect(function getMember() {
@@ -51,15 +58,29 @@ export default function LoginBar({ children }) {
   return (
     <React.Fragment>
       <div className={styles[`loginbar-container`]}>
-        {member != null && (
+        {member !== null && (
           <section>
             <h3>
-              Hello{""}
+              Hello{" "}
               {myWixClient.auth.loggedIn()
                 ? member.profile?.nickname || member.profile?.slug || ""
                 : "visitor"}
             </h3>
-            <button>{myWixClient.auth.loggedIn() ? "Logout" : "Login"}</button>
+            <button
+              onClick={function checkForUser(event) {
+                console.log("clicked");
+                if (myWixClient.auth.loggedIn()) {
+                  console.log("logout");
+                  logout();
+                } else {
+                  console.log("login");
+                  login();
+                }
+                // myWixClient.auth.loggedIn() ? logout() : login();
+              }}
+            >
+              {myWixClient.auth.loggedIn() ? "Logout" : "Login"}
+            </button>
           </section>
         )}
       </div>

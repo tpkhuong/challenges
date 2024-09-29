@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { createClient, OAuthStrategy } from "@wix/sdk";
 // import { redirects } from "@wix/redirects";
@@ -51,30 +53,31 @@ const myWixClient = createClient({
 //   );
 // }
 
-async function verifyLogin() {
-  const data = JSON.parse(localStorage.getItem("oauthRerdirectData"));
-  localStorage.removeItem("oauthRerdirectData");
-
-  try {
-    const { code, state } = myWixClient.auth.parseFromUrl();
-
-    let tokens = await myWixClient.auth.getMemberTokens(code, state, data);
-
-    while (!tokens?.refreshToken?.value) {
-      tokens = await myWixClient.auth.getMemberTokens(code, state, data);
-    }
-    Cookies.set("session", JSON.stringify(tokens));
-
-    window.location = data?.originalUri || "/";
-  } catch (error) {
-    setNextPage(data?.originalUri || "/");
-    setErrorMessage(error.toString());
-  }
-}
-
-export default function LoginAuth() {
+export default function LoginCallback() {
   const [nextPage, setNextPage] = React.useState(null);
   const [errorMessage, setErrorMessage] = React.useState(null);
+
+  async function verifyLogin() {
+    const data = JSON.parse(localStorage.getItem("oauthRerdirectData"));
+    console.log(data, "data in verify login");
+    localStorage.removeItem("oauthRerdirectData");
+
+    try {
+      const { code, state } = myWixClient.auth.parseFromUrl();
+
+      let tokens = await myWixClient.auth.getMemberTokens(code, state, data);
+
+      while (!tokens?.refreshToken?.value) {
+        tokens = await myWixClient.auth.getMemberTokens(code, state, data);
+      }
+      Cookies.set("session", JSON.stringify(tokens));
+
+      window.location.href = data?.originalUri || "/";
+    } catch (error) {
+      setNextPage(data?.originalUri || "/");
+      setErrorMessage(error.toString());
+    }
+  }
 
   React.useEffect(function runVerifyLogin() {
     verifyLogin();
@@ -83,15 +86,28 @@ export default function LoginAuth() {
   return (
     <article>
       {errorMessage && (
-        <React.Fragment>
+        <>
           <span>{errorMessage}</span>
-        </React.Fragment>
+          <br />
+          <br />
+        </>
       )}
-      {nextPage ? (
-        <a href={nextPage}>Continue</a>
-      ) : (
-        <React.Fragment>Loading...</React.Fragment>
-      )}
+      {nextPage ? <a href={nextPage}>Continue</a> : <>Loading...</>}
     </article>
   );
+
+  // return (
+  //   <article>
+  //     {errorMessage && (
+  //       <React.Fragment>
+  //         <span>{errorMessage}</span>
+  //       </React.Fragment>
+  //     )}
+  //     {nextPage ? (
+  //       <a href={nextPage}>Continue</a>
+  //     ) : (
+  //       <React.Fragment>Loading...</React.Fragment>
+  //     )}
+  //   </article>
+  // );
 }
