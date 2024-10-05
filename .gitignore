@@ -43,6 +43,10 @@
 /learning/nextjs/sellProductStripeCalendar/.env
 /learning/nextjs/sellProductStripeCalendar/.env.local
 /learning/nextjs/sellProductStripeCalendar/.next
+/learning/nextjs/productStripe/node_modules
+/learning/nextjs/productStripe/.env
+/learning/nextjs/productStripe/.env.local
+/learning/nextjs/productStripe/.next
 /testing
 /testingNext
 /guru/testingFolder/node_modules
