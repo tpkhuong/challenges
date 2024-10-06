@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../styles/HomePage.module.css";
 
 export default function RootPage({ children }) {
   return (
@@ -6,6 +7,7 @@ export default function RootPage({ children }) {
       <a href="#main-content" className="skip-link">
         Skip to Main Content
       </a>
+      <h1 className={styles[`title`]}>This is the Root Page.</h1>
     </React.Fragment>
   );
 }
