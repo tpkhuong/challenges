@@ -14,10 +14,16 @@ datasource db {
 }
 
 model User {
-  id      Int      @id @default(autoincrement())
-  email   String   @unique
-  name    String?
+  id    Int    @id @default(autoincrement())
+  email String @unique
   // Post and Profile has to be a model in this schema
-  posts   Post[]
-  profile Profile?
+  // posts   Post[]
+  // profile Profile?
+}
+
+model Customer {
+  id        Int    @id @default(autoincrement())
+  email     String @unique
+  firstName String
+  lastName  String
 }

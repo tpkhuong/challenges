@@ -8,6 +8,7 @@ export default function RootPage({ children }) {
         Skip to Main Content
       </a>
       <h1 className={styles[`title`]}>This is the Root Page.</h1>
+      <button>click me</button>
     </React.Fragment>
   );
 }
