@@ -69,12 +69,23 @@
 .project-links-container {
   padding-inline: 25px;
   margin-block: 120px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+.home-page-features-container {
+  padding-inline: 25px;
 }
 
 /* tablet */
 
 @media screen and (min-width: 47rem) {
-  .inline-spacing {
+  .inline-spacing,
+  .project-links-container,
+  .home-page-features-container {
     padding-inline: 40px;
   }
   .hero-container {
@@ -111,7 +122,9 @@
 /* desktop */
 
 @media screen and (min-width: 89rem) {
-  .inline-spacing {
+  .inline-spacing,
+  .project-links-container,
+  .home-page-features-container {
     padding-inline: 165px;
   }
   .hero-container {
@@ -144,5 +157,27 @@
     width: 600px;
     top: -165px;
     left: 18px;
+  }
+  /* project link */
+
+  .project-links-container {
+    display: grid;
+    gap: 24px 30px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-areas:
+      "web-design app-design"
+      "web-design graphic-design";
+  }
+
+  .project-links-container div:nth-child(1) {
+    grid-area: web-design;
+  }
+  .project-links-container div:nth-child(2) {
+    grid-area: app-design;
+  }
+  .project-links-container div:nth-child(3) {
+    grid-area: graphic-design;
   }
 }

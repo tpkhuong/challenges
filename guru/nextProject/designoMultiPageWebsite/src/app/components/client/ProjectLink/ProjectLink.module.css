@@ -10,7 +10,7 @@
 .img-text-container::after {
   content: "";
   display: block;
-  background-color: hsla(0, 0%, 0%, 1);
+  background-color: hsla(0, 0%, 0%, 0.5);
 
   position: absolute;
   inset: 0;
@@ -24,6 +24,8 @@
   height: max-content;
 
   margin: auto;
+
+  z-index: 1;
 }
 
 .title {
