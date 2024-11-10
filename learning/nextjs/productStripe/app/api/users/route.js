@@ -17,13 +17,65 @@ export async function POST(req, res) {
   const body = await req.json();
   console.log(body, "body");
 
-  //   console.log(name, "name");
-  //   console.log(email, "email");
-  //   console.log(password, "password");
+  // with password
+  const { name, email, password } = body;
+
+  console.log(name, "name");
+  console.log(email, "email");
+  console.log(password, "password");
+
+  const user = await prisma.user.create({
+    data: {
+      // name,
+      email,
+      password,
+    },
+  });
+
+  console.log(user, "user");
   /**
    * Working on adding user data to database(postgresql)
    * **/
   return NextResponse.json({
-    message: "Hi, this is POST",
+    message: "Hi, this is POST with password",
+    data: {
+      name,
+      email,
+      password,
+    },
+  });
+
+  // // without password
+  // const { name, email } = body;
+
+  // console.log(name, "name");
+  // console.log(email, "email");
+
+  // const userWithoutPassword = await prisma.user.create({
+  //   data: {
+  //     email,
+  //   },
+  // });
+
+  // console.log(userWithoutPassword, "userWithoutPassword");
+
+  // return NextResponse.json({
+  //   message: "Hi, this is POST without password",
+  //   data: {
+  //     name,
+  //     email,
+  //   },
+  // });
+}
+
+export async function PUT(req, res) {
+  // use email to find user
+  // then update user data with password
+  const body = await req.json();
+
+  console.log(body, "body");
+
+  return NextResponse.json({
+    message: "Hi, this is PUT method",
   });
 }

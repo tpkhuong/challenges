@@ -345,6 +345,7 @@ export default function RootPage({ children }) {
               </g>
             </svg>
             {/* circle */}
+            {/* need to use rotate on svg */}
             <svg xmlns="http://www.w3.org/2000/svg" width="202" height="202">
               <defs>
                 <linearGradient id="a" x1="0%" x2="100%" y1="50%" y2="50%">
