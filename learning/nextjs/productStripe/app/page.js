@@ -99,6 +99,7 @@ async function sendingGetRequestToDatabase(event) {
 
 async function updatingDatabaseInformation(event) {
   const dataObj = {
+    email: "marvel@coolcompany.com",
     password: "lordOfTheRings",
   };
   const requestObj = {
