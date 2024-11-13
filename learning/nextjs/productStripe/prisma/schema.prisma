@@ -31,3 +31,11 @@ model Customer {
   user      User   @relation(fields: [userId], references: [id])
   userId    Int
 }
+
+model PaidCustomers {
+  id              Int    @id @default(autoincrement())
+  firstName       String
+  lastName        String
+  billingAddress  String
+  shippingAddress String
+}
