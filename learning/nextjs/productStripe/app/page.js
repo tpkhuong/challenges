@@ -22,6 +22,8 @@ export default function RootPage({ children }) {
       <button onClick={sendingGetRequestToDatabase}>Sending GET Request</button>
       {/* UPDATE */}
       <button onClick={updatingDatabaseInformation}>Updating Data</button>
+      {/* checking knowledge */}
+      <button>PaidCustomers Data</button>
     </React.Fragment>
   );
 }
