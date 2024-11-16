@@ -78,6 +78,8 @@
 
 .home-page-features-container {
   padding-inline: 25px;
+
+  margin-block-end: 311px;
 }
 
 /* tablet */
@@ -116,6 +118,10 @@
   }
   .hero-img img {
     left: -45px;
+  }
+
+  .home-page-features-container {
+    margin-block-end: 331px;
   }
 }
 
@@ -161,6 +167,8 @@
   /* project link */
 
   .project-links-container {
+    margin-block: 160px;
+
     display: grid;
     gap: 24px 30px;
 
@@ -179,5 +187,10 @@
   }
   .project-links-container div:nth-child(3) {
     grid-area: graphic-design;
+  }
+
+  .home-page-features-container {
+    display: flex;
+    gap: 30px;
   }
 }

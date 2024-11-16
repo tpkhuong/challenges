@@ -1,3 +1,30 @@
+.image-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svg-container {
+  position: relative;
+}
+
+.image-content-container:nth-of-type(2) {
+  margin-block: 80px;
+}
+
+.svg-container:nth-of-type(2) svg:nth-of-type(1) {
+  transform: rotate(-90deg);
+}
+
+.svg-container:nth-of-type(3) svg:nth-of-type(1) {
+  transform: rotate(60deg);
+}
+
+.svg-container svg:nth-of-type(1) {
+  position: absolute;
+  z-index: -1;
+}
+
 .title {
   font-weight: 400;
   letter-spacing: 5px;
@@ -5,8 +32,46 @@
 
   margin-block-start: 36px;
   margin-block-end: 28px;
+
+  text-align: center;
 }
 
 .description {
   font-size: var(--font-size-16px);
+  text-align: center;
+}
+
+@media screen and (min-width: 47rem) {
+  .image-content-container {
+    flex-direction: revert;
+    gap: 48px;
+  }
+  .text-container {
+    flex-basis: 439px;
+  }
+  .title {
+    margin-block-start: 0px;
+    margin-block-end: 16px;
+    text-align: revert;
+  }
+  .description {
+    text-align: revert;
+  }
+}
+
+@media screen and (min-width: 89rem) {
+  .image-content-container {
+    flex-direction: column;
+  }
+  .image-content-container:nth-of-type(2) {
+    margin-block: 0px;
+  }
+
+  .title {
+    text-align: center;
+    margin-block-end: 32px;
+  }
+  .description {
+    text-align: center;
+  }
 }

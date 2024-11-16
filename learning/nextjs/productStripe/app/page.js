@@ -23,7 +23,7 @@ export default function RootPage({ children }) {
       {/* UPDATE */}
       <button onClick={updatingDatabaseInformation}>Updating Data</button>
       {/* checking knowledge */}
-      <button>PaidCustomers Data</button>
+      <button onClick={paidCustomersData}>PaidCustomers Data</button>
     </React.Fragment>
   );
 }
@@ -121,6 +121,40 @@ async function updatingDatabaseInformation(event) {
     const data = await response.json();
     console.log(data, "data");
 
+    return data;
+  }
+
+  if (!response) {
+    throw new Error(data.message || "Oops! The fun is about to begin!");
+  }
+}
+
+async function paidCustomersData(event) {
+  const paidCustomersData = {
+    firstName: "Cool",
+    lastName: "Dude",
+    billingAddress: "808 Awesome St",
+    shippingAddress: "808 Cool Rd",
+  };
+
+  const requestObj = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(paidCustomersData),
+  };
+
+  // make fetch call
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_AUTH_URL}/api/users`,
+    requestObj
+  );
+
+  if (response) {
+    const data = await response.json();
+
+    console.log(data, "paid customers data");
     return data;
   }
 

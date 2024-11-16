@@ -60,7 +60,7 @@ export default function RootPage({ children }) {
       {/* main */}
       <main role="main">
         {/* project links */}
-        {/* <article className={styles[`project-links-container`]}>
+        <article className={styles[`project-links-container`]}>
           <ProjectLink
             title="WEB DESIGN"
             mobile="/home/mobile/image-web-design.jpg"
@@ -79,7 +79,7 @@ export default function RootPage({ children }) {
             tablet="/home/tablet/image-graphic-design.jpg"
             desktop="/home/desktop/image-graphic-design.jpg"
           />
-        </article> */}
+        </article>
         {/* Home Page Features */}
         <article className={styles[`home-page-features-container`]}>
           {/* Passionate */}
@@ -88,6 +88,25 @@ export default function RootPage({ children }) {
             description="Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge
   art, design, and technology into exciting new solutions."
           >
+            {/* circle */}
+            {/* need to use rotate on svg */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="202" height="202">
+              <defs>
+                <linearGradient id="a" x1="0%" x2="100%" y1="50%" y2="50%">
+                  <stop offset="0%" stopColor="#5D0202" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#5D0202" stopOpacity=".498" />
+                </linearGradient>
+              </defs>
+              <circle
+                cx="101"
+                cy="101"
+                r="101"
+                fill="url(#a)"
+                fillRule="evenodd"
+                opacity=".203"
+                transform="matrix(-1 0 0 1 202 0)"
+              />
+            </svg>
             <svg width="202" height="202" xmlns="http://www.w3.org/2000/svg">
               <g fill="none" fillRule="evenodd">
                 <circle
@@ -344,6 +363,13 @@ export default function RootPage({ children }) {
                 </g>
               </g>
             </svg>
+          </HomePageFeatures>
+          {/* Resourceful */}
+          <HomePageFeatures
+            title="RESOURCEFUL"
+            description="Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer
+  collaboration. It guarantees superior results that fulfill our clients’ needs."
+          >
             {/* circle */}
             {/* need to use rotate on svg */}
             <svg xmlns="http://www.w3.org/2000/svg" width="202" height="202">
@@ -363,13 +389,6 @@ export default function RootPage({ children }) {
                 transform="matrix(-1 0 0 1 202 0)"
               />
             </svg>
-          </HomePageFeatures>
-          {/* Resourceful */}
-          <HomePageFeatures
-            title="RESOURCEFUL"
-            description="Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer
-  collaboration. It guarantees superior results that fulfill our clients’ needs."
-          >
             <svg width="202" height="202" xmlns="http://www.w3.org/2000/svg">
               <g fill="none" fillRule="evenodd">
                 <circle
@@ -684,6 +703,25 @@ export default function RootPage({ children }) {
             description="We are a group of enthusiastic folks who know how to put people first. Our success depends on our customers, and we
   strive to give them the best experience a company can provide."
           >
+            {/* circle */}
+            {/* need to use rotate on svg */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="202" height="202">
+              <defs>
+                <linearGradient id="a" x1="0%" x2="100%" y1="50%" y2="50%">
+                  <stop offset="0%" stopColor="#5D0202" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#5D0202" stopOpacity=".498" />
+                </linearGradient>
+              </defs>
+              <circle
+                cx="101"
+                cy="101"
+                r="101"
+                fill="url(#a)"
+                fillRule="evenodd"
+                opacity=".203"
+                transform="matrix(-1 0 0 1 202 0)"
+              />
+            </svg>
             <svg width="202" height="202" xmlns="http://www.w3.org/2000/svg">
               <g fill="none" fillRule="evenodd">
                 <circle
