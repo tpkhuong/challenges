@@ -108,7 +108,7 @@ export async function PUT(req, res) {
 
   console.log(body, "body");
 
-  const { email } = body;
+  const { email, password } = body;
 
   // use email to find user
   const userFoundByEmail = await prisma.user.findMany({
@@ -117,12 +117,22 @@ export async function PUT(req, res) {
     },
   });
   // then update user data with password
+  // use .update method
+  const updateUser = await prisma.user.update({
+    where: {
+      email: `${email}`,
+    },
+    data: {
+      password: `${password}`,
+    },
+  });
 
   return NextResponse.json({
     message: "Hi, this is PUT method",
     data: {
       email,
       userFoundByEmail,
+      updatedUser: updateUser,
     },
   });
 }

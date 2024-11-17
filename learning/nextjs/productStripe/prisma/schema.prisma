@@ -32,10 +32,10 @@ model Customer {
   userId    Int
 }
 
-model PaidCustomers {
-  id              Int    @id @default(autoincrement())
-  firstName       String
-  lastName        String
-  billingAddress  String
-  shippingAddress String
-}
+// model PaidCustomers {
+//   id             Int    @id @default(autoincrement())
+//   firstName      String
+//   lastName       String
+//   billingAddress String
+//   shippingAddress String
+// }

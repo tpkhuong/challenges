@@ -14,6 +14,8 @@ export default function RootPage({ children }) {
         Skip to Main Content
       </a>
       <h1 className={styles[`title`]}>This is the Root Page.</h1>
+      {/* User */}
+      <h2>Users Database</h2>
       {/* POST */}
       <button onClick={sendingPostRequestToDatabase}>
         Sending POST Request
@@ -24,6 +26,8 @@ export default function RootPage({ children }) {
       <button onClick={updatingDatabaseInformation}>Updating Data</button>
       {/* checking knowledge */}
       <button onClick={paidCustomersData}>PaidCustomers Data</button>
+      <h2>Product</h2>
+      <button onClick={getProductFromDatabase}>Get Product</button>
     </React.Fragment>
   );
 }
@@ -130,11 +134,17 @@ async function updatingDatabaseInformation(event) {
 }
 
 async function paidCustomersData(event) {
+  // const paidCustomersData = {
+  //   firstName: "Cool",
+  //   lastName: "Dude",
+  //   billingAddress: "808 Awesome St",
+  //   shippingAddress: "808 Cool Rd",
+  // };
   const paidCustomersData = {
-    firstName: "Cool",
-    lastName: "Dude",
-    billingAddress: "808 Awesome St",
-    shippingAddress: "808 Cool Rd",
+    firstName: "Hulk",
+    lastName: "Marvel",
+    billingAddress: "808 Dodgers St",
+    shippingAddress: "808 Rams Rd",
   };
 
   const requestObj = {
@@ -160,6 +170,31 @@ async function paidCustomersData(event) {
 
   if (!response) {
     throw new Error(data.message || "Oops! The fun is about to begin!");
+  }
+}
+
+// Product
+
+async function getProductFromDatabase(event) {
+  // const dataObj = {};
+
+  const requestObj = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_AUTH_URL}/api/getproducts`,
+    { method: "GET" }
+  );
+
+  if (response) {
+    const data = await response.json();
+
+    console.log(data, "product data");
+    return data;
   }
 }
 
