@@ -47,6 +47,10 @@
 /learning/nextjs/productStripe/.env
 /learning/nextjs/productStripe/.env.local
 /learning/nextjs/productStripe/.next
+/learning/nextjs/supabaseProductStripe/node_modules
+/learning/nextjs/supabaseProductStripe/.env
+/learning/nextjs/supabaseProductStripe/.env.local
+/learning/nextjs/supabaseProductStripe/.next
 /testing
 /testingNext
 /guru/testingFolder/node_modules
