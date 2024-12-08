@@ -13,3 +13,21 @@ export async function GET(req, res) {
     listOfProducts: products,
   });
 }
+
+// SQl query
+
+// select
+//   *
+// from
+//   customers
+// INNER JOIN addresses
+// ON customers.id = addresses.users_id
+
+// supabase
+
+// const { data, error } = await supabase.from("customers").select(
+//   `
+//     *,
+//     ...addresses!inner()
+//     `
+// );

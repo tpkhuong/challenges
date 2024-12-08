@@ -12,6 +12,9 @@ export default function RootPage({ children }) {
       <h1 className={styles[`title`]}>This is Home Page</h1>
       <button onClick={getProducts}>GET product Request</button>
       <button onClick={getTestUsers}>GET users Request</button>
+      <button onClick={getSupabaseProductData}>
+        GET supabase products Request
+      </button>
     </React.Fragment>
   );
 }
@@ -40,6 +43,21 @@ async function getTestUsers(event) {
     const data = await response.json();
 
     console.log(data, "user data");
+
+    return data;
+  }
+}
+
+async function getSupabaseProductData(event) {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_AUTH_URL}/api/products`,
+    { method: "GET" }
+  );
+
+  if (response) {
+    const data = await response.json();
+
+    console.log(data, "product data");
 
     return data;
   }
