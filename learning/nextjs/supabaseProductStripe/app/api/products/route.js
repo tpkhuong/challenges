@@ -8,28 +8,38 @@ export async function GET(req, res) {
   // one the order_item is found, get product_ID and quantity
   // use product_ID to get product info: name, description, price, inventory
 
-  // const userId = 3;
+  const userId = 3;
 
-  const { data, error } = await supabase.from("order_item").select(`*`);
-  // .eq("user_id", `${userId}`);
+  /**
+   * workding with order details
+   * **/
 
-  // const [firstObj] = data;
+  const { data, error } = await supabase
+    .from(`order_details`)
+    .select(`*`)
+    .eq(`user_id`, `${userId}`);
 
-  // const { id } = firstObj;
+  const [firstObj] = data;
+
+  const { id: orderId } = firstObj;
 
   // once the order_details ID is found, use order_details ID
   // get order_item using order_details ID
 
   // console.log(id, "id");
 
-  const orderId = 3;
+  // const orderId = 3;
+
+  // console.log(orderId, "orderId");
 
   /**
+   * working with order item
    * select takes `` not ""
    * **/
-  // const { orderItemData, itemError } = await supabase
-  //   .from("order_item")
-  //   .select("*");
+  const { data: orderItemData, error: orderError } = await supabase
+    .from(`order_item`)
+    .select(`*`)
+    .eq(`order_id`, `${orderId}`);
 
   /**
    * JOIN
@@ -44,7 +54,34 @@ export async function GET(req, res) {
 
   // console.log(data, "inner join");
 
-  console.log(data, "data");
+  console.log(orderItemData, "orderItemData");
+
+  const productId = orderItemData.reduce(function getProductId(
+    buildingUp,
+    currentValue,
+    index,
+    list
+  ) {
+    buildingUp.push(currentValue.product_id);
+    return buildingUp;
+  },
+  []);
+
+  console.log(productId, "productId");
+
+  const [firstId, secondId] = productId;
+
+  /**
+   * products database
+   * **/
+
+  const { data: productList, error: productError } = await supabase
+    .from(`products`)
+    .select(`*`)
+    .eq(`id`, `${firstId}`);
+  // .or(`id.eq.${firstId}, id.eq.${secondId}`);
+
+  console.log(productList, "productList");
 
   return NextResponse.json({
     message: "This is GET from Api Product route",
@@ -62,3 +99,9 @@ export async function GET(req, res) {
 }
 
 async function getOrderID() {}
+
+// const obj = {
+//   name:"hi"
+// }
+
+// const {name:firstName} = obj;
