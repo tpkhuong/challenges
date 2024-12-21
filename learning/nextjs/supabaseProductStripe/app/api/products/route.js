@@ -85,6 +85,8 @@ export async function GET(req, res) {
 
   return NextResponse.json({
     message: "This is GET from Api Product route",
+    orderInfo: orderItemData,
+    productInfo: productList,
     // orderDetail: orderItemData,
   });
 
