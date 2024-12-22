@@ -1,0 +1,27 @@
+/* mobile */
+.web-design-hero-content {
+  text-align: center;
+  background-color: var(--color-peach);
+  color: var(--color-neutral-white);
+}
+
+.title {
+  font-size: var(--font-size-32px);
+  font-weight: 500;
+
+  margin-block-end: 24px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: var(--font-size-15px);
+}
+/* tablet */
+
+@media screen and (min-width: 47rem) {
+}
+
+/* desktop */
+
+@media screen and (min-width: 89rem) {
+}

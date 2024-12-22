@@ -58,7 +58,7 @@ export default function RootPage({ children }) {
         </div>
       </header>
       {/* main */}
-      <main role="main">
+      <main id="main-content" role="main">
         {/* project links */}
         <article className={styles[`project-links-container`]}>
           <ProjectLink
