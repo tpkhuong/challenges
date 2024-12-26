@@ -27,7 +27,7 @@ function DesignPagesHeroContent({ children, mobileImg, pageTitle, pageImg }) {
           <article className={styles[`web-design-hero-content`]}>
             {/* background color */}
             {/* mobile img is different from tablet and desktop */}
-            <picture>
+            <picture className={styles[`img-container`]}>
               <source srcSet={pageImg} media="(min-width: 768px)" />
               <img src={mobileImg} alt="" />
             </picture>

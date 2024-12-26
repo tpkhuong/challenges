@@ -3,13 +3,28 @@
   text-align: center;
   background-color: var(--color-peach);
   color: var(--color-neutral-white);
+
+  padding-inline: 24px;
+  padding-block: 105px;
+
+  position: relative;
+}
+
+.img-container {
+  position: absolute;
+  top: 0px;
+  right: 215px;
+}
+
+.img-container img {
+  max-width: revert;
 }
 
 .title {
   font-size: var(--font-size-32px);
   font-weight: 500;
 
-  margin-block-end: 24px;
+  margin-block-end: 17px;
 }
 
 .description {
