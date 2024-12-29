@@ -7,13 +7,23 @@ export default function WebDesignPage({ children }) {
       <a href="#main-content" className="skip-link">
         Skip to Main Content
       </a>
-      <DesignPagesHeroContent
+      {/* web design */}
+      {/* <DesignPagesHeroContent
         pageTitle="Web Design"
         mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
       >
         We build websites that serve as powerful marketing tools and bring
         memorable brand experiences.
+      </DesignPagesHeroContent> */}
+      {/* app design */}
+      <DesignPagesHeroContent
+        pageTitle="App Design"
+        mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
+      >
+        Our mobile designs bring intuitive digital solutions to your customers
+        right at their fingertips.
       </DesignPagesHeroContent>
+      {/* graphic design */}
     </React.Fragment>
   );
 }
