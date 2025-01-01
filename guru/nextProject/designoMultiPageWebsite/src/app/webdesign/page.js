@@ -8,27 +8,35 @@ export default function WebDesignPage({ children }) {
         Skip to Main Content
       </a>
       {/* web design */}
-      {/* <DesignPagesHeroContent
+      <DesignPagesHeroContent
         pageTitle="Web Design"
         mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
+        tabletImg="/shared/tablet/bg-pattern-design-pages-intro-tablet.svg"
       >
         We build websites that serve as powerful marketing tools and bring
         memorable brand experiences.
-      </DesignPagesHeroContent> */}
+      </DesignPagesHeroContent>
       {/* app design */}
-      <DesignPagesHeroContent
+      {/* <DesignPagesHeroContent
         pageTitle="App Design"
         mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
+        tabletImg="/shared/tablet/bg-pattern-design-pages-intro-tablet.svg"
       >
         Our mobile designs bring intuitive digital solutions to your customers
         right at their fingertips.
-      </DesignPagesHeroContent>
+      </DesignPagesHeroContent> */}
       {/* graphic design */}
     </React.Fragment>
   );
 }
 
-function DesignPagesHeroContent({ children, mobileImg, pageTitle, pageImg }) {
+function DesignPagesHeroContent({
+  children,
+  mobileImg,
+  tabletImg,
+  pageTitle,
+  pageImg,
+}) {
   return (
     <React.Fragment>
       <header role="banner" className={styles[`web-design-header`]}>
@@ -38,7 +46,10 @@ function DesignPagesHeroContent({ children, mobileImg, pageTitle, pageImg }) {
             {/* background color */}
             {/* mobile img is different from tablet and desktop */}
             <picture className={styles[`img-container`]}>
-              <source srcSet={pageImg} media="(min-width: 768px)" />
+              {/* desktop */}
+              <source srcSet={pageImg} media="(min-width: 1440px)" />
+              {/* tablet */}
+              <source srcSet={tabletImg} media="(min-width: 768px)" />
               <img src={mobileImg} alt="" />
             </picture>
             <h2 className={styles[`title`]}>{pageTitle}</h2>

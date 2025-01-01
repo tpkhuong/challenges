@@ -107,3 +107,12 @@ async function getOrderID() {}
 // }
 
 // const {name:firstName} = obj;
+
+export async function POST(req, res) {
+  // const body = await req.json();
+  // console.log(body, "body");
+
+  return NextResponse.json({
+    message: "This is POST from API Product route",
+  });
+}
