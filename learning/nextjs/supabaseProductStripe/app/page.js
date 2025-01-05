@@ -12,7 +12,8 @@ export default function RootPage({ children }) {
       </a>
       <h1 className={styles[`title`]}>This is Home Page</h1>
       {/* uncomment later */}
-      <StripePayment userName="Captain America" />
+      {/* <StripePayment userName="Captain America" /> */}
+      <StripePayment />
       {/* <button onClick={getProducts}>GET product Request</button>
       <button onClick={getTestUsers}>GET users Request</button>
       <button onClick={getSupabaseProductData}>

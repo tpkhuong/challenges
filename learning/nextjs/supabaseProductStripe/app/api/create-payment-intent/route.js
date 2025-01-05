@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-export default async function POST(request, response) {
+export async function POST(request, response) {
   const body = await request.json();
 
   const { amount } = body;

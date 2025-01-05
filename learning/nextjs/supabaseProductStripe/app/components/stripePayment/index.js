@@ -42,7 +42,7 @@
 
 import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import { elements } from "@stripe/react-stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 import convertToSubcurrency from "../../../utils/convertToSubcurrency.js";
 
 import CheckoutForm from "../CheckoutForm";
@@ -64,15 +64,15 @@ export default function StripePayment() {
   });
 
   React.useEffect(function fetchingData() {
-    fetch("/api/create-payment-intent", {
+    fetch(`${process.env.NEXT_PUBLIC_AUTH_URL}/api/create-payment-intent`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        body: JSON.stringify({ amount: convertToSubcurrency(amount) }),
       },
+      body: JSON.stringify({ amount: convertToSubcurrency(amount) }),
     })
       .then(function getResponse(response) {
-        response.json();
+        return response.json();
       })
       .then(function getData(data) {
         setClientSerect(data.clientSecret);
@@ -91,9 +91,9 @@ export default function StripePayment() {
   return (
     <div>
       {clientSecret && (
-        <Element options={options} stripe={stripePromise}>
+        <Elements options={options} stripe={stripePromise}>
           {confirmed ? <CompletePage /> : <CheckoutForm />}
-        </Element>
+        </Elements>
       )}
     </div>
   );
