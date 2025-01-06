@@ -46,7 +46,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import convertToSubcurrency from "../../../utils/convertToSubcurrency.js";
 
 import CheckoutForm from "../CheckoutForm";
-// import checkout Page
+import CompletePage from "../CompletePage/index.js";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
