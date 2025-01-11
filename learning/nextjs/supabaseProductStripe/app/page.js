@@ -2,7 +2,8 @@
 
 import React from "react";
 import styles from "../styles/IndexPage.module.css";
-import StripePayment from "./components/stripePayment";
+// import StripePayment from "./components/stripePayment";
+import EmbeddedStripePayment from "./components/EmbeddedStripePayment/index.js";
 
 export default function RootPage({ children }) {
   return (
@@ -13,12 +14,13 @@ export default function RootPage({ children }) {
       <h1 className={styles[`title`]}>This is Home Page</h1>
       {/* uncomment later */}
       {/* <StripePayment userName="Captain America" /> */}
-      <StripePayment />
+      {/* <StripePayment /> */}
       {/* <button onClick={getProducts}>GET product Request</button>
       <button onClick={getTestUsers}>GET users Request</button>
       <button onClick={getSupabaseProductData}>
         GET supabase products Request
       </button> */}
+      <EmbeddedStripePayment />
     </React.Fragment>
   );
 }
