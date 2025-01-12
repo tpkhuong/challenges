@@ -12,16 +12,16 @@ export default function EmbeddedStripePayment({ children }) {
     // Create a Checkout Session
     return fetch(`${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ priceId: "price_10thHjwerkwhEhtuh" }),
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
+      // body: JSON.stringify({ priceId: "price_1234" }),
     })
       .then(function getResponse(response) {
         return response.json();
       })
       .then(function getData(data) {
-        data.clientSecret;
+        return data.clientSecret;
       });
   }, []);
 
@@ -35,3 +35,18 @@ export default function EmbeddedStripePayment({ children }) {
     </div>
   );
 }
+
+// function Cars() {
+//   const name = this.name;
+//   const make = this.make;
+//   const price = this.price;
+
+//   // console.log()
+//   console.log(name);
+//   console.log(make);
+//   console.log(price);
+// }
+
+// console.log(
+//   Cars.call({ name: "Accord", make: "Honda", price: "$35,000" }).name
+// );
