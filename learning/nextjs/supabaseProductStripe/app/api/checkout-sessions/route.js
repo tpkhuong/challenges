@@ -34,6 +34,11 @@ export async function POST(request, response) {
 
   console.log(price, "price");
 
+  return NextResponse.json({
+    message: "This is checkout-sessions api",
+    priceData: price,
+  });
+
   // const session = await stripe.checkout.sessions.create({
   //   ui_mode: "embedded",
   //   payment_method_types: ["card"],

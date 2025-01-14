@@ -29,11 +29,35 @@ export default function EmbeddedStripePayment({ children }) {
 
   return (
     <div>
-      <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
+      <button onClick={getCheckout}>Testing Price Obj</button>
+      {/* <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
         <EmbeddedCheckout />
-      </EmbeddedCheckoutProvider>
+      </EmbeddedCheckoutProvider> */}
     </div>
   );
+}
+
+async function getCheckout(event) {
+  const responseObj = {
+    priceId: "price_888",
+  };
+  const methodObj = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(responseObj),
+  };
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`,
+    methodObj
+  );
+
+  if (response) {
+    const data = await response.json();
+
+    console.log(data, "checkout data");
+  }
 }
 
 // function Cars() {
