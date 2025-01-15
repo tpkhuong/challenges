@@ -32,7 +32,7 @@ export async function POST(request, response) {
     },
   });
 
-  console.log(price, "price");
+  // console.log(price, "price");
 
   return NextResponse.json({
     message: "This is checkout-sessions api",
