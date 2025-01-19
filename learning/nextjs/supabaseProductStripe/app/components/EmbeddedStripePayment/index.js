@@ -1,4 +1,5 @@
 import { loadStripe } from "@stripe/stripe-js";
+// import Stripe from "stripe";
 import {
   EmbeddedCheckoutProvider,
   EmbeddedCheckout,
@@ -8,24 +9,32 @@ import React from "react";
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 export default function EmbeddedStripePayment({ children }) {
-  const fetchClientSecret = React.useCallback(function createCheckout() {
-    // Create a Checkout Session
-    return fetch(`${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`, {
-      method: "POST",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
-      // body: JSON.stringify({ priceId: "price_1234" }),
-    })
-      .then(function getResponse(response) {
-        return response.json();
-      })
-      .then(function getData(data) {
-        return data.clientSecret;
-      });
-  }, []);
+  /**
+   * uncomment later
+   * **/
 
-  const options = { fetchClientSecret };
+  // const fetchClientSecret = React.useCallback(function createCheckout() {
+  //   // Create a Checkout Session
+  //   return fetch(`${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`, {
+  //     method: "POST",
+  //     // headers: {
+  //     //   "Content-Type": "application/json",
+  //     // },
+  //     // body: JSON.stringify({ priceId: "price_1234" }),
+  //   })
+  //     .then(function getResponse(response) {
+  //       return response.json();
+  //     })
+  //     .then(function getData(data) {
+  //       return data.clientSecret;
+  //     });
+  // }, []);
+
+  // const options = { fetchClientSecret };
+
+  /**
+   * uncomment later
+   * **/
 
   return (
     <div>
@@ -38,15 +47,32 @@ export default function EmbeddedStripePayment({ children }) {
 }
 
 async function getCheckout(event) {
-  const responseObj = {
-    priceId: "price_888",
-  };
+  /**
+   * get price obj
+   * **/
+
+  // const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+  // const priceObj = await stripe.prices.create({
+  //   currency: "usd",
+  //   unit_amount: 300,
+  //   product_data: {
+  //     name: "Premium Hair",
+  //   },
+  // });
+
+  /**
+   * get price obj
+   * **/
+  // const responseObj = {
+  //   priceObj,
+  // };
   const methodObj = {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(responseObj),
+    // headers: {
+    //   "Content-Type": "application/json",
+    // },
+    // body: JSON.stringify(responseObj),
   };
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`,
