@@ -65,13 +65,13 @@ export async function POST(request, response) {
 
   // return NextResponse.send({ clientSecret: session.client_secret });
 
-  // return NextResponse.json({
-  //   id: session.id,
-  //   client_secret: session.client_secret,
-  // });
-
   return NextResponse.json({
-    message: "This is checkout-sessions api",
-    sessionObj: session,
+    id: session.id,
+    client_secret: session.client_secret,
   });
+
+  // return NextResponse.json({
+  //   message: "This is checkout-sessions api",
+  //   sessionObj: session,
+  // });
 }
