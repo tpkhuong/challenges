@@ -36,17 +36,34 @@ export default function EmbeddedStripePayment({ children }) {
    * uncomment later
    * **/
 
+  /**
+   * Testing
+   * **/
+
+  const [showTesting, setShowTesting] = React.useState(null);
+
+  const testingFunc = getCheckout.bind({ setShowTesting });
+
+  /**
+   * Testing
+   * **/
+
   return (
     <div>
-      <button onClick={getCheckout}>Testing Price Obj</button>
+      <button onClick={testingFunc}>Testing Price Obj</button>
       {/* <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
         <EmbeddedCheckout />
       </EmbeddedCheckoutProvider> */}
+
+      {showTesting && <span>Yay!!!</span>}
     </div>
   );
 }
 
 async function getCheckout(event) {
+  const { setShowTesting } = this;
+  console.log(setShowTesting, "setShowTesting");
+  setShowTesting(true);
   /**
    * get price obj
    * **/
@@ -67,24 +84,24 @@ async function getCheckout(event) {
   // const responseObj = {
   //   priceObj,
   // };
-  const methodObj = {
-    method: "POST",
-    // headers: {
-    //   "Content-Type": "application/json",
-    // },
-    // body: JSON.stringify(responseObj),
-  };
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`,
-    methodObj
-  );
+  // const methodObj = {
+  //   method: "POST",
+  //   // headers: {
+  //   //   "Content-Type": "application/json",
+  //   // },
+  //   // body: JSON.stringify(responseObj),
+  // };
+  // const response = await fetch(
+  //   `${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`,
+  //   methodObj
+  // );
 
-  if (response) {
-    // console.log(response, "response");
-    const data = await response.json();
+  // if (response) {
+  //   // console.log(response, "response");
+  //   const data = await response.json();
 
-    console.log(data, "checkout data");
-  }
+  //   console.log(data, "checkout data");
+  // }
 }
 
 // function Cars() {
