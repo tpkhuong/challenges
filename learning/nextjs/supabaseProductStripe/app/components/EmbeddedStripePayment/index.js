@@ -41,7 +41,7 @@ export default function EmbeddedStripePayment({ children }) {
    * **/
 
   const [showTesting, setShowTesting] = React.useState(null);
-
+  console.log(showTesting);
   const testingFunc = getCheckout.bind({ setShowTesting });
 
   /**
@@ -55,15 +55,15 @@ export default function EmbeddedStripePayment({ children }) {
         <EmbeddedCheckout />
       </EmbeddedCheckoutProvider> */}
 
-      {showTesting && <span>Yay!!!</span>}
+      {showTesting && showTesting.success && <h3>{showTesting.name}</h3>}
     </div>
   );
 }
 
 async function getCheckout(event) {
   const { setShowTesting } = this;
-  console.log(setShowTesting, "setShowTesting");
-  setShowTesting(true);
+  // console.log(setShowTesting, "setShowTesting");
+  // setShowTesting(true);
   /**
    * get price obj
    * **/
@@ -84,24 +84,29 @@ async function getCheckout(event) {
   // const responseObj = {
   //   priceObj,
   // };
-  // const methodObj = {
-  //   method: "POST",
-  //   // headers: {
-  //   //   "Content-Type": "application/json",
-  //   // },
-  //   // body: JSON.stringify(responseObj),
-  // };
-  // const response = await fetch(
-  //   `${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`,
-  //   methodObj
-  // );
+  const methodObj = {
+    method: "POST",
+    // headers: {
+    //   "Content-Type": "application/json",
+    // },
+    // body: JSON.stringify(responseObj),
+  };
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`,
+    methodObj
+  );
 
-  // if (response) {
-  //   // console.log(response, "response");
-  //   const data = await response.json();
+  if (response) {
+    // console.log(response, "response");
+    const data = await response.json();
 
-  //   console.log(data, "checkout data");
-  // }
+    const { success, client_secret, name } = data;
+    if (success) {
+      console.log(data, "checkout data");
+      console.log(client_secret, "client_secret");
+      setShowTesting({ name, success });
+    }
+  }
 }
 
 // function Cars() {
