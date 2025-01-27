@@ -55,7 +55,11 @@ export default function EmbeddedStripePayment({ children }) {
         <EmbeddedCheckout />
       </EmbeddedCheckoutProvider> */}
 
-      {showTesting && showTesting.success && <h3>{showTesting.name}</h3>}
+      {showTesting && showTesting.success && (
+        <ShowObjElement testObj={showTesting}>
+          {showTesting.name}
+        </ShowObjElement>
+      )}
     </div>
   );
 }
@@ -104,9 +108,18 @@ async function getCheckout(event) {
     if (success) {
       console.log(data, "checkout data");
       console.log(client_secret, "client_secret");
-      setShowTesting({ name, success });
+      setShowTesting({ client_secret, name, success });
     }
   }
+}
+
+function ShowObjElement({ children, testObj }) {
+  console.log(testObj, "testObj");
+  return (
+    <React.Fragment>
+      <h3>{children}</h3>
+    </React.Fragment>
+  );
 }
 
 // function Cars() {
