@@ -67,7 +67,7 @@ export async function POST(request, response) {
 
   return NextResponse.json({
     id: session.id,
-    client_secret: session.client_secret,
+    clientSecret: session.client_secret,
     success: true,
     name: "This is a test.",
   });

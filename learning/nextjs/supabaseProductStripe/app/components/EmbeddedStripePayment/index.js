@@ -104,11 +104,13 @@ async function getCheckout(event) {
     // console.log(response, "response");
     const data = await response.json();
 
-    const { success, client_secret, name } = data;
+    const { success, clientSecret, name } = data;
     if (success) {
       console.log(data, "checkout data");
-      console.log(client_secret, "client_secret");
-      setShowTesting({ client_secret, name, success });
+      console.log(clientSecret, "clientSecret");
+      const fetchClientSecret = clientSecret;
+      const options = { fetchClientSecret };
+      setShowTesting({ options, name, success });
     }
   }
 }
