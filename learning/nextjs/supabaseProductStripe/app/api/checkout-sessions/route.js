@@ -76,4 +76,23 @@ export async function POST(request, response) {
   //   message: "This is checkout-sessions api",
   //   sessionObj: session,
   // });
+
+  // const fetchClientSecret = React.useCallback(function createCheckout() {
+  //   // Create a Checkout Session
+  //   return fetch(`${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`, {
+  //     method: "POST",
+  //     // headers: {
+  //     //   "Content-Type": "application/json",
+  //     // },
+  //     // body: JSON.stringify({ priceId: "price_1234" }),
+  //   })
+  //     .then(function getResponse(response) {
+  //       return response.json();
+  //     })
+  //     .then(function getData(data) {
+  //       return data.clientSecret;
+  //     });
+  // }, []);
+
+  // const options = { fetchClientSecret };
 }

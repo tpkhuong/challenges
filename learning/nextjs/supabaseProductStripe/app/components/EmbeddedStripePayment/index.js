@@ -56,9 +56,14 @@ export default function EmbeddedStripePayment({ children }) {
       </EmbeddedCheckoutProvider> */}
 
       {showTesting && showTesting.success && (
-        <ShowObjElement testObj={showTesting}>
-          {showTesting.name}
-        </ShowObjElement>
+        <ShowObjElement></ShowObjElement>
+
+        // <EmbeddedCheckoutProvider
+        //   stripe={stripePromise}
+        //   options={showTesting.options}
+        // >
+        //   <EmbeddedCheckout />
+        // </EmbeddedCheckoutProvider>
       )}
     </div>
   );
