@@ -100,24 +100,38 @@ async function getCheckout(event) {
     // },
     // body: JSON.stringify(responseObj),
   };
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`,
-    methodObj
-  );
+  // const response = await fetch(
+  //   `${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`,
+  //   methodObj
+  // );
 
-  if (response) {
-    // console.log(response, "response");
-    const data = await response.json();
+  // if (response) {
+  //   // console.log(response, "response");
+  //   const data = await response.json();
 
-    const { success, clientSecret, name } = data;
-    if (success) {
-      console.log(data, "checkout data");
-      console.log(clientSecret, "clientSecret");
-      const fetchClientSecret = clientSecret;
-      const options = { fetchClientSecret };
-      setShowTesting({ options, name, success });
-    }
-  }
+  //   const { success, clientSecret, name } = data;
+  //   if (success) {
+  //     console.log(data, "checkout data");
+  //     console.log(clientSecret, "clientSecret");
+  //     const fetchClientSecret = clientSecret;
+  //     const options = { fetchClientSecret };
+  //     setShowTesting({ options, name, success });
+  //   }
+  // }
+
+  fetch(`${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`, methodObj)
+    .then(function getResponse(response) {
+      return response.json();
+    })
+    .then(function getData(data) {
+      console.log(data, "data using then()");
+    });
+
+  // options has to be a function
+
+  // const fetchClientSecret = React.useCallback(function createCheckoutSession(){
+  //   return fetch()
+  // },[])
 }
 
 function ShowObjElement({ children, testObj }) {
