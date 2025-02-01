@@ -58,15 +58,15 @@ export async function POST(request, response) {
     ],
     mode: "payment",
     return_url: `${request.headers.origin}/return?session_id={CHECKOUT_SESSION_ID}`,
-    return_url: `${request.headers.get(
-      "origin"
-    )}/return?session_id={CHECKOUT_SESSION_ID}`,
+    // return_url: `${request.headers.get(
+    //   "origin"
+    // )}/return?session_id={CHECKOUT_SESSION_ID}`,
   });
 
   // return NextResponse.send({ clientSecret: session.client_secret });
 
   return NextResponse.json({
-    id: session.id,
+    // id: session.id,
     clientSecret: session.client_secret,
     success: true,
     name: "This is a test.",

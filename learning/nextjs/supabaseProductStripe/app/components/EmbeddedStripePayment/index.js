@@ -40,9 +40,9 @@ export default function EmbeddedStripePayment({ children }) {
    * Testing
    * **/
 
-  const [showTesting, setShowTesting] = React.useState(null);
-  console.log(showTesting);
-  const testingFunc = getCheckout.bind({ setShowTesting });
+  // const [showTesting, setShowTesting] = React.useState(null);
+  // console.log(showTesting);
+  // const testingFunc = getCheckout.bind({ setShowTesting });
 
   /**
    * Testing
@@ -50,13 +50,15 @@ export default function EmbeddedStripePayment({ children }) {
 
   return (
     <div>
-      <button onClick={testingFunc}>Testing Price Obj</button>
+      {/* <button onClick={testingFunc}>Testing Price Obj</button> */}
       {/* <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
         <EmbeddedCheckout />
       </EmbeddedCheckoutProvider> */}
-
-      {showTesting && showTesting.success && (
-        <ShowObjElement></ShowObjElement>
+      <TestingButton></TestingButton>
+      {/* {showTesting && showTesting.success && (
+        <ShowObjElement testObj={showTesting.options}>
+          {showTesting.name}
+        </ShowObjElement>
 
         // <EmbeddedCheckoutProvider
         //   stripe={stripePromise}
@@ -64,8 +66,60 @@ export default function EmbeddedStripePayment({ children }) {
         // >
         //   <EmbeddedCheckout />
         // </EmbeddedCheckoutProvider>
-      )}
+      )} */}
     </div>
+  );
+}
+
+function TestingButton({ children }) {
+  const methodObj = {
+    method: "POST",
+    // headers: {
+    //   "Content-Type": "application/json",
+    // },
+    // body: JSON.stringify(responseObj),
+  };
+  // useState
+  const [showTesting, setShowTesting] = React.useState(null);
+  // useCallback
+  const fetchClientSecret = React.useCallback(function createCheckoutSession() {
+    return fetch(
+      `${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`,
+      methodObj
+    )
+      .then(function getResponse(response) {
+        return response.json();
+      })
+      .then(function getData(data) {
+        // console.log(data, "data using then()");
+        return data.clientSecret;
+      });
+  }, []);
+
+  const options = { fetchClientSecret };
+
+  return (
+    <React.Fragment>
+      <div>
+        <button
+          onClick={function (event) {
+            console.log(event, "event");
+            console.log(options, "options");
+            setShowTesting({ options });
+          }}
+        >
+          Testing Idea
+        </button>
+        {showTesting && (
+          <EmbeddedCheckoutProvider
+            stripe={stripePromise}
+            options={showTesting.options}
+          >
+            <EmbeddedCheckout />
+          </EmbeddedCheckoutProvider>
+        )}
+      </div>
+    </React.Fragment>
   );
 }
 
@@ -119,19 +173,25 @@ async function getCheckout(event) {
   //   }
   // }
 
-  fetch(`${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`, methodObj)
-    .then(function getResponse(response) {
-      return response.json();
-    })
-    .then(function getData(data) {
-      console.log(data, "data using then()");
-    });
-
   // options has to be a function
 
-  // const fetchClientSecret = React.useCallback(function createCheckoutSession(){
-  //   return fetch()
-  // },[])
+  const fetchClientSecret = React.useCallback(function createCheckoutSession() {
+    return fetch(
+      `${process.env.NEXT_PUBLIC_AUTH_URL}/api/checkout-sessions`,
+      methodObj
+    )
+      .then(function getResponse(response) {
+        return response.json();
+      })
+      .then(function getData(data) {
+        // console.log(data, "data using then()");
+        return data.clientSecret;
+      });
+  }, []);
+
+  const options = { fetchClientSecret };
+
+  setShowTesting({ options, success: true, name: "This is a test" });
 }
 
 function ShowObjElement({ children, testObj }) {
