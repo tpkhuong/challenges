@@ -15,11 +15,11 @@ export default function RootPage({ children }) {
       {/* uncomment later */}
       {/* <StripePayment userName="Captain America" /> */}
       {/* <StripePayment /> */}
-      {/* <button onClick={getProducts}>GET product Request</button>
-      <button onClick={getTestUsers}>GET users Request</button>
+      <button onClick={getProducts}>GET product Request</button>
+      <button onClick={getCustomers}>GET users Request</button>
       <button onClick={getSupabaseProductData}>
         GET supabase products Request
-      </button> */}
+      </button>
       <EmbeddedStripePayment />
     </React.Fragment>
   );
@@ -39,7 +39,7 @@ async function getProducts(event) {
   }
 }
 
-async function getTestUsers(event) {
+async function getCustomers(event) {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_AUTH_URL}/api/users`,
     { method: "GET" }

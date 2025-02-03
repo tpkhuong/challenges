@@ -6,11 +6,13 @@ export async function GET(req, res) {
 
   console.log(supabase, "supabase");
 
-  const { data, error } = await supabase.from("test_users").select("*");
+  // const { data, error } = await supabase.from("test_users").select("*");
+  const { data, error } = await supabase.from("customers").select("*");
 
   //   console.log(supabase, "supabase");
   console.log(data, "data");
   return NextResponse.json({
     message: "This is GET. Api User dir",
+    data,
   });
 }
