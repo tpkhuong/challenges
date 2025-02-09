@@ -12,6 +12,7 @@ export default function WebDesignPage({ children }) {
         pageTitle="Web Design"
         mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
         tabletImg="/shared/tablet/bg-pattern-design-pages-intro-tablet.svg"
+        pageName="graphic"
       >
         We build websites that serve as powerful marketing tools and bring
         memorable brand experiences.
@@ -36,13 +37,18 @@ function DesignPagesHeroContent({
   tabletImg,
   pageTitle,
   pageImg,
+  pageName,
 }) {
   return (
     <React.Fragment>
       <header role="banner" className={styles[`web-design-header`]}>
         {/* logonavbar */}
         <div className={styles[`inline-spacing`]}>
-          <article className={styles[`web-design-hero-content`]}>
+          <article
+            className={`${styles[`${pageName}-design`]} ${
+              styles[`web-design-hero-content`]
+            }`}
+          >
             {/* background color */}
             {/* mobile img is different from tablet and desktop */}
             <picture className={styles[`img-container`]}>

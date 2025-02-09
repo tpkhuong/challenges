@@ -1,4 +1,18 @@
 /* mobile */
+/* testing */
+.web-design .title {
+  color: blue;
+}
+
+.app-design .title {
+  color: purple;
+}
+
+.graphic-design .title {
+  color: orangered;
+}
+/* testing */
+
 .web-design-hero-content {
   text-align: center;
   background-color: var(--color-peach);
@@ -49,14 +63,25 @@
   }
   .web-design-hero-content {
     border-radius: 12px;
+    padding-block: 58px;
   }
   .img-container {
-    top: -115px;
-    right: 16px;
+    top: -156px;
+    right: 26px;
   }
 }
 
 /* desktop */
 
 @media screen and (min-width: 89rem) {
+  .description {
+    padding-inline: 325px;
+  }
+  .inline-spacing {
+    padding-inline: 165px;
+  }
+  /* placement for desktop bg img */
+  /* web-design */
+  /* app-design */
+  /* graphic-design */
 }
