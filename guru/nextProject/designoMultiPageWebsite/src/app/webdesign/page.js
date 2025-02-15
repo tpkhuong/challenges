@@ -12,7 +12,8 @@ export default function WebDesignPage({ children }) {
         pageTitle="Web Design"
         mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
         tabletImg="/shared/tablet/bg-pattern-design-pages-intro-tablet.svg"
-        pageName="graphic"
+        pageImg="/web-design/desktop/bg-pattern-intro-web.svg"
+        pageName="web"
       >
         We build websites that serve as powerful marketing tools and bring
         memorable brand experiences.

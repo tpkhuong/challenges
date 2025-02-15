@@ -67,7 +67,6 @@
   }
   .img-container {
     top: -156px;
-    right: 26px;
   }
 }
 
@@ -82,6 +81,9 @@
   }
   /* placement for desktop bg img */
   /* web-design */
+  .web-design .img-container {
+    right: 0px;
+  }
   /* app-design */
   /* graphic-design */
 }
