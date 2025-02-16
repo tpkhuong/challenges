@@ -85,5 +85,9 @@
     right: 0px;
   }
   /* app-design */
+  .app-design .img-container {
+    right: 0px;
+    left: -60px;
+  }
   /* graphic-design */
 }

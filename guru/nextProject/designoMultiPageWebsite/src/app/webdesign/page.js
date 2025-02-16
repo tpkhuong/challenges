@@ -8,7 +8,7 @@ export default function WebDesignPage({ children }) {
         Skip to Main Content
       </a>
       {/* web design */}
-      <DesignPagesHeroContent
+      {/* <DesignPagesHeroContent
         pageTitle="Web Design"
         mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
         tabletImg="/shared/tablet/bg-pattern-design-pages-intro-tablet.svg"
@@ -17,8 +17,18 @@ export default function WebDesignPage({ children }) {
       >
         We build websites that serve as powerful marketing tools and bring
         memorable brand experiences.
-      </DesignPagesHeroContent>
+      </DesignPagesHeroContent> */}
       {/* app design */}
+      <DesignPagesHeroContent
+        pageTitle="App Design"
+        mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
+        tabletImg="/shared/tablet/bg-pattern-design-pages-intro-tablet.svg"
+        pageImg="/app-design/desktop/bg-pattern-intro-app.svg"
+        pageName="app"
+      >
+        Our mobile designs bring intuitive digital solutions to your customers
+        right at their fingertips.
+      </DesignPagesHeroContent>
       {/* <DesignPagesHeroContent
         pageTitle="App Design"
         mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
