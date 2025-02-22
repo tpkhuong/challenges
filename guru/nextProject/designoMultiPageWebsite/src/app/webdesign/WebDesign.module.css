@@ -89,5 +89,16 @@
     right: 0px;
     left: -60px;
   }
+  .app-design .description {
+    padding-inline: 352px;
+  }
   /* graphic-design */
+  .graphic-design .img-container {
+    right: 0px;
+    left: -60px;
+    top: -160px;
+  }
+  .graphic-design .description {
+    padding-inline: 330px;
+  }
 }

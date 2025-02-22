@@ -19,7 +19,7 @@ export default function WebDesignPage({ children }) {
         memorable brand experiences.
       </DesignPagesHeroContent> */}
       {/* app design */}
-      <DesignPagesHeroContent
+      {/* <DesignPagesHeroContent
         pageTitle="App Design"
         mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
         tabletImg="/shared/tablet/bg-pattern-design-pages-intro-tablet.svg"
@@ -28,7 +28,7 @@ export default function WebDesignPage({ children }) {
       >
         Our mobile designs bring intuitive digital solutions to your customers
         right at their fingertips.
-      </DesignPagesHeroContent>
+      </DesignPagesHeroContent> */}
       {/* <DesignPagesHeroContent
         pageTitle="App Design"
         mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
@@ -38,6 +38,16 @@ export default function WebDesignPage({ children }) {
         right at their fingertips.
       </DesignPagesHeroContent> */}
       {/* graphic design */}
+      <DesignPagesHeroContent
+        pageTitle="Graphic Design"
+        mobileImg="/shared/desktop/bg-pattern-two-circles.svg"
+        tabletImg="/shared/tablet/bg-pattern-design-pages-intro-tablet.svg"
+        pageImg="/graphic-design/desktop/bg-pattern-intro-graphic.svg"
+        pageName="graphic"
+      >
+        We deliver eye-catching branding materials that are tailored to meet
+        your business objectives.
+      </DesignPagesHeroContent>
     </React.Fragment>
   );
 }
