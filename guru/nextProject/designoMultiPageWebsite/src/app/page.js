@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/IndexPage.module.css";
 import LogoNavBar from "../app/components/server/LogoNavBar/index.js";
-import ProjectLink from "../app/components/client/ProjectLink/index.js";
+import PageLink from "./components/client/PageLink/index.js";
 import HomePageFeatures from "../app/components/server/HomePageFeatures/index.js";
 import Footer from "../app/components/server/Footer/index.js";
 import MobileNavMenu from "../app/components/server/MobileNavMenu/index.js";
@@ -59,21 +59,21 @@ export default function RootPage({ children }) {
       </header>
       {/* main */}
       <main id="main-content" role="main">
-        {/* project links */}
+        {/* page links */}
         <article className={styles[`project-links-container`]}>
-          <ProjectLink
+          <PageLink
             title="WEB DESIGN"
             mobile="/home/mobile/image-web-design.jpg"
             tablet="/home/tablet/image-web-design.jpg"
             desktop="/home/desktop/image-web-design-large.jpg"
           />
-          <ProjectLink
+          <PageLink
             title="APP DESIGN"
             mobile="/home/mobile/image-app-design.jpg"
             tablet="/home/tablet/image-app-design.jpg"
             desktop="/home/desktop/image-app-design.jpg"
           />
-          <ProjectLink
+          <PageLink
             title="GRAPHIC DESIGN"
             mobile="/home/mobile/image-graphic-design.jpg"
             tablet="/home/tablet/image-graphic-design.jpg"
