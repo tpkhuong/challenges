@@ -66,6 +66,10 @@
   left: -168px;
 }
 
+.test-container {
+  padding-inline: 25px;
+}
+
 .project-links-container {
   padding-inline: 25px;
   margin-block: 120px;

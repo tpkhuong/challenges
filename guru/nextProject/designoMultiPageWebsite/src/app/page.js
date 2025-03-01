@@ -5,6 +5,7 @@ import PageLink from "./components/client/PageLink/index.js";
 import HomePageFeatures from "../app/components/server/HomePageFeatures/index.js";
 import Footer from "../app/components/server/Footer/index.js";
 import MobileNavMenu from "../app/components/server/MobileNavMenu/index.js";
+import ProjectLink from "../app/components/client/ProjectLink/index.js";
 
 export default function RootPage({ children }) {
   return (
@@ -59,8 +60,16 @@ export default function RootPage({ children }) {
       </header>
       {/* main */}
       <main id="main-content" role="main">
+        <article className={styles[`test-container`]}>
+          {/* project links */}
+          <ProjectLink
+            img="/web-design/desktop/image-transfer.jpg"
+            title="Express"
+            text="A multi-carrier shipping website for ecommerce businesses"
+          />
+        </article>
         {/* page links */}
-        <article className={styles[`project-links-container`]}>
+        {/* <article className={styles[`project-links-container`]}>
           <PageLink
             title="WEB DESIGN"
             mobile="/home/mobile/image-web-design.jpg"
@@ -79,7 +88,7 @@ export default function RootPage({ children }) {
             tablet="/home/tablet/image-graphic-design.jpg"
             desktop="/home/desktop/image-graphic-design.jpg"
           />
-        </article>
+        </article> */}
         {/* Home Page Features */}
         <article className={styles[`home-page-features-container`]}>
           {/* Passionate */}

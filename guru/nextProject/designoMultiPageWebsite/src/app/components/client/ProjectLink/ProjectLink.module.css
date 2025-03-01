@@ -1,0 +1,39 @@
+/* mobile */
+.project-link-card {
+  --border-radius: 8px;
+}
+.img-container {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+
+  overflow: hidden;
+}
+.text-content {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+
+  text-align: center;
+  /* background-color: var(--color-projectlink-card-bg); */
+  background-color: var(--color-peach);
+
+  padding-inline: 30px;
+  padding-block: 32px;
+}
+.title {
+  font-size: var(--font-size-20px);
+  color: var(--color-peach);
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 400;
+
+  margin-block-end: 16px;
+}
+
+.description {
+  font-size: var(--font-size-16px);
+  color: var(--color-neutral-black);
+
+  padding-inline: 6px;
+}
+/* tablet */
+/* desktop */

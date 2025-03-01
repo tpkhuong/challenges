@@ -4,13 +4,15 @@ import styles from "./ProjectLink.module.css";
 export default function ProjectLink({ children, img, title, text }) {
   return (
     <React.Fragment>
-      <a href="">
+      <a className={styles[`project-link-card`]}>
         {/* img */}
-        <div className={`img-container`}></div>
+        <div className={styles[`img-container`]}>
+          <img src={img} alt="" />
+        </div>
         {/* text content */}
-        <div className={`text-content`}>
-          <h2></h2>
-          <p></p>
+        <div className={styles[`text-content`]}>
+          <h2 className={styles[`title`]}>{title}</h2>
+          <p className={styles[`description`]}>{text}</p>
         </div>
       </a>
     </React.Fragment>
