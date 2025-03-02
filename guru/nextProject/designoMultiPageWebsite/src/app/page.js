@@ -62,6 +62,37 @@ export default function RootPage({ children }) {
       <main id="main-content" role="main">
         <article className={styles[`test-container`]}>
           {/* project links */}
+          {/* 1 */}
+          <ProjectLink
+            img="/web-design/desktop/image-transfer.jpg"
+            title="Express"
+            text="A multi-carrier shipping website for ecommerce businesses"
+          />
+          {/* 2 */}
+          <ProjectLink
+            img="/web-design/desktop/image-transfer.jpg"
+            title="Express"
+            text="A multi-carrier shipping website for ecommerce businesses"
+          />
+          {/* 3 */}
+          <ProjectLink
+            img="/web-design/desktop/image-transfer.jpg"
+            title="Express"
+            text="A multi-carrier shipping website for ecommerce businesses"
+          />
+          {/* 4 */}
+          <ProjectLink
+            img="/web-design/desktop/image-transfer.jpg"
+            title="Express"
+            text="A multi-carrier shipping website for ecommerce businesses"
+          />
+          {/* 5 */}
+          <ProjectLink
+            img="/web-design/desktop/image-transfer.jpg"
+            title="Express"
+            text="A multi-carrier shipping website for ecommerce businesses"
+          />
+          {/* 6 */}
           <ProjectLink
             img="/web-design/desktop/image-transfer.jpg"
             title="Express"
