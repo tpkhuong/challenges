@@ -64,39 +64,39 @@ export default function RootPage({ children }) {
           {/* project links */}
           {/* 1 */}
           <ProjectLink
-            img="/web-design/desktop/image-transfer.jpg"
+            img="/web-design/desktop/image-express.jpg"
             title="Express"
             text="A multi-carrier shipping website for ecommerce businesses"
           />
           {/* 2 */}
           <ProjectLink
             img="/web-design/desktop/image-transfer.jpg"
-            title="Express"
-            text="A multi-carrier shipping website for ecommerce businesses"
+            title="Transfer"
+            text="Site for low-cost money transfers and sending money within seconds"
           />
           {/* 3 */}
           <ProjectLink
-            img="/web-design/desktop/image-transfer.jpg"
-            title="Express"
-            text="A multi-carrier shipping website for ecommerce businesses"
+            img="/web-design/desktop/image-photon.jpg"
+            title="Photon"
+            text="A state-of-the-art music player with high-resolution audio and DSP effects"
           />
           {/* 4 */}
           <ProjectLink
-            img="/web-design/desktop/image-transfer.jpg"
-            title="Express"
-            text="A multi-carrier shipping website for ecommerce businesses"
+            img="/web-design/desktop/image-builder.jpg"
+            title="Builder"
+            text="Connects users with local contractors based on their location"
           />
           {/* 5 */}
           <ProjectLink
-            img="/web-design/desktop/image-transfer.jpg"
-            title="Express"
-            text="A multi-carrier shipping website for ecommerce businesses"
+            img="/web-design/desktop/image-blogr.jpg"
+            title="Blogr"
+            text="Blogr is a platform for creating an online blog or publication"
           />
           {/* 6 */}
           <ProjectLink
-            img="/web-design/desktop/image-transfer.jpg"
-            title="Express"
-            text="A multi-carrier shipping website for ecommerce businesses"
+            img="/web-design/desktop/image-camp.jpg"
+            title="Camp"
+            text="Get expert training in coding, data, design, and digital marketing"
           />
         </article>
         {/* page links */}
