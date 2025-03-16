@@ -66,10 +66,6 @@
   left: -168px;
 }
 
-.test-container {
-  padding-inline: 24px;
-}
-
 .project-links-container {
   padding-inline: 25px;
   margin-block: 120px;
@@ -94,6 +90,8 @@
 
   gap: 40px 0px; */
 
+  padding-inline: 24px;
+
   display: flex;
 
   flex-direction: column;
@@ -108,7 +106,8 @@
 @media screen and (min-width: 47rem) {
   .inline-spacing,
   .project-links-container,
-  .home-page-features-container {
+  .home-page-features-container,
+  .test-container {
     padding-inline: 40px;
   }
   .hero-container {
@@ -151,7 +150,8 @@
 @media screen and (min-width: 89rem) {
   .inline-spacing,
   .project-links-container,
-  .home-page-features-container {
+  .home-page-features-container,
+  .test-container {
     padding-inline: 165px;
   }
   .hero-container {
@@ -219,5 +219,6 @@
 
   .test-container {
     flex-flow: row wrap;
+    gap: 32px 30px;
   }
 }
