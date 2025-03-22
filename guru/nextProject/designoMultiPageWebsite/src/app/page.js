@@ -93,11 +93,11 @@ export default function RootPage({ children }) {
             text="Blogr is a platform for creating an online blog or publication"
           />
           {/* 6 */}
-          <ProjectLink
+          {/* <ProjectLink
             img="/web-design/desktop/image-camp.jpg"
             title="Camp"
             text="Get expert training in coding, data, design, and digital marketing"
-          />
+          /> */}
         </article>
         {/* page links */}
         {/* <article className={styles[`project-links-container`]}>
