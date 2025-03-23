@@ -81,17 +81,17 @@ export default function RootPage({ children }) {
             text="A state-of-the-art music player with high-resolution audio and DSP effects"
           />
           {/* 4 */}
-          <ProjectLink
+          {/* <ProjectLink
             img="/web-design/desktop/image-builder.jpg"
             title="Builder"
             text="Connects users with local contractors based on their location"
-          />
+          /> */}
           {/* 5 */}
-          <ProjectLink
+          {/* <ProjectLink
             img="/web-design/desktop/image-blogr.jpg"
             title="Blogr"
             text="Blogr is a platform for creating an online blog or publication"
-          />
+          /> */}
           {/* 6 */}
           {/* <ProjectLink
             img="/web-design/desktop/image-camp.jpg"
