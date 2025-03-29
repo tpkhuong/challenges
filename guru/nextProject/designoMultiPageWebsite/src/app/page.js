@@ -6,6 +6,7 @@ import HomePageFeatures from "../app/components/server/HomePageFeatures/index.js
 import Footer from "../app/components/server/Footer/index.js";
 import MobileNavMenu from "../app/components/server/MobileNavMenu/index.js";
 import ProjectLink from "../app/components/client/ProjectLink/index.js";
+import AboutFeature from "./components/client/AboutFeature/index.js";
 
 export default function RootPage({ children }) {
   return (
@@ -61,25 +62,34 @@ export default function RootPage({ children }) {
       {/* main */}
       <main id="main-content" role="main">
         <article className={styles[`test-container`]}>
+          {/* About Feature */}
+          <AboutFeature>
+            {/* {[
+              "this is another test",
+              "the second of many",
+              "What is going on?",
+            ]} */}
+            "the second of many"
+          </AboutFeature>
           {/* project links */}
           {/* 1 */}
-          <ProjectLink
+          {/* <ProjectLink
             img="/web-design/desktop/image-express.jpg"
             title="Express"
             text="A multi-carrier shipping website for ecommerce businesses"
-          />
+          /> */}
           {/* 2 */}
-          <ProjectLink
+          {/* <ProjectLink
             img="/web-design/desktop/image-transfer.jpg"
             title="Transfer"
             text="Site for low-cost money transfers and sending money within seconds"
-          />
+          /> */}
           {/* 3 */}
-          <ProjectLink
+          {/* <ProjectLink
             img="/web-design/desktop/image-photon.jpg"
             title="Photon"
             text="A state-of-the-art music player with high-resolution audio and DSP effects"
-          />
+          /> */}
           {/* 4 */}
           {/* <ProjectLink
             img="/web-design/desktop/image-builder.jpg"
