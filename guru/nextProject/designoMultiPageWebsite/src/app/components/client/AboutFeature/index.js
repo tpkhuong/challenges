@@ -7,6 +7,7 @@ export default function AboutFeature({
   mobile,
   tablet,
   desktop,
+  numberOfCircle,
 }) {
   // check children
   console.log(`children`, children);
@@ -14,7 +15,7 @@ export default function AboutFeature({
   console.log(`is it an array children`, Array.isArray(children));
   return (
     <React.Fragment>
-      <article className={styles[`about-featire-container`]}>
+      <article className={styles[`about-feature-container`]}>
         <div className={styles[`img-container`]}>
           <picture>
             {/* desktop */}
@@ -25,8 +26,36 @@ export default function AboutFeature({
             <img src={mobile} alt="" />
           </picture>
         </div>
-        <div className={styles[`text-container`]}>
-          <h2 className={styles[`title`]}></h2>
+        <div
+          className={`${styles[`${numberOfCircle}-circle-bg-img`]} ${
+            styles[`text-container`]
+          }`}
+        >
+          {/* bg img */}
+          {
+            // "one" circle render picture element
+
+            numberOfCircle == "one" ? (
+              <picture>
+                <source
+                  srcSet="/about/desktop/bg-pattern-hero-about-desktop.svg"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  src="/about/mobile/bg-pattern-hero-about-mobile.svg"
+                  alt=""
+                />
+              </picture>
+            ) : (
+              <img
+                // src="/shared/mobile/bg-pattern-design-pages-intro-mobile.svg"
+                src="/shared/desktop/bg-pattern-three-circles.svg"
+                alt=""
+              />
+            )
+            // "three" circle render img element
+          }
+          <h2 className={styles[`title`]}>{title}</h2>
           <div className={styles[`description-container`]}>
             {Array.isArray(children) ? (
               children.map(function makeParagraphElement(
