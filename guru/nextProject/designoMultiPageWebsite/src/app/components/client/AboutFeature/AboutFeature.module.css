@@ -6,6 +6,8 @@
 
 .one-circle-bg-img.text-container {
   background-color: var(--color-peach);
+
+  padding-block: 77px;
 }
 
 .text-container {
@@ -28,6 +30,11 @@
   /* opacity: ; */
 }
 
+.one-circle-bg-img img {
+  top: -140px;
+  left: -505px;
+}
+
 .three-circle-bg-img img {
   top: 0px;
   left: 0px;
@@ -35,6 +42,8 @@
 
 .one-circle-bg-img .title {
   color: var(--color-neutral-white);
+
+  margin-block-end: 18px;
 }
 
 .title {

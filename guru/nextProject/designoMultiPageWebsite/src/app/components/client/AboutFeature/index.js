@@ -81,3 +81,10 @@ export default function AboutFeature({
     </React.Fragment>
   );
 }
+
+// function objFunc(name){
+//   console.log("this",this);
+//   console.log("name",name)
+// }
+
+// const anotherFunc = objFunc.bind({name:"Hi",birthday:"08-08-2008"},"what is this");
