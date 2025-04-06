@@ -10,9 +10,7 @@ export default function AboutFeature({
   numberOfCircle,
 }) {
   // check children
-  console.log(`children`, children);
-  console.log(`typeof children`, typeof children);
-  console.log(`is it an array children`, Array.isArray(children));
+
   return (
     <React.Fragment>
       <article className={styles[`about-feature-container`]}>

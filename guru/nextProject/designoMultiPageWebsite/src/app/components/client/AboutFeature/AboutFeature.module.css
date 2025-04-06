@@ -73,9 +73,34 @@
 /* tablet */
 
 @media screen and (min-width: 47rem) {
+  .about-feature-container {
+    --border-radius-about-feature: 12px;
+  }
+  .img-container {
+    border-top-left-radius: var(--border-radius-about-feature);
+    border-top-right-radius: var(--border-radius-about-feature);
+
+    overflow: hidden;
+  }
+  .text-container {
+    padding-inline: 60px;
+    padding-block: 68px;
+
+    border-bottom-left-radius: var(--border-radius-about-feature);
+    border-bottom-right-radius: var(--border-radius-about-feature);
+
+    overflow: hidden;
+  }
   .title {
     --title-font-size: var(--font-size-40px);
+
+    margin-block-end: 20px;
+  }
+  .description {
     --description-font-size: var(--font-size-16px);
+  }
+  .description-container p + p {
+    margin-block-start: 28px;
   }
 }
 
