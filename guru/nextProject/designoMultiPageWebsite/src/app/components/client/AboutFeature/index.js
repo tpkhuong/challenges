@@ -8,12 +8,16 @@ export default function AboutFeature({
   tablet,
   desktop,
   numberOfCircle,
+  imgRightSide,
 }) {
   // check children
 
   return (
     <React.Fragment>
-      <article className={styles[`about-feature-container`]}>
+      <article
+        data-imgrightside={`${imgRightSide}`}
+        className={styles[`about-feature-container`]}
+      >
         <div className={styles[`img-container`]}>
           <picture>
             {/* desktop */}
