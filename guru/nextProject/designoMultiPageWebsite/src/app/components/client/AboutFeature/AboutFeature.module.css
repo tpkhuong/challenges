@@ -154,11 +154,31 @@
     border-bottom-right-radius: var(--border-radius-about-feature);
   }
 
+  [data-imgrightside="true"] .three-circle-bg-img img {
+    top: -163px;
+    left: 5px;
+  }
+
+  [data-imgrightside="true"] .one-circle-bg-img img {
+    top: -162px;
+    left: 5px;
+  }
+
+  .three-circle-bg-img img {
+    top: 55px;
+    left: -145px;
+  }
+
   [data-imgrightside="true"] .text-container {
     border-top-left-radius: var(--border-radius-about-feature);
     border-bottom-left-radius: var(--border-radius-about-feature);
     border-top-right-radius: revert;
     border-bottom-right-radius: revert;
+  }
+
+  [data-imgrightside="true"] .one-circle-bg-img.text-container {
+    padding-inline-end: 82px;
+    padding-block: 135px;
   }
 
   /* img on right side */
