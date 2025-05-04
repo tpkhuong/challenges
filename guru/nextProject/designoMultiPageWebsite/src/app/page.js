@@ -8,6 +8,7 @@ import MobileNavMenu from "../app/components/server/MobileNavMenu/index.js";
 import ProjectLink from "../app/components/client/ProjectLink/index.js";
 import AboutFeature from "./components/client/AboutFeature/index.js";
 import LocationIconsSections from "../app/components/client/LocationIconsSection/index.js";
+import LocationContent from "../app/components/server/LocationContent/index.js";
 
 export default function RootPage({ children }) {
   return (
@@ -63,8 +64,25 @@ export default function RootPage({ children }) {
       {/* main */}
       <main id="main-content" role="main">
         <article className={styles[`test-container`]}>
+          {/* Location Page Content */}
+          <LocationContent
+            title="Canada"
+            addressObj={{
+              buildingName: "Designo Central Office",
+              streetObj: {
+                number: "3886",
+                name: "Wellington",
+                suffixAbbr: "Street",
+              },
+              addressBottomLineArr: ["Toronto,", "Ontario", "M9C", "3J5"],
+            }}
+            contactObj={{
+              phoneNumberArr: ["+1", "253-863-8967"],
+              email: "contact@designo.co",
+            }}
+          />
           {/* Location Icons Content */}
-          <LocationIconsSections />
+          {/* <LocationIconsSections /> */}
           {/* About Feature */}
           {/* desktop: img on right */}
           {/* <AboutFeature

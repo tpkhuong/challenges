@@ -1,0 +1,18 @@
+/* mobile */
+
+.map-text-content-container {
+  --three-circle-bg-color: hsl(14, 76%, 97%);
+}
+
+.address-contact-container {
+  background-color: var(--three-circle-bg-color);
+}
+
+/* tablet */
+
+@media screen and (min-width: 47rem) {
+}
+
+/* desktop */
+@media screen and (min-width: 89rem) {
+}
