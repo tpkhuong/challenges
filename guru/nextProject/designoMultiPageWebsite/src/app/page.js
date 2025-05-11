@@ -63,24 +63,24 @@ export default function RootPage({ children }) {
       </header>
       {/* main */}
       <main id="main-content" role="main">
+        {/* Location Page Content */}
+        <LocationContent
+          title="Canada"
+          addressObj={{
+            buildingName: "Designo Central Office",
+            streetObj: {
+              number: "3886",
+              name: "Wellington",
+              suffixAbbr: "Street",
+            },
+            addressBottomLineArr: ["Toronto,", "Ontario", "M9C", "3J5"],
+          }}
+          contactObj={{
+            phoneNumberArr: ["+1", "253-863-8967"],
+            email: "contact@designo.co",
+          }}
+        />
         <article className={styles[`test-container`]}>
-          {/* Location Page Content */}
-          <LocationContent
-            title="Canada"
-            addressObj={{
-              buildingName: "Designo Central Office",
-              streetObj: {
-                number: "3886",
-                name: "Wellington",
-                suffixAbbr: "Street",
-              },
-              addressBottomLineArr: ["Toronto,", "Ontario", "M9C", "3J5"],
-            }}
-            contactObj={{
-              phoneNumberArr: ["+1", "253-863-8967"],
-              email: "contact@designo.co",
-            }}
-          />
           {/* Location Icons Content */}
           {/* <LocationIconsSections /> */}
           {/* About Feature */}

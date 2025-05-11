@@ -19,9 +19,9 @@ export default function LocationContent({
         <img src={mapImg} alt="" />
       </div>
       <div className={styles[`text-content-container`]}>
+        <img src="/shared/desktop/bg-pattern-three-circles.svg" alt="" />
         <h2 className={styles[`title`]}>{title}</h2>
         <div className={styles[`address-contact-container`]}>
-          <img src="/shared/desktop/bg-pattern-three-circles.svg" alt="" />
           {/* mailing address */}
           <div className={styles[`address-container`]}>
             <h3 className={styles[`building`]}>{buildingName}</h3>
