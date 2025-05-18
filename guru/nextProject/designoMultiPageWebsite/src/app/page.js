@@ -64,6 +64,7 @@ export default function RootPage({ children }) {
       {/* main */}
       <main id="main-content" role="main">
         {/* Location Page Content */}
+        {/* canada */}
         <LocationContent
           title="Canada"
           addressObj={{
@@ -78,6 +79,42 @@ export default function RootPage({ children }) {
           contactObj={{
             phoneNumberArr: ["+1", "253-863-8967"],
             email: "contact@designo.co",
+          }}
+        />
+
+        {/* Australia */}
+        <LocationContent
+          title="Australia"
+          addressObj={{
+            buildingName: "Designo AU Office",
+            streetObj: {
+              number: "19",
+              name: "Balonne",
+              suffixAbbr: "Street",
+            },
+            addressBottomLineArr: ["New", "South", "Wales", "2443"],
+          }}
+          contactObj={{
+            phoneNumberArr: ["(02)", "6720", "9092"],
+            email: "contact@designo.au",
+          }}
+        />
+
+        {/* United Kingdom */}
+        <LocationContent
+          title="United Kingdom"
+          addressObj={{
+            buildingName: "Designo UK Office",
+            streetObj: {
+              number: "13",
+              name: "Colorado",
+              suffixAbbr: "Way",
+            },
+            addressBottomLineArr: ["Rhyd-y-fro", "SA8", "9GA"],
+          }}
+          contactObj={{
+            phoneNumberArr: ["078", "3115", "1400"],
+            email: "contact@designo.uk",
           }}
         />
         <article className={styles[`test-container`]}>
