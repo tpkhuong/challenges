@@ -4,7 +4,7 @@ import styles from "./locationContent.module.css";
 export default function LocationContent({
   children,
   title,
-  mapImg,
+  mapImg: { tabletImg, mobileDesktopImg },
   addressObj: {
     buildingName,
     streetObj: { number, name, suffixAbbr },
@@ -16,7 +16,13 @@ export default function LocationContent({
     <article className={styles[`map-text-content-container`]}>
       {/* map img */}
       <div className={styles[`img-container`]}>
-        <img src={mapImg} alt="" />
+        <picture>
+          <source
+            media="(min-width: 768px) and (max-width: 1339px)"
+            srcSet={tabletImg}
+          />
+          <img src={mobileDesktopImg} alt="" />
+        </picture>
       </div>
       <div className={styles[`text-content-container`]}>
         <img src="/shared/desktop/bg-pattern-three-circles.svg" alt="" />

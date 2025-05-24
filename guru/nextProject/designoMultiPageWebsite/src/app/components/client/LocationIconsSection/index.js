@@ -5,19 +5,19 @@ export default function LocationIconsSections({ children }) {
   return (
     <section className={styles[`location-links-container`]}>
       {/* canada */}
-      <LocationContent
+      <LocationTextContent
         title="CANADA"
         img="/shared/desktop/illustration-canada.svg"
         circleImg="/shared/desktop/bg-pattern-small-circle.svg"
       />
       {/* australia */}
-      <LocationContent
+      <LocationTextContent
         title="AUSTRALIA"
         img="/shared/desktop/illustration-australia.svg"
         circleImg="/shared/desktop/bg-pattern-small-circle.svg"
       />
       {/* united kingdom */}
-      <LocationContent
+      <LocationTextContent
         title="UNITED KINGDOM"
         img="/shared/desktop/illustration-united-kingdom.svg"
         circleImg="/shared/desktop/bg-pattern-small-circle.svg"
@@ -26,7 +26,7 @@ export default function LocationIconsSections({ children }) {
   );
 }
 
-function LocationContent({ children, title, img, circleImg }) {
+function LocationTextContent({ children, title, img, circleImg }) {
   return (
     <div className={styles[`location-icon-container`]}>
       {/* img */}
