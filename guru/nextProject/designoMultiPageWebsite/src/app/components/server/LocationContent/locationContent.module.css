@@ -69,6 +69,10 @@
 /* tablet */
 
 @media screen and (min-width: 47rem) {
+  .img-container img {
+    border-radius: 16px;
+  }
+
   .text-content-container {
     padding-block: 88px;
     padding-inline: 74px;
@@ -109,7 +113,25 @@
 
 /* desktop */
 @media screen and (min-width: 89rem) {
+  /* map right side */
+  .map-text-content-container:nth-child(1) .img-container,
+  .map-text-content-container:nth-child(3) .img-container {
+    order: 1;
+  }
+  /* map left side */
+  /* map right side */
+  .img-container {
+    flex-basis: 350px;
+  }
+
+  .img-container img {
+    height: 326px;
+  }
+
   .text-content-container {
+    flex-basis: 730px;
+
     padding-inline: 95px;
+    padding-block: 84px;
   }
 }
