@@ -87,7 +87,11 @@ export default function RootPage({ children }) {
         />
 
         {/* Australia */}
-        {/* <LocationContent
+        <LocationContent
+          mapImg={{
+            mobileDesktopImg: "/locations/desktop/image-map-australia.png",
+            tabletImg: "/locations/tablet/image-map-australia.png",
+          }}
           title="Australia"
           addressObj={{
             buildingName: "Designo AU Office",
@@ -102,10 +106,14 @@ export default function RootPage({ children }) {
             phoneNumberArr: ["(02)", "6720", "9092"],
             email: "contact@designo.au",
           }}
-        /> */}
+        />
 
         {/* United Kingdom */}
-        {/* <LocationContent
+        <LocationContent
+          mapImg={{
+            mobileDesktopImg: "/locations/desktop/image-map-united-kingdom.png",
+            tabletImg: "/locations/tablet/image-map-uk.png",
+          }}
           title="United Kingdom"
           addressObj={{
             buildingName: "Designo UK Office",
@@ -120,7 +128,7 @@ export default function RootPage({ children }) {
             phoneNumberArr: ["078", "3115", "1400"],
             email: "contact@designo.uk",
           }}
-        /> */}
+        />
         <article className={styles[`test-container`]}>
           {/* Location Icons Content */}
           {/* <LocationIconsSections /> */}
