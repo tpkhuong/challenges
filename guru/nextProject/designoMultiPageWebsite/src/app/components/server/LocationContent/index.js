@@ -3,6 +3,7 @@ import styles from "./locationContent.module.css";
 
 export default function LocationContent({
   children,
+  blockSpacer,
   title,
   mapImg: { tabletImg, mobileDesktopImg },
   addressObj: {
@@ -13,7 +14,11 @@ export default function LocationContent({
   contactObj: { phoneNumberArr, email },
 }) {
   return (
-    <article className={styles[`map-text-content-container`]}>
+    <article
+      className={`${styles[`${blockSpacer}`]} ${
+        styles[`map-text-content-container`]
+      }`}
+    >
       {/* map img */}
       <div className={styles[`img-container`]}>
         <picture>

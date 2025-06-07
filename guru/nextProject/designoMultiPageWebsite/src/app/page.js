@@ -106,6 +106,7 @@ export default function RootPage({ children }) {
             phoneNumberArr: ["(02)", "6720", "9092"],
             email: "contact@designo.au",
           }}
+          blockSpacer="block-spacer"
         />
 
         {/* United Kingdom */}
