@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./MobileNavMenu.module.css";
 
@@ -13,7 +14,11 @@ export default function MobileNavMenu({ children, props }) {
       >
         <div className={styles[`mobile-menu-container`]}>
           <nav role="navigation">
-            <ul role="menubar" className={styles[`navlist`]}>
+            <ul
+              onKeyDown={TabbingToCorrectElement}
+              role="menubar"
+              className={styles[`navlist`]}
+            >
               {["our company", "locations", "contact"].map(
                 function makeMenuItem(linkText, index, list) {
                   const companyTextForLink =
@@ -28,6 +33,9 @@ export default function MobileNavMenu({ children, props }) {
                     >
                       <a
                         role="menuitem"
+                        id={`${
+                          index == 0 ? companyTextForLink : linkText
+                        }-selector`}
                         href={`/${index == 0 ? companyTextForLink : linkText}`}
                         className={styles[`navlink`]}
                       >
@@ -43,4 +51,8 @@ export default function MobileNavMenu({ children, props }) {
       </div>
     </React.Fragment>
   );
+}
+
+function TabbingToCorrectElement(event) {
+  console.log(event, "event");
 }
