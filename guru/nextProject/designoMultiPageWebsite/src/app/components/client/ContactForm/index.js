@@ -7,23 +7,50 @@ export default function ContactForm({ children }) {
       <form action="" role="form" noValidate>
         {/* full name */}
         <div>
-          <label htmlFor="full-name"></label>
-          <input type="text" id="full-name" placeholder="Name" />
+          <label className={styles[`visually-hidden`]} htmlFor="full-name">
+            Name
+          </label>
+          <input
+            className={styles[`input-name`]}
+            type="text"
+            id="full-name"
+            placeholder="Name"
+          />
         </div>
         {/* email */}
         <div>
-          <label htmlFor="email"></label>
-          <input type="email" id="email" placeholder="Email Address" />
+          <label className={styles[`visually-hidden`]} htmlFor="email">
+            Email Address
+          </label>
+          <input
+            className={styles[`input-email`]}
+            type="email"
+            id="email"
+            placeholder="Email Address"
+          />
         </div>
         {/* phone */}
         <div>
-          <label htmlFor="phone-number"></label>
-          <input type="text" id="phone-number" placeholder="Phone" />
+          <label className={styles[`visually-hidden`]} htmlFor="phone-number">
+            Phone Number
+          </label>
+          <input
+            className={styles[`input-phone`]}
+            type="text"
+            id="phone-number"
+            placeholder="Phone"
+          />
         </div>
         {/* customer message */}
         <div>
-          <label htmlFor="customer-message"></label>
+          <label
+            className={styles[`visually-hidden`]}
+            htmlFor="customer-message"
+          >
+            Your Message
+          </label>
           <textarea
+            className={styles[`input-message`]}
             name=""
             id="customer-message"
             placeholder="Your Message"

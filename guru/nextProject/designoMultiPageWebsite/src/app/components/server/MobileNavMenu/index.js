@@ -96,21 +96,21 @@ testingUnderstanding.call(
 );
 
 // .apply
-testingUnderstanding.apply(
-  { firstName: "Marvel", lastName: "Lotto", date: "7-12-2025" },
-  [
-    "cool",
-    "awesome",
-    {
-      done: true,
-      lastName: "Lakers",
-      sayHi: (greet) => {
-        console.log(`I want to say ${greet}`);
-      },
-    },
-    "street name",
-  ]
-);
+// testingUnderstanding.apply(
+//   { firstName: "Marvel", lastName: "Lotto", date: "7-12-2025" },
+//   [
+//     "cool",
+//     "awesome",
+//     {
+//       done: true,
+//       lastName: "Lakers",
+//       sayHi: (greet) => {
+//         console.log(`I want to say ${greet}`);
+//       },
+//     },
+//     "street name",
+//   ]
+// );
 // .apply
 testingUnderstanding.apply(
   { firstName: "Marvel", lastName: "Lotto", date: "7-12-2025" },

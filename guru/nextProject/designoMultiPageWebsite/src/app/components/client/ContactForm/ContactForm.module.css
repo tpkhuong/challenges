@@ -1,6 +1,6 @@
 /* mobile */
 
-/* .visually-hidden {
+.visually-hidden {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -9,7 +9,16 @@
   margin: -1px;
   padding: 0;
   border: 0;
-} */
+}
+
+.input-name::placeholder,
+.input-email::placeholder,
+.input-phone::placeholder,
+.input-message::placeholder {
+  font-weight: 500;
+
+  color: hsl(10, 72%, 83%);
+}
 
 /* tablet */
 /* desktop */
