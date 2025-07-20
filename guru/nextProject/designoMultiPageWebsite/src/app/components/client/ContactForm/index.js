@@ -4,9 +4,9 @@ import styles from "./ContactForm.module.css";
 export default function ContactForm({ children }) {
   return (
     <React.Fragment>
-      <form action="" role="form" noValidate>
+      <form className={styles[`contact-form`]} action="" role="form" noValidate>
         {/* full name */}
-        <div>
+        <div className={styles[`input-name-container`]}>
           <label className={styles[`visually-hidden`]} htmlFor="full-name">
             Name
           </label>
@@ -18,7 +18,7 @@ export default function ContactForm({ children }) {
           />
         </div>
         {/* email */}
-        <div>
+        <div className={styles[`input-email-container`]}>
           <label className={styles[`visually-hidden`]} htmlFor="email">
             Email Address
           </label>
@@ -30,7 +30,7 @@ export default function ContactForm({ children }) {
           />
         </div>
         {/* phone */}
-        <div>
+        <div className={styles[`input-phone-container`]}>
           <label className={styles[`visually-hidden`]} htmlFor="phone-number">
             Phone Number
           </label>
@@ -42,7 +42,7 @@ export default function ContactForm({ children }) {
           />
         </div>
         {/* customer message */}
-        <div>
+        <div className={styles[`input-message-container`]}>
           <label
             className={styles[`visually-hidden`]}
             htmlFor="customer-message"
@@ -50,6 +50,7 @@ export default function ContactForm({ children }) {
             Your Message
           </label>
           <textarea
+            rows="5"
             className={styles[`input-message`]}
             name=""
             id="customer-message"
@@ -57,8 +58,27 @@ export default function ContactForm({ children }) {
           ></textarea>
         </div>
         {/* submit button */}
-        <button>SUBMIT</button>
+        <button className={styles[`submit-btn`]}>SUBMIT</button>
       </form>
     </React.Fragment>
   );
 }
+
+function testingArrowFunc() {
+  console.log(this, "this");
+
+  // this.firstName = "Cool";
+  // this.lastName = "Dude";
+
+  const sayHi = () => {
+    const firstName = this.firstName;
+    const lastName = this.lastName;
+
+    return `Hi, my name is ${firstName} ${lastName}`;
+  };
+
+  console.log(this, "this");
+  console.log(sayHi(), "sayHi");
+}
+
+testingArrowFunc.call({ firstName: "Awesome", lastName: "Guy" });

@@ -11,10 +11,18 @@
 
   padding: 72px;
   padding-inline: 24px;
+
+  overflow: hidden;
+  position: relative;
 }
 
 .contact-content-container img {
   max-width: revert;
+
+  position: absolute;
+
+  left: -92px;
+  top: 0px;
 }
 
 .title {

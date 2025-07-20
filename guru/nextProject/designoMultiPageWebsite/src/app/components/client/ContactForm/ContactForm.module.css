@@ -1,5 +1,9 @@
 /* mobile */
 
+.contact-form {
+  margin-block-start: 48px;
+}
+
 .visually-hidden {
   position: absolute;
   overflow: hidden;
@@ -11,6 +15,39 @@
   border: 0;
 }
 
+.input-name-container,
+.input-email-container,
+.input-phone-container,
+.input-message-container {
+  border-bottom: 2px solid var(--color-neutral-white);
+}
+
+/* padding block start */
+
+.input-email,
+.input-phone,
+.input-message {
+  padding-block-start: 25px;
+}
+
+/* padding block end */
+
+.input-name,
+.input-email,
+.input-phone {
+  padding-block-end: 11px;
+}
+
+.input-name,
+.input-email,
+.input-phone,
+.input-message {
+  display: block;
+  width: 100%;
+
+  background: transparent;
+}
+
 .input-name::placeholder,
 .input-email::placeholder,
 .input-phone::placeholder,
@@ -18,6 +55,17 @@
   font-weight: 500;
 
   color: hsl(10, 72%, 83%);
+}
+
+.submit-btn {
+  font-weight: 500;
+  border-radius: 8px;
+  background-color: var(--color-neutral-white);
+
+  margin-block-start: 40px;
+
+  padding: 48px;
+  padding-block: 18px;
 }
 
 /* tablet */
