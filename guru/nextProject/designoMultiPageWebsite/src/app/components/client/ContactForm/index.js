@@ -1,10 +1,19 @@
+"use client";
+
 import React from "react";
 import styles from "./ContactForm.module.css";
+import { formInputAlgorithm, testFunc } from "./contactFormHelpers";
 
 export default function ContactForm({ children }) {
   return (
     <React.Fragment>
-      <form className={styles[`contact-form`]} action="" role="form" noValidate>
+      <form
+        onKeyDown={testFunc}
+        className={styles[`contact-form`]}
+        action=""
+        role="form"
+        noValidate
+      >
         {/* full name */}
         <div className={styles[`input-name-container`]}>
           <label className={styles[`visually-hidden`]} htmlFor="full-name">
