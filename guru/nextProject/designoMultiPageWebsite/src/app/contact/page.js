@@ -8,7 +8,7 @@ export default function ContactPage({ children }) {
       <a href="#main-content" className="skip-link">
         Skip to Main Content
       </a>
-      <main>
+      <main className={styles[`main-container`]}>
         {/* contact content */}
         <article className={styles[`contact-content-container`]}>
           {/* circle image */}
@@ -38,6 +38,26 @@ export default function ContactPage({ children }) {
           </div>
         </article>
         {/* component of location icons */}
+        {/* modal for successfully sent message */}
+        <div data-showmodal="false" className={styles[`modal-container`]}>
+          <div
+            role="dialig"
+            aria-modal="true"
+            id="success-message-modal-selector"
+            className={styles[`success-modal`]}
+          >
+            <h2 className={styles[`modal-title`]}>Thank You!</h2>
+            <p className={styles[`modal-message`]}>
+              Your message has been submitted!
+            </p>
+            <button
+              id="done-btn-message-selector"
+              className={styles[`done-modal-btn`]}
+            >
+              Done
+            </button>
+          </div>
+        </div>
       </main>
     </React.Fragment>
   );

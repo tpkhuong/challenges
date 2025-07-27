@@ -1,5 +1,76 @@
 /* mobile */
 
+/* modal */
+.main-container {
+  position: relative;
+}
+
+.odal-container[data-showmodal="true"] {
+  display: revert;
+}
+
+.modal-container[data-showmodal="false"] {
+  display: none;
+}
+
+.modal-container {
+  position: absolute;
+  inset: 0;
+
+  background-color: hsl(0 0% 0% / 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-modal {
+  text-align: center;
+
+  background-color: var(--color-neutral-white);
+  border-radius: 8px;
+  padding: 32px;
+  /* if we're not using display flex on parent element */
+  /* position: absolute;
+  inset: 0;
+  height: min-content;
+  width: max-content;
+  margin: auto; */
+  /* min-width: 540px; */
+}
+
+.modal-title {
+  margin-block-end: -8px;
+
+  color: var(--color-peach);
+}
+
+.modal-message {
+  margin-block: 32px;
+}
+
+.done-modal-btn:focus {
+  outline: 5px solid blue;
+  outline-offset: 8px;
+}
+
+.done-modal-btn {
+  color: var(--color-neutral-white);
+  background-color: var(--color-peach);
+
+  text-transform: uppercase;
+  font-weight: 500;
+
+  padding-block: 12px;
+  padding-inline: 32px;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+/* modal */
+
 .contact-content-container {
   background-color: var(--color-peach);
   font-size: var(--font-size-15px);
@@ -17,6 +88,7 @@
 }
 
 .contact-content-container img {
+  pointer-events: none;
   max-width: revert;
 
   position: absolute;

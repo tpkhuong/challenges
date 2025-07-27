@@ -2,17 +2,15 @@
 
 import React from "react";
 import styles from "./ContactForm.module.css";
-import { formInputAlgorithm, testFunc } from "./contactFormHelpers";
+import { formInputAlgorithm, subminBtnMessage } from "./contactFormHelpers";
 
 export default function ContactForm({ children }) {
   return (
     <React.Fragment>
       <form
-        onKeyDown={testFunc}
+        onKeyDown={formInputAlgorithm}
         className={styles[`contact-form`]}
-        action=""
         role="form"
-        noValidate
       >
         {/* full name */}
         <div className={styles[`input-name-container`]}>
@@ -67,7 +65,15 @@ export default function ContactForm({ children }) {
           ></textarea>
         </div>
         {/* submit button */}
-        <button className={styles[`submit-btn`]}>SUBMIT</button>
+        {/* reset input to empty chars when user click on submit. Don't have to reload form */}
+        {/* make modal to let customer message was successful */}
+        <button
+          type="button"
+          onClick={subminBtnMessage}
+          className={styles[`submit-btn`]}
+        >
+          SUBMIT
+        </button>
       </form>
     </React.Fragment>
   );
