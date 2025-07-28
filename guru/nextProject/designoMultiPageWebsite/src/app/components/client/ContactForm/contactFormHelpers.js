@@ -1,8 +1,19 @@
 export function formInputAlgorithm(event) {
   console.log(event, "event");
   const currentInput = event.target;
+
+  console.log(currentInput, "currentInput");
 }
 
+/**
+ *
+ * funcObj
+ * ***/
+
+/**
+ *
+ *
+ * ***/
 export function subminBtnMessage(event) {
   //  select done btn
   const doneBtn = document.getElementById("done-btn-message-selector");
