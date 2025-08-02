@@ -18,6 +18,7 @@ export default function ContactForm({ children }) {
             Name
           </label>
           <input
+            data-objselector="fullName"
             className={styles[`input-name`]}
             type="text"
             id="full-name"
@@ -30,6 +31,7 @@ export default function ContactForm({ children }) {
             Email Address
           </label>
           <input
+            data-objselector="email"
             className={styles[`input-email`]}
             type="email"
             id="email"
@@ -44,6 +46,7 @@ export default function ContactForm({ children }) {
           <input
             className={styles[`input-phone`]}
             type="text"
+            data-objselector="phoneNumber"
             id="phone-number"
             placeholder="Phone"
           />
@@ -60,6 +63,7 @@ export default function ContactForm({ children }) {
             rows="5"
             className={styles[`input-message`]}
             name=""
+            data-objselector="customerMessage"
             id="customer-message"
             placeholder="Your Message"
           ></textarea>
