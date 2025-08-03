@@ -1,8 +1,11 @@
 export function formInputAlgorithm(event) {
   console.log(event, "event");
   const currentInput = event.target;
+  const attrForFuncObj = currentInput.getAttribute("data-objselector");
+  // call func based on input
+  inputFuncObj[attrForFuncObj]();
 
-  console.log(currentInput, "currentInput");
+  console.log(attrForFuncObj, "attrForFuncObj");
   console.log(inputFuncObj, "inputFuncObj");
 }
 

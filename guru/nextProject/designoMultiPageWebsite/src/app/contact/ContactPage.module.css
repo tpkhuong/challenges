@@ -87,7 +87,7 @@
   position: relative;
 }
 
-.contact-content-container img {
+.contact-content-container picture img {
   pointer-events: none;
   max-width: revert;
 

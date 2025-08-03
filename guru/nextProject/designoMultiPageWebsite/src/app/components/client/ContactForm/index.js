@@ -13,7 +13,7 @@ export default function ContactForm({ children }) {
         role="form"
       >
         {/* full name */}
-        <div className={styles[`input-name-container`]}>
+        <div data-isempty="false" className={styles[`input-name-container`]}>
           <label className={styles[`visually-hidden`]} htmlFor="full-name">
             Name
           </label>
@@ -24,9 +24,17 @@ export default function ContactForm({ children }) {
             id="full-name"
             placeholder="Name"
           />
+          {/* can't be empty */}
+          <div className={styles[`empty-text-container`]}>
+            <span>Can't be empty</span>
+            <img
+              src="/contact/desktop/icon-error.svg"
+              alt="exclamation mark inside a white circle"
+            />
+          </div>
         </div>
         {/* email */}
-        <div className={styles[`input-email-container`]}>
+        <div data-isempty="false" className={styles[`input-email-container`]}>
           <label className={styles[`visually-hidden`]} htmlFor="email">
             Email Address
           </label>
@@ -37,9 +45,17 @@ export default function ContactForm({ children }) {
             id="email"
             placeholder="Email Address"
           />
+          {/* can't be empty */}
+          <div className={styles[`empty-text-container`]}>
+            <span>Can't be empty</span>
+            <img
+              src="/contact/desktop/icon-error.svg"
+              alt="exclamation mark inside a white circle"
+            />
+          </div>
         </div>
         {/* phone */}
-        <div className={styles[`input-phone-container`]}>
+        <div data-isempty="false" className={styles[`input-phone-container`]}>
           <label className={styles[`visually-hidden`]} htmlFor="phone-number">
             Phone Number
           </label>
@@ -50,9 +66,17 @@ export default function ContactForm({ children }) {
             id="phone-number"
             placeholder="Phone"
           />
+          {/* can't be empty */}
+          <div className={styles[`empty-text-container`]}>
+            <span>Can't be empty</span>
+            <img
+              src="/contact/desktop/icon-error.svg"
+              alt="exclamation mark inside a white circle"
+            />
+          </div>
         </div>
         {/* customer message */}
-        <div className={styles[`input-message-container`]}>
+        <div data-isempty="false" className={styles[`input-message-container`]}>
           <label
             className={styles[`visually-hidden`]}
             htmlFor="customer-message"
@@ -67,6 +91,14 @@ export default function ContactForm({ children }) {
             id="customer-message"
             placeholder="Your Message"
           ></textarea>
+          {/* can't be empty */}
+          <div className={styles[`empty-text-container`]}>
+            <span>Can't be empty</span>
+            <img
+              src="/contact/desktop/icon-error.svg"
+              alt="exclamation mark inside a white circle"
+            />
+          </div>
         </div>
         {/* submit button */}
         {/* reset input to empty chars when user click on submit. Don't have to reload form */}
