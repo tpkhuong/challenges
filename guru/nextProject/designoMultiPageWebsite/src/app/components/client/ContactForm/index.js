@@ -13,7 +13,7 @@ export default function ContactForm({ children }) {
         role="form"
       >
         {/* full name */}
-        <div data-isempty="false" className={styles[`input-name-container`]}>
+        <div data-isempty="true" className={styles[`input-name-container`]}>
           <label className={styles[`visually-hidden`]} htmlFor="full-name">
             Name
           </label>
@@ -34,7 +34,7 @@ export default function ContactForm({ children }) {
           </div>
         </div>
         {/* email */}
-        <div data-isempty="false" className={styles[`input-email-container`]}>
+        <div data-isempty="true" className={styles[`input-email-container`]}>
           <label className={styles[`visually-hidden`]} htmlFor="email">
             Email Address
           </label>
@@ -55,7 +55,7 @@ export default function ContactForm({ children }) {
           </div>
         </div>
         {/* phone */}
-        <div data-isempty="false" className={styles[`input-phone-container`]}>
+        <div data-isempty="true" className={styles[`input-phone-container`]}>
           <label className={styles[`visually-hidden`]} htmlFor="phone-number">
             Phone Number
           </label>
@@ -76,7 +76,7 @@ export default function ContactForm({ children }) {
           </div>
         </div>
         {/* customer message */}
-        <div data-isempty="false" className={styles[`input-message-container`]}>
+        <div data-isempty="true" className={styles[`input-message-container`]}>
           <label
             className={styles[`visually-hidden`]}
             htmlFor="customer-message"

@@ -17,21 +17,30 @@ export function formInputAlgorithm(event) {
 const inputFuncObj = {
   // full-name
   fullName: function (event) {
+    const parent = getTargetParentElement(event.target);
+    const valueOfLength = getLengthOfInputValue(event.target.value);
+    checkLengthOfInputValue(valueOfLength, parent);
     console.log(event, "event");
     console.log("this is full name");
   },
   // email
   email: function (event) {
+    const parent = getTargetParentElement(event.target);
+    const valueOfLength = getLengthOfInputValue(event.target.value);
     console.log(event, "event");
     console.log("this is email");
   },
   // phone-number
   phoneNumber: function (event) {
+    const parent = getTargetParentElement(event.target);
+    const valueOfLength = getLengthOfInputValue(event.target.value);
     console.log(event, "event");
     console.log("this is phone number");
   },
   // customer-message
   customerMessage: function (event) {
+    const parent = getTargetParentElement(event.target);
+    const valueOfLength = getLengthOfInputValue(event.target.value);
     console.log(event, "event");
     console.log("this is customer message");
   },
@@ -41,6 +50,42 @@ const inputFuncObj = {
  *
  * funcObj
  * ***/
+
+function getLengthOfInputValue(inputValue) {
+  const valueLength = inputValue.length;
+
+  return valueLength;
+}
+
+function checkLengthOfInputValue(length, parentElement) {
+  // if length equal 0
+  if (length == 0) {
+    changeDataAttrTrue(parentElement);
+    return;
+  }
+  // if length is greater than 0
+  if (length > 0) {
+    changeDataAttrFalse(parentElement);
+    return;
+  }
+}
+
+function getTargetParentElement(target) {
+  const parentElement = target.parentElement;
+
+  return parentElement;
+}
+
+// change attr data-isempty to "true"
+
+function changeDataAttrTrue(parentElement) {
+  parentElement.setAttribute("data-isempty", "true");
+}
+
+// change attr data-isempty to "false"
+function changeDataAttrFalse(parentElement) {
+  parentElement.setAttribute("data-isempty", "false");
+}
 
 export function subminBtnMessage(event) {
   //  select done btn
