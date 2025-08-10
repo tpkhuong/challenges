@@ -3,7 +3,7 @@ export function formInputAlgorithm(event) {
   const currentInput = event.target;
   const attrForFuncObj = currentInput.getAttribute("data-objselector");
   // call func based on input
-  inputFuncObj[attrForFuncObj]();
+  inputFuncObj[attrForFuncObj](event);
 
   console.log(attrForFuncObj, "attrForFuncObj");
   console.log(inputFuncObj, "inputFuncObj");
@@ -19,9 +19,11 @@ const inputFuncObj = {
   fullName: function (event) {
     const parent = getTargetParentElement(event.target);
     const valueOfLength = getLengthOfInputValue(event.target.value);
+    console.log(parent, "parent");
+    console.log(valueOfLength, "valueOfLength");
     checkLengthOfInputValue(valueOfLength, parent);
-    console.log(event, "event");
-    console.log("this is full name");
+    // console.log(event, "event");
+    // console.log("this is full name");
   },
   // email
   email: function (event) {

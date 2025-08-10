@@ -8,7 +8,7 @@ export default function ContactForm({ children }) {
   return (
     <React.Fragment>
       <form
-        onKeyDown={formInputAlgorithm}
+        onKeyUp={formInputAlgorithm}
         className={styles[`contact-form`]}
         role="form"
       >

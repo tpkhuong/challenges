@@ -5,19 +5,19 @@
 /* ***** */
 
 /* do not show */
-/* .input-name-container[data-isempty="true"] .empty-text-container,
+.input-name-container[data-isempty="true"] .empty-text-container,
 .input-email-container[data-isempty="true"] .empty-text-container,
 .input-phone-container[data-isempty="true"] .empty-text-container,
 .input-message-container[data-isempty="true"] .empty-text-container {
-  display: none;
-} */
+  display: flex;
+}
 
 /* show content */
 .input-name-container[data-isempty="false"] .empty-text-container,
 .input-email-container[data-isempty="false"] .empty-text-container,
 .input-phone-container[data-isempty="false"] .empty-text-container,
 .input-message-container[data-isempty="false"] .empty-text-container {
-  display: flex;
+  display: none;
 }
 /* ***** */
 /* hide or show empty text content */
