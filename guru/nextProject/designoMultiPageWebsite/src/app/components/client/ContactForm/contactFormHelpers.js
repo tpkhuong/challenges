@@ -31,6 +31,7 @@ const inputFuncObj = {
     const valueOfLength = getLengthOfInputValue(event.target.value);
     console.log(event, "event");
     console.log("this is email");
+    checkLengthOfInputValue(valueOfLength, parent);
   },
   // phone-number
   phoneNumber: function (event) {

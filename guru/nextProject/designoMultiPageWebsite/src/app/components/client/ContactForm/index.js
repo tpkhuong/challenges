@@ -61,7 +61,7 @@ export default function ContactForm({ children }) {
           </label>
           <input
             className={styles[`input-phone`]}
-            type="text"
+            type="tel"
             data-objselector="phoneNumber"
             id="phone-number"
             placeholder="Phone"
