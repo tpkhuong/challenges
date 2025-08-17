@@ -39,6 +39,7 @@ const inputFuncObj = {
     const valueOfLength = getLengthOfInputValue(event.target.value);
     console.log(event, "event");
     console.log("this is phone number");
+    checkLengthOfInputValue(valueOfLength, parent);
   },
   // customer-message
   customerMessage: function (event) {
