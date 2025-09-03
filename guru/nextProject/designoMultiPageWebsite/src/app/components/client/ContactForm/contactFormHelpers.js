@@ -35,6 +35,10 @@ const inputFuncObj = {
   },
   // phone-number
   phoneNumber: function (event) {
+    // remove numbers for users
+    // const regex = /[0-9\-]/gi;
+    // use pattern on input html element
+    console.log(event.target.value, "target value");
     const parent = getTargetParentElement(event.target);
     const valueOfLength = getLengthOfInputValue(event.target.value);
     console.log(event, "event");
@@ -47,6 +51,7 @@ const inputFuncObj = {
     const valueOfLength = getLengthOfInputValue(event.target.value);
     console.log(event, "event");
     console.log("this is customer message");
+    checkLengthOfInputValue(valueOfLength, parent);
   },
 };
 
