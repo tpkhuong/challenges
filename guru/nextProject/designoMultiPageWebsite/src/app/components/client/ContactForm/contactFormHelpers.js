@@ -37,7 +37,7 @@ const inputFuncObj = {
   phoneNumber: function (event) {
     // remove numbers for users
     // const regex = /[0-9\-]/gi;
-    // use pattern on input html element
+    // automatically set pattern for users
     console.log(event.target.value, "target value");
     const parent = getTargetParentElement(event.target);
     const valueOfLength = getLengthOfInputValue(event.target.value);

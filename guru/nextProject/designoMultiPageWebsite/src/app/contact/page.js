@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import styles from "./ContactPage.module.css";
 import ContactForm from "../components/client/ContactForm/index.js";
+import { doneMessageBtn } from "./contactPageHelpers.js";
 
 export default function ContactPage({ children }) {
   return (
@@ -51,6 +54,7 @@ export default function ContactPage({ children }) {
               Your message has been submitted!
             </p>
             <button
+              onClick={doneMessageBtn}
               id="done-btn-message-selector"
               className={styles[`done-modal-btn`]}
             >
