@@ -38,7 +38,25 @@ const inputFuncObj = {
     // remove numbers for users
     // const regex = /[0-9\-]/gi;
     // automatically set pattern for users
-    console.log(event.target.value, "target value");
+    // phone number format: (213)323-8778
+    const numberRegex = /[0-9\-]/gi;
+    const onlyNumberArray = event.target.value.match(numberRegex);
+    console.log("onlyNumberArray before", onlyNumberArray);
+    if (!onlyNumberArray) {
+      // first key press is not a number key
+      event.target.value = "";
+      return;
+    }
+    console.log("onlyNumberArray after", onlyNumberArray);
+    /****
+     * extra helpers
+     * *****/
+
+    leftSidePhoneNumber(onlyNumberArray);
+    middlePhoneNumber(onlyNumberArray);
+    /****
+     * extra helpers
+     * *****/
     const parent = getTargetParentElement(event.target);
     const valueOfLength = getLengthOfInputValue(event.target.value);
     console.log(event, "event");
@@ -108,3 +126,27 @@ export function subminBtnMessage(event) {
   // select done btn and focus
   doneBtn.focus();
 }
+
+/*****
+ * Phone number algorithm helpers
+ * *****/
+
+function leftSidePhoneNumber(arrayOfNumbers) {
+  if (arrayOfNumbers.length <= 3) {
+    console.log("left side");
+  }
+}
+
+function middlePhoneNumber(arrayOfNumbers) {
+  if (arrayOfNumbers.length > 3) {
+    console.log("middle side");
+  }
+}
+
+/*****
+ * Phone number algorithm helpers
+ * *****/
+
+// ["0","1","2","3","4","5","6","7","8","9"].some(function findOnlyNumber(element,index,list){
+//   return element == "2"
+// });
