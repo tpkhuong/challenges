@@ -10,11 +10,22 @@ export function formInputAlgorithm(event) {
 }
 
 /**
- *
  * funcObj
  * ***/
 
 const inputFuncObj = {
+  convertLengthToTextObj: {
+    1: "first",
+    2: "second",
+    3: "third",
+    4: "",
+    5: "",
+    6: "",
+    7: "",
+    8: "",
+    9: "",
+    10: "",
+  },
   // full-name
   fullName: function (event) {
     const parent = getTargetParentElement(event.target);
@@ -35,6 +46,7 @@ const inputFuncObj = {
   },
   // phone-number
   phoneNumber: function (event) {
+    console.log(this.convertToTextObj, "this.convertToTextObj");
     // remove numbers for users
     // const regex = /[0-9\-]/gi;
     // automatically set pattern for users
@@ -48,14 +60,21 @@ const inputFuncObj = {
       return;
     }
     console.log("onlyNumberArray after", onlyNumberArray);
+    console.log("onlyNumberArray.length after", onlyNumberArray.length);
+    /*****
+     * get here there is an number in the array
+     * *****/
     /****
      * extra helpers
      * *****/
 
-    leftSidePhoneNumber(onlyNumberArray);
-    middlePhoneNumber(onlyNumberArray);
+    leftSidePhoneNumber(onlyNumberArray, event);
+    middlePhoneNumber(onlyNumberArray, event);
     /****
      * extra helpers
+     * *****/
+    /*****
+     * get here there is an number in the array
      * *****/
     const parent = getTargetParentElement(event.target);
     const valueOfLength = getLengthOfInputValue(event.target.value);
@@ -131,13 +150,27 @@ export function subminBtnMessage(event) {
  * Phone number algorithm helpers
  * *****/
 
-function leftSidePhoneNumber(arrayOfNumbers) {
-  if (arrayOfNumbers.length <= 3) {
-    console.log("left side");
+function leftSidePhoneNumber(arrayOfNumbers, event) {
+  if (arrayOfNumbers.length <= 2) {
+    const arrayForLeftSide = ["(", ...arrayOfNumbers];
+    event.target.value = arrayForLeftSide.join("");
+    return;
+  }
+  if (arrayOfNumbers.length == 3) {
+    /*****
+     * when user hit/press back key
+     * *****/
+    // check to see if user hit/press back key
+    // if user did hit/press back key remove ) parentheses
+    const stringOfLeftSideWithParentheses = ["(", ...arrayOfNumbers, ")"].join(
+      ""
+    );
+    event.target.value = stringOfLeftSideWithParentheses;
+    return;
   }
 }
 
-function middlePhoneNumber(arrayOfNumbers) {
+function middlePhoneNumber(arrayOfNumbers, event) {
   if (arrayOfNumbers.length > 3) {
     console.log("middle side");
   }
