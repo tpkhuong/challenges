@@ -46,7 +46,7 @@ const inputFuncObj = {
   },
   // phone-number
   phoneNumber: function (event) {
-    console.log(this.convertToTextObj, "this.convertToTextObj");
+    console.log(this.convertLengthToTextObj, "this.convertLengthToTextObj");
     // remove numbers for users
     // const regex = /[0-9\-]/gi;
     // automatically set pattern for users
@@ -157,15 +157,31 @@ function leftSidePhoneNumber(arrayOfNumbers, event) {
     return;
   }
   if (arrayOfNumbers.length == 3) {
-    /*****
-     * when user hit/press back key
-     * *****/
     // check to see if user hit/press back key
     // if user did hit/press back key remove ) parentheses
     const stringOfLeftSideWithParentheses = ["(", ...arrayOfNumbers, ")"].join(
       ""
     );
     event.target.value = stringOfLeftSideWithParentheses;
+    /*****
+     * when user hit/press back key
+     * *****/
+
+    if (event.key == "Backspace") {
+      console.log(event.target.value, "target value");
+      console.log(event, "event length is 3");
+      const splitTargetValue = event.target.value.split("");
+      const rightSideParenthese = splitTargetValue.pop();
+      if (rightSideParenthese == ")") {
+        const leftSideParentheseWithNumbers = splitTargetValue.join("");
+        event.target.value = leftSideParentheseWithNumbers;
+        return;
+      }
+    }
+
+    /*****
+     * when user hit/press back key
+     * *****/
     return;
   }
 }
