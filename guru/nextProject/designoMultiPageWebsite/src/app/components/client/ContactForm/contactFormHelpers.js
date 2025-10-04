@@ -68,8 +68,10 @@ const inputFuncObj = {
      * extra helpers
      * *****/
 
-    leftSidePhoneNumber(onlyNumberArray, event);
-    middlePhoneNumber(onlyNumberArray, event);
+    const objWithOneProperty = leftSidePhoneNumber(onlyNumberArray, event);
+    // leftSidePhoneNumber(onlyNumberArray, event);
+    // 4 to 6 digits
+    middlePhoneNumber(onlyNumberArray, event, objWithOneProperty);
     /****
      * extra helpers
      * *****/
@@ -156,6 +158,7 @@ function leftSidePhoneNumber(arrayOfNumbers, event) {
     event.target.value = arrayForLeftSide.join("");
     return;
   }
+  // not running when phone number input length is greater than 3
   if (arrayOfNumbers.length == 3) {
     // check to see if user hit/press back key
     // if user did hit/press back key remove ) parentheses
@@ -182,13 +185,25 @@ function leftSidePhoneNumber(arrayOfNumbers, event) {
     /*****
      * when user hit/press back key
      * *****/
-    return;
+    return { stringOfLeftSideWithParentheses };
   }
 }
 
-function middlePhoneNumber(arrayOfNumbers, event) {
-  if (arrayOfNumbers.length > 3) {
+function testing(list) {
+  if (list.length >= 4 && list.length <= 6) {
+    console.log("between 4 and 6");
+    return;
+  }
+  console.log("not between 4 and 6");
+}
+
+function middlePhoneNumber(arrayOfNumbers, event, objOfOneProp) {
+  if (arrayOfNumbers.length >= 4 && arrayOfNumbers.length <= 6) {
     console.log("middle side");
+    console.log("objOfOneProp", objOfOneProp);
+    // if (leftSideOfPhoneNumber && Array.isArray(leftSideOfPhoneNumber)) {
+    //   console.log([...leftSideOfPhoneNumber, " ", "9"]);
+    // }
   }
 }
 
