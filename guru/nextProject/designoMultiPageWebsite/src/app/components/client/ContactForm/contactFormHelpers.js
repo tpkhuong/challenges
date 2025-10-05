@@ -14,6 +14,7 @@ export function formInputAlgorithm(event) {
  * ***/
 
 const inputFuncObj = {
+  leftSideOfPhoneNumberWithParentheses: null,
   convertLengthToTextObj: {
     1: "first",
     2: "second",
@@ -68,10 +69,10 @@ const inputFuncObj = {
      * extra helpers
      * *****/
 
-    const objWithOneProperty = leftSidePhoneNumber(onlyNumberArray, event);
+    leftSidePhoneNumber(onlyNumberArray, event, this);
     // leftSidePhoneNumber(onlyNumberArray, event);
     // 4 to 6 digits
-    middlePhoneNumber(onlyNumberArray, event, objWithOneProperty);
+    middlePhoneNumber(onlyNumberArray, event, this);
     /****
      * extra helpers
      * *****/
@@ -152,7 +153,7 @@ export function subminBtnMessage(event) {
  * Phone number algorithm helpers
  * *****/
 
-function leftSidePhoneNumber(arrayOfNumbers, event) {
+function leftSidePhoneNumber(arrayOfNumbers, event, inputObj) {
   if (arrayOfNumbers.length <= 2) {
     const arrayForLeftSide = ["(", ...arrayOfNumbers];
     event.target.value = arrayForLeftSide.join("");
@@ -165,6 +166,10 @@ function leftSidePhoneNumber(arrayOfNumbers, event) {
     const stringOfLeftSideWithParentheses = ["(", ...arrayOfNumbers, ")"].join(
       ""
     );
+    // save left side to obj
+    inputFuncObj.leftSideOfPhoneNumberWithParentheses =
+      stringOfLeftSideWithParentheses;
+    // save left side to obj
     event.target.value = stringOfLeftSideWithParentheses;
     /*****
      * when user hit/press back key
@@ -197,13 +202,13 @@ function testing(list) {
   console.log("not between 4 and 6");
 }
 
-function middlePhoneNumber(arrayOfNumbers, event, objOfOneProp) {
+function middlePhoneNumber(arrayOfNumbers, event, inputObj) {
   if (arrayOfNumbers.length >= 4 && arrayOfNumbers.length <= 6) {
     console.log("middle side");
-    console.log("objOfOneProp", objOfOneProp);
-    // if (leftSideOfPhoneNumber && Array.isArray(leftSideOfPhoneNumber)) {
-    //   console.log([...leftSideOfPhoneNumber, " ", "9"]);
-    // }
+    console.log("inputObj", inputObj);
+    if (inputObj.leftSideOfPhoneNumberWithParentheses) {
+      console.log([...inputObj.leftSideOfPhoneNumberWithParentheses, " ", "9"]);
+    }
   }
 }
 
