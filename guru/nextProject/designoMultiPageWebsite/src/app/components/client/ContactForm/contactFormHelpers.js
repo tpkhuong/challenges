@@ -206,7 +206,11 @@ function middlePhoneNumber(arrayOfNumbers, event, inputObj) {
   if (arrayOfNumbers.length >= 4 && arrayOfNumbers.length <= 6) {
     console.log("middle side");
     console.log("inputObj", inputObj);
+    const [first, second, third, fourth, fifth, sixth] = arrayOfNumbers;
     if (inputObj.leftSideOfPhoneNumberWithParentheses) {
+      console.log(fourth, "fourth");
+      console.log(fifth, "fifth");
+      console.log(sixth, "sixth");
       console.log([...inputObj.leftSideOfPhoneNumberWithParentheses, " ", "9"]);
     }
   }
