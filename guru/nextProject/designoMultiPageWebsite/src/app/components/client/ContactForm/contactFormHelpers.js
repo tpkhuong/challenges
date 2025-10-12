@@ -211,7 +211,23 @@ function middlePhoneNumber(arrayOfNumbers, event, inputObj) {
       console.log(fourth, "fourth");
       console.log(fifth, "fifth");
       console.log(sixth, "sixth");
-      console.log([...inputObj.leftSideOfPhoneNumberWithParentheses, " ", "9"]);
+      console.log([
+        ...inputObj.leftSideOfPhoneNumberWithParentheses,
+        " ",
+        `${fourth}`,
+        `${fifth ? fifth : ""}`,
+        `${sixth ? sixth : ""}`,
+      ]);
+      const mergeLeftSideAndMiddle = [
+        ...inputObj.leftSideOfPhoneNumberWithParentheses,
+        " ",
+        `${fourth}`,
+        `${fifth ? fifth : ""}`,
+        `${sixth ? sixth : ""}`,
+      ].join("");
+
+      console.log(mergeLeftSideAndMiddle, "mergeLeftSideAndMiddle");
+      // update phone number input with user entered values
     }
   }
 }
