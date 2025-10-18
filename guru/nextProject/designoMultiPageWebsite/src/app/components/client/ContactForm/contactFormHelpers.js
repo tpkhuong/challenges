@@ -218,7 +218,7 @@ function middlePhoneNumber(arrayOfNumbers, event, inputObj) {
         `${fifth ? fifth : ""}`,
         `${sixth ? sixth : ""}`,
       ]);
-      const mergeLeftSideAndMiddle = [
+      const mergeLeftSideAndMiddleString = [
         ...inputObj.leftSideOfPhoneNumberWithParentheses,
         " ",
         `${fourth}`,
@@ -226,8 +226,9 @@ function middlePhoneNumber(arrayOfNumbers, event, inputObj) {
         `${sixth ? sixth : ""}`,
       ].join("");
 
-      console.log(mergeLeftSideAndMiddle, "mergeLeftSideAndMiddle");
+      console.log(mergeLeftSideAndMiddleString, "mergeLeftSideAndMiddleString");
       // update phone number input with user entered values
+      event.target.value = mergeLeftSideAndMiddleString;
     }
   }
 }
