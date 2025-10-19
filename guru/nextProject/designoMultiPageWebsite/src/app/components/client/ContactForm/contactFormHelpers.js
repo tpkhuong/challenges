@@ -15,6 +15,7 @@ export function formInputAlgorithm(event) {
 
 const inputFuncObj = {
   leftSideOfPhoneNumberWithParentheses: null,
+  mergeLeftSideAndMiddlePhoneNumber: null,
   convertLengthToTextObj: {
     1: "first",
     2: "second",
@@ -73,6 +74,8 @@ const inputFuncObj = {
     // leftSidePhoneNumber(onlyNumberArray, event);
     // 4 to 6 digits
     middlePhoneNumber(onlyNumberArray, event, this);
+    // 7 t0 10
+    rightSidePhoneNumber(onlyNumberArray, event, this);
     /****
      * extra helpers
      * *****/
@@ -202,35 +205,46 @@ function testing(list) {
   console.log("not between 4 and 6");
 }
 
-function middlePhoneNumber(arrayOfNumbers, event, inputObj) {
+function middlePhoneNumber(arrayOfNumbers, event, thisObj) {
   if (arrayOfNumbers.length >= 4 && arrayOfNumbers.length <= 6) {
     console.log("middle side");
-    console.log("inputObj", inputObj);
+    console.log("thisObj", thisObj);
     const [first, second, third, fourth, fifth, sixth] = arrayOfNumbers;
-    if (inputObj.leftSideOfPhoneNumberWithParentheses) {
+    if (thisObj.leftSideOfPhoneNumberWithParentheses) {
       console.log(fourth, "fourth");
       console.log(fifth, "fifth");
       console.log(sixth, "sixth");
       console.log([
-        ...inputObj.leftSideOfPhoneNumberWithParentheses,
+        ...thisObj.leftSideOfPhoneNumberWithParentheses,
         " ",
         `${fourth}`,
         `${fifth ? fifth : ""}`,
         `${sixth ? sixth : ""}`,
       ]);
       const mergeLeftSideAndMiddleString = [
-        ...inputObj.leftSideOfPhoneNumberWithParentheses,
+        ...thisObj.leftSideOfPhoneNumberWithParentheses,
         " ",
         `${fourth}`,
         `${fifth ? fifth : ""}`,
         `${sixth ? sixth : ""}`,
       ].join("");
-
+      // save reference of string
+      inputFuncObj.mergeLeftSideAndMiddlePhoneNumber =
+        mergeLeftSideAndMiddleString;
+      // save reference of string
       console.log(mergeLeftSideAndMiddleString, "mergeLeftSideAndMiddleString");
       // update phone number input with user entered values
       event.target.value = mergeLeftSideAndMiddleString;
     }
   }
+}
+
+function rightSidePhoneNumber(arrayOfNumbers, event, thisObj) {
+  console.log("right side");
+  console.log("arrayOfNumbers", arrayOfNumbers);
+  console.log("event", event);
+  console.log("thisObj", thisObj);
+  console.log("right side");
 }
 
 /*****
