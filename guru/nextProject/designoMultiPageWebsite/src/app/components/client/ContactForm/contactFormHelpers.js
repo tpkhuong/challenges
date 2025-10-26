@@ -209,18 +209,19 @@ function middlePhoneNumber(arrayOfNumbers, event, thisObj) {
   if (arrayOfNumbers.length >= 4 && arrayOfNumbers.length <= 6) {
     console.log("middle side");
     console.log("thisObj", thisObj);
-    const [first, second, third, fourth, fifth, sixth] = arrayOfNumbers;
+    const copyLastThreeDigits = arrayOfNumbers.slice(3);
+    const [fourth, fifth, sixth] = copyLastThreeDigits;
     if (thisObj.leftSideOfPhoneNumberWithParentheses) {
-      console.log(fourth, "fourth");
-      console.log(fifth, "fifth");
-      console.log(sixth, "sixth");
-      console.log([
-        ...thisObj.leftSideOfPhoneNumberWithParentheses,
-        " ",
-        `${fourth}`,
-        `${fifth ? fifth : ""}`,
-        `${sixth ? sixth : ""}`,
-      ]);
+      // console.log(fourth, "fourth");
+      // console.log(fifth, "fifth");
+      // console.log(sixth, "sixth");
+      // console.log([
+      //   ...thisObj.leftSideOfPhoneNumberWithParentheses,
+      //   " ",
+      //   `${fourth}`,
+      //   `${fifth ? fifth : ""}`,
+      //   `${sixth ? sixth : ""}`,
+      // ]);
       const mergeLeftSideAndMiddleString = [
         ...thisObj.leftSideOfPhoneNumberWithParentheses,
         " ",
@@ -240,9 +241,15 @@ function middlePhoneNumber(arrayOfNumbers, event, thisObj) {
 }
 
 function rightSidePhoneNumber(arrayOfNumbers, event, thisObj) {
+  const lastFourDigits = arrayOfNumbers.slice(6);
+  const [seventh, eighth, ninth, tenth] = lastFourDigits;
   console.log("right side");
   console.log("arrayOfNumbers", arrayOfNumbers);
-  console.log("event", event);
+  console.log("lastFourDigits", lastFourDigits);
+  console.log("seventh", seventh);
+  console.log("eighth", eighth);
+  console.log("ninth", ninth);
+  console.log("tenth", tenth);
   console.log("thisObj", thisObj);
   console.log("right side");
 }
