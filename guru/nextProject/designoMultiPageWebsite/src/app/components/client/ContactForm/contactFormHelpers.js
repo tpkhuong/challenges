@@ -241,17 +241,30 @@ function middlePhoneNumber(arrayOfNumbers, event, thisObj) {
 }
 
 function rightSidePhoneNumber(arrayOfNumbers, event, thisObj) {
-  const lastFourDigits = arrayOfNumbers.slice(6);
-  const [seventh, eighth, ninth, tenth] = lastFourDigits;
-  console.log("right side");
-  console.log("arrayOfNumbers", arrayOfNumbers);
-  console.log("lastFourDigits", lastFourDigits);
-  console.log("seventh", seventh);
-  console.log("eighth", eighth);
-  console.log("ninth", ninth);
-  console.log("tenth", tenth);
-  console.log("thisObj", thisObj);
-  console.log("right side");
+  if (arrayOfNumbers.length > 6) {
+    const lastFourDigits = arrayOfNumbers.slice(6);
+    const [seventh, eighth, ninth, tenth] = lastFourDigits;
+    console.log("right side");
+    console.log("arrayOfNumbers", arrayOfNumbers);
+    console.log("lastFourDigits", lastFourDigits);
+    console.log("seventh", seventh);
+    console.log("eighth", eighth);
+    console.log("ninth", ninth);
+    console.log("tenth", tenth);
+    console.log("thisObj", thisObj);
+    console.log("right side");
+    console.log(
+      "merge left and middle then add seventh, eighth, ninth, tenth",
+      [
+        ...thisObj.mergeLeftSideAndMiddlePhoneNumber,
+        "-",
+        seventh,
+        eighth,
+        ninth,
+        tenth,
+      ]
+    );
+  }
 }
 
 /*****
