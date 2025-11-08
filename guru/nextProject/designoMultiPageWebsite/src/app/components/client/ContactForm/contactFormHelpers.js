@@ -14,6 +14,7 @@ export function formInputAlgorithm(event) {
  * ***/
 
 const inputFuncObj = {
+  isFullPhoneNumber: false,
   leftSideOfPhoneNumberWithParentheses: null,
   mergeLeftSideAndMiddlePhoneNumber: null,
   convertLengthToTextObj: {
@@ -273,6 +274,19 @@ function rightSidePhoneNumber(arrayOfNumbers, event, thisObj) {
         `${ninth ? ninth : ""}`,
         `${tenth ? tenth : ""}`,
       ].join("");
+      /**
+       * algorithm to handle when 10 digits is entered
+       * **/
+      if (tenth !== "" && !thisObj.isFullPhoneNumber) {
+        // first time 10 digits is entered
+        thisObj.isFullPhoneNumber = true;
+        event.target.value = fullPhoneNumber;
+        return;
+      }
+      /**
+       * algorithm to handle when 10 digits is entered
+       * **/
+
       console.log(fullPhoneNumber, "fullPhoneNumber");
       event.target.value = fullPhoneNumber;
     }
