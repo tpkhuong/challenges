@@ -14,7 +14,7 @@ export function formInputAlgorithm(event) {
  * ***/
 
 const inputFuncObj = {
-  isFullPhoneNumber: false,
+  // isFullPhoneNumber: false,
   leftSideOfPhoneNumberWithParentheses: null,
   mergeLeftSideAndMiddlePhoneNumber: null,
   convertLengthToTextObj: {
@@ -54,7 +54,7 @@ const inputFuncObj = {
     // const regex = /[0-9\-]/gi;
     // automatically set pattern for users
     // phone number format: (213)323-8778
-    const numberRegex = /[0-9\-]/gi;
+    const numberRegex = /[0-9]/gi;
     const onlyNumberArray = event.target.value.match(numberRegex);
     console.log("onlyNumberArray before", onlyNumberArray);
     if (!onlyNumberArray) {
@@ -243,9 +243,18 @@ function middlePhoneNumber(arrayOfNumbers, event, thisObj) {
 
 function rightSidePhoneNumber(arrayOfNumbers, event, thisObj) {
   if (arrayOfNumbers.length > 6) {
-    const lastFourDigits = arrayOfNumbers.slice(6);
+    // getting digits 7 to 10 of phone number
+    const lastFourDigits =
+      arrayOfNumbers.length == 11
+        ? arrayOfNumbers.slice(6, -1)
+        : arrayOfNumbers.slice(6);
+    // getting digits 7 to 10 of phone number
+    console.log(lastFourDigits, "lastFourDigits");
     const [seventh, eighth, ninth, tenth] = lastFourDigits;
     if (thisObj.mergeLeftSideAndMiddlePhoneNumber) {
+      // if (thisObj.isFullPhoneNumber) {
+      //   console.log(thisObj, "thisObj. This is if statement");
+      // }
       // console.log("right side");
       // console.log("arrayOfNumbers", arrayOfNumbers);
       // console.log("lastFourDigits", lastFourDigits);
@@ -266,6 +275,7 @@ function rightSidePhoneNumber(arrayOfNumbers, event, thisObj) {
       //     `${tenth ? tenth : ""}`,
       //   ]
       // );
+      console.log(tenth, "tenth");
       const fullPhoneNumber = [
         ...thisObj.mergeLeftSideAndMiddlePhoneNumber,
         "-",
@@ -277,12 +287,12 @@ function rightSidePhoneNumber(arrayOfNumbers, event, thisObj) {
       /**
        * algorithm to handle when 10 digits is entered
        * **/
-      if (tenth !== "" && !thisObj.isFullPhoneNumber) {
-        // first time 10 digits is entered
-        thisObj.isFullPhoneNumber = true;
-        event.target.value = fullPhoneNumber;
-        return;
-      }
+      // if (tenth !== "" && !thisObj.isFullPhoneNumber) {
+      //   // first time 10 digits is entered
+      //   thisObj.isFullPhoneNumber = true;
+      //   event.target.value = fullPhoneNumber;
+      //   return;
+      // }
       /**
        * algorithm to handle when 10 digits is entered
        * **/
