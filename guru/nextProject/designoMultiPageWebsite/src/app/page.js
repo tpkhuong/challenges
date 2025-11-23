@@ -65,7 +65,7 @@ export default function RootPage({ children }) {
       <main id="main-content" role="main">
         {/* Location Page Content */}
         {/* canada */}
-        <LocationContent
+        {/* <LocationContent
           mapImg={{
             mobileDesktopImg: "/locations/desktop/image-map-canada.png",
             tabletImg: "/locations/tablet/image-map-canada.png",
@@ -84,10 +84,10 @@ export default function RootPage({ children }) {
             phoneNumberArr: ["+1", "253-863-8967"],
             email: "contact@designo.co",
           }}
-        />
+        /> */}
 
         {/* Australia */}
-        <LocationContent
+        {/* <LocationContent
           mapImg={{
             mobileDesktopImg: "/locations/desktop/image-map-australia.png",
             tabletImg: "/locations/tablet/image-map-australia.png",
@@ -107,10 +107,10 @@ export default function RootPage({ children }) {
             email: "contact@designo.au",
           }}
           blockSpacer="block-spacer"
-        />
+        /> */}
 
         {/* United Kingdom */}
-        <LocationContent
+        {/* <LocationContent
           mapImg={{
             mobileDesktopImg: "/locations/desktop/image-map-united-kingdom.png",
             tabletImg: "/locations/tablet/image-map-uk.png",
@@ -129,7 +129,7 @@ export default function RootPage({ children }) {
             phoneNumberArr: ["078", "3115", "1400"],
             email: "contact@designo.uk",
           }}
-        />
+        /> */}
         <article className={styles[`test-container`]}>
           {/* Location Icons Content */}
           {/* <LocationIconsSections /> */}
@@ -215,7 +215,7 @@ export default function RootPage({ children }) {
           /> */}
         </article>
         {/* page links */}
-        {/* <article className={styles[`project-links-container`]}>
+        <article className={styles[`project-links-container`]}>
           <PageLink
             title="WEB DESIGN"
             mobile="/home/mobile/image-web-design.jpg"
@@ -234,7 +234,7 @@ export default function RootPage({ children }) {
             tablet="/home/tablet/image-graphic-design.jpg"
             desktop="/home/desktop/image-graphic-design.jpg"
           />
-        </article> */}
+        </article>
         {/* Home Page Features */}
         <article className={styles[`home-page-features-container`]}>
           {/* Passionate */}

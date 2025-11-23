@@ -49,4 +49,34 @@
     padding-inline: 165px;
     padding-block-end: 68px;
   }
+
+  /* hover */
+
+  .navlist li {
+    position: relative;
+  }
+
+  .navlist li:hover a::after {
+    display: block;
+  }
+
+  .navlist li a::after {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    bottom: 2px;
+  }
+
+  /* .hover-element {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    bottom: 2px;
+  } */
 }

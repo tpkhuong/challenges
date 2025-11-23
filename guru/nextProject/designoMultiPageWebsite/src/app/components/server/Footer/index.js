@@ -17,12 +17,15 @@ export default function Footer({ children, mobile, tablet, desktop, page }) {
           <ul role="menubar" className={styles[`nav-list`]}>
             <li role="none">
               <a href="/">OUR COMPANY</a>
+              {/* <span className={styles[`hover-element`]}></span> */}
             </li>
             <li role="none">
               <a href="/">LOCATIONS</a>
+              {/* <span className={styles[`hover-element`]}></span> */}
             </li>
             <li role="none">
               <a href="/">CONTACT</a>
+              {/* <span className={styles[`hover-element`]}></span> */}
             </li>
           </ul>
         </nav>

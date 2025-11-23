@@ -30,6 +30,7 @@ export default function LogoNarBar({ children, prop }) {
                     >
                       {capitalizedLinkText}
                     </a>
+                    {/* <span className={styles[`hover-element`]}></span> */}
                   </li>
                 );
               }

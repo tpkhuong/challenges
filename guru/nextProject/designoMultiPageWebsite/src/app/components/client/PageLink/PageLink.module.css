@@ -16,6 +16,12 @@
   inset: 0;
 }
 
+/* hover */
+
+.img-text-container:hover.img-text-container::after {
+  background-color: hsla(10, 42%, 54%, 0.5);
+}
+
 .title-link-container {
   position: absolute;
   inset: 0;

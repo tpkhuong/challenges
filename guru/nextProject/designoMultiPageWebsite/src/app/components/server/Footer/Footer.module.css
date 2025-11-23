@@ -309,4 +309,22 @@
     left: revert;
     right: 2px;
   }
+  /* hover */
+  .nav-list a {
+    position: relative;
+  }
+
+  .nav-list li:hover a::after {
+    display: block;
+  }
+
+  .nav-list a::after {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    bottom: 2px;
+  }
 }
