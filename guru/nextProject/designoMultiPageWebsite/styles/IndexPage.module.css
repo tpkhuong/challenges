@@ -221,4 +221,10 @@
     flex-flow: row wrap;
     gap: 32px 30px;
   }
+
+  /* hover */
+  .learn-more-btn:hover {
+    background-color: var(--color-light-peach);
+    color: var(--color-neutral-white);
+  }
 }

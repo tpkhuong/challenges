@@ -305,6 +305,15 @@
     width: 48ch;
   }
 
+  .call-to-action a:hover {
+    background-color: var(--color-light-peach);
+    color: var(--color-neutral-white);
+  }
+
+  .icon-container:hover path {
+    fill: var(--color-social-icon-hover);
+  }
+
   .background-circles {
     left: revert;
     right: 2px;

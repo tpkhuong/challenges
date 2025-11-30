@@ -52,7 +52,7 @@
 
   /* hover */
 
-  .navlist li {
+  .navlist li a {
     position: relative;
   }
 
