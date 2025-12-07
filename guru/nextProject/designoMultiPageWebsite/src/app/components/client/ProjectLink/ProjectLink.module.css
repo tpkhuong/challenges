@@ -1,7 +1,11 @@
 /* mobile */
+
 .project-link-card {
   --border-radius: 16px;
   /* display flex, flex direction colum */
+  --title-color: var(--color-peach);
+  --text-color: var(--color-neutral-black);
+  --card-background-color: var(--color-projectlink-card-bg);
 }
 .img-container {
   border-top-left-radius: var(--border-radius);
@@ -15,7 +19,7 @@
   border-bottom-right-radius: var(--border-radius);
 
   text-align: center;
-  background-color: var(--color-projectlink-card-bg);
+  background-color: var(--card-background-color);
   /* background-color: var(--color-peach); */
 
   padding-inline: 30px;
@@ -23,7 +27,7 @@
 }
 .title {
   font-size: var(--font-size-20px);
-  color: var(--color-peach);
+  color: var(--title-color);
   text-transform: uppercase;
   letter-spacing: 6px;
   font-weight: 400;
@@ -33,7 +37,7 @@
 
 .description {
   font-size: var(--font-size-16px);
-  color: var(--color-neutral-black);
+  color: var(--text-color);
 
   padding-inline: 6px;
 }
@@ -92,6 +96,14 @@
 /* desktop */
 
 @media screen and (min-width: 89rem) {
+  /* hover */
+
+  .project-link-card:hover {
+    --title-color: var(--color-neutral-white);
+    --text-color: var(--color-neutral-white);
+    --card-background-color: var(--color-call-to-action-peach);
+  }
+
   .project-link-card {
     flex-basis: 350px;
 
