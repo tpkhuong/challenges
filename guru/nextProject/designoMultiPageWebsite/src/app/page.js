@@ -132,7 +132,7 @@ export default function RootPage({ children }) {
         /> */}
         <article className={styles[`test-container`]}>
           {/* Location Icons Content */}
-          {/* <LocationIconsSections /> */}
+          <LocationIconsSections />
           {/* About Feature */}
           {/* desktop: img on right */}
           {/* <AboutFeature
