@@ -8,8 +8,23 @@ export default function RootPage({ children }) {
       <a href="#main-content" className="skip-link">
         Skip to Main Content
       </a>
-      <header role="banner"></header>
       <main role="main">
+        {/* get date from API */}
+        {/* app title + units changer */}
+        {/* h2 + search container */}
+        {/* content container */}
+        <section>
+          {/* content cotnainer */}
+          <div>
+            {/* Location display */}
+            {/* feels like, humidity, wind, and precipitation */}
+            {/* Daily Forecast */}
+          </div>
+          <div>
+            {/* h3 + button */}
+            {/* hourly display elements */}
+          </div>
+        </section>
         <Title>{"This is the Weather App!!!"}</Title>
         <h2 className={indexStyles[`title`]}>This is another title.</h2>
       </main>
