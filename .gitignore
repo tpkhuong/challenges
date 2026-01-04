@@ -10,7 +10,7 @@
 /intermediate/urlShorteningApiPage/.env/
 /intermediate/weatherApp/node_modules/
 /intermediate/weatherApp/starter-code/
-/intermediate/weatherApp/.env/
+/intermediate/weatherApp/.env.local
 /intermediate/weatherApp/.next/
 /advanced/mernProjects/frontend/node_modules/
 /advanced/multiPageSetup/node_modules/
