@@ -3,6 +3,7 @@
 import React from "react";
 import indexStyles from "../styles/IndexPage.module.css";
 import Title from "../src/components/Title/index.js";
+import { SearchBox } from "@mapbox/search-js-react";
 
 export default function RootPage({ children }) {
   /**
@@ -29,6 +30,13 @@ export default function RootPage({ children }) {
         Skip to Main Content
       </a>
       <main role="main">
+        <h1>This is a search bar.</h1>
+        <div>
+          <SearchBox
+            accessToken={process.env.NEXT_PUBLIC_MAPBOX_API}
+            options={{ language: "en", country: "US" }}
+          />
+        </div>
         {/* get date from API */}
         {/* app title + units changer */}
         {/* h2 + search container */}
