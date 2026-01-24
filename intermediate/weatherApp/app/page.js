@@ -4,22 +4,22 @@ import React from "react";
 import dynamic from "next/dynamic";
 import indexStyles from "../styles/IndexPage.module.css";
 import Title from "../src/components/Title/index.js";
-// import { SearchBox } from "@mapbox/search-js-react";
+import { SearchBox } from "@mapbox/search-js-react";
 
-const SearchBox = dynamic(() => import(`@mapbox/search-js-react`), {
-  ssr: false,
-});
+// const SearchBox = dynamic(() => import(`@mapbox/search-js-react`), {
+//   ssr: false,
+// });
 
 export default function RootPage({ children }) {
   /**
    * works
    * **/
 
-  const [isClient, setIsClient] = React.useState(false);
+  // const [isClient, setIsClient] = React.useState(false);
 
-  React.useEffect(function renderComponent() {
-    setIsClient(true);
-  }, []);
+  // React.useEffect(function renderComponent() {
+  //   setIsClient(true);
+  // }, []);
 
   // const response = await fetch(
   //   `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,precipitation,showers,rain,snowfall,weather_code,visibility,wind_speed_10m,temperature_80m&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,wind_speed_10m,precipitation,rain,showers,snowfall,weather_code`
@@ -43,16 +43,16 @@ export default function RootPage({ children }) {
       <main role="main">
         <h1>This is a search bar.</h1>
         <div>
-          {isClient ? (
+          {/* {isClient ? (
             <SearchBox
               accessToken={process.env.NEXT_PUBLIC_MAPBOX_API}
               options={{ language: "en", country: "US" }}
             />
-          ) : null}
-          {/* <SearchBox
+          ) : null} */}
+          <SearchBox
             accessToken={process.env.NEXT_PUBLIC_MAPBOX_API}
             options={{ language: "en", country: "US" }}
-          /> */}
+          />
         </div>
         {/* get date from API */}
         {/* app title + units changer */}
