@@ -4,7 +4,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import indexStyles from "../styles/IndexPage.module.css";
 import Title from "../src/components/Title/index.js";
-import { SearchBox } from "@mapbox/search-js-react";
+// import { SearchBox } from "@mapbox/search-js-react";
 
 // const SearchBox = dynamic(() => import(`@mapbox/search-js-react`), {
 //   ssr: false,
@@ -49,10 +49,11 @@ export default function RootPage({ children }) {
               options={{ language: "en", country: "US" }}
             />
           ) : null} */}
-          <SearchBox
+
+          {/* <SearchBox
             accessToken={process.env.NEXT_PUBLIC_MAPBOX_API}
             options={{ language: "en", country: "US" }}
-          />
+          /> */}
         </div>
         {/* get date from API */}
         {/* app title + units changer */}
