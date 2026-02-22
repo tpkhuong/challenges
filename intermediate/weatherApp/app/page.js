@@ -6,7 +6,15 @@ import indexStyles from "../styles/IndexPage.module.css";
 import Title from "../src/components/Title/index.js";
 // import { SearchBox } from "@mapbox/search-js-react";
 
-import SearchBox from "../src/components/SearchBox/index.js";
+// import SearchBox from "../src/components/SearchBox/index.js";
+// import MapComponent from "../src/components/SearchBox/index.js";
+
+const MapComponent = dynamic(
+  () => import("../src/components/SearchBox/index.js"),
+  {
+    ssr: false,
+  }
+);
 
 // const SearchBox = dynamic(() => import(`@mapbox/search-js-react`), {
 //   ssr: false,
@@ -77,7 +85,8 @@ export default function RootPage({ children }) {
         <h2 className={indexStyles[`title`]}>This is another title.</h2>
         <button onClick={getForecastData}>GET Forecast Data</button>
         <h2>This is SearchBox</h2>
-        <SearchBox />
+        {/* <SearchBox /> */}
+        <MapComponent />
       </main>
     </React.Fragment>
   );
