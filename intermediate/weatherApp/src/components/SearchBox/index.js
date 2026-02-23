@@ -20,7 +20,7 @@ import { SearchBox } from "@mapbox/search-js-react";
 
 const MapComponent = () => {
   return (
-    <div>
+    <div onKeyDown={checkLocation}>
       <SearchBox
         accessToken={process.env.NEXT_PUBLIC_MAPBOX_API}
         options={{ language: "en", country: "US" }}
@@ -28,6 +28,10 @@ const MapComponent = () => {
     </div>
   );
 };
+
+function checkLocation(event) {
+  console.log(event, "event");
+}
 
 export default MapComponent;
 // export default function SearchBox({ children }) {
