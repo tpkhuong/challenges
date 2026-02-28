@@ -29,8 +29,27 @@ const MapComponent = () => {
   );
 };
 
-function checkLocation(event) {
+async function checkLocation(event) {
+  // hep6buoD1Ddy4SbObyaI2BenJxFQY6l5gROxLdOw
   console.log(event, "event");
+  if (event.code == "Enter") {
+    console.log("User hit Enter key");
+    const response = await fetch(
+      `https://api.api-ninjas.com/v1/city?name=Portland
+`,
+      {
+        method: "GET",
+        headers: {
+          "X-Api-Key": "hep6buoD1Ddy4SbObyaI2BenJxFQY6l5gROxLdOw",
+        },
+      }
+    );
+
+    if (response) {
+      const data = await response.json();
+      console.log(data, "data");
+    }
+  }
 }
 
 export default MapComponent;
