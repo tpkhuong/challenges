@@ -35,8 +35,7 @@ async function checkLocation(event) {
   if (event.code == "Enter") {
     console.log("User hit Enter key");
     const response = await fetch(
-      `https://api.api-ninjas.com/v1/city?name=Portland
-`,
+      `https://api.api-ninjas.com/v1/geocoding?city=Atlanta&state=Georgia&country=US&zipcode=30308`,
       {
         method: "GET",
         headers: {
