@@ -23,10 +23,11 @@ const MapComponent = () => {
   return (
     <div onKeyDown={checkLocation}>
       <SearchBox
+        className={styles[`hidden-image`]}
         accessToken={process.env.NEXT_PUBLIC_MAPBOX_API}
         options={{ language: "en", country: "US" }}
-        aria-description="format: city comma uppercase state abbreviation  zip code"
-        placeholder="example: Los Angeles, CA 90031"
+        aria-description="format: city comma uppercase state abbreviation zip code or zip code."
+        placeholder="example: Los Angeles, CA 90031 or zip code: 80019"
       />
     </div>
   );

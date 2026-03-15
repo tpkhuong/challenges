@@ -87,6 +87,9 @@ export default function RootPage({ children }) {
         <h2>This is SearchBox</h2>
         {/* <SearchBox /> */}
         <MapComponent />
+        <form action="/">
+          <input type="text" autoComplete="home city" />
+        </form>
       </main>
     </React.Fragment>
   );

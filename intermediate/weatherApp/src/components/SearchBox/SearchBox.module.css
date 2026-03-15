@@ -1,0 +1,8 @@
+/* .hidden-image svg {
+  display: none;
+} */
+
+.hidden-image {
+  display: none;
+  padding-inline-start: 8px;
+}
