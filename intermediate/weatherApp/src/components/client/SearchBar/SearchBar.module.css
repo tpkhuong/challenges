@@ -1,0 +1,11 @@
+.icon-wrapper {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* search icon */
+
+.icon-wrapper path {
+  fill: red;
+}

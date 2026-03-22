@@ -4,6 +4,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import indexStyles from "../styles/IndexPage.module.css";
 import Title from "../src/components/Title/index.js";
+import SearchBar from "../src/components/client/SearchBar/index.js";
 // import { SearchBox } from "@mapbox/search-js-react";
 
 // import SearchBox from "../src/components/SearchBox/index.js";
@@ -84,12 +85,14 @@ export default function RootPage({ children }) {
         <Title>{"This is the Weather App!!!"}</Title>
         <h2 className={indexStyles[`title`]}>This is another title.</h2>
         <button onClick={getForecastData}>GET Forecast Data</button>
-        <h2>This is SearchBox</h2>
+        <h2>This is SearchBar</h2>
+        {/* <SearchBar /> */}
+        <SearchBar />
         {/* <SearchBox /> */}
-        <MapComponent />
+        {/* <MapComponent />
         <form action="/">
           <input type="text" autoComplete="home city" />
-        </form>
+        </form> */}
       </main>
     </React.Fragment>
   );
