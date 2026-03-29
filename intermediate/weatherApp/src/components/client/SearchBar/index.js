@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./SearchBar.module.css";
 
+const searchBtnAlgorithm = closureWrapper();
+
 export default function SearchBar({ children }) {
   const [] = React.useState();
 
@@ -22,7 +24,11 @@ export default function SearchBar({ children }) {
               />
             </svg>
           </span>
+          <label className="visually-hidden" htmlFor="search-bar-selector">
+            Search Bar
+          </label>
           <input
+            id="search-bar-selector"
             type="text"
             aria-description="format: city comma uppercase state abbreviation zip code or zip code."
             placeholder="example: Los Angeles, CA 90031 or zip code: 80019"
@@ -35,6 +41,42 @@ export default function SearchBar({ children }) {
   );
 }
 
-function searchBtnAlgorithm(event) {
-  console.log(event, "event");
+function closureWrapper() {
+  // recent searches array
+  const dataObj = {
+    recentSearchesArray: [],
+  };
+
+  return function innerFunction(event) {
+    console.log(event, "event");
+    console.lof(
+      dataObj.recentSearchesArray,
+      " before dataObj.recentSearchesArray"
+    );
+    // have user recent search be first on recent searches list
+    const searchBarInputValue = document.getElementById(
+      "search-bar-selector"
+    ).value;
+    const correctOrderOfSearchesArray = dataObj.recentSearchesArray.reduce(
+      function workWithSearchOrder(buildingUp, currentValue) {
+        if (dataObj.recentSearchesArray.length == 0) {
+          buildingUp = [searchBarInputValue, ...dataObj.recentSearchesArray];
+
+          return buildingUp;
+        }
+        buildingUp = [searchBarInputValue, ...buildingUp];
+
+        return buildingUp;
+      },
+      []
+    );
+    // here
+
+    dataObj.recentSearchesArray = correctOrderOfSearchesArray;
+
+    console.lof(
+      dataObj.recentSearchesArray,
+      " after dataObj.recentSearchesArray"
+    );
+  };
 }
