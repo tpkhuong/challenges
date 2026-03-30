@@ -49,7 +49,7 @@ function closureWrapper() {
 
   return function innerFunction(event) {
     console.log(event, "event");
-    console.lof(
+    console.log(
       dataObj.recentSearchesArray,
       " before dataObj.recentSearchesArray"
     );
@@ -74,7 +74,7 @@ function closureWrapper() {
 
     dataObj.recentSearchesArray = correctOrderOfSearchesArray;
 
-    console.lof(
+    console.log(
       dataObj.recentSearchesArray,
       " after dataObj.recentSearchesArray"
     );
