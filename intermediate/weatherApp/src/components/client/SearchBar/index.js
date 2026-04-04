@@ -57,22 +57,36 @@ function closureWrapper() {
     const searchBarInputValue = document.getElementById(
       "search-bar-selector"
     ).value;
-    const correctOrderOfSearchesArray = dataObj.recentSearchesArray.reduce(
-      function workWithSearchOrder(buildingUp, currentValue) {
-        if (dataObj.recentSearchesArray.length == 0) {
-          buildingUp = [searchBarInputValue, ...dataObj.recentSearchesArray];
 
-          return buildingUp;
-        }
-        buildingUp = [searchBarInputValue, ...buildingUp];
+    console.log(searchBarInputValue, "searchBarInputValue");
 
-        return buildingUp;
-      },
-      []
-    );
+    const addValueToArray = [
+      searchBarInputValue,
+      ...dataObj.recentSearchesArray,
+    ];
+
+    console.log(addValueToArray, "addValueToArray");
+
+    dataObj.recentSearchesArray = addValueToArray;
+
+    // const correctOrderOfSearchesArray = dataObj.recentSearchesArray.reduce(
+    //   function workWithSearchOrder(buildingUp, currentValue) {
+    //     if (dataObj.recentSearchesArray.length == 0) {
+    //       buildingUp = [searchBarInputValue, ...dataObj.recentSearchesArray];
+
+    //       return buildingUp;
+    //     }
+    //     buildingUp = [searchBarInputValue, ...buildingUp];
+
+    //     return buildingUp;
+    //   },
+    //   []
+    // );
     // here
 
-    dataObj.recentSearchesArray = correctOrderOfSearchesArray;
+    // console.log(correctOrderOfSearchesArray, "correctOrderOfSearchesArray");
+
+    // dataObj.recentSearchesArray = correctOrderOfSearchesArray;
 
     console.log(
       dataObj.recentSearchesArray,
