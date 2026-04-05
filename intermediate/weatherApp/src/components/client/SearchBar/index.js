@@ -36,6 +36,7 @@ export default function SearchBar({ children }) {
           {/* saved location will use .map on array of saved location. */}
         </div>
         <button onClick={searchBtnAlgorithm}>Search</button>
+        {/* add recent search here */}
       </div>
     </React.Fragment>
   );
