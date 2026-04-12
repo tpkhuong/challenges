@@ -88,6 +88,22 @@ function closureWrapper() {
     // console.log(correctOrderOfSearchesArray, "correctOrderOfSearchesArray");
 
     // dataObj.recentSearchesArray = correctOrderOfSearchesArray;
+    /*****/
+    /** when length is 10  ***/
+
+    if (dataObj.recentSearchesArray.length > 10) {
+      // get the first 10 values of array
+
+      const firstTenCities = dataObj.recentSearchesArray.slice(
+        0,
+        dataObj.recentSearchesArray.legnth - 1
+      );
+
+      dataObj.recentSearchesArray = firstTenCities;
+    }
+
+    /** when length is 10  ***/
+    /*****/
 
     console.log(
       dataObj.recentSearchesArray,
