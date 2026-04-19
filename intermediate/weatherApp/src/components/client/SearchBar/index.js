@@ -93,13 +93,19 @@ function closureWrapper() {
 
     if (dataObj.recentSearchesArray.length > 10) {
       // get the first 10 values of array
+      console.log(
+        dataObj.recentSearchesArray,
+        "dataObj.recentSearchesArray inside if statement"
+      );
 
       const firstTenCities = dataObj.recentSearchesArray.slice(
         0,
-        dataObj.recentSearchesArray.legnth - 1
+        dataObj.recentSearchesArray.length - 1
       );
 
       dataObj.recentSearchesArray = firstTenCities;
+
+      console.log(firstTenCities, "firstTenCities inside if statement");
     }
 
     /** when length is 10  ***/
