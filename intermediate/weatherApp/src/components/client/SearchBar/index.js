@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./SearchBar.module.css";
 
-const searchBtnAlgorithm = closureWrapper();
-
 export default function SearchBar({ children }) {
-  const [] = React.useState();
+  const [isThereSearches, setRecentSearches] = React.useState();
+
+  const searchBtnAlgorithm = closureWrapper(setRecentSearches);
 
   return (
     <React.Fragment>
@@ -42,13 +42,14 @@ export default function SearchBar({ children }) {
   );
 }
 
-function closureWrapper() {
+function closureWrapper(setStateFunc) {
   // recent searches array
   const dataObj = {
     recentSearchesArray: [],
   };
 
   return function innerFunction(event) {
+    console.log(setStateFunc, "setStateFunc at beginning");
     console.log(event, "event");
     console.log(
       dataObj.recentSearchesArray,
@@ -115,5 +116,7 @@ function closureWrapper() {
       dataObj.recentSearchesArray,
       " after dataObj.recentSearchesArray"
     );
+
+    console.log(setStateFunc, "setStateFunc at end");
   };
 }
