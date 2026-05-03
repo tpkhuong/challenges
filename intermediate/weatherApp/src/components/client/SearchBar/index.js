@@ -37,6 +37,11 @@ export default function SearchBar({ children }) {
         </div>
         <button onClick={searchBtnAlgorithm}>Search</button>
         {/* add recent search here */}
+        {!isThereSearches ? (
+          <span>No Searches</span>
+        ) : (
+          <span>Recent Searches</span>
+        )}
       </div>
     </React.Fragment>
   );
@@ -118,5 +123,6 @@ function closureWrapper(setStateFunc) {
     );
 
     console.log(setStateFunc, "setStateFunc at end");
+    setStateFunc(dataObj.recentSearchesArray);
   };
 }
