@@ -85,6 +85,9 @@ export default function RootPage({ children }) {
         <Title>{"This is the Weather App!!!"}</Title>
         <h2 className={indexStyles[`title`]}>This is another title.</h2>
         <button onClick={getForecastData}>GET Forecast Data</button>
+        <button onClick={getLocationUsingZipcode}>
+          GET Location by Zipcode
+        </button>
         <h2>This is SearchBar</h2>
         {/* <SearchBar /> */}
         <SearchBar />
@@ -119,6 +122,26 @@ async function getForecastData(event) {
     const data = await response.json();
 
     console.log("forecast data", data);
+
+    return data;
+  }
+}
+
+async function getLocationUsingZipcode(event) {
+  const responseFromApi = await fetch(
+    `${process.env.NEXT_PUBLIC_AUTH_URL}/api/getLocationByZipcode`,
+    {
+      method: "GET",
+      headers: {
+        "X-Api-Key": "hep6buoD1Ddy4SbObyaI2BenJxFQY6l5gROxLdOw",
+      },
+    }
+  );
+
+  if (responseFromApi) {
+    const data = await responseFromApi.json();
+
+    console.log("this is location/data from using Zipcode", data);
 
     return data;
   }
