@@ -133,7 +133,7 @@ async function getLocationUsingZipcode(event) {
     {
       method: "GET",
       headers: {
-        "X-Api-Key": "hep6buoD1Ddy4SbObyaI2BenJxFQY6l5gROxLdOw",
+        "x-api-key": "hep6buoD1Ddy4SbObyaI2BenJxFQY6l5gROxLdOw",
       },
     }
   );
