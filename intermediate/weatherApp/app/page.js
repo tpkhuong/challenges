@@ -138,11 +138,11 @@ async function getLocationUsingZipcode(event) {
     }
   );
 
-  if (responseFromApi) {
-    const data = await responseFromApi.json();
+  // if (responseFromApi) {
+  //   const data = await responseFromApi.json();
 
-    console.log("this is location/data from using Zipcode", data);
+  //   console.log("this is location/data from using Zipcode", data);
 
-    return data;
-  }
+  //   return data;
+  // }
 }
