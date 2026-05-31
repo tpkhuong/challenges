@@ -112,6 +112,12 @@ export default function RootPage({ children }) {
 //     },
 //   };
 //   export default nextConfig;
+/***
+ * need to make api calls in one api route
+ * when user enter city, state default to "US" for country or user enter zipcode to get forecast
+ * 1) need to look up latitude, longitude get forecast
+ * 2) save location in recent seaches array
+ * **/
 async function getForecastData(event) {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_AUTH_URL}/api/getforecast`,

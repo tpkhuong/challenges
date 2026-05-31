@@ -53,6 +53,14 @@ async function getGeocodingUsingZipcode() {
       },
     }
   );
+  /**
+   * using Zipcode will give city,latitude,longitude, country
+   * then using latitude, longitude in reverse geocoding api to get name(city), country and state
+   * **/
+
+  /***
+   * using latitude, longitude in open-metro api call to get forecast of location
+   * ***/
 
   if (response) {
     const data = await response.json();

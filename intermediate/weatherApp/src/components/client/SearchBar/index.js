@@ -1,6 +1,10 @@
 import React from "react";
 import styles from "./SearchBar.module.css";
 
+/***
+ * have to move SearchBar algorithm to js file where we want to render the weather forecast data
+ * ***/
+
 export default function SearchBar({ children }) {
   const [isThereSearches, setRecentSearches] = React.useState();
 
