@@ -32,6 +32,7 @@ export default function SearchBar({ children }) {
             Search Bar
           </label>
           <input
+            onKeyUp={zipCodeHelper}
             id="search-bar-selector"
             type="text"
             aria-description="format: city comma uppercase state abbreviation zip code or zip code."
@@ -129,4 +130,31 @@ function closureWrapper(setStateFunc) {
     console.log(setStateFunc, "setStateFunc at end");
     setStateFunc(dataObj.recentSearchesArray);
   };
+}
+
+function zipCodeHelper(event) {
+  console.log(event, "event");
+  const { code, key, target } = event;
+
+  const searchBarInput = document.getElementById("search-bar-selector");
+
+  const valueOfSearchBar = searchBarInput.value;
+
+  console.log("value", valueOfSearchBar);
+  console.log("value length", valueOfSearchBar.length);
+
+  if (valueOfSearchBar.length > 5) {
+    console.log("length is greater 5");
+    // get first 5 digits
+    const arrOfDigits = valueOfSearchBar.split("");
+    // remove sixth digit
+    const removeLastDigit = arrOfDigits.pop();
+    console.log(arrOfDigits, "arrOfDigits");
+    const onlyFiveDigitsZipCode = arrOfDigits.join("");
+    searchBarInput.value = onlyFiveDigitsZipCode;
+  }
+
+  // if(key == "Enter"){
+
+  // }
 }
