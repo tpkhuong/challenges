@@ -132,8 +132,13 @@ function closureWrapper(setStateFunc) {
   };
 }
 
+/***
+ * Need to move zipZodeHelper algorithm into closureWrapper function
+ ***/
+
 function zipCodeHelper(event) {
   console.log(event, "event");
+  console.log(event._reactName, "event _reactName");
   const { code, key, target } = event;
 
   const searchBarInput = document.getElementById("search-bar-selector");
@@ -158,3 +163,12 @@ function zipCodeHelper(event) {
 
   // }
 }
+
+"80808".split("").every(function convertToNumber(value, index, list) {
+  const strToNumber = Number(value);
+
+  console.log(strToNumber);
+  // have to use !! to make Number("a") falsy
+  // Number("a") will return NaN then !NaN is true because NaN is 1 of 7 falsy values
+  // return NaN && typeof strToNumber == "number";
+});
