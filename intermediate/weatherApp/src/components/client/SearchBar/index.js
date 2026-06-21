@@ -149,14 +149,48 @@ function zipCodeHelper(event) {
   console.log("value length", valueOfSearchBar.length);
 
   if (valueOfSearchBar.length > 5) {
+    const checkEachDigitsObj = {
+      0: true,
+      1: true,
+      2: true,
+      3: true,
+      4: true,
+      5: true,
+      6: true,
+      7: true,
+      8: true,
+      9: true,
+      NaN: false,
+    };
     console.log("length is greater 5");
     // get first 5 digits
+    const originalInputValues = valueOfSearchBar;
+
     const arrOfDigits = valueOfSearchBar.split("");
     // remove sixth digit
     const removeLastDigit = arrOfDigits.pop();
-    console.log(arrOfDigits, "arrOfDigits");
-    const onlyFiveDigitsZipCode = arrOfDigits.join("");
-    searchBarInput.value = onlyFiveDigitsZipCode;
+    // check if all digits are number
+    const isAllNumbers = arrOfDigits.every(function checkAllDigits(
+      value,
+      index,
+      list
+    ) {
+      const strToNumber = Number(value);
+
+      return checkEachDigitsObj[`${strToNumber}`];
+    });
+
+    // if all digits are number show only first 5 digits
+
+    if (isAllNumbers) {
+      console.log(arrOfDigits, "arrOfDigits");
+      const onlyFiveDigitsZipCode = arrOfDigits.join("");
+      searchBarInput.value = onlyFiveDigitsZipCode;
+      return;
+    }
+    // else show user current entered values
+
+    searchBarInput.value = originalInputValues;
   }
 
   // if(key == "Enter"){
@@ -171,4 +205,14 @@ function zipCodeHelper(event) {
   // have to use !! to make Number("a") falsy
   // Number("a") will return NaN then !NaN is true because NaN is 1 of 7 falsy values
   // return NaN && typeof strToNumber == "number";
+});
+
+["8", "0", "a", "B", "9"].every(function isAllDigitsNumbers(
+  value,
+  index,
+  list
+) {
+  const strToNumber = Number(value);
+
+  return checkEachDigitsObj[strToNumber];
 });
