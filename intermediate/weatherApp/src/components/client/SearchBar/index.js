@@ -198,21 +198,21 @@ function zipCodeHelper(event) {
   // }
 }
 
-"80808".split("").every(function convertToNumber(value, index, list) {
-  const strToNumber = Number(value);
+// "80808".split("").every(function convertToNumber(value, index, list) {
+//   const strToNumber = Number(value);
 
-  console.log(strToNumber);
-  // have to use !! to make Number("a") falsy
-  // Number("a") will return NaN then !NaN is true because NaN is 1 of 7 falsy values
-  // return NaN && typeof strToNumber == "number";
-});
+//   console.log(strToNumber);
+//   // have to use !! to make Number("a") falsy
+//   // Number("a") will return NaN then !NaN is true because NaN is 1 of 7 falsy values
+//   // return NaN && typeof strToNumber == "number";
+// });
 
-["8", "0", "a", "B", "9"].every(function isAllDigitsNumbers(
-  value,
-  index,
-  list
-) {
-  const strToNumber = Number(value);
+// ["8", "0", "a", "B", "9"].every(function isAllDigitsNumbers(
+//   value,
+//   index,
+//   list
+// ) {
+//   const strToNumber = Number(value);
 
-  return checkEachDigitsObj[strToNumber];
-});
+//   return checkEachDigitsObj[strToNumber];
+// });
