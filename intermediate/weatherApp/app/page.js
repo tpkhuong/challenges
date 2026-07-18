@@ -359,6 +359,11 @@ function closureWrapper(setStateFunc) {
    * execute function at the beginning of innerFunction
    ***/
 
+  /*****
+   * Need to separate onKeyUp and onClick algorithm that should fix
+   * algorithm not adding recent searches to array
+   * *****/
+
   function zipCodeHelper(event, searchBarInput) {
     console.log(event, "event");
     console.log(event._reactName, "event _reactName");
