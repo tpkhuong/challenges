@@ -239,7 +239,9 @@ function SearchBar({ children }) {
           />
           {/* saved location will use .map on array of saved location. */}
         </div>
-        <button onClick={searchBtnAlgorithm}>Search</button>
+        <button id="search-button-selector" onClick={searchBtnAlgorithm}>
+          Search
+        </button>
         {/* add recent search here */}
         {!isThereSearches ? (
           <span>No Searches</span>
@@ -281,25 +283,41 @@ function closureWrapper(setStateFunc) {
      * Zipcode helper
      * ***/
 
-    if (event._reactName == "onKeyUp") {
-      console.log("this is a test");
-      zipCodeHelper(event, searchBarInput);
-    }
+    // if (event._reactName == "onKeyUp") {
+    //   console.log("this is a test");
+    //   zipCodeHelper(event, searchBarInput);
+    //   return;
+    // }
 
     /***
      * Zipcode helper
      * ***/
 
+    /***
+     * recentSearchesHelper
+     * ***/
+
+    if (
+      event._reactName == "onClick" &&
+      event.target.getAttribute("id") == "search-button-selector"
+    ) {
+      console.log("search button was clicked.");
+    }
+
+    /***
+     * recentSearchesHelper
+     * ***/
+
     console.log(searchBarInputValue, "searchBarInputValue");
 
-    const addValueToArray = [
-      searchBarInputValue,
-      ...dataObj.recentSearchesArray,
-    ];
+    // const addValueToArray = [
+    //   searchBarInputValue,
+    //   ...dataObj.recentSearchesArray,
+    // ];
 
-    console.log(addValueToArray, "addValueToArray");
+    // console.log(addValueToArray, "addValueToArray");
 
-    dataObj.recentSearchesArray = addValueToArray;
+    // dataObj.recentSearchesArray = addValueToArray;
 
     // const correctOrderOfSearchesArray = dataObj.recentSearchesArray.reduce(
     //   function workWithSearchOrder(buildingUp, currentValue) {
@@ -322,22 +340,22 @@ function closureWrapper(setStateFunc) {
     /*****/
     /** when length is 10  ***/
 
-    if (dataObj.recentSearchesArray.length > 10) {
-      // get the first 10 values of array
-      console.log(
-        dataObj.recentSearchesArray,
-        "dataObj.recentSearchesArray inside if statement"
-      );
+    // if (dataObj.recentSearchesArray.length > 10) {
+    //   // get the first 10 values of array
+    //   console.log(
+    //     dataObj.recentSearchesArray,
+    //     "dataObj.recentSearchesArray inside if statement"
+    //   );
 
-      const firstTenCities = dataObj.recentSearchesArray.slice(
-        0,
-        dataObj.recentSearchesArray.length - 1
-      );
+    //   const firstTenCities = dataObj.recentSearchesArray.slice(
+    //     0,
+    //     dataObj.recentSearchesArray.length - 1
+    //   );
 
-      dataObj.recentSearchesArray = firstTenCities;
+    //   dataObj.recentSearchesArray = firstTenCities;
 
-      console.log(firstTenCities, "firstTenCities inside if statement");
-    }
+    //   console.log(firstTenCities, "firstTenCities inside if statement");
+    // }
 
     /** when length is 10  ***/
     /*****/
@@ -422,6 +440,57 @@ function closureWrapper(setStateFunc) {
     // if(key == "Enter"){
 
     // }
+  }
+
+  function recentSearchesHelper(event, closureDataObj, searchBarValue) {
+    const addValueToArray = [
+      searchBarValue,
+      ...closureDataObj.recentSearchesArray,
+    ];
+
+    console.log(addValueToArray, "addValueToArray");
+
+    closureDataObj.recentSearchesArray = addValueToArray;
+
+    // const correctOrderOfSearchesArray = closureDataObj.recentSearchesArray.reduce(
+    //   function workWithSearchOrder(buildingUp, currentValue) {
+    //     if (closureDataObj.recentSearchesArray.length == 0) {
+    //       buildingUp = [searchBarValue, ...closureDataObj.recentSearchesArray];
+
+    //       return buildingUp;
+    //     }
+    //     buildingUp = [searchBarValue, ...buildingUp];
+
+    //     return buildingUp;
+    //   },
+    //   []
+    // );
+    // here
+
+    // console.log(correctOrderOfSearchesArray, "correctOrderOfSearchesArray");
+
+    // closureDataObj.recentSearchesArray = correctOrderOfSearchesArray;
+    /*****/
+    /** when length is 10  ***/
+
+    if (closureDataObj.recentSearchesArray.length > 10) {
+      // get the first 10 values of array
+      console.log(
+        closureDataObj.recentSearchesArray,
+        "closureDataObj.recentSearchesArray inside if statement from recentSearchesHelper."
+      );
+
+      const firstTenCities = closureDataObj.recentSearchesArray.slice(
+        0,
+        closureDataObj.recentSearchesArray.length - 1
+      );
+
+      closureDataObj.recentSearchesArray = firstTenCities;
+
+      console.log(firstTenCities, "firstTenCities inside if statement");
+    }
+
+    /** when length is 10  ***/
   }
 }
 
