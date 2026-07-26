@@ -283,11 +283,11 @@ function closureWrapper(setStateFunc) {
      * Zipcode helper
      * ***/
 
-    // if (event._reactName == "onKeyUp") {
-    //   console.log("this is a test");
-    //   zipCodeHelper(event, searchBarInput);
-    //   return;
-    // }
+    if (event._reactName == "onKeyUp") {
+      console.log("this is a test");
+      zipCodeHelper(event, searchBarInput);
+      return;
+    }
 
     /***
      * Zipcode helper
@@ -301,7 +301,8 @@ function closureWrapper(setStateFunc) {
       event._reactName == "onClick" &&
       event.target.getAttribute("id") == "search-button-selector"
     ) {
-      console.log("search button was clicked.");
+      recentSearchesHelper(event, dataObj, searchBarInputValue);
+      return;
     }
 
     /***
