@@ -149,6 +149,10 @@ function zipCodeHelper(event) {
   console.log("value length", valueOfSearchBar.length);
 
   if (valueOfSearchBar.length > 5) {
+    /*****
+     * make api call to get city and state from zipcode
+     * then display city and state to user
+     * *****/
     const checkEachDigitsObj = {
       0: true,
       1: true,
