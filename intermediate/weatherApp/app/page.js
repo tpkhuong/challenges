@@ -184,9 +184,11 @@ async function getLocationUsingZipcode(event) {
   const responseFromApi = await fetch(
     `${process.env.NEXT_PUBLIC_AUTH_URL}/api/getLocationByZipcode`,
     {
-      method: "GET",
+      method: "POST",
+      body: JSON.stringify({ name: "Deadpool", tag: "Cool dude" }),
       headers: {
-        "x-api-key": "hep6buoD1Ddy4SbObyaI2BenJxFQY6l5gROxLdOw",
+        // "x-api-key": "hep6buoD1Ddy4SbObyaI2BenJxFQY6l5gROxLdOw",
+        "Content-Type": "application/json",
       },
     }
   );
@@ -430,6 +432,9 @@ function closureWrapper(setStateFunc) {
       if (isAllNumbers) {
         console.log(arrOfDigits, "arrOfDigits");
         const onlyFiveDigitsZipCode = arrOfDigits.join("");
+        /*****
+         * make api call here
+         * ******/
         searchBarInput.value = onlyFiveDigitsZipCode;
         return;
       }

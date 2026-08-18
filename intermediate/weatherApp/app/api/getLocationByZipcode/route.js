@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req, res) {
+export async function POST(req, res) {
   console.log(req.headers, "req");
+  const body = await req.json();
+  console.log(body, "body");
+  const { name, tag } = body;
+  console.log(name, "name");
+  console.log(tag, "tag");
   // const response = await fetch(
   //   "https://api.api-ninjas.com/v1/geocoding?zipcode=30308",
   //   {
