@@ -180,12 +180,12 @@ async function getForecastData(event) {
   }
 }
 
-async function getLocationUsingZipcode(event) {
+async function getLocationUsingZipcode(event, zipcodeEnteredByUser) {
   const responseFromApi = await fetch(
     `${process.env.NEXT_PUBLIC_AUTH_URL}/api/getLocationByZipcode`,
     {
       method: "POST",
-      body: JSON.stringify({ name: "Deadpool", tag: "Cool dude" }),
+      body: JSON.stringify({ zipcode: zipcodeEnteredByUser }),
       headers: {
         // "x-api-key": "hep6buoD1Ddy4SbObyaI2BenJxFQY6l5gROxLdOw",
         "Content-Type": "application/json",
@@ -287,7 +287,7 @@ function closureWrapper(setStateFunc) {
 
     if (event._reactName == "onKeyUp") {
       console.log("this is a test");
-      zipCodeHelper(event, searchBarInput);
+      zipCodeHelper(event, searchBarInput, getLocationUsingZipcode);
       return;
     }
 
@@ -385,7 +385,7 @@ function closureWrapper(setStateFunc) {
    * algorithm not adding recent searches to array
    * *****/
 
-  function zipCodeHelper(event, searchBarInput) {
+  function zipCodeHelper(event, searchBarInput, makeApiCallZipcodeFunc) {
     console.log(event, "event");
     console.log(event._reactName, "event _reactName");
     const { code, key, target } = event;
@@ -432,6 +432,12 @@ function closureWrapper(setStateFunc) {
       if (isAllNumbers) {
         console.log(arrOfDigits, "arrOfDigits");
         const onlyFiveDigitsZipCode = arrOfDigits.join("");
+        /*****
+         * make api call here
+         * ******/
+
+        makeApiCallZipcodeFunc(event, onlyFiveDigitsZipCode);
+
         /*****
          * make api call here
          * ******/

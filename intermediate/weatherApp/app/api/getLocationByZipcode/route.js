@@ -4,9 +4,16 @@ export async function POST(req, res) {
   console.log(req.headers, "req");
   const body = await req.json();
   console.log(body, "body");
-  const { name, tag } = body;
-  console.log(name, "name");
-  console.log(tag, "tag");
+  // const { name, tag } = body;
+  // console.log(name, "name");
+  // console.log(tag, "tag");
+  /*****
+   * testing using data entered by user
+   * *****/
+  console.log(body, "body");
+  const { zipcode } = body;
+  console.log(zipcode, "zipcode");
+
   // const response = await fetch(
   //   "https://api.api-ninjas.com/v1/geocoding?zipcode=30308",
   //   {
